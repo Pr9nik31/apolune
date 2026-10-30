@@ -1,12 +1,12 @@
 import 'dart:ui';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/service/connect/failure.dart';
-import 'package:onexray/service/connect/resolver.dart';
-import 'package:onexray/service/connect/runtime_host.dart';
-import 'package:onexray/service/shared/failure.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/service/connect/failure.dart';
+import 'package:apolune/service/connect/resolver.dart';
+import 'package:apolune/service/connect/runtime_host.dart';
+import 'package:apolune/service/shared/failure.dart';
 
 void main() {
   for (final locale in [

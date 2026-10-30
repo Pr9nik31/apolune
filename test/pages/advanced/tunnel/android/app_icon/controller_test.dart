@@ -5,9 +5,9 @@ import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:image/image.dart' as img;
-import 'package:onexray/pages/advanced/tunnel/android/app_icon/controller.dart';
-import 'package:onexray/pages/advanced/tunnel/android/app_icon/view.dart';
-import 'package:onexray/service/advanced/tunnel/android/app_icon.dart';
+import 'package:apolune/pages/advanced/tunnel/android/app_icon/controller.dart';
+import 'package:apolune/pages/advanced/tunnel/android/app_icon/view.dart';
+import 'package:apolune/service/advanced/tunnel/android/app_icon.dart';
 
 /// Stands in for a launcher icon, matching the 96x96 PNG the Android bridge
 /// produces.

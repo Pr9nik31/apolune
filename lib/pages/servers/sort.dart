@@ -1,9 +1,9 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/servers/controller.dart';
-import 'package:onexray/pages/shared/widgets/button_progress.dart';
-import 'package:onexray/service/servers/sort.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/servers/controller.dart';
+import 'package:apolune/pages/shared/widgets/button_progress.dart';
+import 'package:apolune/service/servers/sort.dart';
 
 class ServerSortButton extends StatelessWidget {
   const ServerSortButton({super.key, required this.controller});

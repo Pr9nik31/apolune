@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/service/connect/dialing.dart';
+import 'package:apolune/service/connect/dialing.dart';
 
 void main() {
   test('missing and unknown strategies retain the system default', () {

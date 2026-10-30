@@ -21,9 +21,9 @@ Add Flutter, Go and Go-installed tools (`GOBIN`, or `GOPATH/bin`) to `PATH`.
 From your workspace, clone only missing repositories:
 
 ```shell
-git clone https://github.com/YuanDevTeam/OneXray.git
+git clone https://github.com/Pr9nik31/apolune.git
 git clone https://github.com/XTLS/libXray.git
-cd OneXray
+cd Apolune
 ```
 
 Keep them as siblings; Windows also needs Vole (see [checkout layout](../build_scripts/README.md#prepare-the-workspace)). All commands
@@ -69,8 +69,8 @@ sudo apt-get install -y build-essential clang libclang-dev cmake ninja-build pkg
 python3 ../libXray/build/main.py linux
 mkdir -p linux/app
 cp ../libXray/linux_so/libXray.so linux/app/
-cp ../libXray/bin/xray linux/app/OneXrayCore
-chmod +x linux/app/OneXrayCore
+cp ../libXray/bin/xray linux/app/ApoluneCore
+chmod +x linux/app/ApoluneCore
 ```
 
 ### Windows
@@ -117,7 +117,7 @@ sources change.
 - Linux: first build Debug and grant the actual Core network capabilities:
   ```shell
   flutter build linux --debug
-  sudo setcap cap_net_admin,cap_net_raw+eip build/linux/x64/debug/bundle/OneXrayCore
+  sudo setcap cap_net_admin,cap_net_raw+eip build/linux/x64/debug/bundle/ApoluneCore
   flutter run -d linux --no-enable-impeller
   ```
   Use `arm64` on ARM64; reapply capabilities when rebuilding replaces Core.

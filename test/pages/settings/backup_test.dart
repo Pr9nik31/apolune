@@ -4,22 +4,22 @@ import 'package:drift/native.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/core/backup/codec.dart';
-import 'package:onexray/core/backup/storage.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/settings/backup/page.dart';
-import 'package:onexray/pages/settings/backup/existing_file_dialog.dart';
-import 'package:onexray/pages/shared/widgets/button_progress.dart';
-import 'package:onexray/pages/shared/widgets/page_action_bar.dart';
-import 'package:onexray/pages/shared/widgets/setting_row.dart';
-import 'package:onexray/pages/shared/widgets/settings_page.dart';
-import 'package:onexray/pages/theme/theme.dart';
-import 'package:onexray/service/advanced/xray/geodata/service.dart';
-import 'package:onexray/service/advanced/xray/data_update/state.dart';
-import 'package:onexray/service/settings/backup/assets.dart';
-import 'package:onexray/service/settings/backup/service.dart';
-import 'package:onexray/service/settings/language/locale.dart';
+import 'package:apolune/core/backup/codec.dart';
+import 'package:apolune/core/backup/storage.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/settings/backup/page.dart';
+import 'package:apolune/pages/settings/backup/existing_file_dialog.dart';
+import 'package:apolune/pages/shared/widgets/button_progress.dart';
+import 'package:apolune/pages/shared/widgets/page_action_bar.dart';
+import 'package:apolune/pages/shared/widgets/setting_row.dart';
+import 'package:apolune/pages/shared/widgets/settings_page.dart';
+import 'package:apolune/pages/theme/theme.dart';
+import 'package:apolune/service/advanced/xray/geodata/service.dart';
+import 'package:apolune/service/advanced/xray/data_update/state.dart';
+import 'package:apolune/service/settings/backup/assets.dart';
+import 'package:apolune/service/settings/backup/service.dart';
+import 'package:apolune/service/settings/language/locale.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 import '../../service/settings/backup/service_test.dart'
@@ -52,7 +52,7 @@ void main() {
     addTearDown(db.close);
     final geodata = GeoDataService.forTesting(
       database: db,
-      directory: '../references/onexray-tests/unused-backup-ui',
+      directory: '../references/apolune-tests/unused-backup-ui',
       download: (_, _) async => fail('No download'),
       count: (_, _, _) async => fail('No indexing'),
       copyBundled: (_) async => fail('No bundled copy'),
@@ -123,7 +123,7 @@ void main() {
                   : backupContainerId,
               request.$2
                   ? '/backups/local.json'
-                  : 'iCloud Drive / OneXray-backup.json',
+                  : 'iCloud Drive / Apolune-backup.json',
             );
             storage.bytes = null;
             if (menu) {
@@ -212,7 +212,7 @@ void main() {
       preferences.settings = const BackupSettings(
         target: BackupTarget(
           'fixture',
-          'OneDrive / a-very-long-selected-directory-name / OneXray-backup.json',
+          'OneDrive / a-very-long-selected-directory-name / Apolune-backup.json',
         ),
       );
       await tester.pumpWidget(app(locale));

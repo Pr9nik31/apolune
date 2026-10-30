@@ -1,7 +1,7 @@
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/service/connect/runtime.dart';
-import 'package:onexray/service/connect/settings.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/service/connect/runtime.dart';
+import 'package:apolune/service/connect/settings.dart';
 
 /// App routing and LAN sharing remain stored preferences while the selected or
 /// already running session is a complete provider graph.

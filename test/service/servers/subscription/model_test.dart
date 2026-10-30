@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/service/servers/subscription/model.dart';
-import 'package:onexray/service/servers/subscription/validator.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/service/servers/subscription/model.dart';
+import 'package:apolune/service/servers/subscription/validator.dart';
 
 void main() {
   test('new source keeps mode unspecified and HWID copies retain policy', () {

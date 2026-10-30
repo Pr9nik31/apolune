@@ -4,8 +4,8 @@ import 'dart:io';
 import 'dart:isolate';
 
 import 'package:ffi/ffi.dart';
-import 'package:onexray/core/ffi/generated_bindings.dart';
-import 'package:onexray/core/ffi/windows/model.dart';
+import 'package:apolune/core/ffi/generated_bindings.dart';
+import 'package:apolune/core/ffi/windows/model.dart';
 import 'package:path/path.dart' as p;
 
 typedef WindowsNativeInvoker = Future<String> Function(String requestJson);
@@ -21,9 +21,9 @@ final class WindowsNativeException implements Exception {
 
 final class WindowsNativeApi {
   static const _maxHostResponseBytes = 1024 * 1024;
-  static const profileName = bool.fromEnvironment('ONEXRAY_WINDOWS_DEVELOPMENT')
-      ? 'OneXray Dev'
-      : 'OneXray';
+  static const profileName = bool.fromEnvironment('APOLUNE_WINDOWS_DEVELOPMENT')
+      ? 'Apolune Dev'
+      : 'Apolune';
   static final _snapshotToken = RegExp(r'^vole-session-v2:[0-9a-f]{64}$');
   static final WindowsNativeApi _singleton = WindowsNativeApi._(
     _invokeWindowsHostInWorker,

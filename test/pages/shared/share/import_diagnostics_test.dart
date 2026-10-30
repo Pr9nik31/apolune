@@ -3,10 +3,10 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/pages/shared/widgets/configuration_transfer.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
-import 'package:onexray/service/shared/share/configuration_transfer.dart';
-import 'package:onexray/service/shared/share/configuration_source.dart';
+import 'package:apolune/pages/shared/widgets/configuration_transfer.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
+import 'package:apolune/service/shared/share/configuration_transfer.dart';
+import 'package:apolune/service/shared/share/configuration_source.dart';
 
 import 'test_app.dart';
 
@@ -16,7 +16,7 @@ void main() {
     addTearDown(bus.close);
   });
 
-  for (final source in ['{\n  "outbounds": [}', 'onexray://invalid']) {
+  for (final source in ['{\n  "outbounds": [}', 'apolune://invalid']) {
     testWidgets('import locates only original JSON: $source', (tester) async {
       String? copied;
       tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(

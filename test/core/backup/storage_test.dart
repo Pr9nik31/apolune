@@ -3,10 +3,10 @@ import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:icloud_storage_plus/icloud_storage.dart';
-import 'package:onexray/core/backup/codec.dart';
-import 'package:onexray/core/backup/storage.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/core/tools/atomic_file.dart';
+import 'package:apolune/core/backup/codec.dart';
+import 'package:apolune/core/backup/storage.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/core/tools/atomic_file.dart';
 import 'package:saf_stream/saf_stream_platform_interface.dart';
 
 class PullStorage extends SafStreamPlatform {
@@ -116,7 +116,7 @@ void main() {
           Future<Object> Function(Object?) handler,
         ) {
           final channel = BasicMessageChannel<Object?>(
-            'dev.flutter.pigeon.onexray.$api.$method',
+            'dev.flutter.pigeon.apolune.$api.$method',
             BackupHostApi.pigeonChannelCodec,
           );
           messenger.setMockDecodedMessageHandler<Object?>(channel, handler);
@@ -228,7 +228,7 @@ void main() {
   );
 
   test('directory content probe distinguishes an absent file from a missing directory', () async {
-    final root = await Directory('../references/onexray-tests').absolute
+    final root = await Directory('../references/apolune-tests').absolute
         .create(recursive: true);
     final dir = await root.createTemp('backup-probe-');
     addTearDown(() async {

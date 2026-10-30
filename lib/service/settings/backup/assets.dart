@@ -1,22 +1,22 @@
 import 'dart:convert';
 
 import 'package:drift/drift.dart';
-import 'package:onexray/core/backup/codec.dart';
-import 'package:onexray/core/backup/model.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/db/database/constants.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/core/db/dao/routing_profile.dart';
-import 'package:onexray/core/model/geo_data_type.dart';
-import 'package:onexray/core/network/model.dart';
-import 'package:onexray/service/advanced/platform_policy.dart';
-import 'package:onexray/service/advanced/xray/geodata/model.dart';
-import 'package:onexray/service/advanced/xray/geodata/service.dart';
-import 'package:onexray/service/connect/runtime.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/connect/routing/custom/document.dart';
-import 'package:onexray/service/shared/share/configuration_transfer.dart';
-import 'package:onexray/service/settings/backup/platform_settings.dart';
+import 'package:apolune/core/backup/codec.dart';
+import 'package:apolune/core/backup/model.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/db/database/constants.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/core/db/dao/routing_profile.dart';
+import 'package:apolune/core/model/geo_data_type.dart';
+import 'package:apolune/core/network/model.dart';
+import 'package:apolune/service/advanced/platform_policy.dart';
+import 'package:apolune/service/advanced/xray/geodata/model.dart';
+import 'package:apolune/service/advanced/xray/geodata/service.dart';
+import 'package:apolune/service/connect/runtime.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/connect/routing/custom/document.dart';
+import 'package:apolune/service/shared/share/configuration_transfer.dart';
+import 'package:apolune/service/settings/backup/platform_settings.dart';
 
 /// Connection assets and same-platform VPN settings cross this boundary.
 /// Runtime choices, local bindings, identities and resource bytes stay local.

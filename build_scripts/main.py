@@ -8,7 +8,7 @@ from app.flutter import BUILDERS, build
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Build and package OneXray")
+    parser = argparse.ArgumentParser(description="Build and package Apolune")
     parser.add_argument("project", choices=PROJECT_CONFIG)
     parser.add_argument("system", choices=BUILDERS)
     parser.add_argument(

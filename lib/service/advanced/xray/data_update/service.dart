@@ -1,13 +1,13 @@
 import 'dart:async';
 
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/errors/failure.dart';
-import 'package:onexray/core/tools/logger.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
-import 'package:onexray/service/advanced/xray/geodata/service.dart';
-import 'package:onexray/service/advanced/xray/geodata/system_state.dart';
-import 'package:onexray/service/advanced/xray/data_update/state.dart';
-import 'package:onexray/service/servers/subscription/service.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/errors/failure.dart';
+import 'package:apolune/core/tools/logger.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
+import 'package:apolune/service/advanced/xray/geodata/service.dart';
+import 'package:apolune/service/advanced/xray/geodata/system_state.dart';
+import 'package:apolune/service/advanced/xray/data_update/state.dart';
+import 'package:apolune/service/servers/subscription/service.dart';
 
 class DataUpdateService {
   static final DataUpdateService _singleton = DataUpdateService._internal();

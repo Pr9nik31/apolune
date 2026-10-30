@@ -2,20 +2,20 @@ import 'dart:convert';
 
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/model/geo_data_type.dart';
-import 'package:onexray/service/servers/import.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/model/geo_data_type.dart';
+import 'package:apolune/service/servers/import.dart';
 
 import '../../../support/fake_geodata_import.dart';
 import '../../../support/xdrive_template_fixture.dart';
 
-import 'package:onexray/service/connect/routing/custom/service.dart';
-import 'package:onexray/service/connect/routing/custom/configuration.dart';
-import 'package:onexray/service/connect/routing/custom/document.dart';
-import 'package:onexray/service/shared/share/app_link_generator.dart';
-import 'package:onexray/service/shared/share/app_link_model.dart';
-import 'package:onexray/service/shared/share/app_link_parser.dart';
-import 'package:onexray/service/shared/share/configuration_transfer.dart';
+import 'package:apolune/service/connect/routing/custom/service.dart';
+import 'package:apolune/service/connect/routing/custom/configuration.dart';
+import 'package:apolune/service/connect/routing/custom/document.dart';
+import 'package:apolune/service/shared/share/app_link_generator.dart';
+import 'package:apolune/service/shared/share/app_link_model.dart';
+import 'package:apolune/service/shared/share/app_link_parser.dart';
+import 'package:apolune/service/shared/share/configuration_transfer.dart';
 
 String template(String name, {bool assets = false}) => jsonEncode({
   'name': name,
@@ -231,12 +231,12 @@ void main() {
     final links = text
         .split('\n')
         .map(Uri.parse)
-        .map(OneXrayAppLinkParser.parse)
-        .whereType<OneXrayAppLink>()
+        .map(ApoluneAppLinkParser.parse)
+        .whereType<ApoluneAppLink>()
         .toList();
     expect(links, hasLength(2));
-    expect(links.first, isA<OneXrayGeoDataLink>());
-    expect((links.last as OneXrayConfigLink).xrayJson, source);
+    expect(links.first, isA<ApoluneGeoDataLink>());
+    expect((links.last as ApoluneConfigLink).xrayJson, source);
     final read = ConfigurationTransferService.read(text, ConfigurationKind.raw);
     expect(read.text, source);
     expect(read.name, 'Metadata');
@@ -290,8 +290,8 @@ void main() {
         text: template('Draft'),
       );
       final link =
-          OneXrayAppLinkParser.parse(Uri.parse(text))! as OneXrayConfigLink;
-      expect(link.type, OneXrayConfigLinkType.custom);
+          ApoluneAppLinkParser.parse(Uri.parse(text))! as ApoluneConfigLink;
+      expect(link.type, ApoluneConfigLinkType.custom);
       expect(link.name, 'Shared');
       expect(jsonDecode(link.xrayJson)['name'], 'Shared');
       expect(jsonDecode(link.xrayJson)['outbounds'], [{}, {}]);
@@ -442,8 +442,8 @@ void main() {
   test('type=custom rejects unsupported rules without falling back to Raw or node import', () async {
     final invalid = template('Route')
         .replaceFirst('"ruleTag"', '"inboundTag":["secret"],"ruleTag"');
-    final link = OneXrayAppLinkGenerator.configurationText(
-      OneXrayConfigLinkType.custom,
+    final link = ApoluneAppLinkGenerator.configurationText(
+      ApoluneConfigLinkType.custom,
       'Route',
       invalid,
     );

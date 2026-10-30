@@ -1,10 +1,10 @@
 import 'dart:convert';
 
-import 'package:onexray/core/errors/json_diagnostic.dart';
-import 'package:onexray/core/model/xray_json.dart';
-import 'package:onexray/service/connect/routing/custom/state.dart';
-import 'package:onexray/service/connect/routing/custom/metadata.dart';
-import 'package:onexray/service/connect/routing/custom/selection_document.dart';
+import 'package:apolune/core/errors/json_diagnostic.dart';
+import 'package:apolune/core/model/xray_json.dart';
+import 'package:apolune/service/connect/routing/custom/state.dart';
+import 'package:apolune/service/connect/routing/custom/metadata.dart';
+import 'package:apolune/service/connect/routing/custom/selection_document.dart';
 
 /// External Custom-routing document after import-only metadata is separated.
 final class RoutingProfileDocument {

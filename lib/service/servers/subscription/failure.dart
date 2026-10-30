@@ -1,7 +1,7 @@
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/service/servers/subscription/model.dart';
-import 'package:onexray/service/shared/failure.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/service/servers/subscription/model.dart';
+import 'package:apolune/service/shared/failure.dart';
 
 String subscriptionFailureMessage(
   AppLocalizations l,

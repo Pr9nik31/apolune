@@ -1,20 +1,20 @@
 import 'dart:convert';
 
-import 'package:onexray/core/errors/failure.dart';
-import 'package:onexray/core/errors/json_diagnostic.dart';
-import 'package:onexray/core/ffi/windows/mode.dart';
-import 'package:onexray/core/pigeon/host_api.dart';
-import 'package:onexray/core/tools/json_document.dart';
-import 'package:onexray/service/advanced/xray/geodata/service.dart';
-import 'package:onexray/service/connect/compiler.dart';
-import 'package:onexray/service/connect/raw/validator.dart';
-import 'package:onexray/service/connect/routing/custom/configuration.dart';
-import 'package:onexray/service/connect/routing/custom/service.dart';
-import 'package:onexray/service/connect/routing/region_catalog.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/servers/outbound/map.dart';
-import 'package:onexray/service/shared/share/configuration_transfer.dart';
-import 'package:onexray/service/shared/xray/validation.dart';
+import 'package:apolune/core/errors/failure.dart';
+import 'package:apolune/core/errors/json_diagnostic.dart';
+import 'package:apolune/core/ffi/windows/mode.dart';
+import 'package:apolune/core/pigeon/host_api.dart';
+import 'package:apolune/core/tools/json_document.dart';
+import 'package:apolune/service/advanced/xray/geodata/service.dart';
+import 'package:apolune/service/connect/compiler.dart';
+import 'package:apolune/service/connect/raw/validator.dart';
+import 'package:apolune/service/connect/routing/custom/configuration.dart';
+import 'package:apolune/service/connect/routing/custom/service.dart';
+import 'package:apolune/service/connect/routing/region_catalog.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/servers/outbound/map.dart';
+import 'package:apolune/service/shared/share/configuration_transfer.dart';
+import 'package:apolune/service/shared/xray/validation.dart';
 
 typedef LocalApiResourceScope = Future<Map<String, dynamic>> Function(
   Future<Map<String, dynamic>> Function() action,

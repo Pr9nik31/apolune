@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/service/settings/traffic_widget.dart';
+import 'package:apolune/service/settings/traffic_widget.dart';
 
 void main() {
   final binding = TestWidgetsFlutterBinding.ensureInitialized();

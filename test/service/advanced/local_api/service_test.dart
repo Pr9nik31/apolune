@@ -3,8 +3,8 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/service/advanced/local_api/service.dart';
-import 'package:onexray/service/advanced/local_api/settings.dart';
+import 'package:apolune/service/advanced/local_api/service.dart';
+import 'package:apolune/service/advanced/local_api/settings.dart';
 
 void main() {
   Map<String, dynamic>? stored;

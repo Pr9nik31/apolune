@@ -1,12 +1,12 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/advanced/tunnel/controller.dart';
-import 'package:onexray/pages/advanced/tunnel/widgets.dart';
-import 'package:onexray/pages/advanced/xray/dialing/controller.dart';
-import 'package:onexray/pages/shared/widgets/setting_row.dart';
-import 'package:onexray/pages/theme/layout.dart';
-import 'package:onexray/service/connect/dialing.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/advanced/tunnel/controller.dart';
+import 'package:apolune/pages/advanced/tunnel/widgets.dart';
+import 'package:apolune/pages/advanced/xray/dialing/controller.dart';
+import 'package:apolune/pages/shared/widgets/setting_row.dart';
+import 'package:apolune/pages/theme/layout.dart';
+import 'package:apolune/service/connect/dialing.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 class ServerDialingPage extends StatelessWidget {

@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:onexray/core/pigeon/constants.dart';
-import 'package:onexray/core/pigeon/model.dart';
-import 'package:onexray/core/tools/json.dart';
+import 'package:apolune/core/pigeon/constants.dart';
+import 'package:apolune/core/pigeon/model.dart';
+import 'package:apolune/core/tools/json.dart';
 
 extension StartVpnRequestReader on StartVpnRequest {
   static Future<StartVpnRequest> readFromStartFile() async {

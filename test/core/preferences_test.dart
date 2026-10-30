@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/constants/preferences.dart';
-import 'package:onexray/service/advanced/xray/data_update/state.dart';
-import 'package:onexray/service/settings/backup/service.dart';
+import 'package:apolune/core/constants/preferences.dart';
+import 'package:apolune/service/advanced/xray/data_update/state.dart';
+import 'package:apolune/service/settings/backup/service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 // ignore: depend_on_referenced_packages
 import 'package:shared_preferences_platform_interface/in_memory_shared_preferences_async.dart';

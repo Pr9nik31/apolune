@@ -2,9 +2,9 @@ import 'dart:ffi';
 import 'dart:io';
 
 import 'package:ffi/ffi.dart';
-import 'package:onexray/core/desktop_startup/adapter.dart';
-import 'package:onexray/core/desktop_startup/model.dart';
-import 'package:onexray/core/tools/logger.dart';
+import 'package:apolune/core/desktop_startup/adapter.dart';
+import 'package:apolune/core/desktop_startup/model.dart';
+import 'package:apolune/core/tools/logger.dart';
 import 'package:path/path.dart' as path;
 import 'package:win32/win32.dart';
 
@@ -103,7 +103,7 @@ final class WindowsExeLaunchAtLoginAdapter extends LaunchAtLoginAdapter {
   Future<LaunchAtLoginStatus> _enable() async {
     if (!File(_executable).existsSync()) {
       return const LaunchAtLoginStatus.error(
-        'The OneXray executable does not exist.',
+        'The Apolune executable does not exist.',
       );
     }
 
@@ -111,7 +111,7 @@ final class WindowsExeLaunchAtLoginAdapter extends LaunchAtLoginAdapter {
     if (failure != null) return failure;
     if (existingShortcut != null && !_canReplaceShortcut(existingShortcut)) {
       return const LaunchAtLoginStatus.error(
-        'The OneXray startup shortcut belongs to another executable.',
+        'The Apolune startup shortcut belongs to another executable.',
       );
     }
     if (!_isValidCurrentShortcut(existingShortcut)) {
@@ -186,18 +186,18 @@ final class WindowsExeLaunchAtLoginAdapter extends LaunchAtLoginAdapter {
         _hasCurrentTarget(shortcut)) {
       return true;
     }
-    return _isMissingOneXrayExecutable(shortcut.target);
+    return _isMissingApoluneExecutable(shortcut.target);
   }
 
-  static bool _isMissingOneXrayExecutable(String executable) {
-    return path.windows.basename(executable).toLowerCase() == 'onexray.exe' &&
+  static bool _isMissingApoluneExecutable(String executable) {
+    return path.windows.basename(executable).toLowerCase() == 'apolune.exe' &&
         !File(executable).existsSync();
   }
 }
 
 final class Win32WindowsLaunchAtLoginStore
     implements WindowsLaunchAtLoginStore {
-  static const _shortcutName = 'OneXray.lnk';
+  static const _shortcutName = 'Apolune.lnk';
   static const _pathBufferLength = 32768;
   static const _shellLinkGetPathRaw = 0x4;
 
@@ -263,7 +263,7 @@ final class Win32WindowsLaunchAtLoginStore
         shellLink.setPath(arena.pcwstr(target));
         shellLink.setWorkingDirectory(arena.pcwstr(workingDirectory));
         shellLink.setArguments(arena.pcwstr(arguments));
-        shellLink.setDescription(arena.pcwstr('OneXray'));
+        shellLink.setDescription(arena.pcwstr('Apolune'));
         shellLink.setIconLocation(arena.pcwstr(target), 0);
         shellLink.setShowCmd(SW_SHOWNORMAL);
 

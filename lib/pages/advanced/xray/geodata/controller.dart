@@ -3,18 +3,18 @@ import 'dart:async';
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter/services.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/model/geo_dat.dart';
-import 'package:onexray/core/model/geo_data_type.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/connect/dialogs.dart'
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/model/geo_dat.dart';
+import 'package:apolune/core/model/geo_data_type.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/connect/dialogs.dart'
     show ConnectCallout, ConnectDialogButton;
-import 'package:onexray/pages/shared/page_cubit.dart';
-import 'package:onexray/pages/shared/widgets/adaptive_dialog.dart';
-import 'package:onexray/service/advanced/xray/geodata/model.dart';
-import 'package:onexray/service/advanced/xray/geodata/service.dart';
-import 'package:onexray/service/shared/failure.dart';
-import 'package:onexray/service/advanced/xray/geodata/validator.dart';
+import 'package:apolune/pages/shared/page_cubit.dart';
+import 'package:apolune/pages/shared/widgets/adaptive_dialog.dart';
+import 'package:apolune/service/advanced/xray/geodata/model.dart';
+import 'package:apolune/service/advanced/xray/geodata/service.dart';
+import 'package:apolune/service/shared/failure.dart';
+import 'package:apolune/service/advanced/xray/geodata/validator.dart';
 
 @immutable
 class GeoDataPageState {

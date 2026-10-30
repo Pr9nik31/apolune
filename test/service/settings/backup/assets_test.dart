@@ -4,17 +4,17 @@ import 'dart:io';
 import 'package:drift/drift.dart' hide isNull;
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/backup/codec.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/service/advanced/platform_policy.dart';
-import 'package:onexray/service/advanced/xray/geodata/service.dart';
-import 'package:onexray/service/connect/runtime.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/connect/routing/options.dart';
-import 'package:onexray/service/connect/routing/custom/advanced.dart';
-import 'package:onexray/service/connect/routing/custom/state.dart';
-import 'package:onexray/service/connect/routing/custom/state_db.dart';
-import 'package:onexray/service/settings/backup/assets.dart';
+import 'package:apolune/core/backup/codec.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/service/advanced/platform_policy.dart';
+import 'package:apolune/service/advanced/xray/geodata/service.dart';
+import 'package:apolune/service/connect/runtime.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/connect/routing/options.dart';
+import 'package:apolune/service/connect/routing/custom/advanced.dart';
+import 'package:apolune/service/connect/routing/custom/state.dart';
+import 'package:apolune/service/connect/routing/custom/state_db.dart';
+import 'package:apolune/service/settings/backup/assets.dart';
 
 void main() {
   test(
@@ -22,7 +22,7 @@ void main() {
     () async {
       final db = AppDatabase.forTesting(NativeDatabase.memory());
       addTearDown(db.close);
-      final parent = await Directory('../references/onexray-tests').absolute
+      final parent = await Directory('../references/apolune-tests').absolute
           .create(recursive: true);
       final root = await parent.createTemp('backup-manual-groups-');
       addTearDown(() => root.delete(recursive: true));
@@ -130,7 +130,7 @@ void main() {
   test('captures only configured assets and restores without IDs, files or network', () async {
     final db = AppDatabase.forTesting(NativeDatabase.memory());
     addTearDown(db.close);
-    final parent = await Directory('../references/onexray-tests').absolute
+    final parent = await Directory('../references/apolune-tests').absolute
         .create(recursive: true);
     final root = await parent.createTemp('backup-assets-');
     addTearDown(() => root.delete(recursive: true));
@@ -461,7 +461,7 @@ void main() {
     setUp(() async {
       db = AppDatabase.forTesting(NativeDatabase.memory());
       addTearDown(db.close);
-      final parent = await Directory('../references/onexray-tests').absolute
+      final parent = await Directory('../references/apolune-tests').absolute
           .create(recursive: true);
       final root = await parent.createTemp('backup-platform-settings-');
       addTearDown(() => root.delete(recursive: true));

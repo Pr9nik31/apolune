@@ -1,7 +1,7 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/pages/theme/color.dart';
-import 'package:onexray/pages/theme/font.dart';
-import 'package:onexray/pages/theme/layout.dart';
+import 'package:apolune/pages/theme/color.dart';
+import 'package:apolune/pages/theme/font.dart';
+import 'package:apolune/pages/theme/layout.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 class SectionView extends StatelessWidget {

@@ -1,13 +1,13 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/settings/app_update/controller.dart';
-import 'package:onexray/pages/settings/app_update/params.dart';
-import 'package:onexray/pages/theme/color.dart';
-import 'package:onexray/pages/theme/font.dart';
-import 'package:onexray/pages/shared/widgets/button_progress.dart';
-import 'package:onexray/service/settings/app_update/service.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/settings/app_update/controller.dart';
+import 'package:apolune/pages/settings/app_update/params.dart';
+import 'package:apolune/pages/theme/color.dart';
+import 'package:apolune/pages/theme/font.dart';
+import 'package:apolune/pages/shared/widgets/button_progress.dart';
+import 'package:apolune/service/settings/app_update/service.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 class AppUpdateDialog extends StatelessWidget {

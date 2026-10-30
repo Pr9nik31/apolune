@@ -2,26 +2,26 @@ import 'dart:convert';
 
 import 'package:drift/drift.dart' show Value;
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/core/model/geo_data_type.dart';
-import 'package:onexray/core/pigeon/model.dart';
-import 'package:onexray/service/shared/share/app_link_generator.dart';
-import 'package:onexray/service/shared/share/app_link_model.dart';
-import 'package:onexray/service/shared/share/app_link_parser.dart';
-import 'package:onexray/service/shared/share/app_link_share_service.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/core/model/geo_data_type.dart';
+import 'package:apolune/core/pigeon/model.dart';
+import 'package:apolune/service/shared/share/app_link_generator.dart';
+import 'package:apolune/service/shared/share/app_link_model.dart';
+import 'package:apolune/service/shared/share/app_link_parser.dart';
+import 'package:apolune/service/shared/share/app_link_share_service.dart';
 
 void main() {
   group('config links', () {
-    for (final entry in const <CoreConfigType, OneXrayConfigLinkType>{
-      CoreConfigType.outbound: OneXrayConfigLinkType.outbound,
-      CoreConfigType.raw: OneXrayConfigLinkType.raw,
+    for (final entry in const <CoreConfigType, ApoluneConfigLinkType>{
+      CoreConfigType.outbound: ApoluneConfigLinkType.outbound,
+      CoreConfigType.raw: ApoluneConfigLinkType.raw,
     }.entries) {
       test('generates and parses ${entry.value.wireName}', () {
         final xrayJson = entry.key == CoreConfigType.outbound
             ? '{"outbounds":[{"name":"Example","protocol":"vless"}]}'
             : '{"name":"Example"}';
-        final uri = OneXrayAppLinkGenerator.config(
+        final uri = ApoluneAppLinkGenerator.config(
           _config(
             type: entry.key.name,
             data: base64Encode(utf8.encode(xrayJson)),
@@ -32,7 +32,7 @@ void main() {
         final generatedUri = uri!;
         expect(generatedUri.queryParameters['type'], entry.value.wireName);
         final link =
-            OneXrayAppLinkParser.parse(generatedUri)! as OneXrayConfigLink;
+            ApoluneAppLinkParser.parse(generatedUri)! as ApoluneConfigLink;
         expect(link.type, entry.value);
         if (entry.key == CoreConfigType.outbound) {
           final wrapper = jsonDecode(link.xrayJson) as Map<String, dynamic>;
@@ -62,15 +62,15 @@ void main() {
         },
       };
       final text = '  \n${jsonEncode(source)}\n';
-      final uri = OneXrayAppLinkGenerator.config(
+      final uri = ApoluneAppLinkGenerator.config(
         _config(
           type: CoreConfigType.raw.name,
           data: base64Encode(utf8.encode(text)),
         ),
       );
-      final link = OneXrayAppLinkParser.parse(uri!)! as OneXrayConfigLink;
+      final link = ApoluneAppLinkParser.parse(uri!)! as ApoluneConfigLink;
 
-      expect(link.type, OneXrayConfigLinkType.raw);
+      expect(link.type, ApoluneConfigLinkType.raw);
       expect(link.name, 'Shared Config');
       expect(link.xrayJson, text);
       expect(jsonDecode(link.xrayJson), source);
@@ -128,10 +128,10 @@ void main() {
           type: 'Remnawave',
           data: base64Encode(utf8.encode(original)),
         ).copyWith(subId: 7, name: 'Shared provider');
-        final uri = OneXrayAppLinkGenerator.config(row)!;
-        final link = OneXrayAppLinkParser.parse(uri)! as OneXrayConfigLink;
+        final uri = ApoluneAppLinkGenerator.config(row)!;
+        final link = ApoluneAppLinkParser.parse(uri)! as ApoluneConfigLink;
         final shared = jsonDecode(link.xrayJson) as Map;
-        expect(link.type, OneXrayConfigLinkType.raw);
+        expect(link.type, ApoluneConfigLinkType.raw);
         expect(link.name, 'Shared provider');
         expect(shared['name'], 'Shared provider');
         expect(shared['remarks'], source['remarks']);
@@ -156,7 +156,7 @@ void main() {
           type: CoreConfigType.outbound.name,
           data: 'not base64!',
         ).copyWith(id: 12, name: 'Config 12', subId: 7);
-        expect(OneXrayAppLinkGenerator.config(legacy), isNull);
+        expect(ApoluneAppLinkGenerator.config(legacy), isNull);
       },
     );
 
@@ -189,7 +189,7 @@ void main() {
         ),
       );
 
-      final names = OneXrayAppLinkGenerator.referencedGeoDataNames(
+      final names = ApoluneAppLinkGenerator.referencedGeoDataNames(
         _config(type: CoreConfigType.raw.name, data: data),
       );
 
@@ -214,7 +214,7 @@ void main() {
         'a-domain': _geoData('a-domain'),
         'z-domain': _geoData('z-domain'),
       };
-      final service = OneXrayAppLinkShareService(
+      final service = ApoluneAppLinkShareService(
         geoDataLookup: (name) async => geoData[name],
       );
 
@@ -226,15 +226,15 @@ void main() {
       final links = text!
           .split('\n')
           .map(Uri.parse)
-          .map(OneXrayAppLinkParser.parse)
-          .whereType<OneXrayAppLink>()
+          .map(ApoluneAppLinkParser.parse)
+          .whereType<ApoluneAppLink>()
           .toList();
       expect(links, hasLength(3));
-      expect(links[0], isA<OneXrayGeoDataLink>());
+      expect(links[0], isA<ApoluneGeoDataLink>());
       expect(links[0].name, 'a-domain');
-      expect(links[1], isA<OneXrayGeoDataLink>());
+      expect(links[1], isA<ApoluneGeoDataLink>());
       expect(links[1].name, 'z-domain');
-      expect(links[2], isA<OneXrayConfigLink>());
+      expect(links[2], isA<ApoluneConfigLink>());
     });
 
     test(
@@ -270,13 +270,13 @@ void main() {
           type: CoreConfigType.raw.name,
           data: base64Encode(utf8.encode(jsonEncode(source))),
         );
-        expect(OneXrayAppLinkGenerator.referencedGeoDataNames(config), {
+        expect(ApoluneAppLinkGenerator.referencedGeoDataNames(config), {
           'alias-ip',
           'response-ip',
           'excluded-domain',
           'excluded-ip',
         });
-        final service = OneXrayAppLinkShareService(
+        final service = ApoluneAppLinkShareService(
           geoDataLookup: (name) async =>
               _geoData(name)
                   .copyWith(type: name.endsWith('-ip') ? 'ip' : 'domain'),
@@ -285,17 +285,17 @@ void main() {
         final links = shared!
             .split('\n')
             .map(Uri.parse)
-            .map(OneXrayAppLinkParser.parse)
-            .whereType<OneXrayAppLink>()
+            .map(ApoluneAppLinkParser.parse)
+            .whereType<ApoluneAppLink>()
             .toList();
-        expect(links.whereType<OneXrayGeoDataLink>().map((link) => link.name), [
+        expect(links.whereType<ApoluneGeoDataLink>().map((link) => link.name), [
           'alias-ip',
           'excluded-domain',
           'excluded-ip',
           'response-ip',
         ]);
-        expect(links.last, isA<OneXrayConfigLink>());
-        expect((links.last as OneXrayConfigLink).xrayJson, jsonEncode(source));
+        expect(links.last, isA<ApoluneConfigLink>());
+        expect((links.last as ApoluneConfigLink).xrayJson, jsonEncode(source));
       },
     );
   });
@@ -303,7 +303,7 @@ void main() {
   group('subscription links', () {
     test('does not export HWID or consent, including when enabled', () {
       const hwid = 'unique-subscription-identity';
-      final uri = OneXrayAppLinkGenerator.subscription(
+      final uri = ApoluneAppLinkGenerator.subscription(
         _subscription().copyWith(hwidEnabled: true, hwid: const Value(hwid)),
       )!;
       expect(uri.queryParameters, {
@@ -312,7 +312,7 @@ void main() {
         'mode': 'appManaged',
       });
       expect(uri.toString(), isNot(contains(hwid)));
-      expect(OneXrayAppLinkParser.parse(uri), isA<OneXraySubscriptionLink>());
+      expect(ApoluneAppLinkParser.parse(uri), isA<ApoluneSubscriptionLink>());
     });
     test(
       'subscription panel and persisted mode round-trip without credentials',
@@ -326,9 +326,9 @@ void main() {
               hwid: const Value('private-hwid'),
               userAgent: const Value('Example/test (compatible)'),
             );
-            final uri = OneXrayAppLinkGenerator.subscription(row)!;
+            final uri = ApoluneAppLinkGenerator.subscription(row)!;
             final link =
-                OneXrayAppLinkParser.parse(uri)! as OneXraySubscriptionLink;
+                ApoluneAppLinkParser.parse(uri)! as ApoluneSubscriptionLink;
             expect(link.panel, panel);
             expect(link.mode, mode);
             expect(link.userAgent, 'Example/test (compatible)');
@@ -338,12 +338,12 @@ void main() {
       },
     );
     test('normalizes a plain subscription URL', () {
-      final uri = OneXrayAppLinkGenerator.subscription(
+      final uri = ApoluneAppLinkGenerator.subscription(
         _subscription(url: 'https://example.com/sub#provider-fragment'),
       );
 
       expect(uri, isNotNull);
-      final link = OneXrayAppLinkParser.parse(uri!)! as OneXraySubscriptionLink;
+      final link = ApoluneAppLinkParser.parse(uri!)! as ApoluneSubscriptionLink;
       expect(link.url, 'https://example.com/sub');
       expect(link.name, 'Provider');
       expect(link.ageKeyType, isNull);
@@ -353,7 +353,7 @@ void main() {
     test('exports only the X25519 age type', () {
       const secretKey = 'AGE-SECRET-KEY-1PRIVATE';
       const publicKey = 'age1public';
-      final uri = OneXrayAppLinkGenerator.subscription(
+      final uri = ApoluneAppLinkGenerator.subscription(
         _subscription(ageSecretKey: secretKey, agePublicKey: publicKey),
       );
 
@@ -361,12 +361,12 @@ void main() {
       final text = uri.toString();
       expect(text, isNot(contains(secretKey)));
       expect(text, isNot(contains(publicKey)));
-      final link = OneXrayAppLinkParser.parse(uri!)! as OneXraySubscriptionLink;
+      final link = ApoluneAppLinkParser.parse(uri!)! as ApoluneSubscriptionLink;
       expect(link.ageKeyType, AgeKeyType.x25519);
     });
 
     test('exports only the hybrid age type', () {
-      final uri = OneXrayAppLinkGenerator.subscription(
+      final uri = ApoluneAppLinkGenerator.subscription(
         _subscription(
           ageSecretKey: 'AGE-SECRET-KEY-PQ-1PRIVATE',
           agePublicKey: 'age1pq1public',
@@ -374,19 +374,19 @@ void main() {
       );
 
       expect(uri, isNotNull);
-      final link = OneXrayAppLinkParser.parse(uri!)! as OneXraySubscriptionLink;
+      final link = ApoluneAppLinkParser.parse(uri!)! as ApoluneSubscriptionLink;
       expect(link.ageKeyType, AgeKeyType.hybrid);
     });
 
     test('rejects incomplete or unsupported age key pairs', () {
       expect(
-        OneXrayAppLinkGenerator.subscription(
+        ApoluneAppLinkGenerator.subscription(
           _subscription(ageSecretKey: 'AGE-SECRET-KEY-1PRIVATE'),
         ),
         isNull,
       );
       expect(
-        OneXrayAppLinkGenerator.subscription(
+        ApoluneAppLinkGenerator.subscription(
           _subscription(
             ageSecretKey: 'unsupported',
             agePublicKey: 'age1public',
@@ -398,12 +398,12 @@ void main() {
   });
 
   test('generates and parses a GeoData link', () {
-    final uri = OneXrayAppLinkGenerator.geoData(
+    final uri = ApoluneAppLinkGenerator.geoData(
       _geoData('Community Domain', url: 'https://example.com/community.dat'),
     );
 
     expect(uri, isNotNull);
-    final link = OneXrayAppLinkParser.parse(uri!)! as OneXrayGeoDataLink;
+    final link = ApoluneAppLinkParser.parse(uri!)! as ApoluneGeoDataLink;
     expect(link.name, 'Community Domain');
     expect(link.type, GeoDataType.domain);
     expect(link.url, 'https://example.com/community.dat');

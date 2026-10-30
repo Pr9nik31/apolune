@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/desktop_startup/linux_adapter.dart';
-import 'package:onexray/core/desktop_startup/model.dart';
+import 'package:apolune/core/desktop_startup/linux_adapter.dart';
+import 'package:apolune/core/desktop_startup/model.dart';
 import 'package:path/path.dart' as path;
 
 import '../../support/test_directory.dart';
@@ -12,9 +12,9 @@ void main() {
   late File executable;
 
   setUp(() async {
-    temporaryDirectory = await createTestDirectory('onexray-linux-autostart-');
+    temporaryDirectory = await createTestDirectory('apolune-linux-autostart-');
     executable = File(
-      path.join(temporaryDirectory.path, r'OneXray $100% Test'),
+      path.join(temporaryDirectory.path, r'Apolune $100% Test'),
     );
     await executable.writeAsString('');
   });
@@ -36,7 +36,7 @@ void main() {
     expect((await adapter.setEnabled(true)).state, LaunchAtLoginState.enabled);
 
     final desktopFile = File(
-      path.join(configHome, 'autostart', 'net.yuandev.onexray.desktop'),
+      path.join(configHome, 'autostart', 'dev.apolune.client.desktop'),
     );
     final text = await desktopFile.readAsString();
     expect(text, contains('Type=Application'));
@@ -65,7 +65,7 @@ void main() {
           temporaryDirectory.path,
           '.config',
           'autostart',
-          'net.yuandev.onexray.desktop',
+          'dev.apolune.client.desktop',
         ),
       ).exists(),
       isTrue,
@@ -75,15 +75,15 @@ void main() {
   test('treats a stale owned entry as disabled', () async {
     final configHome = path.join(temporaryDirectory.path, 'config');
     final desktopFile = File(
-      path.join(configHome, 'autostart', 'net.yuandev.onexray.desktop'),
+      path.join(configHome, 'autostart', 'dev.apolune.client.desktop'),
     );
     await desktopFile.parent.create(recursive: true);
     await desktopFile.writeAsString(
       '[Desktop Entry]\n'
       'Type=Application\n'
-      'Name=OneXray\n'
-      'Exec="/old/OneXray"\n'
-      'TryExec=/old/OneXray\n'
+      'Name=Apolune\n'
+      'Exec="/old/Apolune"\n'
+      'TryExec=/old/Apolune\n'
       'Terminal=false\n',
     );
 

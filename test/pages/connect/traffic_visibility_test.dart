@@ -2,12 +2,12 @@ import 'package:drift/native.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/service/settings/language/locale.dart';
-import 'package:onexray/pages/connect/controller.dart';
-import 'package:onexray/pages/main/page_visibility.dart';
-import 'package:onexray/service/connect/coordinator.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/service/settings/language/locale.dart';
+import 'package:apolune/pages/connect/controller.dart';
+import 'package:apolune/pages/main/page_visibility.dart';
+import 'package:apolune/service/connect/coordinator.dart';
 
 void main() {
   test(

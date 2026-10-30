@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/constants/preferences.dart';
-import 'package:onexray/service/servers/sort.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
+import 'package:apolune/core/constants/preferences.dart';
+import 'package:apolune/service/servers/sort.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 // ignore: depend_on_referenced_packages
 import 'package:shared_preferences_platform_interface/in_memory_shared_preferences_async.dart';

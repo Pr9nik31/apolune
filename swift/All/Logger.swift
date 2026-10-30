@@ -2,7 +2,7 @@
 import Foundation
 import os
 
-private let logger = Logger(subsystem: "net.yuandev.log", category: "debug")
+private let logger = Logger(subsystem: "net.apolune.log", category: "debug")
 
 func YGLog(_ message: String) {
     logger.error("\(message, privacy: .public)")

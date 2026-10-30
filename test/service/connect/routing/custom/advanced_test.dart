@@ -2,20 +2,20 @@ import 'dart:convert';
 
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/ffi/windows/mode.dart';
-import 'package:onexray/core/model/geo_data_type.dart';
-import 'package:onexray/core/tools/json.dart';
-import 'package:onexray/service/connect/compiler.dart';
-import 'package:onexray/service/connect/routing/custom/advanced.dart';
-import 'package:onexray/service/connect/routing/custom/document.dart';
-import 'package:onexray/service/connect/routing/custom/service.dart';
-import 'package:onexray/service/connect/routing/custom/state.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/servers/import.dart';
-import 'package:onexray/service/shared/share/configuration_transfer.dart';
-import 'package:onexray/service/shared/share/app_link_model.dart';
-import 'package:onexray/service/shared/share/app_link_parser.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/ffi/windows/mode.dart';
+import 'package:apolune/core/model/geo_data_type.dart';
+import 'package:apolune/core/tools/json.dart';
+import 'package:apolune/service/connect/compiler.dart';
+import 'package:apolune/service/connect/routing/custom/advanced.dart';
+import 'package:apolune/service/connect/routing/custom/document.dart';
+import 'package:apolune/service/connect/routing/custom/service.dart';
+import 'package:apolune/service/connect/routing/custom/state.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/servers/import.dart';
+import 'package:apolune/service/shared/share/configuration_transfer.dart';
+import 'package:apolune/service/shared/share/app_link_model.dart';
+import 'package:apolune/service/shared/share/app_link_parser.dart';
 
 import '../../compiler_test.dart' show catalog, node, options;
 
@@ -543,8 +543,8 @@ void main() {
         text: jsonEncode(template()),
       );
       expect(
-        (OneXrayAppLinkParser.parse(Uri.parse(text)) as OneXrayConfigLink).type,
-        OneXrayConfigLinkType.customAdvanced,
+        (ApoluneAppLinkParser.parse(Uri.parse(text)) as ApoluneConfigLink).type,
+        ApoluneConfigLinkType.customAdvanced,
       );
       expect(
         () => ConfigurationTransferService.read(text, ConfigurationKind.custom),

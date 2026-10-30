@@ -5,23 +5,23 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
-import 'package:onexray/core/constants/preferences.dart';
-import 'package:onexray/core/desktop_startup/model.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/core/tools/platform.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/service/settings/language/locale.dart';
-import 'package:onexray/pages/settings/app_update/dialog.dart';
-import 'package:onexray/pages/settings/app_update/controller.dart';
-import 'package:onexray/pages/settings/desktop/controller.dart';
-import 'package:onexray/pages/settings/desktop/page.dart';
-import 'package:onexray/pages/settings/page.dart';
-import 'package:onexray/pages/shared/widgets/setting_row.dart';
-import 'package:onexray/pages/settings/theme/page.dart';
-import 'package:onexray/pages/theme/theme.dart';
-import 'package:onexray/service/settings/app_update/service.dart';
-import 'package:onexray/service/shared/event_bus/enum.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
+import 'package:apolune/core/constants/preferences.dart';
+import 'package:apolune/core/desktop_startup/model.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/core/tools/platform.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/service/settings/language/locale.dart';
+import 'package:apolune/pages/settings/app_update/dialog.dart';
+import 'package:apolune/pages/settings/app_update/controller.dart';
+import 'package:apolune/pages/settings/desktop/controller.dart';
+import 'package:apolune/pages/settings/desktop/page.dart';
+import 'package:apolune/pages/settings/page.dart';
+import 'package:apolune/pages/shared/widgets/setting_row.dart';
+import 'package:apolune/pages/settings/theme/page.dart';
+import 'package:apolune/pages/theme/theme.dart';
+import 'package:apolune/service/settings/app_update/service.dart';
+import 'package:apolune/service/shared/event_bus/enum.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 // ignore: depend_on_referenced_packages
 import 'package:shared_preferences_platform_interface/in_memory_shared_preferences_async.dart';
@@ -144,11 +144,11 @@ void main() {
         final bus = AppEventBus();
         addTearDown(bus.close);
         const iconChannel = BasicMessageChannel<Object?>(
-          'dev.flutter.pigeon.onexray.BridgeHostApi.getCurrentAppIcon',
+          'dev.flutter.pigeon.apolune.BridgeHostApi.getCurrentAppIcon',
           BridgeHostApi.pigeonChannelCodec,
         );
         const invokeChannel = BasicMessageChannel<Object?>(
-          'dev.flutter.pigeon.onexray.BridgeHostApi.invoke',
+          'dev.flutter.pigeon.apolune.BridgeHostApi.invoke',
           BridgeHostApi.pigeonChannelCodec,
         );
         final messenger =

@@ -1,14 +1,14 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/gen/assets.gen.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/launch/setup/controller.dart';
-import 'package:onexray/pages/launch/setup/selectors.dart';
-import 'package:onexray/pages/launch/setup/widgets.dart';
-import 'package:onexray/pages/shared/widgets/button_progress.dart';
-import 'package:onexray/pages/theme/color.dart';
-import 'package:onexray/pages/theme/font.dart';
-import 'package:onexray/pages/theme/layout.dart';
-import 'package:onexray/service/launch/setup.dart';
+import 'package:apolune/gen/assets.gen.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/launch/setup/controller.dart';
+import 'package:apolune/pages/launch/setup/selectors.dart';
+import 'package:apolune/pages/launch/setup/widgets.dart';
+import 'package:apolune/pages/shared/widgets/button_progress.dart';
+import 'package:apolune/pages/theme/color.dart';
+import 'package:apolune/pages/theme/font.dart';
+import 'package:apolune/pages/theme/layout.dart';
+import 'package:apolune/service/launch/setup.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 /// The production presentation, without creating services or changing setup
@@ -53,7 +53,7 @@ class SetupView extends StatelessWidget {
                   children: [
                     if (welcome) ...[
                       Text(
-                        'OneXray',
+                        'Apolune',
                         textAlign: TextAlign.center,
                         style: AppTypography.setupBrand,
                       ),

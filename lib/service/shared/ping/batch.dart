@@ -1,9 +1,9 @@
-import 'package:onexray/core/errors/failure.dart';
+import 'package:apolune/core/errors/failure.dart';
 
-import 'package:onexray/core/db/database/constants.dart';
-import 'package:onexray/core/pigeon/host_api.dart';
-import 'package:onexray/core/pigeon/model.dart';
-import 'package:onexray/service/shared/ping/state.dart';
+import 'package:apolune/core/db/database/constants.dart';
+import 'package:apolune/core/pigeon/host_api.dart';
+import 'package:apolune/core/pigeon/model.dart';
+import 'package:apolune/service/shared/ping/state.dart';
 
 class PingBatchSource {
   final String xrayJson;

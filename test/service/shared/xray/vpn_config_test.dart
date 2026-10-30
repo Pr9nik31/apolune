@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/service/shared/xray/vpn_config.dart';
+import 'package:apolune/service/shared/xray/vpn_config.dart';
 
 void main() {
   test('an untagged DNS outbound cannot take an existing reserved tag', () {

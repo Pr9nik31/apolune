@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/service/shared/xray/metrics/model.dart';
+import 'package:apolune/service/shared/xray/metrics/model.dart';
 
 void main() {
   test('current traffic counts only tunnel counters', () {

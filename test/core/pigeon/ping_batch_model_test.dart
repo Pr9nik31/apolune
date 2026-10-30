@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/pigeon/model.dart';
+import 'package:apolune/core/pigeon/model.dart';
 
 void main() {
   test('delay-only response preserves zero latency and item errors', () {

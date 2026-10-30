@@ -1,11 +1,11 @@
-import 'package:onexray/core/constants/preferences.dart';
-import 'package:onexray/core/desktop_startup/model.dart';
-import 'package:onexray/core/desktop_startup/platform.dart';
-import 'package:onexray/core/tools/logger.dart';
-import 'package:onexray/core/tools/platform.dart';
-import 'package:onexray/service/shared/menu/tray/service.dart';
-import 'package:onexray/service/shared/menu/window/service.dart';
-import 'package:onexray/service/connect/coordinator.dart';
+import 'package:apolune/core/constants/preferences.dart';
+import 'package:apolune/core/desktop_startup/model.dart';
+import 'package:apolune/core/desktop_startup/platform.dart';
+import 'package:apolune/core/tools/logger.dart';
+import 'package:apolune/core/tools/platform.dart';
+import 'package:apolune/service/shared/menu/tray/service.dart';
+import 'package:apolune/service/shared/menu/window/service.dart';
+import 'package:apolune/service/connect/coordinator.dart';
 
 final class AppStartupService {
   static final AppStartupService _singleton = AppStartupService._internal();

@@ -1,10 +1,10 @@
-import 'package:onexray/core/errors/json_diagnostic.dart';
-import 'package:onexray/core/model/xray_json.dart';
-import 'package:onexray/service/connect/routing/options.dart';
-import 'package:onexray/core/tools/json.dart';
-import 'package:onexray/service/shared/xray/fake_dns.dart';
-import 'package:onexray/service/shared/xray/fragment.dart';
-import 'package:onexray/service/connect/routing/custom/configuration.dart';
+import 'package:apolune/core/errors/json_diagnostic.dart';
+import 'package:apolune/core/model/xray_json.dart';
+import 'package:apolune/service/connect/routing/options.dart';
+import 'package:apolune/core/tools/json.dart';
+import 'package:apolune/service/shared/xray/fake_dns.dart';
+import 'package:apolune/service/shared/xray/fragment.dart';
+import 'package:apolune/service/connect/routing/custom/configuration.dart';
 
 enum RoutingRuleAction { proxy, direct, block }
 

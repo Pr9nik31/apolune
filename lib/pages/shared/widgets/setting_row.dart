@@ -1,9 +1,9 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/pages/theme/color.dart';
-import 'package:onexray/pages/theme/font.dart';
-import 'package:onexray/pages/theme/layout.dart';
-import 'package:onexray/pages/shared/widgets/menu_picker.dart';
-import 'package:onexray/pages/shared/widgets/section.dart';
+import 'package:apolune/pages/theme/color.dart';
+import 'package:apolune/pages/theme/font.dart';
+import 'package:apolune/pages/theme/layout.dart';
+import 'package:apolune/pages/shared/widgets/menu_picker.dart';
+import 'package:apolune/pages/shared/widgets/section.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 class SettingSection extends StatelessWidget {

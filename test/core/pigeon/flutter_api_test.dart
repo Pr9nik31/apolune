@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/pigeon/flutter_api.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
+import 'package:apolune/core/pigeon/flutter_api.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
 
 void main() {
   test(

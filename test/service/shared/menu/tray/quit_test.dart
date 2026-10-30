@@ -3,15 +3,15 @@ import 'dart:ui' show AppExitResponse, AppExitType;
 
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/ffi/windows/mode.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/core/tools/platform.dart';
-import 'package:onexray/service/connect/coordinator.dart';
-import 'package:onexray/service/connect/runtime_host.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
-import 'package:onexray/service/shared/menu/tray/entry.dart';
-import 'package:onexray/service/shared/menu/tray/service.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/ffi/windows/mode.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/core/tools/platform.dart';
+import 'package:apolune/service/connect/coordinator.dart';
+import 'package:apolune/service/connect/runtime_host.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
+import 'package:apolune/service/shared/menu/tray/entry.dart';
+import 'package:apolune/service/shared/menu/tray/service.dart';
 
 class _QuitTestBinding extends AutomatedTestWidgetsFlutterBinding {
   final actions = <String>[];

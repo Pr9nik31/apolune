@@ -2,25 +2,25 @@ import 'dart:isolate';
 import 'dart:typed_data';
 
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/service/shared/failure.dart';
+import 'package:apolune/service/shared/failure.dart';
 import 'package:image/image.dart' as img;
-import 'package:onexray/core/db/database/constants.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/core/pigeon/host_api.dart';
-import 'package:onexray/core/tools/file.dart';
-import 'package:onexray/core/tools/logger.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/shared/share/params.dart';
-import 'package:onexray/pages/shared/alert.dart';
-import 'package:onexray/pages/shared/page_cubit.dart';
-import 'package:onexray/service/settings/language/service.dart';
-import 'package:onexray/service/shared/share/app_link_share_service.dart';
-import 'package:onexray/service/servers/outbound/map.dart';
-import 'package:onexray/service/servers/outbound/state_db.dart';
+import 'package:apolune/core/db/database/constants.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/core/pigeon/host_api.dart';
+import 'package:apolune/core/tools/file.dart';
+import 'package:apolune/core/tools/logger.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/shared/share/params.dart';
+import 'package:apolune/pages/shared/alert.dart';
+import 'package:apolune/pages/shared/page_cubit.dart';
+import 'package:apolune/service/settings/language/service.dart';
+import 'package:apolune/service/shared/share/app_link_share_service.dart';
+import 'package:apolune/service/servers/outbound/map.dart';
+import 'package:apolune/service/servers/outbound/state_db.dart';
 import 'package:zxing2/qrcode.dart';
 
-enum ShareLinkFormat { original, onexray }
+enum ShareLinkFormat { original, apolune }
 
 class SharePageState {
   const SharePageState({
@@ -98,7 +98,7 @@ class ShareController extends PageCubit<SharePageState> {
   final AppDatabase _database;
   final Future<Uint8List?> Function(String) _qrEncoder;
   final Future<String> Function(Map<String, dynamic>) _originalLinkEncoder;
-  late final _appLinkShareService = OneXrayAppLinkShareService(
+  late final _appLinkShareService = ApoluneAppLinkShareService(
     geoDataLookup: _database.geoDataDao.searchRowByName,
   );
   int _qrGeneration = 0;
@@ -135,7 +135,7 @@ class ShareController extends PageCubit<SharePageState> {
         supportsOriginal: supportsOriginal,
         format: supportsOriginal
             ? ShareLinkFormat.original
-            : ShareLinkFormat.onexray,
+            : ShareLinkFormat.apolune,
       ),
     );
     final appLink = await _appLinkShareService.config(config) ?? '';

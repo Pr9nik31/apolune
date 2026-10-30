@@ -594,7 +594,7 @@ class BridgeHostApi {
 
   Future<String> getTunFilesDir() async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.BridgeHostApi.getTunFilesDir$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.BridgeHostApi.getTunFilesDir$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -613,7 +613,7 @@ class BridgeHostApi {
 
   Future<NativeVpnCommandResult> readVpnStatus() async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.BridgeHostApi.readVpnStatus$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.BridgeHostApi.readVpnStatus$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -632,7 +632,7 @@ class BridgeHostApi {
 
   Future<NativeVpnCommandResult> startVpn() async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.BridgeHostApi.startVpn$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.BridgeHostApi.startVpn$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -651,7 +651,7 @@ class BridgeHostApi {
 
   Future<NativeVpnCommandResult> stopVpn() async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.BridgeHostApi.stopVpn$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.BridgeHostApi.stopVpn$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -670,7 +670,7 @@ class BridgeHostApi {
 
   Future<String> invoke(String requestJson) async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.BridgeHostApi.invoke$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.BridgeHostApi.invoke$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -691,7 +691,7 @@ class BridgeHostApi {
 
   Future<PlatformPermissionResult> queryPlatformPermission() async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.BridgeHostApi.queryPlatformPermission$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.BridgeHostApi.queryPlatformPermission$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -710,7 +710,7 @@ class BridgeHostApi {
 
   Future<PlatformPermissionResult> requestPlatformPermission() async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.BridgeHostApi.requestPlatformPermission$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.BridgeHostApi.requestPlatformPermission$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -729,7 +729,7 @@ class BridgeHostApi {
 
   Future<List<AndroidAppInfo>> getInstalledApps() async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.BridgeHostApi.getInstalledApps$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.BridgeHostApi.getInstalledApps$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -748,7 +748,7 @@ class BridgeHostApi {
 
   Future<Uint8List?> getAppIcon(String packageName) async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.BridgeHostApi.getAppIcon$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.BridgeHostApi.getAppIcon$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -769,7 +769,7 @@ class BridgeHostApi {
 
   Future<bool> useSystemExtension() async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.BridgeHostApi.useSystemExtension$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.BridgeHostApi.useSystemExtension$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -788,7 +788,7 @@ class BridgeHostApi {
 
   Future<AppleVpnCapabilities> appleVpnCapabilities() async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.BridgeHostApi.appleVpnCapabilities$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.BridgeHostApi.appleVpnCapabilities$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -807,7 +807,7 @@ class BridgeHostApi {
 
   Future<NativeLaunchAtLoginResult> queryLaunchAtLogin() async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.BridgeHostApi.queryLaunchAtLogin$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.BridgeHostApi.queryLaunchAtLogin$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -826,7 +826,7 @@ class BridgeHostApi {
 
   Future<NativeLaunchAtLoginResult> setLaunchAtLogin(bool enabled) async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.BridgeHostApi.setLaunchAtLogin$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.BridgeHostApi.setLaunchAtLogin$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -847,7 +847,7 @@ class BridgeHostApi {
 
   Future<bool> openLaunchAtLoginSettings() async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.BridgeHostApi.openLaunchAtLoginSettings$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.BridgeHostApi.openLaunchAtLoginSettings$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -866,7 +866,7 @@ class BridgeHostApi {
 
   Future<bool> setAppIcon(String appIcon) async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.BridgeHostApi.setAppIcon$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.BridgeHostApi.setAppIcon$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -887,7 +887,7 @@ class BridgeHostApi {
 
   Future<String> getCurrentAppIcon() async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.BridgeHostApi.getCurrentAppIcon$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.BridgeHostApi.getCurrentAppIcon$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -924,7 +924,7 @@ class AppleWidgetHostApi {
 
   Future<String?> takeAction() async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.AppleWidgetHostApi.takeAction$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.AppleWidgetHostApi.takeAction$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -943,7 +943,7 @@ class AppleWidgetHostApi {
 
   Future<void> setLanguage(String languageCode) async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.AppleWidgetHostApi.setLanguage$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.AppleWidgetHostApi.setLanguage$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -981,7 +981,7 @@ class AndroidAutomationHostApi {
 
   Future<AndroidAutomationSettings> read() async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.AndroidAutomationHostApi.read$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.AndroidAutomationHostApi.read$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -1000,7 +1000,7 @@ class AndroidAutomationHostApi {
 
   Future<AndroidAutomationSettings> setEnabled(bool enabled) async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.AndroidAutomationHostApi.setEnabled$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.AndroidAutomationHostApi.setEnabled$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -1021,7 +1021,7 @@ class AndroidAutomationHostApi {
 
   Future<AndroidAutomationSettings> resetToken() async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.AndroidAutomationHostApi.resetToken$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.AndroidAutomationHostApi.resetToken$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -1040,7 +1040,7 @@ class AndroidAutomationHostApi {
 
   Future<void> setStartBlocked(bool blocked) async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.AndroidAutomationHostApi.setStartBlocked$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.AndroidAutomationHostApi.setStartBlocked$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -1060,7 +1060,7 @@ class AndroidAutomationHostApi {
 
   Future<void> clear() async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.AndroidAutomationHostApi.clear$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.AndroidAutomationHostApi.clear$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -1096,7 +1096,7 @@ class BackupHostApi {
 
   Future<BackupLocation?> selectBackupFile(bool create) async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.BackupHostApi.selectBackupFile$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.BackupHostApi.selectBackupFile$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -1117,7 +1117,7 @@ class BackupHostApi {
 
   Future<void> requireBackupAccess(String identifier) async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.BackupHostApi.requireBackupAccess$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.BackupHostApi.requireBackupAccess$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -1137,7 +1137,7 @@ class BackupHostApi {
 
   Future<void> releaseBackupFile(String identifier) async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.BackupHostApi.releaseBackupFile$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.BackupHostApi.releaseBackupFile$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -1175,7 +1175,7 @@ class AppleBackupHostApi {
 
   Future<bool> hasBackupFileContents(String identifier) async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.AppleBackupHostApi.hasBackupFileContents$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.AppleBackupHostApi.hasBackupFileContents$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -1196,7 +1196,7 @@ class AppleBackupHostApi {
 
   Future<Uint8List> readBackupFile(String identifier) async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.AppleBackupHostApi.readBackupFile$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.AppleBackupHostApi.readBackupFile$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -1217,7 +1217,7 @@ class AppleBackupHostApi {
 
   Future<void> writeBackupFile(String identifier, Uint8List bytes) async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.onexray.AppleBackupHostApi.writeBackupFile$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.apolune.AppleBackupHostApi.writeBackupFile$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -1255,7 +1255,7 @@ abstract class BridgeFlutterApi {
         : '';
     {
       final pigeonVar_channel = BasicMessageChannel<Object?>(
-        'dev.flutter.pigeon.onexray.BridgeFlutterApi.appleWidgetActionAvailable$messageChannelSuffix',
+        'dev.flutter.pigeon.apolune.BridgeFlutterApi.appleWidgetActionAvailable$messageChannelSuffix',
         pigeonChannelCodec,
         binaryMessenger: binaryMessenger,
       );
@@ -1278,7 +1278,7 @@ abstract class BridgeFlutterApi {
     }
     {
       final pigeonVar_channel = BasicMessageChannel<Object?>(
-        'dev.flutter.pigeon.onexray.BridgeFlutterApi.vpnStatusChanged$messageChannelSuffix',
+        'dev.flutter.pigeon.apolune.BridgeFlutterApi.vpnStatusChanged$messageChannelSuffix',
         pigeonChannelCodec,
         binaryMessenger: binaryMessenger,
       );
@@ -1303,7 +1303,7 @@ abstract class BridgeFlutterApi {
     }
     {
       final pigeonVar_channel = BasicMessageChannel<Object?>(
-        'dev.flutter.pigeon.onexray.BridgeFlutterApi.openSettings$messageChannelSuffix',
+        'dev.flutter.pigeon.apolune.BridgeFlutterApi.openSettings$messageChannelSuffix',
         pigeonChannelCodec,
         binaryMessenger: binaryMessenger,
       );

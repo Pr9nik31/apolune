@@ -1,16 +1,16 @@
 import 'dart:async';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/service/shared/share/service.dart';
+import 'package:apolune/service/shared/share/service.dart';
 
 void main() {
   late StreamController<Uri> links;
   late ShareService service;
   final first = Uri.parse(
-    'onexray://onexray.com/sub/add?url=https://a.example',
+    'apolune://apolune.dev/sub/add?url=https://a.example',
   );
   final second = Uri.parse(
-    'onexray://onexray.com/sub/add?url=https://b.example',
+    'apolune://apolune.dev/sub/add?url=https://b.example',
   );
 
   setUp(() {
@@ -67,7 +67,7 @@ void main() {
   });
 
   test('widget URIs do not enter the import queue', () {
-    links.add(Uri.parse('onexray://widget/connect'));
+    links.add(Uri.parse('apolune://widget/connect'));
     expect(service.claimNextAppLink(), isNull);
   });
 

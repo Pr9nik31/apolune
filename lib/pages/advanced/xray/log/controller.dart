@@ -2,14 +2,14 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/service/advanced/xray/runtime_files.dart';
-import 'package:onexray/service/shared/failure.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/service/advanced/xray/runtime_files.dart';
+import 'package:apolune/service/shared/failure.dart';
 import 'package:path/path.dart' as p;
 
-import 'package:onexray/pages/shared/page_cubit.dart';
-import 'package:onexray/pages/shared/widgets/settings_page.dart';
-import 'package:onexray/pages/advanced/xray/log/params.dart';
+import 'package:apolune/pages/shared/page_cubit.dart';
+import 'package:apolune/pages/shared/widgets/settings_page.dart';
+import 'package:apolune/pages/advanced/xray/log/params.dart';
 
 class LogFileViewerPageState {
   final String title;

@@ -1,27 +1,27 @@
 import 'dart:async';
 
-import 'package:onexray/core/errors/failure.dart';
+import 'package:apolune/core/errors/failure.dart';
 
 import 'package:drift/drift.dart' show Value;
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/constants/preferences.dart';
-import 'package:onexray/core/db/database/constants.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/service/advanced/xray/geodata/service.dart';
-import 'package:onexray/service/connect/coordinator.dart';
-import 'package:onexray/service/connect/runtime_host.dart';
-import 'package:onexray/service/servers/import.dart';
-import 'package:onexray/service/servers/outbound/state_db.dart';
-import 'package:onexray/service/servers/subscription/model.dart';
-import 'package:onexray/service/servers/subscription/service.dart';
-import 'package:onexray/service/servers/sort.dart';
-import 'package:onexray/service/settings/data_cleanup.dart';
-import 'package:onexray/service/advanced/tunnel/android/automation/service.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
-import 'package:onexray/service/shared/ping/batch.dart';
-import 'package:onexray/service/shared/ping/service.dart';
+import 'package:apolune/core/constants/preferences.dart';
+import 'package:apolune/core/db/database/constants.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/service/advanced/xray/geodata/service.dart';
+import 'package:apolune/service/connect/coordinator.dart';
+import 'package:apolune/service/connect/runtime_host.dart';
+import 'package:apolune/service/servers/import.dart';
+import 'package:apolune/service/servers/outbound/state_db.dart';
+import 'package:apolune/service/servers/subscription/model.dart';
+import 'package:apolune/service/servers/subscription/service.dart';
+import 'package:apolune/service/servers/sort.dart';
+import 'package:apolune/service/settings/data_cleanup.dart';
+import 'package:apolune/service/advanced/tunnel/android/automation/service.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
+import 'package:apolune/service/shared/ping/batch.dart';
+import 'package:apolune/service/shared/ping/service.dart';
 // ignore: depend_on_referenced_packages
 import 'package:shared_preferences_platform_interface/in_memory_shared_preferences_async.dart';
 // ignore: depend_on_referenced_packages
@@ -61,7 +61,7 @@ void main() {
     // This test exercises the real file queue, but never accesses the filesystem.
     geodata = GeoDataService.forTesting(
       database: db,
-      directory: '../references/onexray-tests/unused-clear-data',
+      directory: '../references/apolune-tests/unused-clear-data',
       download: (_, _) async => fail('No download expected'),
       count: (_, _, _) async => fail('No indexing expected'),
       copyBundled: (_) async => fail('No asset installation expected'),

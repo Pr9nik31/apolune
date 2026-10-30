@@ -6,25 +6,25 @@ import json
 from pathlib import Path
 
 _GITHUB_PACKAGES = {
-    "ios": ("ios/OneXray-ios.ipa",),
-    "macos": ("macos_se/OneXray-macos-universal.zip",),
-    "android": ("android-universal/OneXray-android-universal.apk",),
+    "ios": ("ios/Apolune-ios.ipa",),
+    "macos": ("macos_se/Apolune-macos-universal.zip",),
+    "android": ("android-universal/Apolune-android-universal.apk",),
     "linux": (
-        "linux-x64/OneXray-linux-x86_64.zip",
-        "linux-x64/OneXray-linux-x86_64.deb",
-        "linux-arm64/OneXray-linux-aarch64.zip",
-        "linux-arm64/OneXray-linux-aarch64.deb",
+        "linux-x64/Apolune-linux-x86_64.zip",
+        "linux-x64/Apolune-linux-x86_64.deb",
+        "linux-arm64/Apolune-linux-aarch64.zip",
+        "linux-arm64/Apolune-linux-aarch64.deb",
     ),
     "windows": (
-        "windows-x64/OneXray-windows-amd64.exe",
-        "windows-x64/OneXray-windows-amd64.zip",
-        "windows-arm64/OneXray-windows-arm64.exe",
-        "windows-arm64/OneXray-windows-arm64.zip",
+        "windows-x64/Apolune-windows-amd64.exe",
+        "windows-x64/Apolune-windows-amd64.zip",
+        "windows-arm64/Apolune-windows-arm64.exe",
+        "windows-arm64/Apolune-windows-arm64.zip",
     ),
 }
 _STORE_PACKAGES = (
-    "windows-store-x64/OneXray-windows-amd64.msix",
-    "windows-store-arm64/OneXray-windows-arm64.msix",
+    "windows-store-x64/Apolune-windows-amd64.msix",
+    "windows-store-arm64/Apolune-windows-arm64.msix",
 )
 
 

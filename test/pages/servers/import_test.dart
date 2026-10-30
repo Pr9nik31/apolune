@@ -6,25 +6,25 @@ import 'package:file_picker/file_picker.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/core/errors/failure.dart';
-import 'package:onexray/core/model/geo_data_type.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/service/settings/language/locale.dart';
-import 'package:onexray/pages/servers/import/controller.dart';
-import 'package:onexray/pages/servers/import/page.dart';
-import 'package:onexray/pages/servers/subscription/form_view.dart';
-import 'package:onexray/pages/theme/theme.dart';
-import 'package:onexray/pages/shared/widgets/adaptive_dialog.dart';
-import 'package:onexray/pages/shared/widgets/button_progress.dart';
-import 'package:onexray/service/servers/import.dart';
-import 'package:onexray/service/shared/db/config_writer.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
-import 'package:onexray/service/shared/share/app_link_model.dart';
-import 'package:onexray/service/servers/subscription/model.dart';
-import 'package:onexray/service/servers/outbound/state_db.dart';
-import 'package:onexray/service/connect/raw/validator.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/core/errors/failure.dart';
+import 'package:apolune/core/model/geo_data_type.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/service/settings/language/locale.dart';
+import 'package:apolune/pages/servers/import/controller.dart';
+import 'package:apolune/pages/servers/import/page.dart';
+import 'package:apolune/pages/servers/subscription/form_view.dart';
+import 'package:apolune/pages/theme/theme.dart';
+import 'package:apolune/pages/shared/widgets/adaptive_dialog.dart';
+import 'package:apolune/pages/shared/widgets/button_progress.dart';
+import 'package:apolune/service/servers/import.dart';
+import 'package:apolune/service/shared/db/config_writer.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
+import 'package:apolune/service/shared/share/app_link_model.dart';
+import 'package:apolune/service/servers/subscription/model.dart';
+import 'package:apolune/service/servers/outbound/state_db.dart';
+import 'package:apolune/service/connect/raw/validator.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
@@ -38,8 +38,8 @@ void main() {
     'panels share the default UA and preserve manual input while loading',
     () async {
       PackageInfo.setMockInitialValues(
-        appName: 'OneXray',
-        packageName: 'net.yuandev.onexray',
+        appName: 'Apolune',
+        packageName: 'dev.apolune.client',
         version: '26.10.4',
         buildNumber: '104',
         buildSignature: '',
@@ -52,8 +52,8 @@ void main() {
       await controller.setPanel(SubscriptionPanel.generic);
       expect(
         controller.userAgent.text,
-        'v2rayN/26.10.4 OneXray/26.10.4 '
-        '(net.yuandev.onexray; build:104; ${Platform.operatingSystem})',
+        'v2rayN/26.10.4 Apolune/26.10.4 '
+        '(dev.apolune.client; build:104; ${Platform.operatingSystem})',
       );
       expect(controller.state.userAgent, controller.userAgent.text);
       final generated = controller.userAgent.text;
@@ -93,15 +93,15 @@ void main() {
     tester,
   ) async {
     PackageInfo.setMockInitialValues(
-      appName: 'OneXray',
-      packageName: 'net.yuandev.onexray',
+      appName: 'Apolune',
+      packageName: 'dev.apolune.client',
       version: '26.10.4',
       buildNumber: '104',
       buildSignature: '',
     );
     final expectedUserAgent =
-        'v2rayN/26.10.4 OneXray/26.10.4 '
-        '(net.yuandev.onexray; build:104; ${Platform.operatingSystem})';
+        'v2rayN/26.10.4 Apolune/26.10.4 '
+        '(dev.apolune.client; build:104; ${Platform.operatingSystem})';
     final controller = ServerImportController(
       loadSubscription: (_) async => null,
     );
@@ -241,15 +241,15 @@ void main() {
         'editing $panel subscription displays the default for $storedLabel UA without saving',
         (tester) async {
           PackageInfo.setMockInitialValues(
-            appName: 'OneXray',
-            packageName: 'net.yuandev.onexray',
+            appName: 'Apolune',
+            packageName: 'dev.apolune.client',
             version: '26.10.4',
             buildNumber: '104',
             buildSignature: '',
           );
           final expectedUserAgent =
-              'v2rayN/26.10.4 OneXray/26.10.4 '
-              '(net.yuandev.onexray; build:104; ${Platform.operatingSystem})';
+              'v2rayN/26.10.4 Apolune/26.10.4 '
+              '(dev.apolune.client; build:104; ${Platform.operatingSystem})';
           var saves = 0;
           final controller = ServerImportController(
             subscriptionId: 7,
@@ -734,7 +734,7 @@ void main() {
 
     await tester.tap(find.text('Back'));
     await tester.pumpAndSettle();
-    expect(find.text('Add servers to OneXray'), findsOneWidget);
+    expect(find.text('Add servers to Apolune'), findsOneWidget);
     expect(completed, isFalse);
 
     await tester.tap(find.text('Paste link'));
@@ -750,7 +750,7 @@ void main() {
     expect(completed, isTrue);
     expect(result, isNull);
     expect(find.byType(ServerImportFormPage), findsNothing);
-    expect(find.text('Add servers to OneXray'), findsNothing);
+    expect(find.text('Add servers to Apolune'), findsNothing);
     expect(find.text('Open'), findsOneWidget);
     expect(Navigator.of(tester.element(find.text('Open'))).canPop(), isFalse);
     expect(tester.takeException(), isNull);
@@ -1232,7 +1232,7 @@ void main() {
             outboundCompanion({'tag': 'local', 'protocol': 'freedom'}),
           ],
           geoData: [
-            const OneXrayGeoDataLink(
+            const ApoluneGeoDataLink(
               name: 'Data source',
               type: GeoDataType.domain,
               url: 'https://data.example/list.dat',
@@ -1509,8 +1509,8 @@ void main() {
 }
 
 String _rawLink() => Uri(
-  scheme: 'onexray',
-  host: 'onexray.com',
+  scheme: 'apolune',
+  host: 'apolune.dev',
   path: '/config/add',
   fragment: 'Expert',
   queryParameters: {

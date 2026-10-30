@@ -2,7 +2,7 @@ import SwiftUI
 import WidgetKit
 import AppIntents
 
-private let connectionURL = URL(string: "onexray://widget/connect")!
+private let connectionURL = URL(string: "apolune://widget/connect")!
 
 private var connectionWidgetFamilies: [WidgetFamily] {
     if #available(iOS 16.0, *) {
@@ -57,7 +57,7 @@ struct ConnectionWidget: Widget {
                 .widgetURL(connectionURL)
         }
         .configurationDisplayName(Text(verbatim: widgetText("Connection", language)))
-        .description(Text(verbatim: widgetText("VPN status and actions that open OneXray.", language)))
+        .description(Text(verbatim: widgetText("VPN status and actions that open Apolune.", language)))
         .supportedFamilies(connectionWidgetFamilies)
     }
 }
@@ -103,10 +103,10 @@ private struct ConnectionWidgetView: View {
                 Image(systemName: statusIcon).font(.title2)
             }
             .privacySensitive()
-            .accessibilityLabel("OneXray, \(statusText)")
+            .accessibilityLabel("Apolune, \(statusText)")
         } else if #available(iOS 16.0, *), family == .accessoryRectangular {
             VStack(alignment: .leading, spacing: 3) {
-                Text("OneXray").font(.headline)
+                Text("Apolune").font(.headline)
                 Label(statusText, systemImage: statusIcon).font(.caption).privacySensitive()
                 Text(text("Open app")).font(.caption2)
             }
@@ -175,7 +175,7 @@ private struct ConnectionWidgetView: View {
     }
 
     private var brand: some View {
-        Text("OneXray")
+        Text("Apolune")
             .font(.caption)
             .foregroundStyle(palette.secondary)
             .lineLimit(1)

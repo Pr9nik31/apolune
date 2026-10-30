@@ -1,5 +1,5 @@
-import 'package:onexray/core/errors/failure.dart';
-import 'package:onexray/core/errors/json_diagnostic.dart';
+import 'package:apolune/core/errors/failure.dart';
+import 'package:apolune/core/errors/json_diagnostic.dart';
 
 import 'dart:async';
 import 'dart:convert';
@@ -7,19 +7,19 @@ import 'dart:io';
 
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/constants.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/core/network/client.dart';
-import 'package:onexray/core/pigeon/constants.dart';
-import 'package:onexray/service/servers/import.dart';
-import 'package:onexray/service/shared/db/config_writer.dart';
-import 'package:onexray/service/shared/share/app_link_model.dart';
-import 'package:onexray/service/servers/subscription/model.dart';
-import 'package:onexray/service/servers/outbound/state_db.dart';
-import 'package:onexray/service/connect/raw/db.dart';
-import 'package:onexray/service/connect/raw/editor.dart';
-import 'package:onexray/service/shared/share/configuration_transfer.dart';
+import 'package:apolune/core/db/database/constants.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/core/network/client.dart';
+import 'package:apolune/core/pigeon/constants.dart';
+import 'package:apolune/service/servers/import.dart';
+import 'package:apolune/service/shared/db/config_writer.dart';
+import 'package:apolune/service/shared/share/app_link_model.dart';
+import 'package:apolune/service/servers/subscription/model.dart';
+import 'package:apolune/service/servers/outbound/state_db.dart';
+import 'package:apolune/service/connect/raw/db.dart';
+import 'package:apolune/service/connect/raw/editor.dart';
+import 'package:apolune/service/shared/share/configuration_transfer.dart';
 
 import '../../support/fake_geodata_import.dart';
 
@@ -191,7 +191,7 @@ void main() {
       );
       final results = await service.importSubscriptions([
         for (final name in ['download', 'write', 'success'])
-          OneXraySubscriptionLink(name: name, url: 'https://example.com/$name'),
+          ApoluneSubscriptionLink(name: name, url: 'https://example.com/$name'),
       ]);
 
       expect(results[0].result.error, same(downloadError));
@@ -205,7 +205,7 @@ void main() {
   test(
     'subscription AppLink policy survives detection and the import boundary',
     () async {
-      final received = <OneXraySubscriptionLink>[];
+      final received = <ApoluneSubscriptionLink>[];
       final service = ServerImportService(
         subscribe: (link) async {
           received.add(link);
@@ -217,8 +217,8 @@ void main() {
         },
       );
       final input = Uri(
-        scheme: 'onexray',
-        host: 'onexray.com',
+        scheme: 'apolune',
+        host: 'apolune.dev',
         path: '/sub/add',
         queryParameters: {
           'url': 'https://example.com/sub',
@@ -303,10 +303,10 @@ void main() {
     expect(validations, 2);
   });
 
-  test('OneXray node links use the existing decoder; subscriptions stay read-only form inputs', () async {
+  test('Apolune node links use the existing decoder; subscriptions stay read-only form inputs', () async {
     final link = Uri(
-      scheme: 'onexray',
-      host: 'onexray.com',
+      scheme: 'apolune',
+      host: 'apolune.dev',
       path: '/config/add',
       queryParameters: {
         'type': 'outbound',
@@ -596,15 +596,15 @@ void main() {
 }
 
 String _configLink(String type, String json) => Uri(
-  scheme: 'onexray',
-  host: 'onexray.com',
+  scheme: 'apolune',
+  host: 'apolune.dev',
   path: '/config/add',
   queryParameters: {'type': type, 'data': base64Encode(utf8.encode(json))},
 ).toString();
 
 String _geoLink(String name) => Uri(
-  scheme: 'onexray',
-  host: 'onexray.com',
+  scheme: 'apolune',
+  host: 'apolune.dev',
   path: '/dat/add',
   fragment: name,
   queryParameters: {'type': 'domain', 'url': 'https://data.example/list.dat'},

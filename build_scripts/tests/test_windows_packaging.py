@@ -23,7 +23,7 @@ class WindowsPackagingTest(unittest.TestCase):
         temporary = tempfile.TemporaryDirectory(dir=fixtures)
         self.addCleanup(temporary.cleanup)
         self.workspace = Path(temporary.name)
-        self.root = self.workspace / "OneXray"
+        self.root = self.workspace / "Apolune"
         self.config = self.root / "windows/packaging/exe/make_config.yaml"
         self.config.parent.mkdir(parents=True)
         shutil.copy2(
@@ -31,7 +31,7 @@ class WindowsPackagingTest(unittest.TestCase):
             self.config,
         )
         self.pubspec = self.root / "pubspec.yaml"
-        self.pubspec.write_bytes(b"name: onexray\nversion: 26.7.3+412\n")
+        self.pubspec.write_bytes(b"name: apolune\nversion: 26.7.3+412\n")
         self.output = self.workspace / "output"
         self.output.mkdir()
         self.addCleanup(patch.stopall)
@@ -39,24 +39,24 @@ class WindowsPackagingTest(unittest.TestCase):
             os.environ,
             {
                 "BUILD_NUMBER": "12",
-                "ONEXRAY_DEV_SIGN": "0",
+                "APOLUNE_DEV_SIGN": "0",
                 "VOLE_DIR": "",
-                "ONEXRAY_DEV_CERT_THUMBPRINT": "a" * 40,
-                "ONEXRAY_DEV_PUBLISHER": "CN=Development Fixture",
+                "APOLUNE_DEV_CERT_THUMBPRINT": "a" * 40,
+                "APOLUNE_DEV_PUBLISHER": "CN=Development Fixture",
             },
         ).start()
 
     def builder(self, architecture="x64", mode="msix", development=False):
         with patch.dict(
             os.environ,
-            {"ONEXRAY_WINDOWS_ARCH": architecture, "ONEXRAY_DEV_SIGN": "1" if development else "0"},
+            {"APOLUNE_WINDOWS_ARCH": architecture, "APOLUNE_DEV_SIGN": "1" if development else "0"},
         ):
-            return WindowsBuilder("OneXray", "windows", str(self.root / "build_scripts"), mode=mode)
+            return WindowsBuilder("Apolune", "windows", str(self.root / "build_scripts"), mode=mode)
 
     def bundle(self, builder):
         source = self.root / "build/windows" / builder.target_architecture / "runner/Release"
         source.mkdir(parents=True, exist_ok=True)
-        for name in ("OneXray.exe", "msvcp140.dll", *_VOLE_ARTIFACTS):
+        for name in ("Apolune.exe", "msvcp140.dll", *_VOLE_ARTIFACTS):
             (source / name).write_bytes(name.encode())
         for name in ("data/icudtl.dat", "data/app.so", "data/flutter_assets/AssetManifest.bin"):
             file = source / name
@@ -79,7 +79,7 @@ class WindowsPackagingTest(unittest.TestCase):
                 calls.append(args)
                 self.assertIn("exe,zip", args)
                 self.assertIn("--skip-clean", args)
-                self.assertIn("ONEXRAY_WINDOWS_MODE=exe", args)
+                self.assertIn("APOLUNE_WINDOWS_MODE=exe", args)
                 self.assertIn("build-number=412", args)
                 self.assertEqual(kwargs["env"], {"PROCESSOR_ARCHITECTURE": processor})
                 self.assertEqual(builder.read_version(), "26.7.3")
@@ -90,7 +90,7 @@ class WindowsPackagingTest(unittest.TestCase):
                 dist = self.root / "dist/26.7.3"
                 dist.mkdir(parents=True, exist_ok=True)
                 for extension in ("exe", "zip"):
-                    (dist / f"OneXray-{builder.package_suffix}.{extension}").write_bytes(
+                    (dist / f"Apolune-{builder.package_suffix}.{extension}").write_bytes(
                         extension.encode()
                     )
                 (dist / "unrelated.msix").write_bytes(b"other channel")
@@ -100,7 +100,7 @@ class WindowsPackagingTest(unittest.TestCase):
             self.assertEqual(len(calls), 1)
             for extension in ("exe", "zip"):
                 self.assertEqual(
-                    (self.output / f"OneXray-{builder.package_suffix}.{extension}").read_bytes(),
+                    (self.output / f"Apolune-{builder.package_suffix}.{extension}").read_bytes(),
                     extension.encode(),
                 )
             self.assertFalse((self.output / "unrelated.msix").exists())
@@ -112,7 +112,7 @@ class WindowsPackagingTest(unittest.TestCase):
         original_config, original_pubspec = self.config.read_bytes(), self.pubspec.read_bytes()
         dist = self.root / "dist/26.7.3"
         dist.mkdir(parents=True)
-        (dist / "OneXray-windows-amd64.exe").write_bytes(b"incomplete")
+        (dist / "Apolune-windows-amd64.exe").write_bytes(b"incomplete")
         for failure, expected in (
             (RuntimeError("packaging failed"), RuntimeError),
             (None, FileNotFoundError),
@@ -170,12 +170,12 @@ class WindowsPackagingTest(unittest.TestCase):
                     ):
                         builder.build_app()
                     flutter = commands[0]
-                    self.assertIn("ONEXRAY_WINDOWS_MODE=msix", " ".join(flutter))
+                    self.assertIn("APOLUNE_WINDOWS_MODE=msix", " ".join(flutter))
                     self.assertEqual(
-                        "--dart-define=ONEXRAY_WINDOWS_DEVELOPMENT=true" in flutter, development
+                        "--dart-define=APOLUNE_WINDOWS_DEVELOPMENT=true" in flutter, development
                     )
                     self.assertEqual(len(commands), 4 if development else 3)
-                    package_path = self.output / f"OneXray-{builder.package_suffix}.msix"
+                    package_path = self.output / f"Apolune-{builder.package_suffix}.msix"
                     with zipfile.ZipFile(package_path) as package:
                         self.assertTrue(set(_VOLE_ARTIFACTS).issubset(package.namelist()))
                         self.assertEqual("AppxSignature.p7x" in package.namelist(), development)
@@ -183,7 +183,7 @@ class WindowsPackagingTest(unittest.TestCase):
                         identity = manifest.find("f:Identity", NS)
                         self.assertEqual(
                             identity.get("Name"),
-                            "OneXray.Dev" if development else "YuanDevLLC.OneXray",
+                            "Apolune.Dev" if development else "Apolune.Apolune",
                         )
                         self.assertEqual(identity.get("ProcessorArchitecture"), architecture)
                         self.assertEqual(
@@ -217,7 +217,7 @@ class WindowsPackagingTest(unittest.TestCase):
                                 NS,
                             )
                         )
-                        self.assertIsNotNone(manifest.find(".//uap:Protocol[@Name='onexray']", NS))
+                        self.assertIsNotNone(manifest.find(".//uap:Protocol[@Name='apolune']", NS))
                     self.assertFalse(stage.exists())
                     self.assertEqual((source / "msvcp140.dll").read_bytes(), original_crt)
                     self.assertFalse((source / "AppxManifest.xml").exists())
@@ -230,14 +230,14 @@ class WindowsPackagingTest(unittest.TestCase):
             self.assertRaises(RuntimeError),
         ):
             builder.package_msix()
-        self.assertTrue((source / "OneXray.exe").is_file())
+        self.assertTrue((source / "Apolune.exe").is_file())
         self.assertFalse((source.parents[1] / "x64/runner/Release").exists())
         self.assertEqual(list(self.output.iterdir()), [])
 
     def test_packaging_or_signing_failure_preserves_the_previous_package(self):
         stage = self.workspace / "stage"
         stage.mkdir()
-        package = self.output / "OneXray.msix"
+        package = self.output / "Apolune.msix"
         package.write_bytes(b"previous package")
         for failure_at in ("pack", "sign"):
             (stage / "AppxManifest.xml").write_text(MANIFEST)
@@ -258,7 +258,7 @@ class WindowsPackagingTest(unittest.TestCase):
             self.assertEqual(list(self.output.iterdir()), [package])
 
     def test_missing_development_signing_settings_fail_before_packaging(self):
-        for settings in ({"ONEXRAY_DEV_PUBLISHER": ""}, {"ONEXRAY_DEV_CERT_THUMBPRINT": ""}):
+        for settings in ({"APOLUNE_DEV_PUBLISHER": ""}, {"APOLUNE_DEV_CERT_THUMBPRINT": ""}):
             with patch.dict(os.environ, settings), self.assertRaises(ValueError):
                 pack_msix("missing stage", "missing.msix", local_development=True)
 
@@ -321,7 +321,7 @@ class WindowsPackagingTest(unittest.TestCase):
         config = self.config.read_text()
         for setting in (
             "app_id: 835d7bbd-85bb-4c73-97f8-ce0740f151a7",
-            "executable_name: OneXray.exe",
+            "executable_name: Apolune.exe",
             "privileges_required: lowest",
         ):
             self.assertIn(setting, config)
@@ -336,16 +336,16 @@ NS = {
 MANIFEST = f'''<Package xmlns="{NS["f"]}" xmlns:uap="{NS["uap"]}" xmlns:desktop="{NS["desktop"]}"
  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
  IgnorableNamespaces="uap desktop rescap">
- <Identity Name="YuanDevLLC.OneXray" Publisher="CN=Store" Version="26.7.3.0" ProcessorArchitecture="x64" />
+ <Identity Name="Apolune.Apolune" Publisher="CN=Store" Version="26.7.3.0" ProcessorArchitecture="x64" />
  <Capabilities>
   <Capability Name="internetClientServer" /><Capability Name="privateNetworkClientServer" />
   <rescap:Capability Name="runFullTrust" /><rescap:Capability Name="networkingVpnProvider" />
  </Capabilities>
- <Applications><Application Id="OneXray" Executable="OneXray.exe" EntryPoint="Windows.FullTrustApplication">
+ <Applications><Application Id="Apolune" Executable="Apolune.exe" EntryPoint="Windows.FullTrustApplication">
   <Extensions>
-   <uap:Extension Category="windows.protocol"><uap:Protocol Name="onexray" /></uap:Extension>
-   <desktop:Extension Category="windows.startupTask" Executable="OneXray.exe" EntryPoint="Windows.FullTrustApplication">
-    <desktop:StartupTask TaskId="VoleStartup" Enabled="false" DisplayName="OneXray" />
+   <uap:Extension Category="windows.protocol"><uap:Protocol Name="apolune" /></uap:Extension>
+   <desktop:Extension Category="windows.startupTask" Executable="Apolune.exe" EntryPoint="Windows.FullTrustApplication">
+    <desktop:StartupTask TaskId="VoleStartup" Enabled="false" DisplayName="Apolune" />
    </desktop:Extension>
   </Extensions>
  </Application></Applications>

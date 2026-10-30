@@ -1,11 +1,11 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/errors/failure.dart';
-import 'package:onexray/core/errors/json_diagnostic.dart';
-import 'package:onexray/service/connect/routing/custom/advanced.dart';
-import 'package:onexray/service/connect/routing/custom/document.dart';
-import 'package:onexray/service/connect/routing/custom/service.dart';
+import 'package:apolune/core/errors/failure.dart';
+import 'package:apolune/core/errors/json_diagnostic.dart';
+import 'package:apolune/service/connect/routing/custom/advanced.dart';
+import 'package:apolune/service/connect/routing/custom/document.dart';
+import 'package:apolune/service/connect/routing/custom/service.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -190,7 +190,7 @@ void main() {
                 },
               },
               ['dns', 'servers', 1, 'queryStrategy'],
-              'dns.servers[1].queryStrategy is managed by OneXray; use App settings',
+              'dns.servers[1].queryStrategy is managed by Apolune; use App settings',
             ),
             (
               {
@@ -204,7 +204,7 @@ void main() {
                 },
               },
               ['routing', 'rules', 0, 'inboundTag', 1],
-              'routing.rules[0].inboundTag is managed by OneXray; use App settings',
+              'routing.rules[0].inboundTag is managed by Apolune; use App settings',
             ),
             (
               {

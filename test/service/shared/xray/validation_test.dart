@@ -1,13 +1,13 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/model/xray_json.dart';
-import 'package:onexray/core/pigeon/constants.dart';
-import 'package:onexray/service/connect/routing/custom/advanced.dart';
-import 'package:onexray/service/connect/routing/custom/service.dart';
-import 'package:onexray/service/shared/xray/validation.dart';
-import 'package:onexray/service/shared/xray/remnawave.dart';
-import 'package:onexray/service/shared/xray/vpn_config.dart';
+import 'package:apolune/core/model/xray_json.dart';
+import 'package:apolune/core/pigeon/constants.dart';
+import 'package:apolune/service/connect/routing/custom/advanced.dart';
+import 'package:apolune/service/connect/routing/custom/service.dart';
+import 'package:apolune/service/shared/xray/validation.dart';
+import 'package:apolune/service/shared/xray/remnawave.dart';
+import 'package:apolune/service/shared/xray/vpn_config.dart';
 
 void main() {
   for (final provider in [false, true]) {

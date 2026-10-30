@@ -1,6 +1,6 @@
-import 'package:onexray/core/backup/model.dart';
-import 'package:onexray/service/advanced/platform_policy.dart';
-import 'package:onexray/service/connect/settings.dart';
+import 'package:apolune/core/backup/model.dart';
+import 'package:apolune/service/advanced/platform_policy.dart';
+import 'package:apolune/service/connect/settings.dart';
 
 /// Portable VPN preferences stay inside their source operating system's key.
 /// Physical interface names and unrelated platform drafts stay on the device.

@@ -1,9 +1,9 @@
-import 'package:onexray/core/constants/preferences.dart';
-import 'package:onexray/core/network/client.dart';
-import 'package:onexray/core/pigeon/host_api.dart';
-import 'package:onexray/core/tools/logger.dart';
-import 'package:onexray/core/tools/platform.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
+import 'package:apolune/core/constants/preferences.dart';
+import 'package:apolune/core/network/client.dart';
+import 'package:apolune/core/pigeon/host_api.dart';
+import 'package:apolune/core/tools/logger.dart';
+import 'package:apolune/core/tools/platform.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:pub_semver/pub_semver.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -55,13 +55,13 @@ class AppUpdateService {
   AppUpdateService._internal();
 
   static const _githubLatestReleaseApi =
-      "https://api.github.com/repos/YuanDevTeam/OneXray/releases/latest";
+      "https://api.github.com/repos/Pr9nik31/apolune/releases/latest";
   static const _githubLatestReleaseUrl =
-      "https://github.com/YuanDevTeam/OneXray/releases/latest";
+      "https://github.com/Pr9nik31/apolune/releases/latest";
   static const _appStoreUrl =
-      "https://apps.apple.com/us/app/onexray/id6745748773";
+      "https://apps.apple.com/us/app/apolune/id6745748773";
   static const _googlePlayUrl =
-      "https://play.google.com/store/apps/details?id=net.yuandev.onexray";
+      "https://play.google.com/store/apps/details?id=dev.apolune.client";
   static const _automaticCheckInterval = Duration(days: 1);
 
   Future<AppUpdateCheckResult> checkForUpdate() async {

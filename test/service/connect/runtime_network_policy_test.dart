@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/service/connect/compiler.dart';
-import 'package:onexray/service/connect/runtime_network_policy.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/connect/routing/region_catalog.dart';
+import 'package:apolune/service/connect/compiler.dart';
+import 'package:apolune/service/connect/runtime_network_policy.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/connect/routing/region_catalog.dart';
 
 CompiledConnection compileRaw(
   Map<String, dynamic> source, {

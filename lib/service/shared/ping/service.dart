@@ -1,20 +1,20 @@
 import 'dart:async';
 
-import 'package:onexray/core/errors/failure.dart';
+import 'package:apolune/core/errors/failure.dart';
 
 import 'package:collection/collection.dart';
 import 'package:drift/drift.dart';
-import 'package:onexray/core/tools/logger.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
-import 'package:onexray/core/db/database/constants.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/core/tools/empty.dart';
-import 'package:onexray/service/shared/ping/batch.dart';
-import 'package:onexray/service/shared/ping/state.dart';
-import 'package:onexray/service/shared/command_serial_executor.dart';
-import 'package:onexray/service/servers/outbound/map.dart';
-import 'package:onexray/service/servers/outbound/state_db.dart';
+import 'package:apolune/core/tools/logger.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
+import 'package:apolune/core/db/database/constants.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/core/tools/empty.dart';
+import 'package:apolune/service/shared/ping/batch.dart';
+import 'package:apolune/service/shared/ping/state.dart';
+import 'package:apolune/service/shared/command_serial_executor.dart';
+import 'package:apolune/service/servers/outbound/map.dart';
+import 'package:apolune/service/servers/outbound/state_db.dart';
 
 class PingService {
   static final PingService _singleton = PingService._internal();

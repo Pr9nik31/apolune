@@ -1,5 +1,5 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/core/db/database/constants.dart';
+import 'package:apolune/core/db/database/constants.dart';
 
 @immutable
 class AppPalette {
@@ -66,7 +66,7 @@ class AppPalette {
     required this.chart5,
   });
 
-  // Semantic mapping of references/onexray-app-prototype/src/theme/tokens.json.
+  // Semantic mapping of references/apolune-app-prototype/src/theme/tokens.json.
   // Interactive colors and solid button fills differ in the dark theme.
   static const light = AppPalette(
     background: Color(0xFFFEFEFE),

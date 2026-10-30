@@ -1,13 +1,13 @@
 import 'dart:async';
 
-import 'package:onexray/core/db/database/constants.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/service/connect/compiler.dart';
-import 'package:onexray/service/servers/outbound/map.dart';
-import 'package:onexray/service/servers/outbound/state_db.dart';
-import 'package:onexray/service/servers/sort.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
+import 'package:apolune/core/db/database/constants.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/service/connect/compiler.dart';
+import 'package:apolune/service/servers/outbound/map.dart';
+import 'package:apolune/service/servers/outbound/state_db.dart';
+import 'package:apolune/service/servers/sort.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
 
 /// Display data is parsed when rows change, never while building node widgets.
 class ServerDisplay {

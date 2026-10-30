@@ -1,7 +1,7 @@
-import 'package:onexray/core/tools/json.dart';
-import 'package:onexray/service/shared/xray/fake_dns.dart';
-import 'package:onexray/service/shared/xray/runtime_inbounds.dart';
-import 'package:onexray/service/shared/xray/vpn_config.dart';
+import 'package:apolune/core/tools/json.dart';
+import 'package:apolune/service/shared/xray/fake_dns.dart';
+import 'package:apolune/service/shared/xray/runtime_inbounds.dart';
+import 'package:apolune/service/shared/xray/vpn_config.dart';
 
 /// Supplements the App tunnel and DNS ingress on a disposable provider graph.
 /// Platform runtime fields and Core validation use the shared Raw path.

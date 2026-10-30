@@ -3,16 +3,16 @@ import 'dart:math' as math;
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/advanced/controller.dart';
-import 'package:onexray/pages/advanced/tab_visibility.dart';
-import 'package:onexray/pages/advanced/tunnel/controller.dart';
-import 'package:onexray/pages/advanced/tunnel/page.dart';
-import 'package:onexray/pages/advanced/tunnel/widgets.dart';
-import 'package:onexray/pages/shared/widgets/page_app_bar.dart';
-import 'package:onexray/pages/theme/layout.dart';
-import 'package:onexray/pages/shared/widgets/setting_row.dart';
-import 'package:onexray/pages/shared/widgets/settings_page.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/advanced/controller.dart';
+import 'package:apolune/pages/advanced/tab_visibility.dart';
+import 'package:apolune/pages/advanced/tunnel/controller.dart';
+import 'package:apolune/pages/advanced/tunnel/page.dart';
+import 'package:apolune/pages/advanced/tunnel/widgets.dart';
+import 'package:apolune/pages/shared/widgets/page_app_bar.dart';
+import 'package:apolune/pages/theme/layout.dart';
+import 'package:apolune/pages/shared/widgets/setting_row.dart';
+import 'package:apolune/pages/shared/widgets/settings_page.dart';
 
 class AdvancedPage extends StatelessWidget {
   final WidgetBuilder? xrayBuilder;

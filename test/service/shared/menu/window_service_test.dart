@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:macos_window_utils/macos_window_utils.dart';
-import 'package:onexray/service/shared/menu/window/service.dart';
+import 'package:apolune/service/shared/menu/window/service.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();

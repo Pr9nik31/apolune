@@ -1,13 +1,13 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/service/shared/share/outgoing_share.dart';
+import 'package:apolune/service/shared/share/outgoing_share.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:share_plus_platform_interface/share_plus_platform_interface.dart';
 
 void main() {
   const content = ShareText(
     title: '  Example  ',
-    text: 'onexray://example.test/first\nonexray://example.test/second\n',
+    text: 'apolune://example.test/first\napolune://example.test/second\n',
   );
   const origin = Rect.fromLTWH(10, 20, 100, 40);
 
@@ -52,8 +52,8 @@ void main() {
       ),
     );
     await share.sendText(const ShareText(title: '  ', text: ' exact text '));
-    expect(sent.title, 'OneXray');
-    expect(sent.subject, 'OneXray');
+    expect(sent.title, 'Apolune');
+    expect(sent.subject, 'Apolune');
     expect(sent.text, ' exact text ');
     expect(sent.sharePositionOrigin, isNull);
   });

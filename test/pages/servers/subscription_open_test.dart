@@ -5,14 +5,14 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/core/network/client.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/servers/import/controller.dart';
-import 'package:onexray/pages/servers/import/page.dart';
-import 'package:onexray/pages/shared/widgets/adaptive_dialog.dart';
-import 'package:onexray/pages/theme/theme.dart';
-import 'package:onexray/service/settings/language/locale.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
+import 'package:apolune/core/network/client.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/servers/import/controller.dart';
+import 'package:apolune/pages/servers/import/page.dart';
+import 'package:apolune/pages/shared/widgets/adaptive_dialog.dart';
+import 'package:apolune/pages/theme/theme.dart';
+import 'package:apolune/service/settings/language/locale.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 void main() {
@@ -72,8 +72,8 @@ void main() {
     addSubscription();
     await tester.runAsync(() async {
       recoveredPackageInfo.complete({
-        'appName': 'OneXray',
-        'packageName': 'net.yuandev.onexray',
+        'appName': 'Apolune',
+        'packageName': 'dev.apolune.client',
         'version': '26.10.4',
         'buildNumber': '104',
         'buildSignature': '',

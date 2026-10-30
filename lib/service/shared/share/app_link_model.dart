@@ -1,37 +1,37 @@
-import 'package:onexray/core/model/geo_data_type.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/core/pigeon/model.dart';
+import 'package:apolune/core/model/geo_data_type.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/core/pigeon/model.dart';
 
-enum OneXrayConfigLinkType {
+enum ApoluneConfigLinkType {
   outbound('outbound'),
   custom('custom'),
   customAdvanced('custom-advanced'),
   raw('raw');
 
-  const OneXrayConfigLinkType(this.wireName);
+  const ApoluneConfigLinkType(this.wireName);
 
   final String wireName;
 }
 
-sealed class OneXrayAppLink {
-  const OneXrayAppLink({required this.name});
+sealed class ApoluneAppLink {
+  const ApoluneAppLink({required this.name});
 
   final String name;
 }
 
-final class OneXrayConfigLink extends OneXrayAppLink {
-  const OneXrayConfigLink({
+final class ApoluneConfigLink extends ApoluneAppLink {
+  const ApoluneConfigLink({
     required super.name,
     required this.type,
     required this.xrayJson,
   });
 
-  final OneXrayConfigLinkType type;
+  final ApoluneConfigLinkType type;
   final String xrayJson;
 }
 
-final class OneXraySubscriptionLink extends OneXrayAppLink {
-  const OneXraySubscriptionLink({
+final class ApoluneSubscriptionLink extends ApoluneAppLink {
+  const ApoluneSubscriptionLink({
     required super.name,
     required this.url,
     this.ageKeyType,
@@ -47,8 +47,8 @@ final class OneXraySubscriptionLink extends OneXrayAppLink {
   final SubscriptionMode? mode;
 }
 
-final class OneXrayGeoDataLink extends OneXrayAppLink {
-  const OneXrayGeoDataLink({
+final class ApoluneGeoDataLink extends ApoluneAppLink {
+  const ApoluneGeoDataLink({
     required super.name,
     required this.type,
     required this.url,

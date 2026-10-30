@@ -1,7 +1,7 @@
 import 'dart:io';
 
 final _packageDirectivePattern = RegExp(
-  r'''^[ \t]*(?:import|export)\s+['"]package:onexray/([^/'"]+)/''',
+  r'''^[ \t]*(?:import|export)\s+['"]package:apolune/([^/'"]+)/''',
   multiLine: true,
 );
 

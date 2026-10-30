@@ -1,9 +1,9 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/core/errors/json_diagnostic.dart';
-import 'package:onexray/pages/theme/font.dart';
-import 'package:onexray/pages/theme/layout.dart';
-import 'package:onexray/pages/shared/widgets/json_editor.dart';
-import 'package:onexray/service/shared/json_editing.dart';
+import 'package:apolune/core/errors/json_diagnostic.dart';
+import 'package:apolune/pages/theme/font.dart';
+import 'package:apolune/pages/theme/layout.dart';
+import 'package:apolune/pages/shared/widgets/json_editor.dart';
+import 'package:apolune/service/shared/json_editing.dart';
 import 'package:re_editor/re_editor.dart';
 
 /// Compact outbound JSON input used by manual import and server editing.

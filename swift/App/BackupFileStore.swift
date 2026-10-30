@@ -3,10 +3,10 @@ import Foundation
 /// Owns only file grants and coordinated bytes. The Dart backup service owns
 /// binding, scheduling, the document format and destructive restore.
 final class BackupFileStore {
-    static let fileName = "OneXray-backup.json"
+    static let fileName = "Apolune-backup.json"
     static let byteLimit = 64 * 1024 * 1024
     private let preferences: UserDefaults
-    private let key = "onexray.backup.fileBookmarks"
+    private let key = "apolune.backup.fileBookmarks"
     private let creationOptions: URL.BookmarkCreationOptions
 
     init(preferences: UserDefaults = .standard,
@@ -158,6 +158,6 @@ final class BackupFileStore {
     }
 
     private func failure(_ message: String) -> NSError {
-        NSError(domain: "OneXray.Backup", code: 1, userInfo: [NSLocalizedDescriptionKey: message])
+        NSError(domain: "Apolune.Backup", code: 1, userInfo: [NSLocalizedDescriptionKey: message])
     }
 }

@@ -4,18 +4,18 @@ import 'dart:io';
 
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/model/geo_data_type.dart';
-import 'package:onexray/service/advanced/xray/geodata/model.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
-import 'package:onexray/service/advanced/xray/geodata/service.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/service/advanced/policy_editor.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/connect/coordinator.dart';
-import 'package:onexray/service/connect/runtime_host.dart';
-import 'package:onexray/service/shared/share/configuration_transfer.dart';
-import 'package:onexray/service/connect/routing/custom/geodata_suggestions.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/model/geo_data_type.dart';
+import 'package:apolune/service/advanced/xray/geodata/model.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
+import 'package:apolune/service/advanced/xray/geodata/service.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/service/advanced/policy_editor.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/connect/coordinator.dart';
+import 'package:apolune/service/connect/runtime_host.dart';
+import 'package:apolune/service/shared/share/configuration_transfer.dart';
+import 'package:apolune/service/connect/routing/custom/geodata_suggestions.dart';
 import 'package:path/path.dart' as p;
 
 void main() {
@@ -71,7 +71,7 @@ void main() {
   setUp(() async {
     final bus = AppEventBus();
     addTearDown(bus.close);
-    final fixtures = await Directory('../references/onexray-tests').absolute
+    final fixtures = await Directory('../references/apolune-tests').absolute
         .create(recursive: true);
     workspace = await fixtures.createTemp('geodata-');
     datRoot = Directory(p.join(workspace.path, 'dat'));
@@ -322,7 +322,7 @@ void main() {
         await service.ensureInstalled();
         await service.add(input());
         final old = (await db.geoDataDao.allRows).single;
-        final stage = await workspace.createTemp('.onexray-geodata-restore-');
+        final stage = await workspace.createTemp('.apolune-geodata-restore-');
         await File(p.join(stage.path, 'restore.json')).writeAsString(
           jsonEncode([
             {'id': old.id, 'name': old.name},
@@ -1060,7 +1060,7 @@ void main() {
           .list()
           .where(
             (entry) =>
-                p.basename(entry.path).startsWith('.onexray-geodata-import-'),
+                p.basename(entry.path).startsWith('.apolune-geodata-import-'),
           )
           .toList(),
       isEmpty,

@@ -1,7 +1,7 @@
-import 'package:onexray/core/tools/json.dart';
-import 'package:onexray/service/shared/xray/fake_dns.dart';
-import 'package:onexray/service/shared/xray/runtime_inbounds.dart';
-import 'package:onexray/service/shared/xray/runtime_outbounds.dart';
+import 'package:apolune/core/tools/json.dart';
+import 'package:apolune/service/shared/xray/fake_dns.dart';
+import 'package:apolune/service/shared/xray/runtime_inbounds.dart';
+import 'package:apolune/service/shared/xray/runtime_outbounds.dart';
 
 /// Portable VPN ingress supplements for complete Raw and provider graphs.
 /// Device settings and runtime resources belong to ConnectionCompiler.

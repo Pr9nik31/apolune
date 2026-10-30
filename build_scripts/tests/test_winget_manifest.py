@@ -21,7 +21,7 @@ class WingetManifestTest(unittest.TestCase):
             "assets": [
                 {
                     "name": name,
-                    "browser_download_url": f"https://github.com/YuanDevTeam/OneXray/releases/download/v26.9.3/{name}",
+                    "browser_download_url": f"https://github.com/Pr9nik31/apolune/releases/download/v26.9.3/{name}",
                 }
                 for name in INSTALLER_NAMES.values()
             ],
@@ -35,10 +35,10 @@ class WingetManifestTest(unittest.TestCase):
             "ManifestType": "installer",
             "InstallerType": "inno",
             "Scope": "machine",
-            "ProductCode": "onexray_is1",
+            "ProductCode": "apolune_is1",
             "ReleaseDate": "2026-09-16",
-            "InstallationMetadata": {"DefaultInstallLocation": r"%ProgramFiles%\OneXray"},
-            "AppsAndFeaturesEntries": [{"ProductCode": "onexray_is1"}],
+            "InstallationMetadata": {"DefaultInstallLocation": r"%ProgramFiles%\Apolune"},
+            "AppsAndFeaturesEntries": [{"ProductCode": "apolune_is1"}],
             "Installers": [
                 {
                     "Architecture": arch,
@@ -51,7 +51,7 @@ class WingetManifestTest(unittest.TestCase):
         self.manifests = [
             fix_installer(self.generated),
             base
-            | {"ManifestType": "defaultLocale", "PackageLocale": "en-US", "PackageName": "OneXray"},
+            | {"ManifestType": "defaultLocale", "PackageLocale": "en-US", "PackageName": "Apolune"},
             base | {"ManifestType": "version", "DefaultLocale": "en-US"},
         ]
 
@@ -73,11 +73,11 @@ class WingetManifestTest(unittest.TestCase):
             {
                 "Scope": "machine",
                 "InstallationMetadata": {
-                    "DefaultInstallLocation": r"%ProgramFiles%\OneXray",
+                    "DefaultInstallLocation": r"%ProgramFiles%\Apolune",
                     "Files": [],
                 },
                 "AppsAndFeaturesEntries": [
-                    {"DisplayName": "OneXray 26.9.3", "ProductCode": "x64_is1"}
+                    {"DisplayName": "Apolune 26.9.3", "ProductCode": "x64_is1"}
                 ],
             }
         )
@@ -102,8 +102,8 @@ class WingetManifestTest(unittest.TestCase):
         for field, value in (
             ("Scope", "machine"),
             ("InstallerType", "msix"),
-            ("InstallationMetadata", {"DefaultInstallLocation": r"%ProgramFiles%\OneXray"}),
-            ("AppsAndFeaturesEntries", [{"DisplayName": "OneXray 26.9.3"}]),
+            ("InstallationMetadata", {"DefaultInstallLocation": r"%ProgramFiles%\Apolune"}),
+            ("AppsAndFeaturesEntries", [{"DisplayName": "Apolune 26.9.3"}]),
             ("ElevationRequirement", "elevatesSelf"),
         ):
             with self.subTest(field=field):

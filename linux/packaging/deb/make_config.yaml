@@ -1,8 +1,8 @@
-display_name: OneXray
-package_name: onexray
+display_name: Apolune
+package_name: apolune
 maintainer:
-  name: Yuan Dev LLC
-  email: yuan@yuandev.net
+  name: Apolune
+  email: yuan@apolune.net
 priority: optional
 section: net
 # Fallback for direct Fastforge use. The App build script replaces this with
@@ -15,9 +15,9 @@ dependencies:
 essential: false
 icon: assets/logo.png
 postinstall_scripts:
-  - setcap cap_net_admin,cap_net_raw+eip /opt/OneXray/OneXrayCore
+  - setcap cap_net_admin,cap_net_raw+eip /opt/Apolune/ApoluneCore
 keywords:
-  - OneXray
+  - Apolune
   - Xray
   - VPN
   - Proxy
@@ -25,6 +25,6 @@ generic_name: VPN and Proxy Client
 categories:
   - Network
 startup_notify: true
-startup_wm_class: OneXray
+startup_wm_class: Apolune
 supported_mime_type:
-  - x-scheme-handler/onexray
+  - x-scheme-handler/apolune

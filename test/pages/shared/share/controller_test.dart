@@ -5,14 +5,14 @@ import 'dart:typed_data';
 import 'package:drift/drift.dart' show Value;
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/service/servers/outbound/state_db.dart';
-import 'package:onexray/service/shared/share/app_link_model.dart';
-import 'package:onexray/service/shared/share/app_link_parser.dart';
-import 'package:onexray/pages/shared/share/controller.dart';
-import 'package:onexray/pages/shared/share/params.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/service/servers/outbound/state_db.dart';
+import 'package:apolune/service/shared/share/app_link_model.dart';
+import 'package:apolune/service/shared/share/app_link_parser.dart';
+import 'package:apolune/pages/shared/share/controller.dart';
+import 'package:apolune/pages/shared/share/params.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -70,9 +70,9 @@ void main() {
         'https://example.test/subscription#My%20subscription',
       );
 
-      controller.selectFormat(ShareLinkFormat.onexray);
+      controller.selectFormat(ShareLinkFormat.apolune);
       final link = Uri.parse(controller.state.selectedLink);
-      expect(link.scheme, 'onexray');
+      expect(link.scheme, 'apolune');
       expect(Uri.decodeComponent(link.fragment), 'My subscription');
       expect(link.queryParameters['age'], 'x25519');
       expect(controller.state.selectedLink, isNot(contains('PRIVATE')));
@@ -93,7 +93,7 @@ void main() {
       },
     );
     controller.toggleQr();
-    controller.selectFormat(ShareLinkFormat.onexray);
+    controller.selectFormat(ShareLinkFormat.apolune);
     controller.selectFormat(ShareLinkFormat.original);
     expect(links, [
       controller.state.originalLink,
@@ -108,7 +108,7 @@ void main() {
     await Future<void>.delayed(Duration.zero);
     expect(controller.state.qrCode, [3]);
 
-    controller.selectFormat(ShareLinkFormat.onexray);
+    controller.selectFormat(ShareLinkFormat.apolune);
     expect(controller.state.qrCode, isNull);
     controller.toggleQr();
     results[3].complete(Uint8List.fromList([4]));
@@ -165,13 +165,13 @@ void main() {
       );
       await controller.stream.firstWhere((state) => !state.loading);
       expect(controller.state.supportsOriginal, isFalse);
-      expect(controller.state.format, ShareLinkFormat.onexray);
+      expect(controller.state.format, ShareLinkFormat.apolune);
       expect(controller.state.originalLink, isEmpty);
       expect(controller.state.linkError, isEmpty);
       final share = controller.state.selectedLink;
       final link =
-          OneXrayAppLinkParser.parse(Uri.parse(share))! as OneXrayConfigLink;
-      expect(link.type, OneXrayConfigLinkType.raw);
+          ApoluneAppLinkParser.parse(Uri.parse(share))! as ApoluneConfigLink;
+      expect(link.type, ApoluneConfigLinkType.raw);
       expect(link.name, 'Complete profile');
       if (type == CoreConfigType.Remnawave) {
         final config = jsonDecode(link.xrayJson) as Map<String, dynamic>;
@@ -191,7 +191,7 @@ void main() {
         expect(link.xrayJson, source);
       }
       controller.selectFormat(ShareLinkFormat.original);
-      expect(controller.state.format, ShareLinkFormat.onexray);
+      expect(controller.state.format, ShareLinkFormat.apolune);
       expect(controller.state.selectedLink, share);
       controller.toggleQr();
       if (controller.state.qrCode == null) {
@@ -202,7 +202,7 @@ void main() {
     });
   }
 
-  test('ordinary outbound keeps Original and OneXray formats', () async {
+  test('ordinary outbound keeps Original and Apolune formats', () async {
     final outbound = {
       'tag': 'Ordinary node',
       'protocol': 'socks',
@@ -236,11 +236,11 @@ void main() {
         'outbounds': [outbound],
       },
     ]);
-    controller.selectFormat(ShareLinkFormat.onexray);
+    controller.selectFormat(ShareLinkFormat.apolune);
     final link =
-        OneXrayAppLinkParser.parse(Uri.parse(controller.state.selectedLink))!
-            as OneXrayConfigLink;
-    expect(link.type, OneXrayConfigLinkType.outbound);
+        ApoluneAppLinkParser.parse(Uri.parse(controller.state.selectedLink))!
+            as ApoluneConfigLink;
+    expect(link.type, ApoluneConfigLinkType.outbound);
     expect(jsonDecode(link.xrayJson), {
       'outbounds': [outbound],
     });

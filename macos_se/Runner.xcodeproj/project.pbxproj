@@ -33,7 +33,7 @@
 		EB68C6F72F94D08D007C293A /* MainFlutterWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB68C6EB2F94D08D007C293A /* MainFlutterWindow.swift */; };
 		EB68C6F82F94D08D007C293A /* HostApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB68C6E42F94D08D007C293A /* HostApi.swift */; };
 		EB7E983A2F93C204002151DD /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEAD85A2B95749600A8D27B /* NetworkExtension.framework */; };
-		EB7E98442F93C204002151DD /* net.yuandev.onexray.se.tun.systemextension in Embed System Extensions */ = {isa = PBXBuildFile; fileRef = EB7E98392F93C204002151DD /* net.yuandev.onexray.se.tun.systemextension */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EB7E98442F93C204002151DD /* dev.apolune.client.se.tun.systemextension in Embed System Extensions */ = {isa = PBXBuildFile; fileRef = EB7E98392F93C204002151DD /* dev.apolune.client.se.tun.systemextension */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EB7E984F2F93C268002151DD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7E984C2F93C268002151DD /* main.swift */; };
 		EB9A10062FE6000000000006 /* IconBlue.icon in Resources */ = {isa = PBXBuildFile; fileRef = EB9A10052FE6000000000005 /* IconBlue.icon */; };
 		EBB9CF7E2F93C6CE00466352 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEAD8882B9578E000A8D27B /* libresolv.tbd */; };
@@ -92,7 +92,7 @@
 			dstPath = "$(SYSTEM_EXTENSIONS_FOLDER_PATH)";
 			dstSubfolderSpec = 16;
 			files = (
-				EB7E98442F93C204002151DD /* net.yuandev.onexray.se.tun.systemextension in Embed System Extensions */,
+				EB7E98442F93C204002151DD /* dev.apolune.client.se.tun.systemextension in Embed System Extensions */,
 			);
 			name = "Embed System Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,7 +102,7 @@
 /* Begin PBXFileReference section */
 		333000ED22D3DE5D00554162 /* Warnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Warnings.xcconfig; sourceTree = "<group>"; };
 		335BBD1A22A9A15E00E9071D /* GeneratedPluginRegistrant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedPluginRegistrant.swift; sourceTree = "<group>"; };
-		33CC10ED2044A3C60003C045 /* OneXraySE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneXraySE.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		33CC10ED2044A3C60003C045 /* ApoluneSE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApoluneSE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33CC10F22044A3C60003C045 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Runner/Assets.xcassets; sourceTree = "<group>"; };
 		33CC10F52044A3C60003C045 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		33CC10F72044A3C60003C045 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Runner/Info.plist; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 		EB68C6EA2F94D08D007C293A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB68C6EB2F94D08D007C293A /* MainFlutterWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlutterWindow.swift; sourceTree = "<group>"; };
 		EB68C6EC2F94D08D007C293A /* SystemExtensionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemExtensionManager.swift; sourceTree = "<group>"; };
-		EB7E98392F93C204002151DD /* net.yuandev.onexray.se.tun.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = net.yuandev.onexray.se.tun.systemextension; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB7E98392F93C204002151DD /* dev.apolune.client.se.tun.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = dev.apolune.client.se.tun.systemextension; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB7E984B2F93C268002151DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB7E984C2F93C268002151DD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EB7E984D2F93C268002151DD /* tunnel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tunnel.entitlements; sourceTree = "<group>"; };
@@ -199,8 +199,8 @@
 		33CC10EE2044A3C60003C045 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				33CC10ED2044A3C60003C045 /* OneXraySE.app */,
-				EB7E98392F93C204002151DD /* net.yuandev.onexray.se.tun.systemextension */,
+				33CC10ED2044A3C60003C045 /* ApoluneSE.app */,
+				EB7E98392F93C204002151DD /* dev.apolune.client.se.tun.systemextension */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -348,7 +348,7 @@
 				78A3181F2AECB46A00862997 /* FlutterGeneratedPluginSwiftPackage */,
 			);
 			productName = Runner;
-			productReference = 33CC10ED2044A3C60003C045 /* OneXraySE.app */;
+			productReference = 33CC10ED2044A3C60003C045 /* ApoluneSE.app */;
 			productType = "com.apple.product-type.application";
 		};
 		EB7E98382F93C204002151DD /* tunnel */ = {
@@ -365,7 +365,7 @@
 			);
 			name = tunnel;
 			productName = tunnel;
-			productReference = EB7E98392F93C204002151DD /* net.yuandev.onexray.se.tun.systemextension */;
+			productReference = EB7E98392F93C204002151DD /* dev.apolune.client.se.tun.systemextension */;
 			productType = "com.apple.product-type.system-extension";
 		};
 /* End PBXNativeTarget section */
@@ -627,16 +627,16 @@
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = 2CKAULFA9J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Runner/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = OneXraySE;
+				INFOPLIST_KEY_CFBundleDisplayName = ApoluneSE;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.yuandev.onexray.se;
-				PROVISIONING_PROFILE_SPECIFIER = OneXraySEmacOS;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = OneXraySEmacOS;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.apolune.client.se;
+				PROVISIONING_PROFILE_SPECIFIER = ApoluneSEmacOS;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = ApoluneSEmacOS;
 				REGISTER_APP_GROUPS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/../swift/all/BridgeHeader.h";
 				SWIFT_VERSION = 6.0;
@@ -781,16 +781,16 @@
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = 2CKAULFA9J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Runner/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = OneXraySE;
+				INFOPLIST_KEY_CFBundleDisplayName = ApoluneSE;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.yuandev.onexray.se;
-				PROVISIONING_PROFILE_SPECIFIER = OneXraySEmacOS;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = OneXraySEmacOS;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.apolune.client.se;
+				PROVISIONING_PROFILE_SPECIFIER = ApoluneSEmacOS;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = ApoluneSEmacOS;
 				REGISTER_APP_GROUPS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/../swift/all/BridgeHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -813,16 +813,16 @@
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = 2CKAULFA9J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Runner/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = OneXraySE;
+				INFOPLIST_KEY_CFBundleDisplayName = ApoluneSE;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.yuandev.onexray.se;
-				PROVISIONING_PROFILE_SPECIFIER = OneXraySEmacOS;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = OneXraySEmacOS;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.apolune.client.se;
+				PROVISIONING_PROFILE_SPECIFIER = ApoluneSEmacOS;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = ApoluneSEmacOS;
 				REGISTER_APP_GROUPS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/../swift/all/BridgeHeader.h";
 				SWIFT_VERSION = 6.0;
@@ -896,10 +896,10 @@
 				MTL_FAST_MATH = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_MODULE_VERIFIER_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = net.yuandev.onexray.se.tun;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.apolune.client.se.tun;
 				PRODUCT_NAME = "$(inherited)";
-				PROVISIONING_PROFILE_SPECIFIER = OneXraySEmacOSTun;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = OneXraySEmacOSTun;
+				PROVISIONING_PROFILE_SPECIFIER = ApoluneSEmacOSTun;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = ApoluneSEmacOSTun;
 				REGISTER_APP_GROUPS = YES;
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -963,10 +963,10 @@
 				MTL_FAST_MATH = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_MODULE_VERIFIER_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = net.yuandev.onexray.se.tun;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.apolune.client.se.tun;
 				PRODUCT_NAME = "$(inherited)";
-				PROVISIONING_PROFILE_SPECIFIER = OneXraySEmacOSTun;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = OneXraySEmacOSTun;
+				PROVISIONING_PROFILE_SPECIFIER = ApoluneSEmacOSTun;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = ApoluneSEmacOSTun;
 				REGISTER_APP_GROUPS = YES;
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -1028,10 +1028,10 @@
 				MTL_FAST_MATH = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_MODULE_VERIFIER_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = net.yuandev.onexray.se.tun;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.apolune.client.se.tun;
 				PRODUCT_NAME = "$(inherited)";
-				PROVISIONING_PROFILE_SPECIFIER = OneXraySEmacOSTun;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = OneXraySEmacOSTun;
+				PROVISIONING_PROFILE_SPECIFIER = ApoluneSEmacOSTun;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = ApoluneSEmacOSTun;
 				REGISTER_APP_GROUPS = YES;
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;

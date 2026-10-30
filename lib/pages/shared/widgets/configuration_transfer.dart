@@ -2,21 +2,21 @@ import 'dart:convert';
 
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter/services.dart';
-import 'package:onexray/core/tools/json_document.dart';
+import 'package:apolune/core/tools/json_document.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:onexray/pages/shared/widgets/app_activity.dart';
-import 'package:onexray/core/tools/file.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/shared/alert.dart';
-import 'package:onexray/pages/shared/page_cubit.dart';
-import 'package:onexray/pages/shared/share/action.dart';
-import 'package:onexray/pages/shared/widgets/button_progress.dart';
-import 'package:onexray/pages/theme/font.dart';
-import 'package:onexray/service/servers/import.dart';
-import 'package:onexray/service/shared/failure.dart';
-import 'package:onexray/service/advanced/xray/geodata/model.dart';
-import 'package:onexray/service/shared/share/configuration_transfer.dart';
-import 'package:onexray/service/shared/share/outgoing_share.dart';
+import 'package:apolune/pages/shared/widgets/app_activity.dart';
+import 'package:apolune/core/tools/file.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/shared/alert.dart';
+import 'package:apolune/pages/shared/page_cubit.dart';
+import 'package:apolune/pages/shared/share/action.dart';
+import 'package:apolune/pages/shared/widgets/button_progress.dart';
+import 'package:apolune/pages/theme/font.dart';
+import 'package:apolune/service/servers/import.dart';
+import 'package:apolune/service/shared/failure.dart';
+import 'package:apolune/service/advanced/xray/geodata/model.dart';
+import 'package:apolune/service/shared/share/configuration_transfer.dart';
+import 'package:apolune/service/shared/share/outgoing_share.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 enum ConfigurationTransferAction { file, clipboard, export }

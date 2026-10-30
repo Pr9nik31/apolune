@@ -13,8 +13,8 @@
 
 名称、HTTPS URL、Age 成对输入由服务检查；重复 URL 在写入事务中拒绝，下载前快速检查不替代提交复核。
 每个来源可选填 `userAgent`，仅覆盖该订阅本次下载的 `User-Agent` 请求头，自定义值优先。
-App 下载统一默认使用 `v2rayN/<OneXray 版本> <完整 OneXray UA>`，包括订阅、Geodata 及其它下载；
-版本、包名、构建号和平台信息仍来自 OneXray。订阅未填写或清空 UA 时使用同一默认值，不提供全局 UA 选择。
+App 下载统一默认使用 `v2rayN/<Apolune 版本> <完整 Apolune UA>`，包括订阅、Geodata 及其它下载；
+版本、包名、构建号和平台信息仍来自 Apolune。订阅未填写或清空 UA 时使用同一默认值，不提供全局 UA 选择。
 订阅表单默认填入同一兼容 UA，切换面板不清空 UA；手动输入、分享链接及已保存的显式 UA 保留。
 已有来源的 UA 为空时，编辑页只补充默认值展示，不自动写入数据库；保存仍需用户明确操作。
 添加、编辑和刷新共用此设置，URL 原样请求，不自动附加格式端点。
@@ -138,7 +138,7 @@ Setup 期间只暂存，已有导入或其它模态关闭后再继续。相同 U
 完成、取消、失败或页面销毁均结束本次领取，不自动重放，之后用户再次打开同一链接仍可导入。
 暂存只在内存中保留；Widget 导航链接仍由独立入口处理。
 
-规范 scheme/host 为 `onexray://onexray.com`：
+规范 scheme/host 为 `apolune://apolune.dev`：
 
 ```text
 /config/add?type=outbound|raw|custom|custom-advanced&data=<base64>#<name>
@@ -162,7 +162,7 @@ Raw 保留配置原文，依赖通过独立 `/dat/add` 伴随链接提供。
 ## 系统分享
 
 `OutgoingShare` 在 iOS/Android/macOS/Windows 使用 `share_plus` 发送已有文本；
-Linux 显式复制，不使用邮件回退。标题/主题用显示名称，空名回退 OneXray；链接仍是文本，不改 URI 元数据或临时文件。
+Linux 显式复制，不使用邮件回退。标题/主题用显示名称，空名回退 Apolune；链接仍是文本，不改 URI 元数据或临时文件。
 分发不下载、不保存资产、不启动 VPN；二维码、JSON、日志和运行配置导出仍为明确文件保存。
 
 页面操作负责局部 loading、防重复提交、Raw/Custom 风险确认和异常反馈；分发前测量按钮位置，无有效位置则省略。

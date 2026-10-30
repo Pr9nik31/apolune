@@ -13,9 +13,9 @@ public enum Constants {
     #endif
 }
 
-private let teamAppGroupId = "2CKAULFA9J.net.yuandev.onexray"
-private let groupAppGroupId = "group.net.yuandev.onexray"
-private let seGroupAppGroupId = "group.net.yuandev.onexray.se"
+private let teamAppGroupId = "2CKAULFA9J.dev.apolune.client"
+private let groupAppGroupId = "group.dev.apolune.client"
+private let seGroupAppGroupId = "group.dev.apolune.client.se"
 
 public func appGroupId() -> String {
     #if os(iOS)
@@ -29,8 +29,8 @@ public func appGroupId() -> String {
     #endif
 }
 
-private let tunId = "net.yuandev.onexray.tun"
-private let seTunId = "net.yuandev.onexray.se.tun"
+private let tunId = "dev.apolune.client.tun"
+private let seTunId = "dev.apolune.client.se.tun"
 
 public func packetTunnelId() -> String {
     #if os(iOS)
@@ -44,8 +44,8 @@ public func packetTunnelId() -> String {
     #endif
 }
 
-private let serverAddress = "OneXray"
-private let seServerAddress = "OneXraySE"
+private let serverAddress = "Apolune"
+private let seServerAddress = "ApoluneSE"
 
 public func vpnServerAddress() -> String {
     #if os(iOS)

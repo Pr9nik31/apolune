@@ -4,20 +4,20 @@ import 'package:drift/drift.dart' show Value;
 import 'package:drift/native.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
-import 'package:onexray/core/db/database/constants.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/service/settings/language/locale.dart';
-import 'package:onexray/l10n/localizations/app_localizations_en.dart';
-import 'package:onexray/pages/connect/routing/widgets.dart';
-import 'package:onexray/pages/connect/routing/smart/exit_picker_controller.dart';
-import 'package:onexray/pages/connect/routing/smart/exit_picker.dart';
-import 'package:onexray/pages/theme/theme.dart';
-import 'package:onexray/pages/theme/layout.dart';
-import 'package:onexray/pages/shared/widgets/page_action_bar.dart';
-import 'package:onexray/service/connect/coordinator.dart';
-import 'package:onexray/service/servers/outbound/map.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
+import 'package:apolune/core/db/database/constants.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/service/settings/language/locale.dart';
+import 'package:apolune/l10n/localizations/app_localizations_en.dart';
+import 'package:apolune/pages/connect/routing/widgets.dart';
+import 'package:apolune/pages/connect/routing/smart/exit_picker_controller.dart';
+import 'package:apolune/pages/connect/routing/smart/exit_picker.dart';
+import 'package:apolune/pages/theme/theme.dart';
+import 'package:apolune/pages/theme/layout.dart';
+import 'package:apolune/pages/shared/widgets/page_action_bar.dart';
+import 'package:apolune/service/connect/coordinator.dart';
+import 'package:apolune/service/servers/outbound/map.dart';
 
 CoreConfigData _server(int id, {int delay = 20}) => CoreConfigData(
   manualSortOrder: 0,

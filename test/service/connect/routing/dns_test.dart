@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/model/xray_json.dart';
-import 'package:onexray/service/connect/routing/dns.dart';
-import 'package:onexray/service/connect/routing/options.dart';
-import 'package:onexray/service/shared/xray/fake_dns.dart';
+import 'package:apolune/core/model/xray_json.dart';
+import 'package:apolune/service/connect/routing/dns.dart';
+import 'package:apolune/service/connect/routing/options.dart';
+import 'package:apolune/service/shared/xray/fake_dns.dart';
 
 void main() {
   test('non-address DNS policy defaults to proxy and survives preferences', () {

@@ -48,7 +48,7 @@ def augment_manifest(
     package.set("IgnorableNamespaces", " ".join(ignorable))
 
     if development_publisher:
-        identity.set("Name", "OneXray.Dev")
+        identity.set("Name", "Apolune.Dev")
         identity.set("Publisher", development_publisher)
 
     application_items = applications.findall(_tag(_FOUNDATION, "Application"))
@@ -112,19 +112,19 @@ def augment_manifest(
 
 def pack_msix(stage: str, package: str, *, local_development: bool = False) -> None:
     """Pack once; publish the output only after packaging/signing succeeds."""
-    publisher = os.environ.get("ONEXRAY_DEV_PUBLISHER")
-    thumbprint = "".join(os.environ.get("ONEXRAY_DEV_CERT_THUMBPRINT", "").split())
+    publisher = os.environ.get("APOLUNE_DEV_PUBLISHER")
+    thumbprint = "".join(os.environ.get("APOLUNE_DEV_CERT_THUMBPRINT", "").split())
     if local_development and (not publisher or not thumbprint):
-        raise ValueError("ONEXRAY_DEV_PUBLISHER and ONEXRAY_DEV_CERT_THUMBPRINT are required")
+        raise ValueError("APOLUNE_DEV_PUBLISHER and APOLUNE_DEV_CERT_THUMBPRINT are required")
     augment_manifest(
         os.path.join(stage, "AppxManifest.xml"),
         development_publisher=publisher if local_development else None,
     )
     # Use the output volume so replacing a prior package is atomic.
     with tempfile.TemporaryDirectory(
-        prefix="onexray-msix-", dir=os.path.dirname(package)
+        prefix="apolune-msix-", dir=os.path.dirname(package)
     ) as temporary:
-        built = os.path.join(temporary, "OneXray.msix")
+        built = os.path.join(temporary, "Apolune.msix")
         run_command([_sdk_tool("makeappx.exe"), "pack", "/d", stage, "/p", built, "/o"])
         if local_development:
             signtool = _sdk_tool("signtool.exe")

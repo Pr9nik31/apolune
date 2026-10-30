@@ -1,6 +1,6 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/shared/alert.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/shared/alert.dart';
 
 Future<bool> confirmOrdinarySubscription(
   BuildContext context,

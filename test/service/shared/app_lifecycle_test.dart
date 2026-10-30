@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/service/shared/app_lifecycle.dart';
+import 'package:apolune/service/shared/app_lifecycle.dart';
 
 void main() {
   const cases = <AppLifecycleState?, bool>{

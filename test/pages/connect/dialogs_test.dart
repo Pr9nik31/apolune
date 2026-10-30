@@ -1,10 +1,10 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/service/settings/language/locale.dart';
-import 'package:onexray/pages/connect/dialogs.dart';
-import 'package:onexray/pages/theme/color.dart';
-import 'package:onexray/pages/theme/theme.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/service/settings/language/locale.dart';
+import 'package:apolune/pages/connect/dialogs.dart';
+import 'package:apolune/pages/theme/color.dart';
+import 'package:apolune/pages/theme/theme.dart';
 
 void main() {
   testWidgets('destructive confirmation keeps subject and warning structure', (

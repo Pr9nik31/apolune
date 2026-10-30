@@ -1,23 +1,23 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/model/geo_data_type.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/core/pigeon/model.dart';
-import 'package:onexray/service/shared/share/app_link_model.dart';
-import 'package:onexray/service/shared/share/app_link_parser.dart';
+import 'package:apolune/core/model/geo_data_type.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/core/pigeon/model.dart';
+import 'package:apolune/service/shared/share/app_link_model.dart';
+import 'package:apolune/service/shared/share/app_link_parser.dart';
 
 void main() {
   group('config links', () {
-    for (final entry in const <String, OneXrayConfigLinkType>{
-      'outbound': OneXrayConfigLinkType.outbound,
-      'raw': OneXrayConfigLinkType.raw,
+    for (final entry in const <String, ApoluneConfigLinkType>{
+      'outbound': ApoluneConfigLinkType.outbound,
+      'raw': ApoluneConfigLinkType.raw,
     }.entries) {
       test('parses ${entry.key}', () {
         const json = '{"name":"Example"}';
         final uri = Uri(
-          scheme: 'onexray',
-          host: 'onexray.com',
+          scheme: 'apolune',
+          host: 'apolune.dev',
           path: '/config/add',
           queryParameters: {
             'type': entry.key,
@@ -26,10 +26,10 @@ void main() {
           fragment: 'Imported Profile',
         );
 
-        final result = OneXrayAppLinkParser.parse(uri);
+        final result = ApoluneAppLinkParser.parse(uri);
 
-        expect(result, isA<OneXrayConfigLink>());
-        final link = result! as OneXrayConfigLink;
+        expect(result, isA<ApoluneConfigLink>());
+        final link = result! as ApoluneConfigLink;
         expect(link.type, entry.value);
         expect(link.xrayJson, json);
         expect(link.name, 'Imported Profile');
@@ -38,7 +38,7 @@ void main() {
 
     for (final type in ['setting', 'profile', 'full', 'unknown']) {
       test('rejects retired or unsupported config type $type', () {
-        expect(OneXrayAppLinkParser.parse(_configUri(type: type)), isNull);
+        expect(ApoluneAppLinkParser.parse(_configUri(type: type)), isNull);
       });
     }
 
@@ -47,12 +47,12 @@ void main() {
         base64Encode(utf8.encode('{"name":"Example"}')),
       );
       final duplicate = Uri.parse(
-        'onexray://onexray.com/config/add?type=raw&type=full&data=$data',
+        'apolune://apolune.dev/config/add?type=raw&type=full&data=$data',
       );
       final unknown = _configUri(extra: const {'backup': 'true'});
 
-      expect(OneXrayAppLinkParser.parse(duplicate), isNull);
-      expect(OneXrayAppLinkParser.parse(unknown), isNull);
+      expect(ApoluneAppLinkParser.parse(duplicate), isNull);
+      expect(ApoluneAppLinkParser.parse(unknown), isNull);
     });
   });
 
@@ -63,10 +63,10 @@ void main() {
         name: 'Provider',
       );
 
-      final result = OneXrayAppLinkParser.parse(uri);
+      final result = ApoluneAppLinkParser.parse(uri);
 
-      expect(result, isA<OneXraySubscriptionLink>());
-      final link = result! as OneXraySubscriptionLink;
+      expect(result, isA<ApoluneSubscriptionLink>());
+      final link = result! as ApoluneSubscriptionLink;
       expect(link.url, 'https://example.com/subscription');
       expect(link.name, 'Provider');
       expect(link.ageKeyType, isNull);
@@ -75,19 +75,19 @@ void main() {
     });
 
     test('parses X25519 and hybrid age modes', () {
-      final x25519 = OneXrayAppLinkParser.parse(
+      final x25519 = ApoluneAppLinkParser.parse(
         _subscriptionUri(url: 'https://example.com/sub', age: 'x25519'),
       );
-      final hybrid = OneXrayAppLinkParser.parse(
+      final hybrid = ApoluneAppLinkParser.parse(
         _subscriptionUri(url: 'https://example.com/sub', age: 'hybrid'),
       );
 
       expect(
-        (x25519! as OneXraySubscriptionLink).ageKeyType,
+        (x25519! as ApoluneSubscriptionLink).ageKeyType,
         AgeKeyType.x25519,
       );
       expect(
-        (hybrid! as OneXraySubscriptionLink).ageKeyType,
+        (hybrid! as ApoluneSubscriptionLink).ageKeyType,
         AgeKeyType.hybrid,
       );
     });
@@ -99,27 +99,27 @@ void main() {
       );
       final insecure = _subscriptionUri(url: 'http://example.com/sub');
 
-      expect(OneXrayAppLinkParser.parse(unknownAge), isNull);
-      expect(OneXrayAppLinkParser.parse(insecure), isNull);
+      expect(ApoluneAppLinkParser.parse(unknownAge), isNull);
+      expect(ApoluneAppLinkParser.parse(insecure), isNull);
     });
 
     test(
       'parses explicit panel and mode and rejects ambiguous policy parameters',
       () {
         final result =
-            OneXrayAppLinkParser.parse(
+            ApoluneAppLinkParser.parse(
                   _subscriptionUri(
                     url: 'https://example.com/sub',
                     panel: 'remnawave',
                     mode: 'providerManaged',
                   ),
                 )!
-                as OneXraySubscriptionLink;
+                as ApoluneSubscriptionLink;
         expect(result.panel, SubscriptionPanel.remnawave);
         expect(result.mode, SubscriptionMode.providerManaged);
         final base = Uri(
-          scheme: 'onexray',
-          host: 'onexray.com',
+          scheme: 'apolune',
+          host: 'apolune.dev',
           path: '/sub/add',
           queryParameters: {'url': 'https://example.com/sub'},
         ).toString();
@@ -136,7 +136,7 @@ void main() {
           'userAgent=Example%0D%0AX-Test%3Avalue',
         ]) {
           expect(
-            OneXrayAppLinkParser.parse(Uri.parse('$base&$query')),
+            ApoluneAppLinkParser.parse(Uri.parse('$base&$query')),
             isNull,
             reason: query,
           );
@@ -147,22 +147,22 @@ void main() {
 
   group('GeoData links', () {
     test('parses domain and IP GeoData', () {
-      final domain = OneXrayAppLinkParser.parse(
+      final domain = ApoluneAppLinkParser.parse(
         _geoDataUri(type: 'domain', name: 'community-domain'),
       );
-      final ip = OneXrayAppLinkParser.parse(
+      final ip = ApoluneAppLinkParser.parse(
         _geoDataUri(type: 'ip', name: 'community-ip'),
       );
 
-      expect((domain! as OneXrayGeoDataLink).type, GeoDataType.domain);
+      expect((domain! as ApoluneGeoDataLink).type, GeoDataType.domain);
       expect(domain.name, 'community-domain');
-      expect((ip! as OneXrayGeoDataLink).type, GeoDataType.ip);
+      expect((ip! as ApoluneGeoDataLink).type, GeoDataType.ip);
     });
 
     test('rejects unsupported types and non-HTTPS URLs', () {
-      expect(OneXrayAppLinkParser.parse(_geoDataUri(type: 'other')), isNull);
+      expect(ApoluneAppLinkParser.parse(_geoDataUri(type: 'other')), isNull);
       expect(
-        OneXrayAppLinkParser.parse(
+        ApoluneAppLinkParser.parse(
           _geoDataUri(type: 'domain', url: 'file:///tmp/geosite.dat'),
         ),
         isNull,
@@ -173,19 +173,19 @@ void main() {
   test('requires the exact scheme, host, and supported path', () {
     final wrongScheme = _configUri(scheme: 'https');
     final wrongHost = _configUri(host: 'example.com');
-    final spoofedHost = _configUri(host: 'onexray.com.example.com');
+    final spoofedHost = _configUri(host: 'apolune.dev.example.com');
     final wrongPath = _configUri(path: '/backup/add');
 
-    expect(OneXrayAppLinkParser.parse(wrongScheme), isNull);
-    expect(OneXrayAppLinkParser.parse(wrongHost), isNull);
-    expect(OneXrayAppLinkParser.parse(spoofedHost), isNull);
-    expect(OneXrayAppLinkParser.parse(wrongPath), isNull);
+    expect(ApoluneAppLinkParser.parse(wrongScheme), isNull);
+    expect(ApoluneAppLinkParser.parse(wrongHost), isNull);
+    expect(ApoluneAppLinkParser.parse(spoofedHost), isNull);
+    expect(ApoluneAppLinkParser.parse(wrongPath), isNull);
   });
 }
 
 Uri _configUri({
-  String scheme = 'onexray',
-  String host = 'onexray.com',
+  String scheme = 'apolune',
+  String host = 'apolune.dev',
   String path = '/config/add',
   String type = 'raw',
   Map<String, String> extra = const {},
@@ -210,8 +210,8 @@ Uri _subscriptionUri({
   String? mode,
 }) {
   return Uri(
-    scheme: 'onexray',
-    host: 'onexray.com',
+    scheme: 'apolune',
+    host: 'apolune.dev',
     path: '/sub/add',
     queryParameters: {'url': url, 'age': ?age, 'panel': ?panel, 'mode': ?mode},
     fragment: name,
@@ -224,8 +224,8 @@ Uri _geoDataUri({
   String name = '',
 }) {
   return Uri(
-    scheme: 'onexray',
-    host: 'onexray.com',
+    scheme: 'apolune',
+    host: 'apolune.dev',
     path: '/dat/add',
     queryParameters: {'type': type, 'url': url},
     fragment: name,

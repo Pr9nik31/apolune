@@ -1,4 +1,4 @@
-# OneXray App Icons
+# Apolune App Icons
 
 Shared Icon Composer artwork for Apple platform app icons.
 

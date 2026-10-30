@@ -2,12 +2,12 @@ import 'dart:convert';
 
 import 'package:drift/drift.dart';
 
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/tools/json.dart';
-import 'package:onexray/service/connect/routing/custom/document.dart';
-import 'package:onexray/service/connect/routing/custom/state.dart';
-import 'package:onexray/service/connect/routing/custom/configuration.dart';
-import 'package:onexray/service/connect/routing/custom/advanced.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/tools/json.dart';
+import 'package:apolune/service/connect/routing/custom/document.dart';
+import 'package:apolune/service/connect/routing/custom/state.dart';
+import 'package:apolune/service/connect/routing/custom/configuration.dart';
+import 'package:apolune/service/connect/routing/custom/advanced.dart';
 
 /// Converts the persisted Base64 UTF-8 Xray document to and from editable state.
 extension RoutingProfileStateDb on RoutingConfiguration {

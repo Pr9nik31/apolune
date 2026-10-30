@@ -1,10 +1,10 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/settings/theme/controller.dart';
-import 'package:onexray/pages/shared/widgets/setting_row.dart';
-import 'package:onexray/pages/shared/widgets/settings_page.dart';
-import 'package:onexray/service/shared/event_bus/enum.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/settings/theme/controller.dart';
+import 'package:apolune/pages/shared/widgets/setting_row.dart';
+import 'package:apolune/pages/shared/widgets/settings_page.dart';
+import 'package:apolune/service/shared/event_bus/enum.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 class ThemePage extends StatelessWidget {

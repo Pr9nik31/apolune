@@ -1,5 +1,5 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/pages/theme/layout.dart';
+import 'package:apolune/pages/theme/layout.dart';
 
 class ResponsiveContent extends StatelessWidget {
   final Widget child;

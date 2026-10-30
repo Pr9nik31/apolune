@@ -1,6 +1,6 @@
 import 'package:drift/drift.dart';
-import 'package:onexray/core/db/database/constants.dart';
-import 'package:onexray/core/db/database/database.dart';
+import 'package:apolune/core/db/database/constants.dart';
+import 'package:apolune/core/db/database/database.dart';
 
 class ConfigWriteResult {
   final int count;

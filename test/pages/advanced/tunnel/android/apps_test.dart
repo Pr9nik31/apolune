@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/pages/advanced/tunnel/android/apps.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/pages/advanced/tunnel/android/apps.dart';
 
 void main() {
   test(

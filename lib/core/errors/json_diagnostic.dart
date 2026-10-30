@@ -1,4 +1,4 @@
-import 'package:onexray/core/errors/failure.dart';
+import 'package:apolune/core/errors/failure.dart';
 
 /// A location supplied by a JSON parser or an App-owned document boundary.
 /// Core error messages are never interpreted as paths or source offsets.

@@ -1,15 +1,15 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/core/pigeon/flutter_api.dart';
-import 'package:onexray/core/pigeon/host_api.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/core/tools/platform.dart';
-import 'package:onexray/pages/main/router.dart';
-import 'package:onexray/service/launch/app_startup.dart';
-import 'package:onexray/service/shared/menu/short_cut/service.dart';
-import 'package:onexray/service/shared/menu/settings/service.dart';
-import 'package:onexray/service/shared/menu/window/service.dart';
-import 'package:onexray/service/shared/share/service.dart';
-import 'package:onexray/service/shared/apple_widget/service.dart';
+import 'package:apolune/core/pigeon/flutter_api.dart';
+import 'package:apolune/core/pigeon/host_api.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/core/tools/platform.dart';
+import 'package:apolune/pages/main/router.dart';
+import 'package:apolune/service/launch/app_startup.dart';
+import 'package:apolune/service/shared/menu/short_cut/service.dart';
+import 'package:apolune/service/shared/menu/settings/service.dart';
+import 'package:apolune/service/shared/menu/window/service.dart';
+import 'package:apolune/service/shared/share/service.dart';
+import 'package:apolune/service/shared/apple_widget/service.dart';
 
 const _desktopWindowSize = Size(1160, 720);
 const _minimumDesktopWindowSize = Size(480, 600);

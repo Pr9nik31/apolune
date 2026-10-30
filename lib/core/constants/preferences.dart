@@ -1,4 +1,4 @@
-import 'package:onexray/core/tools/json.dart';
+import 'package:apolune/core/tools/json.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class PreferencesKey {

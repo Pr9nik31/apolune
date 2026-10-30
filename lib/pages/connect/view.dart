@@ -1,17 +1,17 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/tools/traffic_format.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/theme/font.dart';
-import 'package:onexray/pages/theme/color.dart';
-import 'package:onexray/pages/theme/layout.dart';
-import 'package:onexray/pages/theme/theme.dart';
-import 'package:onexray/pages/shared/widgets/responsive_content.dart';
-import 'package:onexray/pages/shared/widgets/page_empty_state.dart';
-import 'package:onexray/pages/shared/widgets/button_progress.dart';
-import 'package:onexray/pages/connect/runtime_observatory.dart';
-import 'package:onexray/service/connect/coordinator.dart';
-import 'package:onexray/service/connect/failure.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/tools/traffic_format.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/theme/font.dart';
+import 'package:apolune/pages/theme/color.dart';
+import 'package:apolune/pages/theme/layout.dart';
+import 'package:apolune/pages/theme/theme.dart';
+import 'package:apolune/pages/shared/widgets/responsive_content.dart';
+import 'package:apolune/pages/shared/widgets/page_empty_state.dart';
+import 'package:apolune/pages/shared/widgets/button_progress.dart';
+import 'package:apolune/pages/connect/runtime_observatory.dart';
+import 'package:apolune/service/connect/coordinator.dart';
+import 'package:apolune/service/connect/failure.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 class ConnectView extends StatelessWidget {
@@ -80,7 +80,7 @@ class ConnectView extends StatelessWidget {
     if (empty) {
       return ResponsiveContent(
         child: PageEmptyState(
-          title: l.prototypeStartUsingOneXray,
+          title: l.prototypeStartUsingApolune,
           description: l.prototypeFirstConnectionHint,
           primaryLabel: l.prototypeAddServers,
           onPrimary: onAddServers,

@@ -3,15 +3,15 @@ import 'dart:io';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/pigeon/host_api.dart';
-import 'package:onexray/core/pigeon/model.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/service/shared/share/xray_share_reader.dart';
+import 'package:apolune/core/pigeon/host_api.dart';
+import 'package:apolune/core/pigeon/model.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/service/shared/share/xray_share_reader.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
   const channel = BasicMessageChannel<Object?>(
-    'dev.flutter.pigeon.onexray.BridgeHostApi.invoke',
+    'dev.flutter.pigeon.apolune.BridgeHostApi.invoke',
     BridgeHostApi.pigeonChannelCodec,
   );
   final messenger =

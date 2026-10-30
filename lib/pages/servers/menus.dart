@@ -1,10 +1,10 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/servers/controller.dart';
-import 'package:onexray/pages/theme/color.dart';
-import 'package:onexray/pages/theme/font.dart';
-import 'package:onexray/pages/shared/widgets/adaptive_dialog.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/servers/controller.dart';
+import 'package:apolune/pages/theme/color.dart';
+import 'package:apolune/pages/theme/font.dart';
+import 'package:apolune/pages/shared/widgets/adaptive_dialog.dart';
 
 Future<ServerAction?> showServerActionsMenu(
   BuildContext context, {

@@ -4,12 +4,12 @@ import 'dart:ui';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/service/connect/failure.dart';
-import 'package:onexray/service/connect/runtime_host.dart';
-import 'package:onexray/service/servers/subscription/failure.dart';
-import 'package:onexray/service/servers/subscription/model.dart';
-import 'package:onexray/service/shared/failure.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/service/connect/failure.dart';
+import 'package:apolune/service/connect/runtime_host.dart';
+import 'package:apolune/service/servers/subscription/failure.dart';
+import 'package:apolune/service/servers/subscription/model.dart';
+import 'package:apolune/service/shared/failure.dart';
 
 void main() {
   final l = lookupAppLocalizations(const Locale('zh'));

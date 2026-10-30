@@ -1,22 +1,22 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:onexray/core/tools/platform.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/settings/controller.dart';
-import 'package:onexray/pages/shared/widgets/page_app_bar.dart';
-import 'package:onexray/pages/theme/color.dart';
-import 'package:onexray/pages/theme/font.dart';
-import 'package:onexray/pages/theme/layout.dart';
-import 'package:onexray/pages/shared/widgets/setting_row.dart';
-import 'package:onexray/pages/shared/widgets/button_progress.dart';
-import 'package:onexray/pages/shared/widgets/settings_page.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
-import 'package:onexray/service/shared/event_bus/state.dart';
+import 'package:apolune/core/tools/platform.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/settings/controller.dart';
+import 'package:apolune/pages/shared/widgets/page_app_bar.dart';
+import 'package:apolune/pages/theme/color.dart';
+import 'package:apolune/pages/theme/font.dart';
+import 'package:apolune/pages/theme/layout.dart';
+import 'package:apolune/pages/shared/widgets/setting_row.dart';
+import 'package:apolune/pages/shared/widgets/button_progress.dart';
+import 'package:apolune/pages/shared/widgets/settings_page.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
+import 'package:apolune/service/shared/event_bus/state.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
-import 'package:onexray/pages/settings/widgets.dart';
+import 'package:apolune/pages/settings/widgets.dart';
 
-class AboutOneXrayPage extends StatelessWidget {
-  const AboutOneXrayPage({super.key});
+class AboutApolunePage extends StatelessWidget {
+  const AboutApolunePage({super.key});
   @override
   Widget build(BuildContext context) => BlocProvider(
     create: (_) => SettingsController(),
@@ -27,7 +27,7 @@ class AboutOneXrayPage extends StatelessWidget {
         final mobile =
             MediaQuery.sizeOf(context).width <= AppLayout.mobileBreakpoint;
         return Scaffold(
-          appBar: PageAppBar(title: Text(l10n.prototypeAboutOneXray)),
+          appBar: PageAppBar(title: Text(l10n.prototypeAboutApolune)),
           body: SafeArea(
             child: SettingsPageScroll(
               desktopMaxWidth: AppLayout.routingMaxWidth,
@@ -64,7 +64,7 @@ class AboutOneXrayPage extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(height: 9),
-                          Text('OneXray', style: AppTypography.aboutBrandTitle),
+                          Text('Apolune', style: AppTypography.aboutBrandTitle),
                           const SizedBox(height: 9),
                           Text(
                             l10n.prototypeCrossPlatformXrayClient,
@@ -154,7 +154,7 @@ class AboutOneXrayPage extends StatelessWidget {
                         ),
                         if (AppPlatform.isMobile || AppPlatform.isMacOS)
                           _LinkRow(
-                            label: l10n.prototypeRateOneXray,
+                            label: l10n.prototypeRateApolune,
                             icon: LucideIcons.star,
                             link: SettingsLink.review,
                           ),

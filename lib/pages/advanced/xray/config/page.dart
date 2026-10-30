@@ -1,13 +1,13 @@
-import 'package:onexray/service/shared/failure.dart';
+import 'package:apolune/service/shared/failure.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/advanced/xray/config/controller.dart';
-import 'package:onexray/pages/advanced/xray/config/params.dart';
-import 'package:onexray/pages/advanced/xray/runtime_code_view.dart';
-import 'package:onexray/pages/theme/color.dart';
-import 'package:onexray/pages/theme/font.dart';
-import 'package:onexray/pages/theme/layout.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/advanced/xray/config/controller.dart';
+import 'package:apolune/pages/advanced/xray/config/params.dart';
+import 'package:apolune/pages/advanced/xray/runtime_code_view.dart';
+import 'package:apolune/pages/theme/color.dart';
+import 'package:apolune/pages/theme/font.dart';
+import 'package:apolune/pages/theme/layout.dart';
 
 class ConfigFileViewerPage extends StatelessWidget {
   final ConfigFileViewerParams params;

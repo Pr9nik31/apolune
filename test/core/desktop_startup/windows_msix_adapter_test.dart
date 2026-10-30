@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/desktop_startup/model.dart';
-import 'package:onexray/core/desktop_startup/windows_msix_adapter.dart';
-import 'package:onexray/core/ffi/windows/native_api.dart';
+import 'package:apolune/core/desktop_startup/model.dart';
+import 'package:apolune/core/desktop_startup/windows_msix_adapter.dart';
+import 'package:apolune/core/ffi/windows/native_api.dart';
 
 void main() {
   test('maps the packaged StartupTask state', () async {

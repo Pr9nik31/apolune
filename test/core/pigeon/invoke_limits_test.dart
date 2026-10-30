@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/pigeon/invoke_limits.dart';
+import 'package:apolune/core/pigeon/invoke_limits.dart';
 
 void main() {
   test('accepts UTF-8 JSON at the invoke size limit', () {

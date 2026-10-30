@@ -3,13 +3,13 @@ import 'dart:async';
 import 'package:drift/drift.dart' hide isNull, isNotNull;
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/service/servers/outbound/state_db.dart';
-import 'package:onexray/service/servers/subscription/model.dart';
-import 'package:onexray/service/servers/subscription/service.dart';
-import 'package:onexray/service/servers/subscription/user_info.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/service/servers/outbound/state_db.dart';
+import 'package:apolune/service/servers/subscription/model.dart';
+import 'package:apolune/service/servers/subscription/service.dart';
+import 'package:apolune/service/servers/subscription/user_info.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
 
 void main() {
   late AppDatabase database;

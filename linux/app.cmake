@@ -8,6 +8,6 @@ install(FILES "${APP_DIR}/libXray.so"
         COMPONENT Runtime)
 
 install(PROGRAMS
-        "${APP_DIR}/OneXrayCore"
+        "${APP_DIR}/ApoluneCore"
         DESTINATION "${CMAKE_INSTALL_PREFIX}"
         COMPONENT Runtime)

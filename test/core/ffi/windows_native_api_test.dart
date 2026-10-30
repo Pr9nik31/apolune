@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/ffi/windows/model.dart';
-import 'package:onexray/core/ffi/windows/native_api.dart';
+import 'package:apolune/core/ffi/windows/model.dart';
+import 'package:apolune/core/ffi/windows/native_api.dart';
 
 void main() {
   test('queries the canonical Windows VPN profile state', () async {
@@ -64,7 +64,7 @@ void main() {
         sessionBackend: const WindowsSessionBackend(
           processes: [
             WindowsManagedProcess(
-              executableRelativePath: 'OneXrayCore.exe',
+              executableRelativePath: 'ApoluneCore.exe',
               arguments: [
                 'run',
                 '-dns',
@@ -99,7 +99,7 @@ void main() {
           'sessionBackend': {
             'processes': [
               {
-                'executableRelativePath': 'OneXrayCore.exe',
+                'executableRelativePath': 'ApoluneCore.exe',
                 'arguments': [
                   'run',
                   '-dns',

@@ -1,5 +1,5 @@
-import 'package:onexray/pages/main/url.dart';
-import 'package:onexray/service/launch/bootstrap.dart';
+import 'package:apolune/pages/main/url.dart';
+import 'package:apolune/service/launch/bootstrap.dart';
 
 extension LaunchDestinationRoute on LaunchDestination {
   String get route {

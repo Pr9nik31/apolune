@@ -1,16 +1,16 @@
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/service/connect/coordinator.dart';
-import 'package:onexray/service/connect/failure.dart';
-import 'package:onexray/service/connect/platform_requirements.dart';
-import 'package:onexray/service/connect/resolver.dart';
-import 'package:onexray/service/connect/runtime_host.dart';
-import 'package:onexray/service/settings/language/service.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
-import 'package:onexray/service/shared/menu/tray/service.dart';
-import 'package:onexray/service/shared/menu/tray/entry.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/service/connect/coordinator.dart';
+import 'package:apolune/service/connect/failure.dart';
+import 'package:apolune/service/connect/platform_requirements.dart';
+import 'package:apolune/service/connect/resolver.dart';
+import 'package:apolune/service/connect/runtime_host.dart';
+import 'package:apolune/service/settings/language/service.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
+import 'package:apolune/service/shared/menu/tray/service.dart';
+import 'package:apolune/service/shared/menu/tray/entry.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();

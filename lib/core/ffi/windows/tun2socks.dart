@@ -13,7 +13,7 @@ tun:
   mtu: 1400
 
 proxies:
-  - name: onexray-local-socks
+  - name: apolune-local-socks
     type: socks5
     server: 127.0.0.1
     port: $port
@@ -23,6 +23,6 @@ dns:
   enable: false
 
 rules:
-  - MATCH,onexray-local-socks
+  - MATCH,apolune-local-socks
 ''';
 }

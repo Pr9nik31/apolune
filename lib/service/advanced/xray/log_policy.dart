@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:onexray/service/connect/coordinator.dart';
-import 'package:onexray/service/advanced/platform_policy.dart';
-import 'package:onexray/service/connect/runtime.dart';
-import 'package:onexray/service/connect/runtime_host.dart';
+import 'package:apolune/service/connect/coordinator.dart';
+import 'package:apolune/service/advanced/platform_policy.dart';
+import 'package:apolune/service/connect/runtime.dart';
+import 'package:apolune/service/connect/runtime_host.dart';
 
 /// Only log policy is replaced; concurrently saved platform settings survive.
 /// The coordinator owns validation, reconnection and the atomic commit.

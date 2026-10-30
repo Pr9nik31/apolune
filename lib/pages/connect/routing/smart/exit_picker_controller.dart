@@ -1,12 +1,12 @@
 import 'dart:async';
 
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/shared/page_cubit.dart';
-import 'package:onexray/pages/servers/catalog.dart';
-import 'package:onexray/service/connect/coordinator.dart';
-import 'package:onexray/service/servers/catalog.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/shared/page_cubit.dart';
+import 'package:apolune/pages/servers/catalog.dart';
+import 'package:apolune/service/connect/coordinator.dart';
+import 'package:apolune/service/servers/catalog.dart';
 
 class ServerExitChoice {
   final int? id;

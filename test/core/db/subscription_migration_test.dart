@@ -5,9 +5,9 @@ import 'dart:io';
 import 'package:drift/drift.dart' hide isNull, isNotNull;
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/constants.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/service/advanced/xray/geodata/service.dart';
+import 'package:apolune/core/db/database/constants.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/service/advanced/xray/geodata/service.dart';
 import 'package:path/path.dart' as p;
 import 'package:sqlite3/sqlite3.dart' as sqlite;
 
@@ -139,7 +139,7 @@ void main() {
   );
 
   test('an interrupted empty first creation retries', () async {
-    final directory = await _fixtureDirectory('onexray-empty-db-test-');
+    final directory = await _fixtureDirectory('apolune-empty-db-test-');
     addTearDown(() => directory.delete(recursive: true));
     final file = File('${directory.path}/db.sqlite');
     sqlite.sqlite3.open(file.path).close();
@@ -157,7 +157,7 @@ void main() {
   test(
     'an unknown populated schema 0 database is rejected unchanged',
     () async {
-      final directory = await _fixtureDirectory('onexray-unknown-db-test-');
+      final directory = await _fixtureDirectory('apolune-unknown-db-test-');
       addTearDown(() => directory.delete(recursive: true));
       final file = File('${directory.path}/db.sqlite');
       final unknown = sqlite.sqlite3.open(file.path);
@@ -559,7 +559,7 @@ void main() {
 }
 
 Future<File> _legacyDatabase(int version) async {
-  final directory = await _fixtureDirectory('onexray-schema-test-');
+  final directory = await _fixtureDirectory('apolune-schema-test-');
   addTearDown(() => directory.delete(recursive: true));
   final file = File('${directory.path}/db.sqlite');
   final database = sqlite.sqlite3.open(file.path);
@@ -768,7 +768,7 @@ Map<String, List<List<Object?>>> _snapshotV3(sqlite.Database database) => {
 
 Future<Directory> _fixtureDirectory(String prefix) async {
   final fixtures = await Directory(
-    '../references/onexray-refactor-validation/test-fixtures',
+    '../references/apolune-refactor-validation/test-fixtures',
   ).absolute.create(recursive: true);
   return fixtures.createTemp(prefix);
 }

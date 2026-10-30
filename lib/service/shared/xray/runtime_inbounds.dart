@@ -1,7 +1,7 @@
-import 'package:onexray/core/model/xray_json.dart';
-import 'package:onexray/service/connect/routing/options.dart';
-import 'package:onexray/core/network/constants.dart';
-import 'package:onexray/core/pigeon/constants.dart';
+import 'package:apolune/core/model/xray_json.dart';
+import 'package:apolune/service/connect/routing/options.dart';
+import 'package:apolune/core/network/constants.dart';
+import 'package:apolune/core/pigeon/constants.dart';
 
 const lanProxyInboundTag = 'app-lan-proxy';
 const defaultLanProxyPort = 11024;
@@ -18,7 +18,7 @@ XrayInbound createTunInbound({
   listen: NetConstants.proxyHost,
   protocol: 'tun',
   settings: XrayInboundTunSettings(
-    name: 'OneXrayTun',
+    name: 'ApoluneTun',
     mtu: VpnConstants.tunMtu,
     gateway: gateway,
     dns: dns,

@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/service/connect/routing/region_catalog.dart';
+import 'package:apolune/service/connect/routing/region_catalog.dart';
 
 void main() {
   test('uses current installed categories, not assumed region names', () {

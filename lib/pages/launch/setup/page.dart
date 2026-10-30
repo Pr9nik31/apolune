@@ -1,9 +1,9 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/launch/setup/controller.dart';
-import 'package:onexray/pages/launch/setup/view.dart';
-import 'package:onexray/service/launch/setup.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/launch/setup/controller.dart';
+import 'package:apolune/pages/launch/setup/view.dart';
+import 'package:apolune/service/launch/setup.dart';
 
 export 'controller.dart' show SetupAction, SetupPageState;
 export 'privacy.dart' show SetupPrivacyPage, SetupPrivacyView;

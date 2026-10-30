@@ -1,6 +1,6 @@
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/service/settings/language/service.dart';
-import 'package:onexray/service/advanced/xray/geodata/model.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/service/settings/language/service.dart';
+import 'package:apolune/service/advanced/xray/geodata/model.dart';
 import 'package:tuple/tuple.dart';
 
 class GeoDataValidator {

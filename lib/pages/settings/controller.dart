@@ -1,22 +1,22 @@
-import 'package:onexray/service/shared/failure.dart';
+import 'package:apolune/service/shared/failure.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:in_app_review/in_app_review.dart';
-import 'package:onexray/core/constants/preferences.dart';
-import 'package:onexray/core/pigeon/host_api.dart';
-import 'package:onexray/core/tools/platform.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/main/navigation.dart';
-import 'package:onexray/pages/shared/alert.dart';
-import 'package:onexray/pages/shared/page_cubit.dart';
-import 'package:onexray/pages/settings/app_icon/controller.dart';
-import 'package:onexray/pages/shared/widgets/settings_page.dart';
-import 'package:onexray/service/settings/app_update/service.dart';
-import 'package:onexray/service/settings/data_cleanup.dart';
-import 'package:onexray/service/settings/traffic_widget.dart';
-import 'package:onexray/service/launch/app_startup.dart';
-import 'package:onexray/service/shared/doc/helper.dart';
-import 'package:onexray/service/shared/event_bus/enum.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
+import 'package:apolune/core/constants/preferences.dart';
+import 'package:apolune/core/pigeon/host_api.dart';
+import 'package:apolune/core/tools/platform.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/main/navigation.dart';
+import 'package:apolune/pages/shared/alert.dart';
+import 'package:apolune/pages/shared/page_cubit.dart';
+import 'package:apolune/pages/settings/app_icon/controller.dart';
+import 'package:apolune/pages/shared/widgets/settings_page.dart';
+import 'package:apolune/service/settings/app_update/service.dart';
+import 'package:apolune/service/settings/data_cleanup.dart';
+import 'package:apolune/service/settings/traffic_widget.dart';
+import 'package:apolune/service/launch/app_startup.dart';
+import 'package:apolune/service/shared/doc/helper.dart';
+import 'package:apolune/service/shared/event_bus/enum.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -250,12 +250,12 @@ class SettingsController extends PageCubit<SettingsPageState> {
     final uri = switch (link) {
       SettingsLink.documentation => DocURLHelper.docUri(),
       SettingsLink.review => null,
-      SettingsLink.community => Uri.parse('https://t.me/YuanDevTeam'),
+      SettingsLink.community => Uri.parse('https://t.me/Pr9nik31'),
       SettingsLink.feedback => Uri.parse(
-        'https://github.com/YuanDevTeam/OneXray/issues/new',
+        'https://github.com/Pr9nik31/apolune/issues/new',
       ),
       SettingsLink.source => Uri.parse(
-        'https://github.com/YuanDevTeam/OneXray',
+        'https://github.com/Pr9nik31/apolune',
       ),
       SettingsLink.credits => DocURLHelper.creditsUri(),
       SettingsLink.privacy => DocURLHelper.privacyUri(),

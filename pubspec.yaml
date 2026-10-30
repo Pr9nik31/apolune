@@ -1,4 +1,4 @@
-name: onexray
+name: apolune
 description: "Cross Platform Xray-core Client"
 publish_to: "none"
 version: 26.11.1+1
@@ -101,14 +101,14 @@ dependency_overrides:
   isolate_manager: ^6.3.2
 
 msix_config:
-  display_name: OneXray
-  publisher_display_name: Yuan Dev LLC
-  identity_name: YuanDevLLC.OneXray
+  display_name: Apolune
+  publisher_display_name: Apolune
+  identity_name: Apolune.Apolune
   publisher: CN=3666BCB5-5482-46DD-9C19-D8A7290A39FD
   logo_path: assets/logo.png
   # Preserve the blue margin; trimming it makes the X fill Windows app icons.
   trim_logo: false
-  protocol_activation: onexray
+  protocol_activation: apolune
   languages: en-us
   capabilities: internetClientServer, privateNetworkClientServer, networkingVpnProvider
   startup_task:

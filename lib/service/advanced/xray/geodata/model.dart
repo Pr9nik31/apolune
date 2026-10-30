@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/model/geo_dat.dart';
-import 'package:onexray/core/model/geo_data_type.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/model/geo_dat.dart';
+import 'package:apolune/core/model/geo_data_type.dart';
 import 'package:path/path.dart' as p;
 
 class GeoDataInput {

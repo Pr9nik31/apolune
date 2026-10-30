@@ -1,27 +1,27 @@
 import 'dart:async';
 
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/core/errors/json_diagnostic.dart';
+import 'package:apolune/core/errors/json_diagnostic.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/connect/dialogs.dart';
-import 'package:onexray/pages/servers/import/controller.dart';
-import 'package:onexray/pages/servers/subscription/form_view.dart';
-import 'package:onexray/pages/shared/widgets/page_app_bar.dart';
-import 'package:onexray/pages/theme/color.dart';
-import 'package:onexray/pages/theme/font.dart';
-import 'package:onexray/pages/theme/layout.dart';
-import 'package:onexray/pages/shared/widgets/adaptive_dialog.dart';
-import 'package:onexray/pages/shared/widgets/app_activity.dart';
-import 'package:onexray/pages/shared/widgets/button_progress.dart';
-import 'package:onexray/pages/shared/widgets/outbound_json_editor.dart';
-import 'package:onexray/service/servers/import.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/connect/dialogs.dart';
+import 'package:apolune/pages/servers/import/controller.dart';
+import 'package:apolune/pages/servers/subscription/form_view.dart';
+import 'package:apolune/pages/shared/widgets/page_app_bar.dart';
+import 'package:apolune/pages/theme/color.dart';
+import 'package:apolune/pages/theme/font.dart';
+import 'package:apolune/pages/theme/layout.dart';
+import 'package:apolune/pages/shared/widgets/adaptive_dialog.dart';
+import 'package:apolune/pages/shared/widgets/app_activity.dart';
+import 'package:apolune/pages/shared/widgets/button_progress.dart';
+import 'package:apolune/pages/shared/widgets/outbound_json_editor.dart';
+import 'package:apolune/service/servers/import.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 export 'controller.dart' show ServerImportAction;
 
-export 'package:onexray/service/servers/import.dart' show ServerImportResult;
+export 'package:apolune/service/servers/import.dart' show ServerImportResult;
 
 class ServersImportPage extends StatefulWidget {
   final String? initialText;
@@ -65,7 +65,7 @@ class _ServersImportPageState extends State<ServersImportPage> {
         return PopScope(
           canPop: state.canClose,
           child: AppDialog(
-            title: l10n.prototypeAddServersToOneXray,
+            title: l10n.prototypeAddServersToApolune,
             onClose: () => controller.closeFlow(context),
             body: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -313,7 +313,7 @@ class ServerImportFormPage extends StatelessWidget {
               child: ShadInput(
                 controller: controller.text,
                 placeholder: const Text(
-                  'vless://, vmess://, trojan://, ss://, https://, onexray://',
+                  'vless://, vmess://, trojan://, ss://, https://, apolune://',
                 ),
                 expands: true,
                 editableTextSize: const Size(double.infinity, 98),

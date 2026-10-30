@@ -4,23 +4,23 @@ import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/core/tools/logger.dart';
-import 'package:onexray/pages/main/navigation.dart';
-import 'package:onexray/pages/main/desktop_window.dart';
-import 'package:onexray/pages/main/menu_actions.dart';
-import 'package:onexray/pages/theme/color.dart';
-import 'package:onexray/pages/theme/font.dart';
-import 'package:onexray/pages/theme/layout.dart';
-import 'package:onexray/service/settings/app_update/service.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
-import 'package:onexray/service/shared/event_bus/state.dart';
-import 'package:onexray/service/manager.dart';
-import 'package:onexray/service/shared/failure.dart';
-import 'package:onexray/service/shared/menu/short_cut/service.dart';
-import 'package:onexray/service/shared/menu/settings/service.dart';
-import 'package:onexray/service/shared/menu/tray/service.dart';
-import 'package:onexray/service/shared/share/service.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/core/tools/logger.dart';
+import 'package:apolune/pages/main/navigation.dart';
+import 'package:apolune/pages/main/desktop_window.dart';
+import 'package:apolune/pages/main/menu_actions.dart';
+import 'package:apolune/pages/theme/color.dart';
+import 'package:apolune/pages/theme/font.dart';
+import 'package:apolune/pages/theme/layout.dart';
+import 'package:apolune/service/settings/app_update/service.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
+import 'package:apolune/service/shared/event_bus/state.dart';
+import 'package:apolune/service/manager.dart';
+import 'package:apolune/service/shared/failure.dart';
+import 'package:apolune/service/shared/menu/short_cut/service.dart';
+import 'package:apolune/service/shared/menu/settings/service.dart';
+import 'package:apolune/service/shared/menu/tray/service.dart';
+import 'package:apolune/service/shared/share/service.dart';
 
 class AdaptiveMainShell extends StatefulWidget {
   const AdaptiveMainShell({
@@ -383,7 +383,7 @@ class _AdaptiveMainShellState extends State<AdaptiveMainShell> {
                           : AppSpacing.sidebarBrandBottom,
                     ),
                     child: Text(
-                      'OneXray',
+                      'Apolune',
                       maxLines: 1,
                       softWrap: false,
                       overflow: TextOverflow.ellipsis,

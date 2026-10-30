@@ -1,36 +1,36 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:onexray/core/errors/failure.dart';
-import 'package:onexray/core/errors/json_diagnostic.dart';
+import 'package:apolune/core/errors/failure.dart';
+import 'package:apolune/core/errors/json_diagnostic.dart';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/network/client.dart';
-import 'package:onexray/core/pigeon/host_api.dart';
-import 'package:onexray/service/shared/db/config_writer.dart';
-import 'package:onexray/service/connect/raw/editor.dart';
-import 'package:onexray/service/advanced/xray/geodata/service.dart';
-import 'package:onexray/service/advanced/xray/geodata/model.dart';
-import 'package:onexray/service/advanced/xray/geodata/validator.dart';
-import 'package:onexray/service/shared/ping/service.dart';
-import 'package:onexray/service/shared/xray/validation.dart';
-import 'package:onexray/service/shared/share/app_link_model.dart';
-import 'package:onexray/service/shared/share/app_link_parser.dart';
-import 'package:onexray/service/shared/share/service.dart';
-import 'package:onexray/service/shared/share/configuration_transfer.dart';
-import 'package:onexray/service/shared/share/configuration_source.dart';
-import 'package:onexray/service/connect/routing/custom/service.dart';
-import 'package:onexray/service/shared/in_flight_operations.dart';
-import 'package:onexray/service/shared/share/xray_share_reader.dart';
-import 'package:onexray/service/servers/subscription/model.dart';
-import 'package:onexray/service/servers/subscription/service.dart';
-import 'package:onexray/service/servers/outbound/map.dart';
-import 'package:onexray/service/servers/outbound/state_db.dart';
-import 'package:onexray/service/connect/raw/db.dart';
-import 'package:onexray/service/connect/raw/validator.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/network/client.dart';
+import 'package:apolune/core/pigeon/host_api.dart';
+import 'package:apolune/service/shared/db/config_writer.dart';
+import 'package:apolune/service/connect/raw/editor.dart';
+import 'package:apolune/service/advanced/xray/geodata/service.dart';
+import 'package:apolune/service/advanced/xray/geodata/model.dart';
+import 'package:apolune/service/advanced/xray/geodata/validator.dart';
+import 'package:apolune/service/shared/ping/service.dart';
+import 'package:apolune/service/shared/xray/validation.dart';
+import 'package:apolune/service/shared/share/app_link_model.dart';
+import 'package:apolune/service/shared/share/app_link_parser.dart';
+import 'package:apolune/service/shared/share/service.dart';
+import 'package:apolune/service/shared/share/configuration_transfer.dart';
+import 'package:apolune/service/shared/share/configuration_source.dart';
+import 'package:apolune/service/connect/routing/custom/service.dart';
+import 'package:apolune/service/shared/in_flight_operations.dart';
+import 'package:apolune/service/shared/share/xray_share_reader.dart';
+import 'package:apolune/service/servers/subscription/model.dart';
+import 'package:apolune/service/servers/subscription/service.dart';
+import 'package:apolune/service/servers/outbound/map.dart';
+import 'package:apolune/service/servers/outbound/state_db.dart';
+import 'package:apolune/service/connect/raw/db.dart';
+import 'package:apolune/service/connect/raw/validator.dart';
 import 'package:path/path.dart' as p;
 
 class ServerImportResult {
@@ -40,7 +40,7 @@ class ServerImportResult {
   final int customCount;
   final int geoDataCount;
   final int subscriptionCount;
-  final List<OneXrayGeoDataLink> failedGeoData;
+  final List<ApoluneGeoDataLink> failedGeoData;
   int get writeFailureCount => failedGeoData.length;
   const ServerImportResult({
     required this.count,
@@ -56,14 +56,14 @@ class ServerImportResult {
 class ServerImportPreview {
   final List<CoreConfigCompanion> rows;
   final List<ParsedRawConfiguration> raw;
-  final List<OneXrayGeoDataLink> geoData;
+  final List<ApoluneGeoDataLink> geoData;
   final List<ConfigurationContent> customRoutes;
   final List<GeoDataInput> assets;
   final GeoDataImport? _dependencies;
   ServerImportPreview(
     Iterable<CoreConfigCompanion> rows, {
     Iterable<ParsedRawConfiguration> raw = const [],
-    Iterable<OneXrayGeoDataLink> geoData = const [],
+    Iterable<ApoluneGeoDataLink> geoData = const [],
     Iterable<ConfigurationContent> customRoutes = const [],
     this._dependencies,
     Iterable<GeoDataInput> assets = const [],
@@ -83,10 +83,10 @@ class ServerImportPreview {
 }
 
 class ServerImportDetection {
-  final List<OneXraySubscriptionLink> subscriptions;
+  final List<ApoluneSubscriptionLink> subscriptions;
   final List<_ImportLine> _local;
   ServerImportDetection._(
-    Iterable<OneXraySubscriptionLink> subscriptions,
+    Iterable<ApoluneSubscriptionLink> subscriptions,
     Iterable<_ImportLine> local,
   ) : subscriptions = List.unmodifiable(subscriptions),
       _local = List.unmodifiable(local);
@@ -96,7 +96,7 @@ class ServerImportDetection {
 final class _ImportLine {
   final String text;
   final Uri? uri;
-  final OneXrayAppLink? link;
+  final ApoluneAppLink? link;
   const _ImportLine._(this.text, this.uri, this.link);
 
   factory _ImportLine.parse(String text) {
@@ -104,13 +104,13 @@ final class _ImportLine {
     if (uri == null) {
       return _ImportLine._(text, uri, null);
     }
-    final link = OneXrayAppLinkParser.parse(uri);
+    final link = ApoluneAppLinkParser.parse(uri);
     return _ImportLine._(
       text,
       uri,
       link ??
           (NetClient.isHttpsDownloadUri(uri)
-              ? OneXraySubscriptionLink(
+              ? ApoluneSubscriptionLink(
                   name: uri.fragment,
                   url: SubscriptionUrl.normalize(uri.toString()),
                 )
@@ -140,10 +140,10 @@ class ServerImportService {
   final Future<String> Function(String) _validate;
   final Future<ConfigWriteResult> Function(List<CoreConfigCompanion>) _write;
   final void Function(List<int>) _schedule;
-  final Future<SubscriptionInsertResult> Function(OneXraySubscriptionLink)?
+  final Future<SubscriptionInsertResult> Function(ApoluneSubscriptionLink)?
   _subscribe;
-  final Future<bool> Function(OneXrayGeoDataLink) _validateGeoData;
-  final Future<bool> Function(OneXrayGeoDataLink) _writeGeoData;
+  final Future<bool> Function(ApoluneGeoDataLink) _validateGeoData;
+  final Future<bool> Function(ApoluneGeoDataLink) _writeGeoData;
 
   ServerImportService({
     AppDatabase? database,
@@ -153,8 +153,8 @@ class ServerImportService {
     Future<ConfigWriteResult> Function(List<CoreConfigCompanion>)? write,
     void Function(List<int>)? schedule,
     this._subscribe,
-    Future<bool> Function(OneXrayGeoDataLink)? validateGeoData,
-    Future<bool> Function(OneXrayGeoDataLink)? writeGeoData,
+    Future<bool> Function(ApoluneGeoDataLink)? validateGeoData,
+    Future<bool> Function(ApoluneGeoDataLink)? writeGeoData,
   }) : _database = database,
        _transfer = transfer ?? ConfigurationTransferService(),
        _parse = parse ?? XrayShareReader().parseShareText,
@@ -193,11 +193,11 @@ class ServerImportService {
   /// Classify before any writes. JSON/base64 stay intact for the native parser.
   ServerImportDetection detect(String text) {
     _checkSize(text);
-    final subscriptions = <OneXraySubscriptionLink>[];
+    final subscriptions = <ApoluneSubscriptionLink>[];
     final local = <_ImportLine>[];
     for (final line in _inputLines(text)) {
       final link = line.link;
-      if (link is OneXraySubscriptionLink) {
+      if (link is ApoluneSubscriptionLink) {
         subscriptions.add(link);
       } else {
         local.add(line);
@@ -212,7 +212,7 @@ class ServerImportService {
       : text.split('\n').map(_ImportLine.parse).toList();
 
   Future<List<ServerSubscriptionImport>> importSubscriptions(
-    List<OneXraySubscriptionLink> links, {
+    List<ApoluneSubscriptionLink> links, {
     SubscriptionFormatConfirmation? confirmOrdinary,
   }) => _imports.track(() async {
     final results = <ServerSubscriptionImport>[];
@@ -245,7 +245,7 @@ class ServerImportService {
   });
 
   static Future<SubscriptionInsertResult> _importSubscription(
-    OneXraySubscriptionLink link, {
+    ApoluneSubscriptionLink link, {
     SubscriptionFormatConfirmation? confirmOrdinary,
   }) async {
     if (!NetClient.isHttpsDownloadUri(Uri.parse(link.url))) {
@@ -346,24 +346,24 @@ class ServerImportService {
         return ServerImportPreview(await _parse(text));
       }
       final rows = <CoreConfigCompanion>[];
-      final geoData = <OneXrayGeoDataLink>[];
+      final geoData = <ApoluneGeoDataLink>[];
       final other = <String>[];
       final configurations = <ConfigurationContent>[];
       final parsedLines = detection._local;
-      final usedGeoData = <OneXrayGeoDataLink>{};
+      final usedGeoData = <ApoluneGeoDataLink>{};
       for (final item in parsedLines) {
         final uri = item.uri;
         final link = item.link;
         if (link == null) {
-          if (uri?.scheme.toLowerCase() == OneXrayAppLinkParser.scheme) {
+          if (uri?.scheme.toLowerCase() == ApoluneAppLinkParser.scheme) {
             continue;
           }
           other.add(item.text);
           continue;
         }
         try {
-          if (link is OneXrayConfigLink &&
-              link.type == OneXrayConfigLinkType.outbound) {
+          if (link is ApoluneConfigLink &&
+              link.type == ApoluneConfigLinkType.outbound) {
             final outbound = decodeSingleOutbound(
               link.xrayJson,
               nameAlias: link.name.isEmpty ? null : link.name,
@@ -377,13 +377,13 @@ class ServerImportService {
               );
             }
             rows.add(outboundCompanion(outbound));
-          } else if (link is OneXrayConfigLink &&
-              link.type != OneXrayConfigLinkType.outbound) {
+          } else if (link is ApoluneConfigLink &&
+              link.type != ApoluneConfigLinkType.outbound) {
             final kind = ConfigurationKind.values.singleWhere(
               (kind) => kind.linkType == link.type,
             );
             final source = ConfigurationSource.parse(link.xrayJson);
-            final dependencies = <OneXrayGeoDataLink>[];
+            final dependencies = <ApoluneGeoDataLink>[];
             if (kind == ConfigurationKind.raw) {
               final references = geoDataReferences(
                 source.value as Map<String, dynamic>,
@@ -391,7 +391,7 @@ class ServerImportService {
               for (final data
                   in parsedLines
                       .map((item) => item.link)
-                      .whereType<OneXrayGeoDataLink>()) {
+                      .whereType<ApoluneGeoDataLink>()) {
                 if (references.containsKey(data.name) ||
                     references.containsKey('${data.name}.dat')) {
                   usedGeoData.add(data);
@@ -407,7 +407,7 @@ class ServerImportService {
                 linked: dependencies,
               ),
             );
-          } else if (link is OneXrayGeoDataLink) {
+          } else if (link is ApoluneGeoDataLink) {
             geoData.add(link);
           } else {
             throw const FormatException('Unsupported local asset');
@@ -431,7 +431,7 @@ class ServerImportService {
               used.url == link.url,
         ),
       );
-      final standalone = <OneXrayGeoDataLink>[];
+      final standalone = <ApoluneGeoDataLink>[];
       for (final link in geoData) {
         if (!_safeGeoDataName(link.name) ||
             !NetClient.isHttpsDownloadUri(Uri.parse(link.url)) ||
@@ -471,7 +471,7 @@ class ServerImportService {
   Future<ServerImportPreview> _configurationPreview(
     List<CoreConfigCompanion> rows,
     List<ConfigurationContent> contents,
-    List<OneXrayGeoDataLink> standalone,
+    List<ApoluneGeoDataLink> standalone,
   ) async {
     final custom = contents
         .where((item) => item.kind != ConfigurationKind.raw)
@@ -576,7 +576,7 @@ class ServerImportService {
       _schedule(result.ids.take(preview.rows.length).toList());
     }
     var geoDataCount = 0;
-    final failures = <OneXrayGeoDataLink>[];
+    final failures = <ApoluneGeoDataLink>[];
     for (final link in preview.geoData) {
       if (_imports.isPaused) {
         failures.add(link);

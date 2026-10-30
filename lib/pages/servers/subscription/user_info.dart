@@ -1,10 +1,10 @@
 import 'package:intl/intl.dart' show DateFormat;
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/core/tools/traffic_format.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/theme/color.dart';
-import 'package:onexray/pages/theme/font.dart';
-import 'package:onexray/service/servers/subscription/user_info.dart';
+import 'package:apolune/core/tools/traffic_format.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/theme/color.dart';
+import 'package:apolune/pages/theme/font.dart';
+import 'package:apolune/service/servers/subscription/user_info.dart';
 
 class SubscriptionPackageSummary extends StatelessWidget {
   const SubscriptionPackageSummary({super.key, required this.info});

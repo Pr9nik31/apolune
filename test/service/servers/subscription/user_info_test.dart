@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/service/servers/subscription/user_info.dart';
+import 'package:apolune/service/servers/subscription/user_info.dart';
 
 void main() {
   final now = DateTime.utc(2026, 9, 22);

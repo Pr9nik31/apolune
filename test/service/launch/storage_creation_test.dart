@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/service/launch/storage_preparation.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/service/launch/storage_preparation.dart';
 // ignore: depend_on_referenced_packages
 import 'package:path_provider_platform_interface/path_provider_platform_interface.dart';
 
@@ -27,7 +27,7 @@ void main() {
     'startup creates a missing database and retains its initial signal',
     () async {
       final root = await Directory(
-        '../references/onexray-refactor-validation/test-fixtures',
+        '../references/apolune-refactor-validation/test-fixtures',
       ).absolute.create(recursive: true);
       final directory = await root.createTemp('startup-creation-');
       final oldPaths = PathProviderPlatform.instance;

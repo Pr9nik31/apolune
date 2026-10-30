@@ -3,9 +3,9 @@ import 'dart:io';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/service/shared/ping/batch.dart';
-import 'package:onexray/service/shared/ping/state.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/service/shared/ping/batch.dart';
+import 'package:apolune/service/shared/ping/state.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +18,7 @@ void main() {
 
   test('native request contains only the delay test configuration', () async {
     const channel = BasicMessageChannel<Object?>(
-      'dev.flutter.pigeon.onexray.BridgeHostApi.invoke',
+      'dev.flutter.pigeon.apolune.BridgeHostApi.invoke',
       BridgeHostApi.pigeonChannelCodec,
     );
     final messenger =

@@ -1,8 +1,8 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/shared/widgets/adaptive_dialog.dart';
-import 'package:onexray/pages/theme/font.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/shared/widgets/adaptive_dialog.dart';
+import 'package:apolune/pages/theme/font.dart';
 
 /// Optional explanations stay out of the form until the user asks for them.
 /// Errors, unavailable states and action warnings belong beside their controls.

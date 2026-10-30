@@ -3,7 +3,7 @@ import 'dart:io';
 import 'dart:isolate';
 
 import 'package:ffi/ffi.dart';
-import 'package:onexray/core/ffi/desktop_core_exit.dart';
+import 'package:apolune/core/ffi/desktop_core_exit.dart';
 
 final _libc = DynamicLibrary.open('libc.so.6');
 final _syscall = _libc

@@ -8,31 +8,31 @@ from pathlib import Path
 from verify_release import verify_release
 
 PUBLIC_PACKAGES = {
-    "ios": ["ios/OneXray-ios.ipa"],
-    "macos": ["macos_se/OneXray-macos-universal.zip"],
-    "android": ["android-universal/OneXray-android-universal.apk"],
+    "ios": ["ios/Apolune-ios.ipa"],
+    "macos": ["macos_se/Apolune-macos-universal.zip"],
+    "android": ["android-universal/Apolune-android-universal.apk"],
     "linux": [
-        "linux-x64/OneXray-linux-x86_64.zip",
-        "linux-x64/OneXray-linux-x86_64.deb",
-        "linux-arm64/OneXray-linux-aarch64.zip",
-        "linux-arm64/OneXray-linux-aarch64.deb",
+        "linux-x64/Apolune-linux-x86_64.zip",
+        "linux-x64/Apolune-linux-x86_64.deb",
+        "linux-arm64/Apolune-linux-aarch64.zip",
+        "linux-arm64/Apolune-linux-aarch64.deb",
     ],
     "windows": [
-        "windows-x64/OneXray-windows-amd64.exe",
-        "windows-x64/OneXray-windows-amd64.zip",
-        "windows-arm64/OneXray-windows-arm64.exe",
-        "windows-arm64/OneXray-windows-arm64.zip",
+        "windows-x64/Apolune-windows-amd64.exe",
+        "windows-x64/Apolune-windows-amd64.zip",
+        "windows-arm64/Apolune-windows-arm64.exe",
+        "windows-arm64/Apolune-windows-arm64.zip",
     ],
 }
 STORE_PACKAGES = [
-    "windows-store-x64/OneXray-windows-amd64.msix",
-    "windows-store-arm64/OneXray-windows-arm64.msix",
+    "windows-store-x64/Apolune-windows-amd64.msix",
+    "windows-store-arm64/Apolune-windows-arm64.msix",
 ]
 
 
 class ReleaseTest(unittest.TestCase):
     def setUp(self):
-        fixtures = Path(__file__).resolve().parents[3] / "references/onexray-tests/release-files"
+        fixtures = Path(__file__).resolve().parents[3] / "references/apolune-tests/release-files"
         fixtures.mkdir(parents=True, exist_ok=True)
         directory = tempfile.TemporaryDirectory(dir=fixtures)
         self.addCleanup(directory.cleanup)
@@ -43,7 +43,7 @@ class ReleaseTest(unittest.TestCase):
             "sha": "a" * 40,
             "run-id": "123",
             "run-attempt": "1",
-            "repository": "YuanDevTeam/OneXray",
+            "repository": "Pr9nik31/apolune",
             "target": "all",
         }.items():
             (self.metadata / f"{name}.txt").write_text(value)
@@ -53,7 +53,7 @@ class ReleaseTest(unittest.TestCase):
             "id": 123,
             "run_attempt": 1,
             "head_sha": "a" * 40,
-            "repository": {"full_name": "YuanDevTeam/OneXray"},
+            "repository": {"full_name": "Pr9nik31/apolune"},
         }
         for name in [name for group in PUBLIC_PACKAGES.values() for name in group] + STORE_PACKAGES:
             path = self.artifacts / name

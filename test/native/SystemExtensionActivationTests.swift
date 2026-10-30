@@ -2,7 +2,7 @@ import Foundation
 import XCTest
 
 // Link the production file without submitting requests to the operating system.
-func packetTunnelId() -> String { "net.yuandev.onexray.test.tun" }
+func packetTunnelId() -> String { "dev.apolune.client.test.tun" }
 func YGLog(_ message: String) {}
 
 final class SystemExtensionActivationTests: XCTestCase {

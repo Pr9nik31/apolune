@@ -4,14 +4,14 @@ import 'package:collection/collection.dart';
 import 'package:drift/drift.dart' show Value;
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/service/connect/resolver.dart';
-import 'package:onexray/service/connect/runtime.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/servers/catalog.dart';
-import 'package:onexray/service/servers/manual_groups.dart';
-import 'package:onexray/service/servers/outbound/state_db.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/service/connect/resolver.dart';
+import 'package:apolune/service/connect/runtime.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/servers/catalog.dart';
+import 'package:apolune/service/servers/manual_groups.dart';
+import 'package:apolune/service/servers/outbound/state_db.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();

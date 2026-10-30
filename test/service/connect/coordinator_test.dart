@@ -6,20 +6,20 @@ import 'package:drift/drift.dart' hide isNull, isNotNull;
 import 'package:drift/native.dart';
 import 'package:flutter/widgets.dart' show AppLifecycleState;
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/db/database/constants.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/core/pigeon/model.dart';
-import 'package:onexray/service/advanced/platform_policy.dart';
-import 'package:onexray/service/advanced/policy_editor.dart';
-import 'package:onexray/service/connect/compiler.dart';
-import 'package:onexray/service/connect/coordinator.dart';
-import 'package:onexray/service/connect/resolver.dart';
-import 'package:onexray/service/connect/routing/region_catalog.dart';
-import 'package:onexray/service/connect/runtime.dart';
-import 'package:onexray/service/connect/runtime_host.dart';
-import 'package:onexray/service/connect/settings.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/db/database/constants.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/core/pigeon/model.dart';
+import 'package:apolune/service/advanced/platform_policy.dart';
+import 'package:apolune/service/advanced/policy_editor.dart';
+import 'package:apolune/service/connect/compiler.dart';
+import 'package:apolune/service/connect/coordinator.dart';
+import 'package:apolune/service/connect/resolver.dart';
+import 'package:apolune/service/connect/routing/region_catalog.dart';
+import 'package:apolune/service/connect/runtime.dart';
+import 'package:apolune/service/connect/runtime_host.dart';
+import 'package:apolune/service/connect/settings.dart';
 import 'package:path/path.dart' as p;
 
 void main() {
@@ -1010,7 +1010,7 @@ void main() {
       'LAN edits preserve the last native input until the next App connection: ${initialStatus.name}',
       () async {
         final fixtures = Directory(
-          p.join('..', 'references', 'onexray-refactor-validation', 'fixtures'),
+          p.join('..', 'references', 'apolune-refactor-validation', 'fixtures'),
         ).absolute;
         await fixtures.create(recursive: true);
         final directory = await fixtures.createTemp('lan-next-app-start-');

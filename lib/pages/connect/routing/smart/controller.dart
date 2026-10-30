@@ -1,16 +1,16 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/core/model/xray_json.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/connect/dialogs.dart';
-import 'package:onexray/pages/launch/setup/selectors.dart';
-import 'package:onexray/pages/shared/alert.dart';
-import 'package:onexray/pages/shared/page_cubit.dart';
-import 'package:onexray/service/shared/failure.dart';
-import 'package:onexray/pages/connect/routing/smart/exit_picker_controller.dart';
+import 'package:apolune/core/model/xray_json.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/connect/dialogs.dart';
+import 'package:apolune/pages/launch/setup/selectors.dart';
+import 'package:apolune/pages/shared/alert.dart';
+import 'package:apolune/pages/shared/page_cubit.dart';
+import 'package:apolune/service/shared/failure.dart';
+import 'package:apolune/pages/connect/routing/smart/exit_picker_controller.dart';
 
-import 'package:onexray/service/connect/compiler.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/connect/routing/smart/editor.dart';
+import 'package:apolune/service/connect/compiler.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/connect/routing/smart/editor.dart';
 
 typedef OpenDirectRegions = Future<List<String>?> Function(
   BuildContext context,

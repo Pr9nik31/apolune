@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/painting.dart';
-import 'package:onexray/core/pigeon/host_api.dart';
-import 'package:onexray/core/tools/logger.dart';
+import 'package:apolune/core/pigeon/host_api.dart';
+import 'package:apolune/core/tools/logger.dart';
 
 typedef AppIconLoader = Future<Uint8List?> Function(String packageName);
 

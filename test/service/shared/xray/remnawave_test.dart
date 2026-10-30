@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/service/shared/xray/remnawave.dart';
+import 'package:apolune/service/shared/xray/remnawave.dart';
 
 Map<String, dynamic> _source({bool dns = true}) => {
   'remarks': 'Provider graph',

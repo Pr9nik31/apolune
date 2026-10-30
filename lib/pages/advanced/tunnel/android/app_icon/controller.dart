@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/painting.dart';
-import 'package:onexray/pages/shared/page_cubit.dart';
-import 'package:onexray/service/advanced/tunnel/android/app_icon.dart';
+import 'package:apolune/pages/shared/page_cubit.dart';
+import 'package:apolune/service/advanced/tunnel/android/app_icon.dart';
 
 class AppIconViewState {
   /// Icon providers per package. A present key with a `null` value means the

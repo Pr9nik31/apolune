@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/pages/shared/page_cubit.dart';
+import 'package:apolune/pages/shared/page_cubit.dart';
 
 void main() {
   test('ignores an async state emitted after close', () async {

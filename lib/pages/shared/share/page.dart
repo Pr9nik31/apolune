@@ -1,18 +1,18 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/connect/dialogs.dart';
-import 'package:onexray/pages/shared/share/action.dart';
-import 'package:onexray/pages/shared/share/controller.dart';
-import 'package:onexray/pages/shared/share/params.dart';
-import 'package:onexray/pages/theme/color.dart';
-import 'package:onexray/pages/theme/font.dart';
-import 'package:onexray/pages/theme/layout.dart';
-import 'package:onexray/pages/shared/widgets/adaptive_dialog.dart';
-import 'package:onexray/pages/shared/widgets/button_progress.dart';
-import 'package:onexray/service/shared/share/outgoing_share.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/connect/dialogs.dart';
+import 'package:apolune/pages/shared/share/action.dart';
+import 'package:apolune/pages/shared/share/controller.dart';
+import 'package:apolune/pages/shared/share/params.dart';
+import 'package:apolune/pages/theme/color.dart';
+import 'package:apolune/pages/theme/font.dart';
+import 'package:apolune/pages/theme/layout.dart';
+import 'package:apolune/pages/shared/widgets/adaptive_dialog.dart';
+import 'package:apolune/pages/shared/widgets/button_progress.dart';
+import 'package:apolune/service/shared/share/outgoing_share.dart';
 
 class SharePage extends StatelessWidget {
   const SharePage({
@@ -103,7 +103,7 @@ class SharePage extends StatelessWidget {
                 children: [
                   for (final format in ShareLinkFormat.values)
                     if (state.supportsOriginal ||
-                        format == ShareLinkFormat.onexray)
+                        format == ShareLinkFormat.apolune)
                       Expanded(
                         child: _formatChoice(
                           context,
@@ -174,7 +174,7 @@ class SharePage extends StatelessWidget {
           ),
         ),
         if (params.type == ShareType.subscription &&
-            state.format == ShareLinkFormat.onexray)
+            state.format == ShareLinkFormat.apolune)
           Padding(
             padding: const EdgeInsets.fromLTRB(22, 10, 22, 0),
             child: Text(
@@ -292,7 +292,7 @@ class SharePage extends StatelessWidget {
           child: Text(
             format == ShareLinkFormat.original
                 ? l.prototypeOriginalLink
-                : l.sharePageOneXrayLink,
+                : l.sharePageApoluneLink,
             textAlign: TextAlign.center,
             style: AppTypography.subscriptionField.copyWith(
               color: selected ? palette.primary : palette.mutedStrong,

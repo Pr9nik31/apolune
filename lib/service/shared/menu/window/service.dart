@@ -1,9 +1,9 @@
 import 'dart:ui';
 
 import 'package:macos_window_utils/macos_window_utils.dart';
-import 'package:onexray/core/constants/preferences.dart';
-import 'package:onexray/core/tools/logger.dart';
-import 'package:onexray/core/tools/platform.dart';
+import 'package:apolune/core/constants/preferences.dart';
+import 'package:apolune/core/tools/logger.dart';
+import 'package:apolune/core/tools/platform.dart';
 import 'package:window_manager/window_manager.dart';
 
 final class WindowService with WindowListener {

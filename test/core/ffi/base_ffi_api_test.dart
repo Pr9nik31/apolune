@@ -1,10 +1,10 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/ffi/base_ffi_api.dart';
-import 'package:onexray/core/ffi/linux_ffi_api.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/core/pigeon/model.dart';
+import 'package:apolune/core/ffi/base_ffi_api.dart';
+import 'package:apolune/core/ffi/linux_ffi_api.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/core/pigeon/model.dart';
 import 'package:path/path.dart' as p;
 
 import '../../support/test_directory.dart';
@@ -51,7 +51,7 @@ void main() {
   test(
     'replaces old inputs with one unique immutable runtime directory',
     () async {
-      final directory = await createTestDirectory('onexray-desktop-inputs-');
+      final directory = await createTestDirectory('apolune-desktop-inputs-');
       addTearDown(() => directory.delete(recursive: true));
       final api = _TestFfiApi(stopResult: true, directory: directory.path);
       addTearDown(api.stopSharedIsolate);

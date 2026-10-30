@@ -3,8 +3,8 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/l10n/localizations/app_localizations_en.dart';
-import 'package:onexray/service/shared/menu/short_cut/service.dart';
+import 'package:apolune/l10n/localizations/app_localizations_en.dart';
+import 'package:apolune/service/shared/menu/short_cut/service.dart';
 
 void main() {
   test('mobile publishes exactly the four agreed actions', () {

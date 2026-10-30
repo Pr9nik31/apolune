@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:onexray/service/advanced/platform_policy.dart';
+import 'package:apolune/service/advanced/platform_policy.dart';
 
 class OutboundInterfaceOption {
   final String name;
@@ -31,7 +31,7 @@ Future<List<NetworkInterface>> queryInterfaceList() async {
 
 Future<List<NetworkInterface>> queryXrayOutboundInterfaceList() async => [
   for (final row in await queryInterfaceList())
-    if (row.name != 'OneXrayTun' &&
+    if (row.name != 'ApoluneTun' &&
         !row.addresses.any(
           (address) =>
               address.address == PlatformPolicy.tunIpv4Address ||

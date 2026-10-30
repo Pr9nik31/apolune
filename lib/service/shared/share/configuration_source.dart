@@ -1,5 +1,5 @@
-import 'package:onexray/core/errors/json_diagnostic.dart';
-import 'package:onexray/core/tools/json.dart';
+import 'package:apolune/core/errors/json_diagnostic.dart';
+import 'package:apolune/core/tools/json.dart';
 
 /// The decoded value and exact text belong to one import/edit operation.
 final class ConfigurationSource {

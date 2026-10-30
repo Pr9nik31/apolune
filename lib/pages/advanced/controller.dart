@@ -2,14 +2,14 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/widgets.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/pigeon/host_api.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/shared/page_cubit.dart';
-import 'package:onexray/service/connect/coordinator.dart';
-import 'package:onexray/service/advanced/platform_policy.dart';
-import 'package:onexray/service/connect/runtime.dart';
-import 'package:onexray/service/shared/app_lifecycle.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/pigeon/host_api.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/shared/page_cubit.dart';
+import 'package:apolune/service/connect/coordinator.dart';
+import 'package:apolune/service/advanced/platform_policy.dart';
+import 'package:apolune/service/connect/runtime.dart';
+import 'package:apolune/service/shared/app_lifecycle.dart';
 
 class AdvancedPageState {
   final PlatformPolicy? policy;

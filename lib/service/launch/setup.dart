@@ -1,17 +1,17 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:onexray/core/errors/failure.dart';
+import 'package:apolune/core/errors/failure.dart';
 
-import 'package:onexray/core/constants/preferences.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/service/advanced/platform_policy.dart';
-import 'package:onexray/service/connect/runtime.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/advanced/xray/geodata/service.dart';
-import 'package:onexray/service/launch/storage_preparation.dart';
-import 'package:onexray/service/connect/routing/custom/geodata_suggestions.dart';
-import 'package:onexray/service/advanced/tunnel/interface.dart';
+import 'package:apolune/core/constants/preferences.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/service/advanced/platform_policy.dart';
+import 'package:apolune/service/connect/runtime.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/advanced/xray/geodata/service.dart';
+import 'package:apolune/service/launch/storage_preparation.dart';
+import 'package:apolune/service/connect/routing/custom/geodata_suggestions.dart';
+import 'package:apolune/service/advanced/tunnel/interface.dart';
 
 enum SetupStep { welcome, configuration, complete }
 

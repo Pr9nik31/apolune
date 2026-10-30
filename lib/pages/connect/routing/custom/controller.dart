@@ -2,22 +2,22 @@ import 'dart:async';
 
 import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/connect/dialogs.dart';
-import 'package:onexray/pages/shared/alert.dart';
-import 'package:onexray/pages/shared/page_cubit.dart';
-import 'package:onexray/pages/connect/routing/custom/rule_controller.dart';
-import 'package:onexray/pages/shared/widgets/adaptive_dialog.dart';
-import 'package:onexray/pages/shared/widgets/configuration_transfer.dart';
-import 'package:onexray/service/connect/routing/custom/editor.dart';
-import 'package:onexray/service/connect/routing/custom/configuration.dart';
-import 'package:onexray/service/shared/failure.dart';
-import 'package:onexray/service/connect/routing/custom/document.dart';
-import 'package:onexray/service/connect/routing/custom/state.dart';
-import 'package:onexray/service/connect/routing/options.dart';
-import 'package:onexray/service/shared/share/configuration_transfer.dart';
-import 'package:onexray/service/shared/xray/fragment.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/connect/dialogs.dart';
+import 'package:apolune/pages/shared/alert.dart';
+import 'package:apolune/pages/shared/page_cubit.dart';
+import 'package:apolune/pages/connect/routing/custom/rule_controller.dart';
+import 'package:apolune/pages/shared/widgets/adaptive_dialog.dart';
+import 'package:apolune/pages/shared/widgets/configuration_transfer.dart';
+import 'package:apolune/service/connect/routing/custom/editor.dart';
+import 'package:apolune/service/connect/routing/custom/configuration.dart';
+import 'package:apolune/service/shared/failure.dart';
+import 'package:apolune/service/connect/routing/custom/document.dart';
+import 'package:apolune/service/connect/routing/custom/state.dart';
+import 'package:apolune/service/connect/routing/options.dart';
+import 'package:apolune/service/shared/share/configuration_transfer.dart';
+import 'package:apolune/service/shared/xray/fragment.dart';
 
 typedef OpenCustomRule = Future<RoutingRuleState?> Function(
   BuildContext context,

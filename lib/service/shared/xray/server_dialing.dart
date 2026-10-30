@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:onexray/core/model/xray_json.dart';
-import 'package:onexray/service/connect/dialing.dart';
-import 'package:onexray/service/shared/xray/fragment.dart';
+import 'package:apolune/core/model/xray_json.dart';
+import 'package:apolune/service/connect/dialing.dart';
+import 'package:apolune/service/shared/xray/fragment.dart';
 
 /// Compiles the device's server dialing preference into managed runtime maps.
 abstract final class ManagedServerDialing {

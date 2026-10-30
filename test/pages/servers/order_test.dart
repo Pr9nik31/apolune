@@ -1,9 +1,9 @@
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/pages/servers/order/controller.dart';
-import 'package:onexray/service/servers/manual_groups.dart';
-import 'package:onexray/service/servers/outbound/state_db.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/pages/servers/order/controller.dart';
+import 'package:apolune/service/servers/manual_groups.dart';
+import 'package:apolune/service/servers/outbound/state_db.dart';
 
 void main() {
   late AppDatabase db;

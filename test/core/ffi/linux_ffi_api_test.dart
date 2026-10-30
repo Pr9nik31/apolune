@@ -3,11 +3,11 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/ffi/desktop_core_exit.dart';
-import 'package:onexray/core/ffi/linux_ffi_api.dart';
-import 'package:onexray/core/model/tun_json.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/core/pigeon/model.dart';
+import 'package:apolune/core/ffi/desktop_core_exit.dart';
+import 'package:apolune/core/ffi/linux_ffi_api.dart';
+import 'package:apolune/core/model/tun_json.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/core/pigeon/model.dart';
 import 'package:path/path.dart' as p;
 
 void main() {
@@ -22,7 +22,7 @@ void main() {
       expect((await api.readVpnStatus()).status, VpnStatus.connected);
       expect(
         fixture.commands,
-        everyElement(['pgrep', '-x', '-r', 'R,S,D,T,t,I', 'OneXrayCore']),
+        everyElement(['pgrep', '-x', '-r', 'R,S,D,T,t,I', 'ApoluneCore']),
       );
     },
   );
@@ -37,7 +37,7 @@ void main() {
       expect((await api.stopVpn()).status, VpnStatus.disconnected);
       expect((await api.readVpnStatus()).status, VpnStatus.disconnected);
       expect(fixture.pkills, [
-        ['pkill', '-TERM', '-x', 'OneXrayCore'],
+        ['pkill', '-TERM', '-x', 'ApoluneCore'],
       ]);
       expect(fixture.watchedPids, unorderedEquals([42, 43]));
       expect(fixture.events, [VpnStatus.disconnecting, VpnStatus.disconnected]);
@@ -367,7 +367,7 @@ void main() {
     expect((await api.stopVpn()).state, NativeVpnCommandState.failed);
     expect((await api.readVpnStatus()).status, VpnStatus.connected);
     expect(fixture.pkills, [
-      ['pkill', '-TERM', '-x', 'OneXrayCore'],
+      ['pkill', '-TERM', '-x', 'ApoluneCore'],
     ]);
     expect(fixture.events, [VpnStatus.disconnecting]);
   });
@@ -387,7 +387,7 @@ void main() {
 
       expect((await api.stopVpn()).status, VpnStatus.disconnected);
       expect(fixture.pkills, [
-        ['pkill', '-TERM', '-x', 'OneXrayCore'],
+        ['pkill', '-TERM', '-x', 'ApoluneCore'],
       ]);
     },
   );
@@ -459,8 +459,8 @@ void main() {
 
       expect((await api.stopVpn()).status, VpnStatus.disconnected);
       expect(fixture.pkills, [
-        ['pkill', '-TERM', '-x', 'OneXrayCore'],
-        ['pkill', '-KILL', '-x', 'OneXrayCore'],
+        ['pkill', '-TERM', '-x', 'ApoluneCore'],
+        ['pkill', '-KILL', '-x', 'ApoluneCore'],
       ]);
     },
   );
@@ -569,9 +569,9 @@ class _Fixture {
 
   static Future<_Fixture> create() async {
     final fixtures = await Directory(
-      '../references/onexray-refactor-validation/test-fixtures',
+      '../references/apolune-refactor-validation/test-fixtures',
     ).absolute.create(recursive: true);
-    final directory = await fixtures.createTemp('onexray-linux-process-');
+    final directory = await fixtures.createTemp('apolune-linux-process-');
     final fixture = _Fixture(directory);
     addTearDown(() => directory.delete(recursive: true));
     addTearDown(fixture._statuses.close);
@@ -585,17 +585,17 @@ class _Fixture {
   }) {
     final api = LinuxFfiApi.forTesting(
       filesDirectory: directory.path,
-      executablePath: p.join(directory.path, 'OneXrayCore'),
+      executablePath: p.join(directory.path, 'ApoluneCore'),
       startProcess: startProcess,
       readRequest: readRequest,
       runCommand: (executable, arguments) async {
         commands.add([executable, ...arguments]);
         if (executable == 'pgrep') {
-          expect(arguments, ['-x', '-r', 'R,S,D,T,t,I', 'OneXrayCore']);
+          expect(arguments, ['-x', '-r', 'R,S,D,T,t,I', 'ApoluneCore']);
         } else {
           expect(executable, 'pkill');
           expect(arguments.first, isIn(['-TERM', '-KILL']));
-          expect(arguments.skip(1), ['-x', 'OneXrayCore']);
+          expect(arguments.skip(1), ['-x', 'ApoluneCore']);
         }
         if (runCommand != null) return runCommand(executable, arguments);
         if (executable == 'pgrep') return queryResult();

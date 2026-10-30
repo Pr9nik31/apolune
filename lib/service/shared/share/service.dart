@@ -4,11 +4,11 @@ import 'dart:io';
 
 import 'package:app_links/app_links.dart';
 import 'package:flutter/foundation.dart';
-import 'package:onexray/core/tools/platform.dart';
+import 'package:apolune/core/tools/platform.dart';
 import 'package:image/image.dart' as img;
 import 'package:mobile_scanner/mobile_scanner.dart';
-import 'package:onexray/core/tools/logger.dart';
-import 'package:onexray/service/shared/apple_widget/service.dart';
+import 'package:apolune/core/tools/logger.dart';
+import 'package:apolune/service/shared/apple_widget/service.dart';
 import 'package:zxing2/qrcode.dart';
 
 final class IncomingAppLink {

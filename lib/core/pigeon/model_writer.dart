@@ -1,10 +1,10 @@
 import 'dart:io';
 import 'dart:convert';
 
-import 'package:onexray/core/pigeon/constants.dart';
-import 'package:onexray/core/pigeon/model.dart';
-import 'package:onexray/core/tools/json.dart';
-import 'package:onexray/core/tools/atomic_file.dart';
+import 'package:apolune/core/pigeon/constants.dart';
+import 'package:apolune/core/pigeon/model.dart';
+import 'package:apolune/core/tools/json.dart';
+import 'package:apolune/core/tools/atomic_file.dart';
 
 extension StartVpnRequestWriter on StartVpnRequest {
   Future<void> writeToStartFile() async {

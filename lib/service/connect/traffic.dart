@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:onexray/service/shared/xray/metrics/model.dart';
+import 'package:apolune/service/shared/xray/metrics/model.dart';
 
 /// One in-memory sample from the active Xray metrics endpoint.
 class ConnectionTraffic {

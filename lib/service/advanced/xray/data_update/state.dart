@@ -1,8 +1,8 @@
 import 'package:collection/collection.dart';
-import 'package:onexray/core/constants/preferences.dart';
-import 'package:onexray/core/model/auto_update_json.dart';
-import 'package:onexray/core/tools/empty.dart';
-import 'package:onexray/service/settings/language/service.dart';
+import 'package:apolune/core/constants/preferences.dart';
+import 'package:apolune/core/model/auto_update_json.dart';
+import 'package:apolune/core/tools/empty.dart';
+import 'package:apolune/service/settings/language/service.dart';
 
 enum AutoUpdateInterval {
   oneDay(24),

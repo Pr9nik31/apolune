@@ -1,9 +1,9 @@
-import 'package:onexray/core/tools/logger.dart';
-import 'package:onexray/service/shared/event_bus/enum.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
+import 'package:apolune/core/tools/logger.dart';
+import 'package:apolune/service/shared/event_bus/enum.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
 
 class DocURLHelper {
-  static const _domain = "onexray.com";
+  static const _domain = "apolune.dev";
 
   static String _localizedDocsRootPath() {
     return switch (AppEventBus.instance.state.languageCode) {

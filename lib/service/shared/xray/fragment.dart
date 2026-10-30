@@ -1,6 +1,6 @@
-import 'package:onexray/core/model/xray_json.dart';
-import 'package:onexray/core/tools/json.dart';
-import 'package:onexray/service/servers/outbound/map.dart';
+import 'package:apolune/core/model/xray_json.dart';
+import 'package:apolune/core/tools/json.dart';
+import 'package:apolune/service/servers/outbound/map.dart';
 
 /// Shared by route compilation and its local validation placeholders.
 abstract final class XrayFragment {

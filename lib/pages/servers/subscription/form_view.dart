@@ -1,13 +1,13 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/pages/shared/widgets/page_help.dart';
-import 'package:onexray/core/pigeon/model.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/theme/color.dart';
-import 'package:onexray/pages/theme/font.dart';
-import 'package:onexray/pages/theme/layout.dart';
-import 'package:onexray/pages/shared/widgets/button_progress.dart';
-import 'package:onexray/pages/shared/widgets/setting_row.dart';
+import 'package:apolune/pages/shared/widgets/page_help.dart';
+import 'package:apolune/core/pigeon/model.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/theme/color.dart';
+import 'package:apolune/pages/theme/font.dart';
+import 'package:apolune/pages/theme/layout.dart';
+import 'package:apolune/pages/shared/widgets/button_progress.dart';
+import 'package:apolune/pages/shared/widgets/setting_row.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 enum _ModeChoice { automatic, appManaged, providerManaged }

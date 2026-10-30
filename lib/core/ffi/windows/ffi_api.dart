@@ -1,12 +1,12 @@
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
-import 'package:onexray/core/ffi/base_ffi_api.dart';
-import 'package:onexray/core/ffi/windows/exe_ffi_api.dart';
-import 'package:onexray/core/ffi/windows/mode.dart';
-import 'package:onexray/core/ffi/windows/model.dart';
-import 'package:onexray/core/ffi/windows/msix_ffi_api.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
+import 'package:apolune/core/ffi/base_ffi_api.dart';
+import 'package:apolune/core/ffi/windows/exe_ffi_api.dart';
+import 'package:apolune/core/ffi/windows/mode.dart';
+import 'package:apolune/core/ffi/windows/model.dart';
+import 'package:apolune/core/ffi/windows/msix_ffi_api.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
 import 'package:path/path.dart' as p;
 
 abstract class WindowsFfiApi extends BaseFfiApi {

@@ -1,24 +1,24 @@
 import 'dart:convert';
 
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/model/geo_data_type.dart';
-import 'package:onexray/service/advanced/xray/geodata/model.dart';
-import 'package:onexray/service/advanced/xray/geodata/service.dart';
-import 'package:onexray/service/connect/routing/custom/document.dart';
-import 'package:onexray/service/connect/routing/custom/advanced.dart';
-import 'package:onexray/service/connect/routing/custom/configuration.dart';
-import 'package:onexray/service/shared/share/app_link_generator.dart';
-import 'package:onexray/service/shared/share/app_link_model.dart';
-import 'package:onexray/service/shared/share/app_link_parser.dart';
-import 'package:onexray/service/shared/share/configuration_source.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/model/geo_data_type.dart';
+import 'package:apolune/service/advanced/xray/geodata/model.dart';
+import 'package:apolune/service/advanced/xray/geodata/service.dart';
+import 'package:apolune/service/connect/routing/custom/document.dart';
+import 'package:apolune/service/connect/routing/custom/advanced.dart';
+import 'package:apolune/service/connect/routing/custom/configuration.dart';
+import 'package:apolune/service/shared/share/app_link_generator.dart';
+import 'package:apolune/service/shared/share/app_link_model.dart';
+import 'package:apolune/service/shared/share/app_link_parser.dart';
+import 'package:apolune/service/shared/share/configuration_source.dart';
 
 enum ConfigurationKind {
-  raw(OneXrayConfigLinkType.raw),
-  custom(OneXrayConfigLinkType.custom),
-  customAdvanced(OneXrayConfigLinkType.customAdvanced);
+  raw(ApoluneConfigLinkType.raw),
+  custom(ApoluneConfigLinkType.custom),
+  customAdvanced(ApoluneConfigLinkType.customAdvanced);
 
   const ConfigurationKind(this.linkType);
-  final OneXrayConfigLinkType linkType;
+  final ApoluneConfigLinkType linkType;
 }
 
 class ConfigurationContent {
@@ -120,20 +120,20 @@ class ConfigurationTransferService {
     }
     var text = input;
     var name = '';
-    final linked = <OneXrayGeoDataLink>[];
+    final linked = <ApoluneGeoDataLink>[];
     if (!input.trimLeft().startsWith('{')) {
-      OneXrayConfigLink? configuration;
+      ApoluneConfigLink? configuration;
       for (final line
           in input.split('\n').where((line) => line.trim().isNotEmpty)) {
         final uri = Uri.tryParse(line.trim());
-        final link = uri == null ? null : OneXrayAppLinkParser.parse(uri);
-        if (link is OneXrayConfigLink && configuration == null) {
+        final link = uri == null ? null : ApoluneAppLinkParser.parse(uri);
+        if (link is ApoluneConfigLink && configuration == null) {
           final expected = kind.linkType;
           if (link.type != expected) {
             throw const FormatException('Unexpected configuration type');
           }
           configuration = link;
-        } else if (link is OneXrayGeoDataLink &&
+        } else if (link is ApoluneGeoDataLink &&
             kind == ConfigurationKind.raw) {
           linked.add(link);
         } else {
@@ -158,7 +158,7 @@ class ConfigurationTransferService {
     ConfigurationSource source,
     ConfigurationKind kind, {
     String? nameOverride,
-    List<OneXrayGeoDataLink> linked = const [],
+    List<ApoluneGeoDataLink> linked = const [],
   }) {
     final json = source.value;
     if (json is! Map<String, dynamic>) {
@@ -266,9 +266,9 @@ class ConfigurationTransferService {
       for (final asset in await _dependencies(decoded, assets)) {
         links.add(
           Uri(
-            scheme: OneXrayAppLinkParser.scheme,
-            host: OneXrayAppLinkParser.host,
-            path: OneXrayAppLinkParser.geoDataPath,
+            scheme: ApoluneAppLinkParser.scheme,
+            host: ApoluneAppLinkParser.host,
+            path: ApoluneAppLinkParser.geoDataPath,
             queryParameters: {'type': asset.type.name, 'url': asset.url},
             fragment: asset.name,
           ).toString(),
@@ -276,7 +276,7 @@ class ConfigurationTransferService {
       }
     }
     links.add(
-      OneXrayAppLinkGenerator.configurationText(
+      ApoluneAppLinkGenerator.configurationText(
         kind.linkType,
         name,
         json,

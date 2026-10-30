@@ -1,16 +1,16 @@
-import 'package:onexray/service/shared/failure.dart';
+import 'package:apolune/service/shared/failure.dart';
 
 import 'dart:async';
 
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/core/constants/preferences.dart';
-import 'package:onexray/core/desktop_startup/model.dart';
-import 'package:onexray/core/tools/logger.dart';
-import 'package:onexray/core/tools/platform.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/shared/alert.dart';
-import 'package:onexray/pages/shared/page_cubit.dart';
-import 'package:onexray/service/launch/app_startup.dart';
+import 'package:apolune/core/constants/preferences.dart';
+import 'package:apolune/core/desktop_startup/model.dart';
+import 'package:apolune/core/tools/logger.dart';
+import 'package:apolune/core/tools/platform.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/shared/alert.dart';
+import 'package:apolune/pages/shared/page_cubit.dart';
+import 'package:apolune/service/launch/app_startup.dart';
 import 'package:window_manager/window_manager.dart';
 
 class DesktopSettingsPageState {

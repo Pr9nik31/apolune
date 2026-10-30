@@ -1,7 +1,7 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/pages/shared/page_cubit.dart';
-import 'package:onexray/service/connect/routing/custom/geodata_suggestions.dart';
-import 'package:onexray/service/connect/routing/custom/state.dart';
+import 'package:apolune/pages/shared/page_cubit.dart';
+import 'package:apolune/service/connect/routing/custom/geodata_suggestions.dart';
+import 'package:apolune/service/connect/routing/custom/state.dart';
 
 class RuleValueEntry {
   final text = TextEditingController();

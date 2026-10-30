@@ -1,8 +1,8 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/pages/advanced/page.dart';
-import 'package:onexray/pages/advanced/tunnel/controller.dart';
-import 'package:onexray/pages/advanced/xray/page.dart';
-import 'package:onexray/pages/main/navigation.dart';
+import 'package:apolune/pages/advanced/page.dart';
+import 'package:apolune/pages/advanced/tunnel/controller.dart';
+import 'package:apolune/pages/advanced/xray/page.dart';
+import 'package:apolune/pages/main/navigation.dart';
 
 /// Route wiring stays in the shell; platform pages only edit their own drafts.
 class AdvancedRootPage extends StatelessWidget {

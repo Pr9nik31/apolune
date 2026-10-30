@@ -1,5 +1,5 @@
 name: Setup Flutter
-description: Install stable Flutter on all OneXray build hosts
+description: Install stable Flutter on all Apolune build hosts
 
 runs:
   using: composite

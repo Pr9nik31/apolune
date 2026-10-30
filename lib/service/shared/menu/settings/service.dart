@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:onexray/core/pigeon/flutter_api.dart';
-import 'package:onexray/core/tools/logger.dart';
-import 'package:onexray/core/tools/platform.dart';
-import 'package:onexray/service/launch/app_startup.dart';
+import 'package:apolune/core/pigeon/flutter_api.dart';
+import 'package:apolune/core/tools/logger.dart';
+import 'package:apolune/core/tools/platform.dart';
+import 'package:apolune/service/launch/app_startup.dart';
 
 /// A navigation request is accepted only by the currently ready shell. Requests
 /// received during Setup, initialization or a modal are never queued.

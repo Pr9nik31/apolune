@@ -1,15 +1,15 @@
 import 'dart:async';
 
-import 'package:onexray/pages/shared/widgets/page_app_bar.dart';
-import 'package:onexray/service/connect/coordinator.dart';
+import 'package:apolune/pages/shared/widgets/page_app_bar.dart';
+import 'package:apolune/service/connect/coordinator.dart';
 
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:onexray/pages/shared/widgets/app_activity.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/connect/controller.dart';
-import 'package:onexray/pages/connect/view.dart';
-import 'package:onexray/pages/main/page_visibility.dart';
+import 'package:apolune/pages/shared/widgets/app_activity.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/connect/controller.dart';
+import 'package:apolune/pages/connect/view.dart';
+import 'package:apolune/pages/main/page_visibility.dart';
 
 class ConnectPage extends StatefulWidget {
   const ConnectPage({super.key});

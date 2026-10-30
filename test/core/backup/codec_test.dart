@@ -2,8 +2,8 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/backup/codec.dart';
-import 'package:onexray/core/backup/model.dart';
+import 'package:apolune/core/backup/codec.dart';
+import 'package:apolune/core/backup/model.dart';
 
 void main() {
   const smart = BackupSmartRouting(

@@ -1,6 +1,6 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/pages/shared/widgets/button_progress.dart';
+import 'package:apolune/pages/shared/widgets/button_progress.dart';
 
 void main() {
   testWidgets('button progress keeps its label and fits the button', (

@@ -2,26 +2,26 @@ import 'dart:convert';
 
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/errors/json_diagnostic.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/core/pigeon/model.dart';
-import 'package:onexray/service/connect/raw/editor.dart';
-import 'package:onexray/service/connect/compiler.dart';
-import 'package:onexray/service/connect/coordinator.dart';
-import 'package:onexray/service/connect/runtime.dart';
-import 'package:onexray/service/connect/runtime_host.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/advanced/platform_policy.dart';
-import 'package:onexray/service/shared/share/configuration_transfer.dart';
-import 'package:onexray/service/shared/share/configuration_source.dart';
-import 'package:onexray/service/shared/xray/vpn_config.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/errors/json_diagnostic.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/core/pigeon/model.dart';
+import 'package:apolune/service/connect/raw/editor.dart';
+import 'package:apolune/service/connect/compiler.dart';
+import 'package:apolune/service/connect/coordinator.dart';
+import 'package:apolune/service/connect/runtime.dart';
+import 'package:apolune/service/connect/runtime_host.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/advanced/platform_policy.dart';
+import 'package:apolune/service/shared/share/configuration_transfer.dart';
+import 'package:apolune/service/shared/share/configuration_source.dart';
+import 'package:apolune/service/shared/xray/vpn_config.dart';
 
 import '../../../support/fake_geodata_import.dart';
 import '../../../support/xdrive_template_fixture.dart';
 
-import 'package:onexray/service/servers/outbound/state_db.dart';
-import 'package:onexray/service/connect/raw/db.dart';
+import 'package:apolune/service/servers/outbound/state_db.dart';
+import 'package:apolune/service/connect/raw/db.dart';
 
 const _text =
     '{ "name": "original", "outbounds": [{"tag":"direct","protocol":"freedom"}] }';

@@ -1,13 +1,13 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/tools/platform.dart';
-import 'package:onexray/pages/theme/color.dart';
-import 'package:onexray/pages/theme/font.dart';
-import 'package:onexray/pages/theme/layout.dart';
-import 'package:onexray/pages/theme/theme.dart';
-import 'package:onexray/pages/shared/widgets/button_progress.dart';
-import 'package:onexray/pages/shared/widgets/page_action_bar.dart';
-import 'package:onexray/pages/shared/widgets/page_app_bar.dart';
+import 'package:apolune/core/tools/platform.dart';
+import 'package:apolune/pages/theme/color.dart';
+import 'package:apolune/pages/theme/font.dart';
+import 'package:apolune/pages/theme/layout.dart';
+import 'package:apolune/pages/theme/theme.dart';
+import 'package:apolune/pages/shared/widgets/button_progress.dart';
+import 'package:apolune/pages/shared/widgets/page_action_bar.dart';
+import 'package:apolune/pages/shared/widgets/page_app_bar.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 void main() {

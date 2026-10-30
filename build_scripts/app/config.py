@@ -1,5 +1,5 @@
 PROJECT_CONFIG = {
-    "OneXray": {
+    "Apolune": {
         "build_number.base": 400,
         "core.dir": "libXray",
         "core.lib.src.files.ios": ["LibXray.xcframework"],
@@ -15,7 +15,7 @@ PROJECT_CONFIG = {
         "core.dat.dst.dir": "../assets/dat",
         "core.bin.src.file.linux": "bin/xray",
         "core.bin.src.file.windows": "bin/xray.exe",
-        "core.bin.dst.file.linux": "app/OneXrayCore",
-        "core.bin.dst.file.windows": "app/OneXrayCore.exe",
+        "core.bin.dst.file.linux": "app/ApoluneCore",
+        "core.bin.dst.file.windows": "app/ApoluneCore.exe",
     },
 }

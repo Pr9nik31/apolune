@@ -1,4 +1,4 @@
-import 'package:onexray/pages/shared/page_cubit.dart';
+import 'package:apolune/pages/shared/page_cubit.dart';
 
 class ManualOrderItem {
   const ManualOrderItem(this.id, this.name);

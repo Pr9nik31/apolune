@@ -1,4 +1,4 @@
-import 'package:onexray/core/model/xray_json.dart';
+import 'package:apolune/core/model/xray_json.dart';
 
 XrayOutbound createFreedomOutbound({
   required String tag,

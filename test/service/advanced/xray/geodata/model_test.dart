@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/model/geo_data_type.dart';
-import 'package:onexray/service/advanced/xray/geodata/model.dart';
+import 'package:apolune/core/model/geo_data_type.dart';
+import 'package:apolune/service/advanced/xray/geodata/model.dart';
 
 void main() {
   test(

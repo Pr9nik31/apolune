@@ -5,11 +5,11 @@ import 'package:pigeon/pigeon.dart';
     dartOut: 'lib/core/pigeon/messages.g.dart',
     dartOptions: DartOptions(),
     kotlinOut:
-        'android/app/src/main/kotlin/net/yuandev/onexray/pigeon/Messages.g.kt',
-    kotlinOptions: KotlinOptions(package: "net.yuandev.onexray.pigeon"),
+        'android/app/src/main/kotlin/net/apolune/apolune/pigeon/Messages.g.kt',
+    kotlinOptions: KotlinOptions(package: "dev.apolune.client.pigeon"),
     swiftOut: 'swift/App/pigeon/Messages.g.swift',
     swiftOptions: SwiftOptions(),
-    dartPackageName: 'onexray',
+    dartPackageName: 'apolune',
   ),
 )
 @HostApi()

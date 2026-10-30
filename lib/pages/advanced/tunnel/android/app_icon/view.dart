@@ -1,6 +1,6 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:onexray/pages/advanced/tunnel/android/app_icon/controller.dart';
+import 'package:apolune/pages/advanced/tunnel/android/app_icon/controller.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 /// Shows the launcher icon of [packageName], falling back to a generic glyph

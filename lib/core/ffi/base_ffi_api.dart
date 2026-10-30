@@ -4,12 +4,12 @@ import 'dart:io';
 import 'package:ffi/ffi.dart';
 import 'package:flutter/foundation.dart' show protected;
 import 'package:isolate_manager/isolate_manager.dart';
-import 'package:onexray/core/ffi/generated_bindings.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/core/pigeon/model.dart';
-import 'package:onexray/core/tools/empty.dart';
+import 'package:apolune/core/ffi/generated_bindings.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/core/pigeon/model.dart';
+import 'package:apolune/core/tools/empty.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:onexray/core/tools/platform.dart';
+import 'package:apolune/core/tools/platform.dart';
 import 'package:path/path.dart' as p;
 
 List<String> desktopCoreRunArguments({

@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/model/xray_json.dart';
+import 'package:apolune/core/model/xray_json.dart';
 
 void main() {
   test('round-trips the complete regular configuration model', () {
@@ -61,7 +61,7 @@ void main() {
         {
           'listen': '127.0.0.1',
           'protocol': 'tun',
-          'settings': {'name': 'OneXrayTun', 'mtu': 9000},
+          'settings': {'name': 'ApoluneTun', 'mtu': 9000},
           'tag': 'tunIn',
           'sniffing': {
             'enabled': true,
@@ -182,7 +182,7 @@ void main() {
 
   test('round-trips the App-managed inbound settings', () {
     final tun = {
-      'name': 'OneXrayTun',
+      'name': 'ApoluneTun',
       'mtu': 9000,
       'gateway': ['198.18.0.1/15', 'fc00::1/64'],
       'dns': ['8.8.8.8', '2001:4860:4860::8888'],

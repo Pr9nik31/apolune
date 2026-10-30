@@ -6,18 +6,18 @@ import 'package:drift/native.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/pages/shared/share/controller.dart';
-import 'package:onexray/pages/shared/share/page.dart';
-import 'package:onexray/pages/shared/share/params.dart';
-import 'package:onexray/pages/shared/widgets/adaptive_dialog.dart';
-import 'package:onexray/pages/shared/widgets/button_progress.dart';
-import 'package:onexray/pages/shared/widgets/configuration_transfer.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
-import 'package:onexray/service/shared/share/app_link_model.dart';
-import 'package:onexray/service/shared/share/app_link_parser.dart';
-import 'package:onexray/service/shared/share/configuration_transfer.dart';
-import 'package:onexray/service/shared/share/outgoing_share.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/pages/shared/share/controller.dart';
+import 'package:apolune/pages/shared/share/page.dart';
+import 'package:apolune/pages/shared/share/params.dart';
+import 'package:apolune/pages/shared/widgets/adaptive_dialog.dart';
+import 'package:apolune/pages/shared/widgets/button_progress.dart';
+import 'package:apolune/pages/shared/widgets/configuration_transfer.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
+import 'package:apolune/service/shared/share/app_link_model.dart';
+import 'package:apolune/service/shared/share/app_link_parser.dart';
+import 'package:apolune/service/shared/share/configuration_transfer.dart';
+import 'package:apolune/service/shared/share/outgoing_share.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
@@ -93,13 +93,13 @@ void main() {
       expect(find.byType(SharePage), findsOneWidget);
       expect(find.byType(ShadToast), findsNothing);
 
-      await tester.tap(find.text('OneXray link'));
+      await tester.tap(find.text('Apolune link'));
       await tester.pumpAndSettle();
       await tester.tap(button);
       await tester.pumpAndSettle();
       expect(sent, hasLength(2));
       final link = Uri.parse(sent.last.text!);
-      expect(link.scheme, 'onexray');
+      expect(link.scheme, 'apolune');
       expect(link.queryParameters['age'], 'x25519');
       expect(sent.last.text, isNot(contains('PRIVATE')));
       expect(sent.last.text, isNot(contains('age1public')));
@@ -232,7 +232,7 @@ void main() {
         }
         await tester.pumpAndSettle();
         final link =
-            OneXrayAppLinkParser.parse(Uri.parse(links))! as OneXrayConfigLink;
+            ApoluneAppLinkParser.parse(Uri.parse(links))! as ApoluneConfigLink;
         expect(link.type, kind.linkType);
         expect(link.name, 'Draft');
         if (kind == ConfigurationKind.raw) {

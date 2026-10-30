@@ -1,8 +1,8 @@
 blank_issues_enabled: true
 contact_links:
-  - name: OneXray documentation
-    url: https://onexray.com
+  - name: Apolune documentation
+    url: https://apolune.dev
     about: Read installation, routing, and platform-specific guidance.
-  - name: OneXray releases
-    url: https://github.com/YuanDevTeam/OneXray/releases
+  - name: Apolune releases
+    url: https://github.com/Pr9nik31/apolune/releases
     about: Check available versions and release notes before reporting a problem.

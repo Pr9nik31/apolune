@@ -1,7 +1,7 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:onexray/pages/servers/import/controller.dart';
-import 'package:onexray/pages/servers/import/page.dart';
+import 'package:apolune/pages/servers/import/controller.dart';
+import 'package:apolune/pages/servers/import/page.dart';
 
 class SubscriptionEditorPage extends StatelessWidget {
   final int subscriptionId;

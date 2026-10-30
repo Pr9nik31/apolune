@@ -1,5 +1,5 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/core/tools/platform.dart';
+import 'package:apolune/core/tools/platform.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 abstract final class AppFontFamily {

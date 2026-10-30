@@ -3,16 +3,16 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/ffi/desktop_core_exit.dart';
-import 'package:onexray/core/ffi/windows/core_process.dart';
-import 'package:onexray/core/ffi/windows/exe_ffi_api.dart';
-import 'package:onexray/core/ffi/windows/ffi_api.dart';
-import 'package:onexray/core/ffi/windows/mode.dart';
-import 'package:onexray/core/ffi/windows/msix_ffi_api.dart';
-import 'package:onexray/core/ffi/windows/native_api.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/core/pigeon/model.dart';
-import 'package:onexray/core/model/tun_json.dart';
+import 'package:apolune/core/ffi/desktop_core_exit.dart';
+import 'package:apolune/core/ffi/windows/core_process.dart';
+import 'package:apolune/core/ffi/windows/exe_ffi_api.dart';
+import 'package:apolune/core/ffi/windows/ffi_api.dart';
+import 'package:apolune/core/ffi/windows/mode.dart';
+import 'package:apolune/core/ffi/windows/msix_ffi_api.dart';
+import 'package:apolune/core/ffi/windows/native_api.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/core/pigeon/model.dart';
+import 'package:apolune/core/model/tun_json.dart';
 import 'package:path/path.dart' as p;
 
 void main() {
@@ -24,7 +24,7 @@ void main() {
   WindowsExeFfiApi create({Future<StartVpnRequest> Function()? readRequest}) =>
       WindowsExeFfiApi(
         filesDirectory: directory.path,
-        executable: p.join(directory.path, 'OneXrayCore.exe'),
+        executable: p.join(directory.path, 'ApoluneCore.exe'),
         process: process,
         readRequest:
             readRequest ??
@@ -58,7 +58,7 @@ void main() {
 
   test('the compile-time mode chooses one Windows implementation', () {
     const configured = String.fromEnvironment(
-      'ONEXRAY_WINDOWS_MODE',
+      'APOLUNE_WINDOWS_MODE',
       defaultValue: 'exe',
     );
     expect(windowsBuildMode.name, configured);

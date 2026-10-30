@@ -4,20 +4,20 @@ import 'dart:io';
 
 import 'package:drift/drift.dart' show Value;
 import 'package:flutter/services.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/errors/failure.dart';
-import 'package:onexray/core/model/geo_dat.dart';
-import 'package:onexray/core/model/geo_data_type.dart';
-import 'package:onexray/core/pigeon/constants.dart';
-import 'package:onexray/core/pigeon/host_api.dart';
-import 'package:onexray/core/pigeon/model.dart';
-import 'package:onexray/gen/assets.gen.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
-import 'package:onexray/service/advanced/xray/geodata/download.dart';
-import 'package:onexray/service/advanced/xray/geodata/model.dart';
-import 'package:onexray/service/advanced/xray/geodata/system_state.dart';
-import 'package:onexray/service/shared/in_flight_operations.dart';
-import 'package:onexray/service/shared/command_serial_executor.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/errors/failure.dart';
+import 'package:apolune/core/model/geo_dat.dart';
+import 'package:apolune/core/model/geo_data_type.dart';
+import 'package:apolune/core/pigeon/constants.dart';
+import 'package:apolune/core/pigeon/host_api.dart';
+import 'package:apolune/core/pigeon/model.dart';
+import 'package:apolune/gen/assets.gen.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
+import 'package:apolune/service/advanced/xray/geodata/download.dart';
+import 'package:apolune/service/advanced/xray/geodata/model.dart';
+import 'package:apolune/service/advanced/xray/geodata/system_state.dart';
+import 'package:apolune/service/shared/in_flight_operations.dart';
+import 'package:apolune/service/shared/command_serial_executor.dart';
 import 'package:path/path.dart' as p;
 
 /// Runs a confirmed save against staged dependencies. The callback includes
@@ -356,7 +356,7 @@ class GeoDataService {
     final parent = Directory(p.dirname(_root));
     await for (final entry in parent.list(followLinks: false)) {
       if (entry is Directory &&
-          p.basename(entry.path).startsWith('.onexray-geodata-restore-')) {
+          p.basename(entry.path).startsWith('.apolune-geodata-restore-')) {
         await _recoverRestoreJournal(entry, discard: discard);
       }
     }
@@ -620,11 +620,11 @@ class GeoDataService {
     await for (final entry in parent.list(followLinks: false)) {
       if (entry is! Directory) continue;
       final directoryName = p.basename(entry.path);
-      if (directoryName.startsWith('.onexray-geodata-backup-')) {
+      if (directoryName.startsWith('.apolune-geodata-backup-')) {
         if ((await _flatNames(entry)).isEmpty) await _deleteStage(entry);
         continue;
       }
-      if (!directoryName.startsWith('.onexray-geodata-import-') ||
+      if (!directoryName.startsWith('.apolune-geodata-import-') ||
           _activeImportStages.contains(p.normalize(entry.path))) {
         continue;
       }
@@ -747,7 +747,7 @@ class GeoDataService {
     }
     final parent = Directory(p.dirname(_root));
     await parent.create(recursive: true);
-    return parent.createTemp('.onexray-geodata-$prefix');
+    return parent.createTemp('.apolune-geodata-$prefix');
   }
 
   Future<Map<String, File?>> _stageFiles(Directory stage) async => {
@@ -894,7 +894,7 @@ class GeoDataService {
   Future<void> _deleteStage(Directory stage) async {
     final expectedParent = p.normalize(p.dirname(_root));
     if (p.normalize(p.dirname(stage.path)) != expectedParent ||
-        !p.basename(stage.path).startsWith('.onexray-geodata-')) {
+        !p.basename(stage.path).startsWith('.apolune-geodata-')) {
       throw StateError('Invalid Geodata staging directory');
     }
     if (await stage.exists()) await stage.delete(recursive: true);

@@ -1,15 +1,15 @@
 import 'dart:convert';
 import 'dart:math';
 
-import 'package:onexray/core/constants/preferences.dart';
-import 'package:onexray/core/errors/failure.dart';
-import 'package:onexray/core/pigeon/host_api.dart';
-import 'package:onexray/core/tools/platform.dart';
-import 'package:onexray/service/advanced/local_api/configuration.dart';
-import 'package:onexray/service/advanced/local_api/server.dart';
-import 'package:onexray/service/advanced/local_api/settings.dart';
-import 'package:onexray/service/connect/coordinator.dart';
-import 'package:onexray/service/shared/command_serial_executor.dart';
+import 'package:apolune/core/constants/preferences.dart';
+import 'package:apolune/core/errors/failure.dart';
+import 'package:apolune/core/pigeon/host_api.dart';
+import 'package:apolune/core/tools/platform.dart';
+import 'package:apolune/service/advanced/local_api/configuration.dart';
+import 'package:apolune/service/advanced/local_api/server.dart';
+import 'package:apolune/service/advanced/local_api/settings.dart';
+import 'package:apolune/service/connect/coordinator.dart';
+import 'package:apolune/service/shared/command_serial_executor.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 /// The opt-in desktop listener lives with the App, not with the VPN process.

@@ -1,18 +1,18 @@
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/advanced/tunnel/controller.dart';
-import 'package:onexray/pages/advanced/tunnel/page.dart';
-import 'package:onexray/pages/advanced/tunnel/widgets.dart';
-import 'package:onexray/pages/theme/color.dart';
-import 'package:onexray/pages/theme/theme.dart';
-import 'package:onexray/service/advanced/policy_editor.dart';
-import 'package:onexray/service/connect/coordinator.dart';
-import 'package:onexray/service/connect/runtime.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/settings/language/locale.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/advanced/tunnel/controller.dart';
+import 'package:apolune/pages/advanced/tunnel/page.dart';
+import 'package:apolune/pages/advanced/tunnel/widgets.dart';
+import 'package:apolune/pages/theme/color.dart';
+import 'package:apolune/pages/theme/theme.dart';
+import 'package:apolune/service/advanced/policy_editor.dart';
+import 'package:apolune/service/connect/coordinator.dart';
+import 'package:apolune/service/connect/runtime.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/settings/language/locale.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 double _contrast(Color foreground, Color background) {

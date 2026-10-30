@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/desktop_startup/windows_exe_adapter.dart';
+import 'package:apolune/core/desktop_startup/windows_exe_adapter.dart';
 import 'package:path/path.dart' as path;
 
 void main() {
@@ -65,7 +65,7 @@ void main() {
 
   test('disabling preserves a shortcut owned by another copy', () async {
     final executable = Platform.resolvedExecutable;
-    final otherExecutable = _createOtherOneXrayExecutable();
+    final otherExecutable = _createOtherApoluneExecutable();
     final store = _FakeWindowsLaunchAtLoginStore(
       shortcut: _shortcut(otherExecutable),
     );
@@ -82,7 +82,7 @@ void main() {
 
   test('enabling does not overwrite another shortcut target', () async {
     final executable = Platform.resolvedExecutable;
-    final otherExecutable = _createOtherOneXrayExecutable();
+    final otherExecutable = _createOtherApoluneExecutable();
     final store = _FakeWindowsLaunchAtLoginStore(
       shortcut: _shortcut(otherExecutable),
     );
@@ -121,10 +121,10 @@ void main() {
     expect(store.shortcut?.arguments, isEmpty);
   });
 
-  test('enabling replaces a missing OneXray shortcut target', () async {
+  test('enabling replaces a missing Apolune shortcut target', () async {
     final executable = Platform.resolvedExecutable;
     final store = _FakeWindowsLaunchAtLoginStore(
-      shortcut: _shortcut(r'C:\Removed\OneXray.exe'),
+      shortcut: _shortcut(r'C:\Removed\Apolune.exe'),
     );
     final adapter = WindowsExeLaunchAtLoginAdapter(
       executable: executable,
@@ -170,13 +170,13 @@ void main() {
   }
 }
 
-String _createOtherOneXrayExecutable() {
+String _createOtherApoluneExecutable() {
   final directory =
       (Directory('../references/windows-exe-tests').absolute
             ..createSync(recursive: true))
-          .createTempSync('onexray-startup-test-');
+          .createTempSync('apolune-startup-test-');
   addTearDown(() => directory.deleteSync(recursive: true));
-  final executable = File(path.join(directory.path, 'OneXray.exe'));
+  final executable = File(path.join(directory.path, 'Apolune.exe'));
   executable.writeAsStringSync('test');
   return executable.path;
 }

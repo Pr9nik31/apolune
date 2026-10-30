@@ -1,12 +1,12 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/pages/shared/widgets/button_progress.dart';
+import 'package:apolune/pages/shared/widgets/button_progress.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:onexray/core/desktop_startup/model.dart';
-import 'package:onexray/core/tools/platform.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/settings/desktop/controller.dart';
-import 'package:onexray/pages/shared/widgets/setting_row.dart';
-import 'package:onexray/pages/shared/widgets/settings_page.dart';
+import 'package:apolune/core/desktop_startup/model.dart';
+import 'package:apolune/core/tools/platform.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/settings/desktop/controller.dart';
+import 'package:apolune/pages/shared/widgets/setting_row.dart';
+import 'package:apolune/pages/shared/widgets/settings_page.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 class DesktopSettingsPage extends StatelessWidget {

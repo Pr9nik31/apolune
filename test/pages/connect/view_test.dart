@@ -1,21 +1,21 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/tools/traffic_format.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/service/settings/language/locale.dart';
-import 'package:onexray/pages/connect/view.dart';
-import 'package:onexray/pages/theme/layout.dart';
-import 'package:onexray/pages/theme/theme.dart';
-import 'package:onexray/pages/shared/widgets/page_action_bar.dart';
-import 'package:onexray/pages/shared/widgets/page_empty_state.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/tools/traffic_format.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/service/settings/language/locale.dart';
+import 'package:apolune/pages/connect/view.dart';
+import 'package:apolune/pages/theme/layout.dart';
+import 'package:apolune/pages/theme/theme.dart';
+import 'package:apolune/pages/shared/widgets/page_action_bar.dart';
+import 'package:apolune/pages/shared/widgets/page_empty_state.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
-import 'package:onexray/service/connect/coordinator.dart';
-import 'package:onexray/service/connect/resolver.dart';
-import 'package:onexray/service/connect/traffic.dart';
-import 'package:onexray/service/settings/backup/service.dart';
+import 'package:apolune/service/connect/coordinator.dart';
+import 'package:apolune/service/connect/resolver.dart';
+import 'package:apolune/service/connect/traffic.dart';
+import 'package:apolune/service/settings/backup/service.dart';
 
 void main() {
   test('connection traffic keeps byte conversion and prototype precision', () {

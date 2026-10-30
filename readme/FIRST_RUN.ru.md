@@ -21,9 +21,9 @@ Git, Python 3.12+, Go согласно `go.mod` libXray и LLVM/libclang для 
 В рабочем каталоге клонируйте только отсутствующие репозитории:
 
 ```shell
-git clone https://github.com/YuanDevTeam/OneXray.git
+git clone https://github.com/Pr9nik31/apolune.git
 git clone https://github.com/XTLS/libXray.git
-cd OneXray
+cd Apolune
 ```
 
 Репозитории должны быть соседними; для Windows нужен также Vole — см. [структуру каталогов](../build_scripts/README.md#prepare-the-workspace).
@@ -69,8 +69,8 @@ sudo apt-get install -y build-essential clang libclang-dev cmake ninja-build pkg
 python3 ../libXray/build/main.py linux
 mkdir -p linux/app
 cp ../libXray/linux_so/libXray.so linux/app/
-cp ../libXray/bin/xray linux/app/OneXrayCore
-chmod +x linux/app/OneXrayCore
+cp ../libXray/bin/xray linux/app/ApoluneCore
+chmod +x linux/app/ApoluneCore
 ```
 
 ### Windows
@@ -117,7 +117,7 @@ Apple/Android, поскольку общий Dart-код импортирует 
 - Linux: сначала соберите Debug bundle и выдайте сетевые возможности его Core:
   ```shell
   flutter build linux --debug
-  sudo setcap cap_net_admin,cap_net_raw+eip build/linux/x64/debug/bundle/OneXrayCore
+  sudo setcap cap_net_admin,cap_net_raw+eip build/linux/x64/debug/bundle/ApoluneCore
   flutter run -d linux --no-enable-impeller
   ```
   Для ARM64 замените `x64` на `arm64`; после замены Core выдайте возможности заново.

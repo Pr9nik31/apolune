@@ -1,6 +1,6 @@
 import 'package:macos_window_utils/widgets/macos_toolbar_passthrough.dart';
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/pages/main/desktop_window.dart';
+import 'package:apolune/pages/main/desktop_window.dart';
 
 /// Keeps the themed AppBar while forwarding clicks on controls that overlap
 /// the native macOS titlebar. Empty titlebar space keeps native window gestures.

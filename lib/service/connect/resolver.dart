@@ -1,12 +1,12 @@
 import 'dart:async';
 
-import 'package:onexray/core/db/database/constants.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/service/connect/compiler.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/shared/ping/service.dart';
-import 'package:onexray/service/connect/routing/custom/configuration.dart';
+import 'package:apolune/core/db/database/constants.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/service/connect/compiler.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/shared/ping/service.dart';
+import 'package:apolune/service/connect/routing/custom/configuration.dart';
 
 enum ConnectionResolutionFailure {
   selectionUnavailable,

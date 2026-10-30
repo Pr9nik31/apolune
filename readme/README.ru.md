@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="../assets/logo.png" width="96" alt="Логотип OneXray">
+  <img src="../assets/logo.png" width="96" alt="Логотип Apolune">
 </p>
 
-<h1 align="center">OneXray</h1>
+<h1 align="center">Apolune</h1>
 
 <p align="center">
   Клиент Xray-core с открытым исходным кодом для телефонов, планшетов и компьютеров.
@@ -15,34 +15,34 @@
 <p align="center"><strong>Скачайте из официальных магазинов</strong></p>
 
 <p align="center">
-  <a href="https://apps.apple.com/us/app/onexray/id6745748773"><img src="./store-badges/ru/app-store.svg" height="48" align="middle" alt="Загрузить в App Store"></a>&nbsp;
-  <a href="https://play.google.com/store/apps/details?id=net.yuandev.onexray"><img src="./store-badges/ru/google-play.png" height="64" align="middle" alt="Скачать в Google Play"></a>&nbsp;
+  <a href="https://apps.apple.com/us/app/apolune/id6745748773"><img src="./store-badges/ru/app-store.svg" height="48" align="middle" alt="Загрузить в App Store"></a>&nbsp;
+  <a href="https://play.google.com/store/apps/details?id=dev.apolune.client"><img src="./store-badges/ru/google-play.png" height="64" align="middle" alt="Скачать в Google Play"></a>&nbsp;
   <a href="https://apps.microsoft.com/detail/9NJ0MVHW215D"><img src="./store-badges/ru/microsoft-store.svg" height="48" align="middle" alt="Скачать из Microsoft Store"></a>
 </p>
 
 <p align="center">
-  <a href="#linux">Linux</a> · <a href="#onexrayse">OneXraySE</a> · <a href="#другие-варианты-загрузки">Другие варианты загрузки</a>
+  <a href="#linux">Linux</a> · <a href="#apolunese">ApoluneSE</a> · <a href="#другие-варианты-загрузки">Другие варианты загрузки</a>
 </p>
 
 <p align="center">
-  Если OneXray вам полезен, поставьте этому репозиторию ⭐ <strong>Star</strong>, чтобы поддержать дальнейшую разработку.
+  Если Apolune вам полезен, поставьте этому репозиторию ⭐ <strong>Star</strong>, чтобы поддержать дальнейшую разработку.
 </p>
 
 <p align="center">
-  <a href="https://github.com/YuanDevTeam/OneXray"><img src="https://img.shields.io/github/stars/YuanDevTeam/OneXray?style=social" alt="Звёзды на GitHub"></a>
-  <a href="https://github.com/YuanDevTeam/OneXray/releases/latest"><img src="https://img.shields.io/github/v/release/YuanDevTeam/OneXray?display_name=tag&sort=semver" alt="Последний релиз"></a>
+  <a href="https://github.com/Pr9nik31/apolune"><img src="https://img.shields.io/github/stars/Pr9nik31/apolune?style=social" alt="Звёзды на GitHub"></a>
+  <a href="https://github.com/Pr9nik31/apolune/releases/latest"><img src="https://img.shields.io/github/v/release/Pr9nik31/apolune?display_name=tag&sort=semver" alt="Последний релиз"></a>
 </p>
 
-**Добавьте свои серверы или подписку.** OneXray не предоставляет доступ к VPN или прокси-серверы.
+**Добавьте свои серверы или подписку.** Apolune не предоставляет доступ к VPN или прокси-серверы.
 
-[![OneXray на Mac, iPad и iPhone](./images/devices-ru.png)](./images/devices-ru.png)
+[![Apolune на Mac, iPad и iPhone](./images/devices-ru.png)](./images/devices-ru.png)
 
-## Почему OneXray
+## Почему Apolune
 
 - **На всех ваших устройствах.** Используйте iPhone, iPad, Mac, Android, Windows или Linux. Доступны светлая и тёмная темы и пять языков интерфейса.
 - **Серверы в порядке.** Импортируйте ссылки, Xray JSON и подписки. Объединяйте вручную добавленные узлы в группы и меняйте их порядок перетаскиванием.
 - **Маршрутизация под вашим контролем.** Выбирайте умную или пользовательскую маршрутизацию либо используйте полные конфигурации Raw и провайдеров, включая подписки Remnawave.
-- **Открытость и конфиденциальность.** Исходный код под GPL-3.0, без учётных записей, рекламы, аналитики и отслеживания. [Политика конфиденциальности](https://onexray.com/ru/docs/privacy/).
+- **Открытость и конфиденциальность.** Исходный код под GPL-3.0, без учётных записей, рекламы, аналитики и отслеживания. [Политика конфиденциальности](https://apolune.dev/ru/docs/privacy/).
 
 ## Первые шаги
 
@@ -50,24 +50,24 @@
 2. Откройте **Серверы** и добавьте подписку, ссылки или Xray JSON. Полные конфигурации провайдеров распознаются при импорте подписки.
 3. На странице **Подключение** выберите сервер или полную конфигурацию и запустите VPN. Для узлов, которыми управляет приложение, начните с умной маршрутизации; конфигурации провайдеров используют собственные настройки маршрутизации и DNS.
 
-[Первое подключение](https://onexray.com/ru/docs/getting-started/) · [Импорт серверов](https://onexray.com/ru/docs/servers/import/) · [Руководство по Remnawave](https://onexray.com/ru/docs/servers/remnawave/)
+[Первое подключение](https://apolune.dev/ru/docs/getting-started/) · [Импорт серверов](https://apolune.dev/ru/docs/servers/import/) · [Руководство по Remnawave](https://apolune.dev/ru/docs/servers/remnawave/)
 
 ## Загрузка
 
 Выберите официальный магазин для своего устройства:
 
-- **iPhone / iPad:** [App Store](https://apps.apple.com/us/app/onexray/id6745748773) — iOS / iPadOS 15+.
-- **macOS:** [Mac App Store](https://apps.apple.com/us/app/onexray/id6745748773) — macOS 13+, Apple silicon или Intel.
-- **Телефоны / планшеты Android:** [Google Play](https://play.google.com/store/apps/details?id=net.yuandev.onexray) — Android 10+, arm64-v8a или x86_64.
+- **iPhone / iPad:** [App Store](https://apps.apple.com/us/app/apolune/id6745748773) — iOS / iPadOS 15+.
+- **macOS:** [Mac App Store](https://apps.apple.com/us/app/apolune/id6745748773) — macOS 13+, Apple silicon или Intel.
+- **Телефоны / планшеты Android:** [Google Play](https://play.google.com/store/apps/details?id=dev.apolune.client) — Android 10+, arm64-v8a или x86_64.
 - **Windows:** [Microsoft Store](https://apps.microsoft.com/detail/9NJ0MVHW215D) — Windows 10 20H2+ (x64) или Windows 11 (ARM64).
 
 ### Linux
 
-[DEB · x86_64](https://github.com/YuanDevTeam/OneXray/releases/latest/download/OneXray-linux-x86_64.deb) · [DEB · arm64](https://github.com/YuanDevTeam/OneXray/releases/latest/download/OneXray-linux-aarch64.deb). Требуются Linux 5.3+ и glibc 2.39+. Зависимости и разрешения описаны в [руководстве по установке на Linux](https://onexray.com/ru/docs/install/#linux).
+[DEB · x86_64](https://github.com/Pr9nik31/apolune/releases/latest/download/Apolune-linux-x86_64.deb) · [DEB · arm64](https://github.com/Pr9nik31/apolune/releases/latest/download/Apolune-linux-aarch64.deb). Требуются Linux 5.3+ и glibc 2.39+. Зависимости и разрешения описаны в [руководстве по установке на Linux](https://apolune.dev/ru/docs/install/#linux).
 
-### OneXraySE
+### ApoluneSE
 
-Версия для macOS с System Extension доступна через [Homebrew](https://formulae.brew.sh/cask/onexrayse) или в виде [Universal ZIP](https://github.com/YuanDevTeam/OneXray/releases/latest/download/OneXray-macos-universal.zip). Требуется macOS 13+, Apple silicon или Intel. Разрешение расширения и обновление описаны в [руководстве по установке на macOS](https://onexray.com/ru/docs/install/#macos).
+Версия для macOS с System Extension доступна через [Homebrew](https://formulae.brew.sh/cask/apolunese) или в виде [Universal ZIP](https://github.com/Pr9nik31/apolune/releases/latest/download/Apolune-macos-universal.zip). Требуется macOS 13+, Apple silicon или Intel. Разрешение расширения и обновление описаны в [руководстве по установке на macOS](https://apolune.dev/ru/docs/install/#macos).
 
 ### Другие варианты загрузки
 
@@ -76,29 +76,29 @@
 
 | Платформа | Пакеты |
 | --- | --- |
-| iPhone / iPad | [IPA](https://github.com/YuanDevTeam/OneXray/releases/latest/download/OneXray-ios.ipa) |
-| Android | [Универсальный APK](https://github.com/YuanDevTeam/OneXray/releases/latest/download/OneXray-android-universal.apk) |
-| Windows x64 | [EXE через winget](https://onexray.com/ru/docs/install/#windows) · [ZIP](https://github.com/YuanDevTeam/OneXray/releases/latest/download/OneXray-windows-amd64.zip) |
-| Windows ARM64 | [EXE через winget](https://onexray.com/ru/docs/install/#windows) · [ZIP](https://github.com/YuanDevTeam/OneXray/releases/latest/download/OneXray-windows-arm64.zip) |
-| Linux x86_64 | [ZIP](https://github.com/YuanDevTeam/OneXray/releases/latest/download/OneXray-linux-x86_64.zip) |
-| Linux arm64 | [ZIP](https://github.com/YuanDevTeam/OneXray/releases/latest/download/OneXray-linux-aarch64.zip) |
+| iPhone / iPad | [IPA](https://github.com/Pr9nik31/apolune/releases/latest/download/Apolune-ios.ipa) |
+| Android | [Универсальный APK](https://github.com/Pr9nik31/apolune/releases/latest/download/Apolune-android-universal.apk) |
+| Windows x64 | [EXE через winget](https://apolune.dev/ru/docs/install/#windows) · [ZIP](https://github.com/Pr9nik31/apolune/releases/latest/download/Apolune-windows-amd64.zip) |
+| Windows ARM64 | [EXE через winget](https://apolune.dev/ru/docs/install/#windows) · [ZIP](https://github.com/Pr9nik31/apolune/releases/latest/download/Apolune-windows-arm64.zip) |
+| Linux x86_64 | [ZIP](https://github.com/Pr9nik31/apolune/releases/latest/download/Apolune-linux-x86_64.zip) |
+| Linux arm64 | [ZIP](https://github.com/Pr9nik31/apolune/releases/latest/download/Apolune-linux-aarch64.zip) |
 
-В [руководстве по установке](https://onexray.com/ru/docs/install/) описаны подпись IPA, варианты Windows и отдельное хранение их данных, разрешения и обновление ZIP-версий. [Все релизы](https://github.com/YuanDevTeam/OneXray/releases).
+В [руководстве по установке](https://apolune.dev/ru/docs/install/) описаны подпись IPA, варианты Windows и отдельное хранение их данных, разрешения и обновление ZIP-версий. [Все релизы](https://github.com/Pr9nik31/apolune/releases).
 
 </details>
 
 ## Настройка и помощь
 
-- [Документация пользователя](https://onexray.com/ru/docs/) — настройка, маршрутизация, подписки и возможности платформ.
-- [Настройка с помощью ИИ](https://onexray.com/ru/docs/ai/) — скопируйте запрос из руководства помощнику, которому доверяете, или прикрепите [полное руководство](https://onexray.com/ru/llms-full.txt). OneXray не содержит встроенного ИИ-сервиса и не отправляет конфигурации помощнику; перед подключением проверьте полученный JSON в приложении.
-- [Сообщить об ошибке или предложить функцию](https://github.com/YuanDevTeam/OneXray/issues) — укажите платформу, версии приложения и Xray-core, шаги воспроизведения. Удалите учётные данные из публикуемых конфигураций, ссылок подписок и журналов.
-- [Сообщество Telegram](https://t.me/YuanDevTeam).
+- [Документация пользователя](https://apolune.dev/ru/docs/) — настройка, маршрутизация, подписки и возможности платформ.
+- [Настройка с помощью ИИ](https://apolune.dev/ru/docs/ai/) — скопируйте запрос из руководства помощнику, которому доверяете, или прикрепите [полное руководство](https://apolune.dev/ru/llms-full.txt). Apolune не содержит встроенного ИИ-сервиса и не отправляет конфигурации помощнику; перед подключением проверьте полученный JSON в приложении.
+- [Сообщить об ошибке или предложить функцию](https://github.com/Pr9nik31/apolune/issues) — укажите платформу, версии приложения и Xray-core, шаги воспроизведения. Удалите учётные данные из публикуемых конфигураций, ссылок подписок и журналов.
+- [Сообщество Telegram](https://t.me/Pr9nik31).
 
-## Поддержать OneXray
+## Поддержать Apolune
 
-OneXray вам полезен? Поставьте этому репозиторию ⭐ **Star**, чтобы поддержать дальнейшую разработку.
+Apolune вам полезен? Поставьте этому репозиторию ⭐ **Star**, чтобы поддержать дальнейшую разработку.
 
-[App Store](https://apps.apple.com/us/app/onexray/id6745748773) · [Google Play](https://play.google.com/store/apps/details?id=net.yuandev.onexray) · [Microsoft Store](https://apps.microsoft.com/detail/9NJ0MVHW215D)
+[App Store](https://apps.apple.com/us/app/apolune/id6745748773) · [Google Play](https://play.google.com/store/apps/details?id=dev.apolune.client) · [Microsoft Store](https://apps.microsoft.com/detail/9NJ0MVHW215D)
 
 Будем рады изменениям кода, переводам и улучшениям документации. Начните с [настройки среды разработки](./FIRST_RUN.ru.md), [руководства по сборке](../build_scripts/README.md) и [правил работы приложения](../docs/README.md).
 

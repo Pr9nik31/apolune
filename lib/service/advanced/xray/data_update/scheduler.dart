@@ -2,12 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/widgets.dart';
 
-import 'package:onexray/core/errors/failure.dart';
-import 'package:onexray/core/pigeon/flutter_api.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/core/tools/logger.dart';
-import 'package:onexray/service/advanced/xray/data_update/service.dart';
-import 'package:onexray/service/settings/backup/service.dart';
+import 'package:apolune/core/errors/failure.dart';
+import 'package:apolune/core/pigeon/flutter_api.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/core/tools/logger.dart';
+import 'package:apolune/service/advanced/xray/data_update/service.dart';
+import 'package:apolune/service/settings/backup/service.dart';
 
 class BackgroundTaskService with WidgetsBindingObserver {
   static final BackgroundTaskService _singleton =

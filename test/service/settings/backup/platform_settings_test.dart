@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/backup/model.dart';
-import 'package:onexray/service/advanced/platform_policy.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/settings/backup/platform_settings.dart';
+import 'package:apolune/core/backup/model.dart';
+import 'package:apolune/service/advanced/platform_policy.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/settings/backup/platform_settings.dart';
 
 void main() {
   final source = PlatformPolicy.fromJson({

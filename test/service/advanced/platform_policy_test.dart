@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/ffi/windows/mode.dart';
-import 'package:onexray/service/advanced/platform_policy.dart';
-import 'package:onexray/service/connect/dialing.dart';
-import 'package:onexray/service/connect/settings.dart';
+import 'package:apolune/core/ffi/windows/mode.dart';
+import 'package:apolune/service/advanced/platform_policy.dart';
+import 'package:apolune/service/connect/dialing.dart';
+import 'package:apolune/service/connect/settings.dart';
 
 void main() {
   test('native DNS failures identify the first effective field', () {

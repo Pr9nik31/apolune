@@ -1,12 +1,12 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/service/settings/language/locale.dart';
-import 'package:onexray/pages/servers/controller.dart';
-import 'package:onexray/pages/servers/menus.dart';
-import 'package:onexray/pages/theme/color.dart';
-import 'package:onexray/pages/theme/theme.dart';
-import 'package:onexray/pages/shared/widgets/adaptive_dialog.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/service/settings/language/locale.dart';
+import 'package:apolune/pages/servers/controller.dart';
+import 'package:apolune/pages/servers/menus.dart';
+import 'package:apolune/pages/theme/color.dart';
+import 'package:apolune/pages/theme/theme.dart';
+import 'package:apolune/pages/shared/widgets/adaptive_dialog.dart';
 
 const _open = Key('open-server-menu');
 const _size = Size(390, 844);

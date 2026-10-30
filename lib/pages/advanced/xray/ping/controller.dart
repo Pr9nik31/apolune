@@ -1,9 +1,9 @@
-import 'package:onexray/service/shared/failure.dart';
+import 'package:apolune/service/shared/failure.dart';
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/pages/shared/page_cubit.dart';
+import 'package:apolune/pages/shared/page_cubit.dart';
 import 'package:go_router/go_router.dart';
-import 'package:onexray/pages/shared/alert.dart';
-import 'package:onexray/service/shared/ping/state.dart';
+import 'package:apolune/pages/shared/alert.dart';
+import 'package:apolune/service/shared/ping/state.dart';
 
 class PingPageState {
   static const _unset = Object();

@@ -1,11 +1,11 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:onexray/core/ffi/windows/model.dart';
-import 'package:onexray/core/ffi/windows/mode.dart';
-import 'package:onexray/core/model/tun_json.dart';
-import 'package:onexray/service/connect/dialing.dart';
-import 'package:onexray/service/connect/settings.dart';
+import 'package:apolune/core/ffi/windows/model.dart';
+import 'package:apolune/core/ffi/windows/mode.dart';
+import 'package:apolune/core/model/tun_json.dart';
+import 'package:apolune/service/connect/dialing.dart';
+import 'package:apolune/service/connect/settings.dart';
 
 ConnectionPlatform get connectionPlatform => switch (Platform.operatingSystem) {
   'ios' => ConnectionPlatform.ios,

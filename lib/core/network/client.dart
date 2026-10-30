@@ -2,9 +2,9 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:onexray/core/errors/failure.dart';
-import 'package:onexray/core/network/model.dart';
-import 'package:onexray/core/tools/logger.dart';
+import 'package:apolune/core/errors/failure.dart';
+import 'package:apolune/core/network/model.dart';
+import 'package:apolune/core/tools/logger.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 class NetClient {
@@ -43,16 +43,16 @@ class NetClient {
 
   static Future<String> defaultUserAgent() async {
     var version = '0.0.0';
-    var userAgent = 'OneXray (${Platform.operatingSystem})';
+    var userAgent = 'Apolune (${Platform.operatingSystem})';
     try {
       final packageInfo = await PackageInfo.fromPlatform();
       version = packageInfo.version;
       userAgent =
-          'OneXray/$version '
+          'Apolune/$version '
           '(${packageInfo.packageName}; build:${packageInfo.buildNumber}; '
           '${Platform.operatingSystem})';
     } catch (error) {
-      ygLogger('Unable to build the OneXray User-Agent: $error');
+      ygLogger('Unable to build the Apolune User-Agent: $error');
     }
     // Providers can select an Xray JSON template by this leading product.
     return 'v2rayN/$version $userAgent';

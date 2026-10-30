@@ -3,11 +3,11 @@ import 'dart:convert';
 
 import 'package:drift/drift.dart' hide isNull, isNotNull;
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/constants.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/service/connect/resolver.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/connect/routing/custom/state.dart';
+import 'package:apolune/core/db/database/constants.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/service/connect/resolver.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/connect/routing/custom/state.dart';
 
 void main() {
   test(

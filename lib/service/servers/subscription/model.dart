@@ -1,4 +1,4 @@
-import 'package:onexray/core/db/database/enum.dart';
+import 'package:apolune/core/db/database/enum.dart';
 
 typedef SubscriptionFormatConfirmation = Future<bool> Function(String name);
 

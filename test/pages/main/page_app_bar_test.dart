@@ -2,9 +2,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:macos_window_utils/window_manipulator.dart';
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/pages/main/desktop_window.dart';
-import 'package:onexray/pages/shared/widgets/page_app_bar.dart';
-import 'package:onexray/pages/theme/theme.dart';
+import 'package:apolune/pages/main/desktop_window.dart';
+import 'package:apolune/pages/shared/widgets/page_app_bar.dart';
+import 'package:apolune/pages/theme/theme.dart';
 
 void main() {
   testWidgets('page bar preserves themed sizing and tabs', (tester) async {

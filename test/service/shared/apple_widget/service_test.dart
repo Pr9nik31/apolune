@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/service/shared/apple_widget/service.dart';
-import 'package:onexray/service/shared/menu/short_cut/service.dart';
+import 'package:apolune/service/shared/apple_widget/service.dart';
+import 'package:apolune/service/shared/menu/short_cut/service.dart';
 
 void main() {
   final binding = TestWidgetsFlutterBinding.ensureInitialized();
@@ -109,19 +109,19 @@ void main() {
         receive: (action) async => received.add(action),
       );
       expect(
-        service.receiveOpenUri(Uri.parse('onexray://widget/connect')),
+        service.receiveOpenUri(Uri.parse('apolune://widget/connect')),
         isTrue,
       );
       for (final text in [
-        'onexray://widget/startVpn',
-        'onexray://widget/stopVpn',
-        'onexray://widget/connect?action=startVpn',
-        'onexray://widget/connect?',
-        'onexray://widget/connect#',
-        'onexray://user@widget/connect',
-        'onexray://widget:80/connect',
+        'apolune://widget/startVpn',
+        'apolune://widget/stopVpn',
+        'apolune://widget/connect?action=startVpn',
+        'apolune://widget/connect?',
+        'apolune://widget/connect#',
+        'apolune://user@widget/connect',
+        'apolune://widget:80/connect',
         'https://widget/connect',
-        'onexray://onexray.com/config/add',
+        'apolune://apolune.dev/config/add',
       ]) {
         expect(service.receiveOpenUri(Uri.parse(text)), isFalse, reason: text);
       }
@@ -192,7 +192,7 @@ void main() {
     await service.initialize();
     await service.setLanguage('en');
     expect(
-      service.receiveOpenUri(Uri.parse('onexray://widget/connect')),
+      service.receiveOpenUri(Uri.parse('apolune://widget/connect')),
       isFalse,
     );
     service.dispose();

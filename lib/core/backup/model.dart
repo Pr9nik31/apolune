@@ -17,7 +17,7 @@ class BackupDocument {
   final Map<String, dynamic>? platformSettings;
 
   const BackupDocument({
-    this.format = 'onexray-backup',
+    this.format = 'apolune-backup',
     this.version = 1,
     required this.createdAt,
     this.manualGroups = const [],

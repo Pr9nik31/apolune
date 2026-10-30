@@ -1,13 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/widgets.dart';
-import 'package:onexray/core/pigeon/flutter_api.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/core/tools/logger.dart';
-import 'package:onexray/core/tools/platform.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/service/settings/language/locale.dart';
-import 'package:onexray/service/shared/menu/short_cut/service.dart';
+import 'package:apolune/core/pigeon/flutter_api.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/core/tools/logger.dart';
+import 'package:apolune/core/tools/platform.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/service/settings/language/locale.dart';
+import 'package:apolune/service/shared/menu/short_cut/service.dart';
 
 /// Foreground Apple intents hand off to the existing App connection actions.
 /// The Widget never compiles a configuration or directly starts a tunnel.
@@ -92,7 +92,7 @@ final class AppleWidgetService with WidgetsBindingObserver {
   }
 
   static bool isOpenUri(Uri uri) =>
-      uri.scheme == 'onexray' &&
+      uri.scheme == 'apolune' &&
       uri.host == 'widget' &&
       uri.path == '/connect' &&
       !uri.hasPort &&

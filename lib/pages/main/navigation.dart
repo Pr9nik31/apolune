@@ -1,7 +1,7 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:go_router/go_router.dart';
-import 'package:onexray/pages/settings/app_update/params.dart';
-import 'package:onexray/service/settings/app_update/service.dart';
+import 'package:apolune/pages/settings/app_update/params.dart';
+import 'package:apolune/service/settings/app_update/service.dart';
 
 /// Root tabs choose their entry page from the same business-page registry.
 enum AppPrimaryDestination {
@@ -68,7 +68,7 @@ enum AppPageDestination {
   appIcon("app-icon"),
   theme("theme"),
   language("language"),
-  aboutOneXray("about-onexray"),
+  aboutApolune("about-apolune"),
   appUpdate("app-update");
 
   final String segment;

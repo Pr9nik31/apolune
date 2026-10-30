@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:onexray/core/errors/json_diagnostic.dart';
-import 'package:onexray/core/tools/json_tokens.dart';
+import 'package:apolune/core/errors/json_diagnostic.dart';
+import 'package:apolune/core/tools/json_tokens.dart';
 
 class JsonSourceRange {
   final int start;

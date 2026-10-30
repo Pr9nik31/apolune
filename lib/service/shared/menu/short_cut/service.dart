@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:onexray/core/tools/logger.dart';
-import 'package:onexray/core/tools/platform.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/service/launch/app_startup.dart';
+import 'package:apolune/core/tools/logger.dart';
+import 'package:apolune/core/tools/platform.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/service/launch/app_startup.dart';
 import 'package:quick_actions/quick_actions.dart';
 
 enum ShortCutAction {

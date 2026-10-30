@@ -1,17 +1,17 @@
 import 'package:drift/native.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/pages/advanced/controller.dart';
-import 'package:onexray/pages/advanced/tab_visibility.dart';
-import 'package:onexray/service/connect/coordinator.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/pages/advanced/controller.dart';
+import 'package:apolune/pages/advanced/tab_visibility.dart';
+import 'package:apolune/service/connect/coordinator.dart';
 
 import 'dart:convert';
 
-import 'package:onexray/core/pigeon/model.dart';
-import 'package:onexray/service/connect/compiler.dart';
-import 'package:onexray/service/connect/runtime.dart';
-import 'package:onexray/service/connect/settings.dart';
+import 'package:apolune/core/pigeon/model.dart';
+import 'package:apolune/service/connect/compiler.dart';
+import 'package:apolune/service/connect/runtime.dart';
+import 'package:apolune/service/connect/settings.dart';
 
 void main() {
   testWidgets('visible inactive windows keep the uptime clock running', (

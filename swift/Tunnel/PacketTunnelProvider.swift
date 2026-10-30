@@ -48,7 +48,7 @@ final class PacketTunnelProvider: NEPacketTunnelProvider, @unchecked Sendable {
         return nil
     }
 
-    private static let stateQueue = DispatchQueue(label: "net.yuandev.onexray.tunnel.state")
+    private static let stateQueue = DispatchQueue(label: "dev.apolune.client.tunnel.state")
     private var startContinuation: CheckedContinuation<Void, Error>?
     private var pendingStartSignal = false
 
@@ -224,7 +224,7 @@ final class PacketTunnelProvider: NEPacketTunnelProvider, @unchecked Sendable {
         for cidr in cidrs {
             let parts = cidr.split(separator: "/", omittingEmptySubsequences: false)
             let invalid = NSError(
-                domain: "OneXray.Tunnel", code: 1,
+                domain: "Apolune.Tunnel", code: 1,
                 userInfo: [NSLocalizedDescriptionKey: "Invalid excluded route: \(cidr)"]
             )
             guard parts.count == 2, let prefix = Int(parts[1]), prefix >= 0 else {

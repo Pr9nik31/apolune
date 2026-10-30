@@ -3,12 +3,12 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/ffi/windows/msix_ffi_api.dart';
-import 'package:onexray/core/ffi/windows/model.dart';
-import 'package:onexray/core/ffi/windows/native_api.dart';
-import 'package:onexray/core/model/tun_json.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/core/pigeon/model.dart';
+import 'package:apolune/core/ffi/windows/msix_ffi_api.dart';
+import 'package:apolune/core/ffi/windows/model.dart';
+import 'package:apolune/core/ffi/windows/native_api.dart';
+import 'package:apolune/core/model/tun_json.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/core/pigeon/model.dart';
 
 void main() {
   final token = 'vole-session-v2:${'a' * 64}';
@@ -144,7 +144,7 @@ void main() {
               'success': true,
               'error': '',
               'data': {
-                'packageFamilyName': 'OneXray.Test',
+                'packageFamilyName': 'Apolune.Test',
                 'packageLocalDataDir': directory.path,
               },
             });
@@ -152,7 +152,7 @@ void main() {
           if (method == 'startVpn') {
             final process =
                 request['payload']['sessionBackend']['processes'].single;
-            expect(process['executableRelativePath'], 'OneXrayCore.exe');
+            expect(process['executableRelativePath'], 'ApoluneCore.exe');
             arguments = (process['arguments'] as List).cast<String>();
             final config = arguments![arguments!.indexOf('-config') + 1];
             errorFile = File('$config.error');

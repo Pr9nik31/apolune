@@ -3,15 +3,15 @@ import 'dart:convert';
 import 'package:drift/drift.dart' show Value;
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/service/connect/coordinator.dart';
-import 'package:onexray/service/connect/runtime.dart';
-import 'package:onexray/service/advanced/platform_policy.dart';
-import 'package:onexray/service/connect/runtime_host.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/advanced/xray/runtime_files.dart';
-import 'package:onexray/service/advanced/xray/log_policy.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/service/connect/coordinator.dart';
+import 'package:apolune/service/connect/runtime.dart';
+import 'package:apolune/service/advanced/platform_policy.dart';
+import 'package:apolune/service/connect/runtime_host.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/advanced/xray/runtime_files.dart';
+import 'package:apolune/service/advanced/xray/log_policy.dart';
 
 void main() {
   late AppDatabase db;

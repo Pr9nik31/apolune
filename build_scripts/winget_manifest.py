@@ -12,12 +12,12 @@ from pathlib import Path
 from typing import ClassVar
 from urllib.request import urlopen
 
-PACKAGE_ID = "YuanDevLLC.OneXray"
-DISPLAY_NAME = "OneXray"
-INSTALL_DIRECTORY = r"%LOCALAPPDATA%\Programs\OneXray"
+PACKAGE_ID = "Apolune.Apolune"
+DISPLAY_NAME = "Apolune"
+INSTALL_DIRECTORY = r"%LOCALAPPDATA%\Programs\Apolune"
 INSTALLER_NAMES = {
-    "x64": "OneXray-windows-amd64.exe",
-    "arm64": "OneXray-windows-arm64.exe",
+    "x64": "Apolune-windows-amd64.exe",
+    "arm64": "Apolune-windows-arm64.exe",
 }
 SCHEMA_VERSION = "1.12.0"
 
@@ -25,7 +25,7 @@ SCHEMA_VERSION = "1.12.0"
 def fix_installer(manifest):
     result = deepcopy(manifest)
     if result.get("PackageIdentifier") != PACKAGE_ID or result.get("ManifestType") != "installer":
-        raise ValueError("Expected the OneXray installer manifest")
+        raise ValueError("Expected the Apolune installer manifest")
     for fields in [result, *result["Installers"]]:
         # Keep unrelated metadata, including per-architecture files/product codes.
         if fields is result or "Scope" in fields:
@@ -62,7 +62,7 @@ def validate_manifests(manifests, release):
     if by_type["version"]["DefaultLocale"] != by_type["defaultLocale"]["PackageLocale"]:
         raise ValueError("DefaultLocale does not match the default locale manifest")
     if by_type["defaultLocale"]["PackageName"] != DISPLAY_NAME:
-        raise ValueError("PackageName must be OneXray")
+        raise ValueError("PackageName must be Apolune")
 
     manifest = by_type["installer"]
     installers = manifest["Installers"]
@@ -72,7 +72,7 @@ def validate_manifests(manifests, release):
         # Installer-level fields take precedence over the root manifest.
         effective = manifest | installer
         if effective.get("InstallerType") != "inno" or effective.get("Scope") != "user":
-            raise ValueError("OneXray must use per-user Inno Setup installation")
+            raise ValueError("Apolune must use per-user Inno Setup installation")
         if (
             effective.get("InstallationMetadata", {}).get("DefaultInstallLocation")
             != INSTALL_DIRECTORY
@@ -80,7 +80,7 @@ def validate_manifests(manifests, release):
             raise ValueError("Unexpected default install location")
         entries = effective.get("AppsAndFeaturesEntries", [])
         if not entries or any(entry.get("DisplayName") != DISPLAY_NAME for entry in entries):
-            raise ValueError("DisplayName must be OneXray, without a version")
+            raise ValueError("DisplayName must be Apolune, without a version")
         if effective.get("ElevationRequirement") not in (None, "elevationProhibited"):
             raise ValueError("The per-user installer must not request elevation")
         name = INSTALLER_NAMES[installer["Architecture"]]

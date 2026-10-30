@@ -3,8 +3,8 @@ import 'dart:io';
 import 'dart:math';
 import 'dart:typed_data';
 
-import 'package:onexray/core/tools/file.dart';
-import 'package:onexray/service/connect/runtime.dart';
+import 'package:apolune/core/tools/file.dart';
+import 'package:apolune/service/connect/runtime.dart';
 
 abstract final class RuntimeDiagnosticFiles {
   static const logChunkBytes = 1024 * 1024;
@@ -39,7 +39,7 @@ abstract final class RuntimeDiagnosticFiles {
 
   static Future<bool> exportConfiguration(String text) => FileTool.saveData(
     Uint8List.fromList(utf8.encode(text)),
-    'OneXray-runtime.json',
+    'Apolune-runtime.json',
     'json',
   );
 

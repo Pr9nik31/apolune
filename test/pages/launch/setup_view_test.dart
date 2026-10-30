@@ -1,12 +1,12 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/service/settings/language/locale.dart';
-import 'package:onexray/pages/launch/setup/page.dart';
-import 'package:onexray/pages/launch/setup/widgets.dart';
-import 'package:onexray/pages/shared/widgets/button_progress.dart';
-import 'package:onexray/pages/theme/theme.dart';
-import 'package:onexray/service/launch/setup.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/service/settings/language/locale.dart';
+import 'package:apolune/pages/launch/setup/page.dart';
+import 'package:apolune/pages/launch/setup/widgets.dart';
+import 'package:apolune/pages/shared/widgets/button_progress.dart';
+import 'package:apolune/pages/theme/theme.dart';
+import 'package:apolune/service/launch/setup.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 Widget _app(

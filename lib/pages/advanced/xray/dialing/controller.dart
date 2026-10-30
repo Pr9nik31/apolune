@@ -1,7 +1,7 @@
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/advanced/tunnel/controller.dart';
-import 'package:onexray/service/advanced/policy_editor.dart';
-import 'package:onexray/service/connect/dialing.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/advanced/tunnel/controller.dart';
+import 'package:apolune/service/advanced/policy_editor.dart';
+import 'package:apolune/service/connect/dialing.dart';
 
 class ServerDialingController extends PolicyEditorController {
   ServerDialingController({super.draft, PolicyEditorService? service})

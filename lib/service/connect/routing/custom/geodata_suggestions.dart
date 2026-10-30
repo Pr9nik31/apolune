@@ -2,10 +2,10 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/services.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/pigeon/constants.dart';
-import 'package:onexray/service/connect/routing/region_catalog.dart';
-import 'package:onexray/service/advanced/xray/geodata/service.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/pigeon/constants.dart';
+import 'package:apolune/service/connect/routing/region_catalog.dart';
+import 'package:apolune/service/advanced/xray/geodata/service.dart';
 import 'package:path/path.dart' as p;
 
 /// One read of actually installed category indexes, separated by condition type.

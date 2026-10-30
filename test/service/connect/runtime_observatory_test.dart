@@ -2,13 +2,13 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/pigeon/model.dart';
-import 'package:onexray/service/connect/compiler.dart';
-import 'package:onexray/service/connect/runtime.dart';
-import 'package:onexray/service/connect/runtime_host.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/connect/traffic.dart';
-import 'package:onexray/service/shared/xray/metrics/model.dart';
+import 'package:apolune/core/pigeon/model.dart';
+import 'package:apolune/service/connect/compiler.dart';
+import 'package:apolune/service/connect/runtime.dart';
+import 'package:apolune/service/connect/runtime_host.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/connect/traffic.dart';
+import 'package:apolune/service/shared/xray/metrics/model.dart';
 
 void main() {
   test(

@@ -1,4 +1,4 @@
-import 'package:onexray/service/connect/routing/options.dart';
+import 'package:apolune/service/connect/routing/options.dart';
 
 enum ConnectionPlatform { ios, macos, android, windows, linux }
 

@@ -2,21 +2,21 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/widgets.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/pigeon/flutter_api.dart';
-import 'package:onexray/core/pigeon/host_api.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/service/connect/failure.dart';
-import 'package:onexray/service/connect/preparation.dart';
-import 'package:onexray/service/connect/runtime.dart';
-import 'package:onexray/service/connect/runtime_host.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/advanced/xray/geodata/service.dart';
-import 'package:onexray/service/servers/subscription/model.dart';
-import 'package:onexray/service/servers/subscription/service.dart';
-import 'package:onexray/service/shared/app_lifecycle.dart';
-import 'package:onexray/service/shared/command_serial_executor.dart';
-import 'package:onexray/service/shared/share/configuration_transfer.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/pigeon/flutter_api.dart';
+import 'package:apolune/core/pigeon/host_api.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/service/connect/failure.dart';
+import 'package:apolune/service/connect/preparation.dart';
+import 'package:apolune/service/connect/runtime.dart';
+import 'package:apolune/service/connect/runtime_host.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/advanced/xray/geodata/service.dart';
+import 'package:apolune/service/servers/subscription/model.dart';
+import 'package:apolune/service/servers/subscription/service.dart';
+import 'package:apolune/service/shared/app_lifecycle.dart';
+import 'package:apolune/service/shared/command_serial_executor.dart';
+import 'package:apolune/service/shared/share/configuration_transfer.dart';
 
 enum ConnectionPhase {
   disconnected,

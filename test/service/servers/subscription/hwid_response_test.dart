@@ -6,15 +6,15 @@ import 'package:drift/drift.dart' show Value;
 import 'package:drift/native.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/network/client.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/l10n/localizations/app_localizations_en.dart';
-import 'package:onexray/service/servers/outbound/state_db.dart';
-import 'package:onexray/service/servers/subscription/failure.dart';
-import 'package:onexray/service/servers/subscription/model.dart';
-import 'package:onexray/service/servers/subscription/service.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/network/client.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/l10n/localizations/app_localizations_en.dart';
+import 'package:apolune/service/servers/outbound/state_db.dart';
+import 'package:apolune/service/servers/subscription/failure.dart';
+import 'package:apolune/service/servers/subscription/model.dart';
+import 'package:apolune/service/servers/subscription/service.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -156,7 +156,7 @@ void main() {
     'normal responses use saved consent; active alone never opts in',
     () async {
       const channel = BasicMessageChannel<Object?>(
-        'dev.flutter.pigeon.onexray.BridgeHostApi.invoke',
+        'dev.flutter.pigeon.apolune.BridgeHostApi.invoke',
         BridgeHostApi.pigeonChannelCodec,
       );
       final messenger =

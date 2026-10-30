@@ -1,4 +1,4 @@
-import 'package:onexray/service/advanced/xray/geodata/service.dart';
+import 'package:apolune/service/advanced/xray/geodata/service.dart';
 
 /// Test adapter for the import's save/dispose interface. Real filesystem and
 /// rollback behavior are exercised by Geodata publication tests.

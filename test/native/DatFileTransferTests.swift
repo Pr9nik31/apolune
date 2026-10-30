@@ -10,7 +10,7 @@ final class DatFileTransferTests: XCTestCase {
     private let time: Int64 = 1_790_726_400_000
 
     override func setUpWithError() throws {
-        root = URL(fileURLWithPath: "../references/onexray-tests/native/fixtures", isDirectory: true)
+        root = URL(fileURLWithPath: "../references/apolune-tests/native/fixtures", isDirectory: true)
             .appendingPathComponent(UUID().uuidString, isDirectory: true)
         try fm.createDirectory(at: root, withIntermediateDirectories: true)
         try fm.createDirectory(at: source, withIntermediateDirectories: false)

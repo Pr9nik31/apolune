@@ -1,11 +1,11 @@
 import 'dart:convert';
 
-import 'package:onexray/core/pigeon/model.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/service/connect/compiler.dart';
-import 'package:onexray/service/advanced/platform_policy.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/connect/traffic.dart';
+import 'package:apolune/core/pigeon/model.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/service/connect/compiler.dart';
+import 'package:apolune/service/advanced/platform_policy.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/connect/traffic.dart';
 
 /// One database value for all settings which can change a running connection.
 class ConnectionConfiguration {

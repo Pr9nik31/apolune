@@ -1,6 +1,6 @@
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:onexray/core/tools/logger.dart';
-import 'package:onexray/core/tools/platform.dart';
+import 'package:apolune/core/tools/logger.dart';
+import 'package:apolune/core/tools/platform.dart';
 
 final class NotificationService {
   static final NotificationService _singleton = NotificationService._internal();
@@ -26,8 +26,8 @@ final class NotificationService {
     );
     final WindowsInitializationSettings initializationSettingsWindows =
         WindowsInitializationSettings(
-          appName: 'OneXray',
-          appUserModelId: 'net.yuandev.onexray',
+          appName: 'Apolune',
+          appUserModelId: 'dev.apolune.client',
           // Search online for GUID generators to make your own
           guid: '835d7bbd-85bb-4c73-97f8-ce0740f151a7',
         );
@@ -79,12 +79,12 @@ final class NotificationService {
     if (AppPlatform.isAndroid) {
       const details = NotificationDetails(
         android: AndroidNotificationDetails(
-          'net.yuandev.onexray',
-          'OneXray',
-          channelDescription: 'OneXray',
+          'dev.apolune.client',
+          'Apolune',
+          channelDescription: 'Apolune',
           importance: Importance.defaultImportance,
           priority: Priority.defaultPriority,
-          ticker: 'OneXray',
+          ticker: 'Apolune',
         ),
       );
       await _localNotification.show(

@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/service/connect/platform_requirements.dart';
-import 'package:onexray/service/connect/settings.dart';
+import 'package:apolune/service/connect/platform_requirements.dart';
+import 'package:apolune/service/connect/settings.dart';
 
 void main() {
   test('non-desktop platforms do not read outbound interfaces', () async {

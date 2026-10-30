@@ -2,15 +2,15 @@ import 'dart:io';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/pigeon/flutter_api.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/service/connect/runtime_host.dart';
+import 'package:apolune/core/pigeon/flutter_api.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/service/connect/runtime_host.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
   test('a successful native query must include its status', () async {
     const channel = BasicMessageChannel<Object?>(
-      'dev.flutter.pigeon.onexray.BridgeHostApi.readVpnStatus',
+      'dev.flutter.pigeon.apolune.BridgeHostApi.readVpnStatus',
       BridgeHostApi.pigeonChannelCodec,
     );
     final messenger =
@@ -39,7 +39,7 @@ void main() {
     'native status returns permission and state without a callback event',
     () async {
       const channel = BasicMessageChannel<Object?>(
-        'dev.flutter.pigeon.onexray.BridgeHostApi.readVpnStatus',
+        'dev.flutter.pigeon.apolune.BridgeHostApi.readVpnStatus',
         BridgeHostApi.pigeonChannelCodec,
       );
       final messenger =

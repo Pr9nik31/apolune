@@ -1,8 +1,8 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/theme/color.dart';
-import 'package:onexray/service/connect/coordinator.dart';
-import 'package:onexray/service/connect/traffic.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/theme/color.dart';
+import 'package:apolune/service/connect/coordinator.dart';
+import 'package:apolune/service/connect/traffic.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 /// Reads the same active-session sample as traffic; it owns no timer or probes.

@@ -77,8 +77,8 @@
 /* Class = "NSMenuItem"; title = "Services"; ObjectID = "NMo-om-nkz"; */
 "NMo-om-nkz.title" = "Службы";
 
-/* Class = "NSMenuItem"; title = "Show OneXray"; ObjectID = "OXr-Sw-Mnu"; */
-"OXr-Sw-Mnu.title" = "Показать OneXray";
+/* Class = "NSMenuItem"; title = "Show Apolune"; ObjectID = "OXr-Sw-Mnu"; */
+"OXr-Sw-Mnu.title" = "Показать Apolune";
 
 /* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "OY7-WF-poV"; */
 "OY7-WF-poV.title" = "Свернуть";

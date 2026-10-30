@@ -1,6 +1,6 @@
-import 'package:onexray/core/model/xray_json.dart';
-import 'package:onexray/service/connect/routing/options.dart';
-import 'package:onexray/service/shared/xray/fake_dns.dart';
+import 'package:apolune/core/model/xray_json.dart';
+import 'package:apolune/service/connect/routing/options.dart';
+import 'package:apolune/service/shared/xray/fake_dns.dart';
 
 abstract final class RoutingDns {
   static const defaultAddress = RoutingDnsSettings.defaultAddress;

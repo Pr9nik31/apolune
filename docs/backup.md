@@ -1,7 +1,7 @@
 # 连接配置备份
 
 备份页面位于设置的数据区；连接/服务器空状态在当前 Tab 打开同一页面，不自动绑定目标或执行恢复。
-仅支持平台显示入口。App 只绑定一个目标，备份和恢复均使用该文件；创建时默认名为 `OneXray-backup.json`。
+仅支持平台显示入口。App 只绑定一个目标，备份和恢复均使用该文件；创建时默认名为 `Apolune-backup.json`。
 不提供版本列表、双向同步或云账号登录。
 文件未加密，包含节点凭据、订阅 URL、Age 私钥和 HWID；Base64 不保密。
 绑定时先探测内容：空文件直接写入首份备份；有内容时选择恢复或覆盖，取消不改变原来的绑定或文件。
@@ -14,7 +14,7 @@
 
 | 平台 | 目标与边界 |
 | --- | --- |
-| iOS / macOS / macOS SE | 首选入口为 iCloud Drive，使用原有容器中的 `Documents/OneXray-backup.json`；也可绑定用户选择的文件，两者共用备份、恢复和自动周期 |
+| iOS / macOS / macOS SE | 首选入口为 iCloud Drive，使用原有容器中的 `Documents/Apolune-backup.json`；也可绑定用户选择的文件，两者共用备份、恢复和自动周期 |
 | Android | SAF 单文档 URI，`saf_stream` 内容读写；Pigeon 只选择/创建、检查持久读写授权和释放旧目标授权；展示提供商实际文件名 |
 | Windows EXE / ZIP / MSIX | 用户选择的 OneDrive 同步目录，普通文件读取与替换；不接 OAuth/Graph、不要求包身份 |
 
@@ -40,7 +40,7 @@ Apple/Windows 使用替换写入；Android 固定 URI 覆盖、不先删旧文�
 
 ## 协议 v1
 
-UTF-8 JSON 的 `format=onexray-backup`、`version=1`、`createdAt` 为 Unix 毫秒；
+UTF-8 JSON 的 `format=apolune-backup`、`version=1`、`createdAt` 为 Unix 毫秒；
 `coreConfigs/subscriptions/routingProfiles/smartRouting/geoData` 为必要分区，缺失列表不同于空列表。
 字段唯一来源是 [备份模型](../lib/core/backup/model.dart)，旧 ZIP v3/v4 不导入、不转换。
 根对象及各分区忽略未知字段，重新导出时只输出当前支持的字段；格式、版本、必要字段和已知字段类型仍需有效。

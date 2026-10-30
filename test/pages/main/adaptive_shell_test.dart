@@ -4,18 +4,18 @@ import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/service/settings/language/locale.dart';
-import 'package:onexray/pages/main/adaptive_shell.dart';
-import 'package:onexray/pages/main/dialog_page.dart';
-import 'package:onexray/pages/main/navigation.dart';
-import 'package:onexray/pages/main/url.dart';
-import 'package:onexray/core/tools/platform.dart';
-import 'package:onexray/pages/theme/layout.dart';
-import 'package:onexray/pages/theme/theme.dart';
-import 'package:onexray/pages/shared/widgets/adaptive_dialog.dart';
-import 'package:onexray/service/settings/app_update/service.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/service/settings/language/locale.dart';
+import 'package:apolune/pages/main/adaptive_shell.dart';
+import 'package:apolune/pages/main/dialog_page.dart';
+import 'package:apolune/pages/main/navigation.dart';
+import 'package:apolune/pages/main/url.dart';
+import 'package:apolune/core/tools/platform.dart';
+import 'package:apolune/pages/theme/layout.dart';
+import 'package:apolune/pages/theme/theme.dart';
+import 'package:apolune/pages/shared/widgets/adaptive_dialog.dart';
+import 'package:apolune/service/settings/app_update/service.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
 
 void main() {
   test('primary destinations use product names and URLs', () {
@@ -193,7 +193,7 @@ void main() {
       const ValueKey('primary-desktop-navigation'),
     );
     expect(find.text('connect-content'), findsOneWidget);
-    expect(find.text('OneXray'), findsOneWidget);
+    expect(find.text('Apolune'), findsOneWidget);
     expect(
       tester.getSize(desktopNavigation).width,
       AppLayout.desktopSidebarWidth,
@@ -240,7 +240,7 @@ void main() {
         tester.getSize(desktopNavigation).width,
         AppLayout.compactSidebarWidth,
       );
-      expect(find.text('OneXray'), findsOneWidget);
+      expect(find.text('Apolune'), findsOneWidget);
       expect(tester.takeException(), isNull);
     }
     await tester.binding.setSurfaceSize(const Size(720, 800));
@@ -452,7 +452,7 @@ void main() {
           lessThanOrEqualTo(landscape.width - padding.right),
         );
         expect(
-          tester.getSize(find.text('OneXray')).height,
+          tester.getSize(find.text('Apolune')).height,
           lessThan(50 * scale),
         );
 

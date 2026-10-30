@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/service/shared/share/xray_share_reader.dart';
+import 'package:apolune/service/shared/share/xray_share_reader.dart';
 
 void main() {
   test(

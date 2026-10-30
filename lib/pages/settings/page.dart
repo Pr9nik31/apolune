@@ -1,25 +1,25 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:onexray/core/tools/platform.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/main/navigation.dart';
-import 'package:onexray/pages/settings/controller.dart';
-import 'package:onexray/pages/settings/widgets.dart';
-import 'package:onexray/pages/settings/app_icon/page.dart';
-import 'package:onexray/pages/settings/desktop/controller.dart';
-import 'package:onexray/pages/settings/language/page.dart';
-import 'package:onexray/pages/shared/widgets/page_app_bar.dart';
-import 'package:onexray/pages/theme/color.dart';
-import 'package:onexray/pages/theme/font.dart';
-import 'package:onexray/pages/theme/layout.dart';
-import 'package:onexray/pages/shared/widgets/setting_row.dart';
-import 'package:onexray/pages/shared/widgets/button_progress.dart';
-import 'package:onexray/pages/shared/widgets/settings_page.dart';
-import 'package:onexray/service/shared/event_bus/enum.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
-import 'package:onexray/service/shared/event_bus/state.dart';
-import 'package:onexray/service/shared/failure.dart';
-import 'package:onexray/service/settings/backup/service.dart';
+import 'package:apolune/core/tools/platform.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/main/navigation.dart';
+import 'package:apolune/pages/settings/controller.dart';
+import 'package:apolune/pages/settings/widgets.dart';
+import 'package:apolune/pages/settings/app_icon/page.dart';
+import 'package:apolune/pages/settings/desktop/controller.dart';
+import 'package:apolune/pages/settings/language/page.dart';
+import 'package:apolune/pages/shared/widgets/page_app_bar.dart';
+import 'package:apolune/pages/theme/color.dart';
+import 'package:apolune/pages/theme/font.dart';
+import 'package:apolune/pages/theme/layout.dart';
+import 'package:apolune/pages/shared/widgets/setting_row.dart';
+import 'package:apolune/pages/shared/widgets/button_progress.dart';
+import 'package:apolune/pages/shared/widgets/settings_page.dart';
+import 'package:apolune/service/shared/event_bus/enum.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
+import 'package:apolune/service/shared/event_bus/state.dart';
+import 'package:apolune/service/shared/failure.dart';
+import 'package:apolune/service/settings/backup/service.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -226,7 +226,7 @@ class SettingsPage extends StatelessWidget {
                       child: SettingRow(
                         minHeight: rowHeight,
                         contentPadding: rowPadding,
-                        title: l10n.prototypeAboutOneXray,
+                        title: l10n.prototypeAboutApolune,
                         titleStyle: AppTypography.settingsRow,
                         titleTrailing: preferences.appUpdateInfo == null
                             ? null
@@ -234,7 +234,7 @@ class SettingsPage extends StatelessWidget {
                         showChevron: true,
                         onTap: () => controller.openSetting(
                           context,
-                          AppPageDestination.aboutOneXray,
+                          AppPageDestination.aboutApolune,
                         ),
                       ),
                     ),

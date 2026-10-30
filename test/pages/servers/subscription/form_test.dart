@@ -1,15 +1,15 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/pigeon/model.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/service/settings/language/locale.dart';
-import 'package:onexray/pages/servers/import/controller.dart';
-import 'package:onexray/pages/servers/subscription/form_view.dart';
-import 'package:onexray/pages/theme/theme.dart';
-import 'package:onexray/pages/shared/widgets/button_progress.dart';
-import 'package:onexray/pages/shared/widgets/setting_row.dart';
+import 'package:apolune/core/pigeon/model.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/service/settings/language/locale.dart';
+import 'package:apolune/pages/servers/import/controller.dart';
+import 'package:apolune/pages/servers/subscription/form_view.dart';
+import 'package:apolune/pages/theme/theme.dart';
+import 'package:apolune/pages/shared/widgets/button_progress.dart';
+import 'package:apolune/pages/shared/widgets/setting_row.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 void main() {
@@ -604,7 +604,7 @@ void main() {
     addTearDown(() => tester.binding.setSurfaceSize(null));
     name.text = 'Example provider';
     url.text = 'https://provider.example/list';
-    controller.userAgent.text = 'OneXrayAudit/1.0';
+    controller.userAgent.text = 'ApoluneAudit/1.0';
     secret.text = 'AGE-SECRET-KEY-1EXISTING';
     public.text = 'age1existing';
     controller.setHwidEnabled(true);
@@ -629,7 +629,7 @@ void main() {
     expect(input(secret), findsNothing);
     expect(controller.state.hwidEnabled, isTrue);
     expect(url.text, 'https://provider.example/list');
-    expect(controller.userAgent.text, 'OneXrayAudit/1.0');
+    expect(controller.userAgent.text, 'ApoluneAudit/1.0');
     expect(secret.text, 'AGE-SECRET-KEY-1EXISTING');
     expect(public.text, 'age1existing');
 

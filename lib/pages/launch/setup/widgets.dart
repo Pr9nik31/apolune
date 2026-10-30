@@ -1,9 +1,9 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/pages/theme/color.dart';
-import 'package:onexray/pages/theme/font.dart';
-import 'package:onexray/pages/theme/layout.dart';
-import 'package:onexray/pages/shared/widgets/page_action_bar.dart';
-import 'package:onexray/pages/shared/widgets/button_progress.dart';
+import 'package:apolune/pages/theme/color.dart';
+import 'package:apolune/pages/theme/font.dart';
+import 'package:apolune/pages/theme/layout.dart';
+import 'package:apolune/pages/shared/widgets/page_action_bar.dart';
+import 'package:apolune/pages/shared/widgets/button_progress.dart';
 
 /// Small setup forms fill the viewport but still scroll on a short screen or
 /// with a larger system text size. Long selector lists use slivers instead.
@@ -66,7 +66,7 @@ class SetupDesktopBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text('OneXray', style: AppTypography.setupBrand),
+          Text('Apolune', style: AppTypography.setupBrand),
           const SizedBox(height: 10),
           Center(
             child: ConstrainedBox(

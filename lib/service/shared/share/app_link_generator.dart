@@ -1,27 +1,27 @@
 import 'dart:convert';
 
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/core/model/geo_data_type.dart';
-import 'package:onexray/core/tools/json.dart';
-import 'package:onexray/service/shared/share/app_link_model.dart';
-import 'package:onexray/service/shared/share/app_link_parser.dart';
-import 'package:onexray/service/servers/subscription/model.dart';
-import 'package:onexray/service/servers/outbound/map.dart';
-import 'package:onexray/service/servers/outbound/state_db.dart';
-import 'package:onexray/service/shared/xray/remnawave.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/core/model/geo_data_type.dart';
+import 'package:apolune/core/tools/json.dart';
+import 'package:apolune/service/shared/share/app_link_model.dart';
+import 'package:apolune/service/shared/share/app_link_parser.dart';
+import 'package:apolune/service/servers/subscription/model.dart';
+import 'package:apolune/service/servers/outbound/map.dart';
+import 'package:apolune/service/servers/outbound/state_db.dart';
+import 'package:apolune/service/shared/xray/remnawave.dart';
 
 enum _SubscriptionAgeMode { none, x25519, hybrid, invalid }
 
-abstract final class OneXrayAppLinkGenerator {
+abstract final class ApoluneAppLinkGenerator {
   static Uri configurationText(
-    OneXrayConfigLinkType type,
+    ApoluneConfigLinkType type,
     String name,
     String text,
   ) => Uri(
-    scheme: OneXrayAppLinkParser.scheme,
-    host: OneXrayAppLinkParser.host,
-    path: OneXrayAppLinkParser.configPath,
+    scheme: ApoluneAppLinkParser.scheme,
+    host: ApoluneAppLinkParser.host,
+    path: ApoluneAppLinkParser.configPath,
     queryParameters: {
       'type': type.wireName,
       'data': base64Encode(utf8.encode(text)),
@@ -31,16 +31,16 @@ abstract final class OneXrayAppLinkGenerator {
 
   static Uri? config(CoreConfigData config) {
     final type = switch (CoreConfigType.fromString(config.type)) {
-      CoreConfigType.outbound => OneXrayConfigLinkType.outbound,
-      CoreConfigType.raw => OneXrayConfigLinkType.raw,
-      CoreConfigType.Remnawave => OneXrayConfigLinkType.raw,
+      CoreConfigType.outbound => ApoluneConfigLinkType.outbound,
+      CoreConfigType.raw => ApoluneConfigLinkType.raw,
+      CoreConfigType.Remnawave => ApoluneConfigLinkType.raw,
       _ => null,
     };
     var data = config.data?.trim();
     if (type == null || data == null || data.isEmpty) {
       return null;
     }
-    if (type == OneXrayConfigLinkType.outbound) {
+    if (type == ApoluneConfigLinkType.outbound) {
       try {
         data = base64Encode(
           utf8.encode(encodeSingleOutbound(readOutboundFromDbData(config))),
@@ -63,9 +63,9 @@ abstract final class OneXrayAppLinkGenerator {
 
     return _verified(
       Uri(
-        scheme: OneXrayAppLinkParser.scheme,
-        host: OneXrayAppLinkParser.host,
-        path: OneXrayAppLinkParser.configPath,
+        scheme: ApoluneAppLinkParser.scheme,
+        host: ApoluneAppLinkParser.host,
+        path: ApoluneAppLinkParser.configPath,
         queryParameters: {'type': type.wireName, 'data': data},
         fragment: config.name,
       ),
@@ -86,9 +86,9 @@ abstract final class OneXrayAppLinkGenerator {
 
     return _verified(
       Uri(
-        scheme: OneXrayAppLinkParser.scheme,
-        host: OneXrayAppLinkParser.host,
-        path: OneXrayAppLinkParser.subscriptionPath,
+        scheme: ApoluneAppLinkParser.scheme,
+        host: ApoluneAppLinkParser.host,
+        path: ApoluneAppLinkParser.subscriptionPath,
         queryParameters: {
           'url': url,
           'age': ?ageType,
@@ -110,9 +110,9 @@ abstract final class OneXrayAppLinkGenerator {
 
     return _verified(
       Uri(
-        scheme: OneXrayAppLinkParser.scheme,
-        host: OneXrayAppLinkParser.host,
-        path: OneXrayAppLinkParser.geoDataPath,
+        scheme: ApoluneAppLinkParser.scheme,
+        host: ApoluneAppLinkParser.host,
+        path: ApoluneAppLinkParser.geoDataPath,
         queryParameters: {'type': type.name, 'url': geoData.url},
         fragment: geoData.name,
       ),
@@ -174,7 +174,7 @@ abstract final class OneXrayAppLinkGenerator {
   }
 
   static Uri? _verified(Uri uri) {
-    return OneXrayAppLinkParser.parse(uri) == null ? null : uri;
+    return ApoluneAppLinkParser.parse(uri) == null ? null : uri;
   }
 
   static void _collectGeoDataNames(

@@ -15,9 +15,9 @@ platform :ios do
     )
 
     [
-      ['net.yuandev.onexray', 'OneXrayiOS'],
-      ['net.yuandev.onexray.tun', 'OneXrayiOSTun'],
-      ['net.yuandev.onexray.widget', 'OneXrayiOSWidget']
+      ['dev.apolune.client', 'ApoluneiOS'],
+      ['dev.apolune.client.tun', 'ApoluneiOSTun'],
+      ['dev.apolune.client.widget', 'ApoluneiOSWidget']
     ].each do |app_identifier, provisioning_name|
       get_provisioning_profile(
         api_key: api_key,
@@ -36,13 +36,13 @@ platform :ios do
         skip_build_archive: true,
         archive_path: "../build/ios/archive/Runner.xcarchive",
         output_directory: File.expand_path('../../../output', __dir__),
-        output_name: 'OneXray-ios',
+        output_name: 'Apolune-ios',
         export_options: {
           method: 'app-store-connect',
           provisioningProfiles: {
-            'net.yuandev.onexray' => 'OneXrayiOS',
-            'net.yuandev.onexray.tun' => 'OneXrayiOSTun',
-            'net.yuandev.onexray.widget' => 'OneXrayiOSWidget'
+            'dev.apolune.client' => 'ApoluneiOS',
+            'dev.apolune.client.tun' => 'ApoluneiOSTun',
+            'dev.apolune.client.widget' => 'ApoluneiOSWidget'
           }
         })
     upload_to_testflight(

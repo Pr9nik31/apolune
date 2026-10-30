@@ -2,10 +2,10 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/shared/widgets/json_editor.dart';
-import 'package:onexray/pages/theme/theme.dart';
-import 'package:onexray/service/settings/language/locale.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/shared/widgets/json_editor.dart';
+import 'package:apolune/pages/theme/theme.dart';
+import 'package:apolune/service/settings/language/locale.dart';
 import 'package:re_editor/re_editor.dart';
 
 // re_editor caches the target platform in top-level finals. Run each platform

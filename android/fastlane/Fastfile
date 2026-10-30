@@ -10,8 +10,8 @@ platform :android do
         timeout: 1200,
     )
     download_universal_apk_from_google_play(
-        version_code: Integer(ENV.fetch('ONEXRAY_BUILD_NUMBER')),
-        destination: "../../output/OneXray-android-universal.apk",
+        version_code: Integer(ENV.fetch('APOLUNE_BUILD_NUMBER')),
+        destination: "../../output/Apolune-android-universal.apk",
     )
   end
 end

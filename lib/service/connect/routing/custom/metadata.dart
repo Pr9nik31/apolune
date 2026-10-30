@@ -1,5 +1,5 @@
-import 'package:onexray/core/errors/json_diagnostic.dart';
-import 'package:onexray/service/advanced/xray/geodata/model.dart';
+import 'package:apolune/core/errors/json_diagnostic.dart';
+import 'package:apolune/service/advanced/xray/geodata/model.dart';
 
 /// Import-only metadata is shared by both routing formats, never by the core.
 List<Map<String, String>> routingAssets(Object? value) {

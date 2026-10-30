@@ -1,4 +1,4 @@
-# OneXray App
+# Apolune App
 
 Cross-platform Flutter Xray-core client. [Current contracts](docs/README.md)
 describe shipped behavior; Git history holds retired plans and progress logs.
@@ -30,7 +30,7 @@ describe shipped behavior; Git history holds retired plans and progress logs.
   [external interfaces](docs/external-interfaces.md).
 - Packaging, signing or CI releases: [build scripts](build_scripts/README.md).
   Apple/Android release commands may upload to stores; they are not local checks.
-- Visual parity: use the relevant [prototype source](../references/onexray-app-prototype/src/)
+- Visual parity: use the relevant [prototype source](../references/apolune-app-prototype/src/)
   and approved translations. Current App contracts take precedence over the prototype.
 - Native bridge changes: inspect `pigeon/message.dart`, `lib/core/pigeon/`,
   Swift/Kotlin consumers and the [libXray API](../libXray/README.md#api).

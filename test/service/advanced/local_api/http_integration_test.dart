@@ -2,8 +2,8 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/service/advanced/local_api/configuration.dart';
-import 'package:onexray/service/advanced/local_api/server.dart';
+import 'package:apolune/service/advanced/local_api/configuration.dart';
+import 'package:apolune/service/advanced/local_api/server.dart';
 
 void main() {
   test(

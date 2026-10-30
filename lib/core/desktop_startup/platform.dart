@@ -1,11 +1,11 @@
-import 'package:onexray/core/desktop_startup/adapter.dart';
-import 'package:onexray/core/desktop_startup/linux_adapter.dart';
-import 'package:onexray/core/desktop_startup/macos_adapter.dart';
-import 'package:onexray/core/desktop_startup/model.dart';
-import 'package:onexray/core/desktop_startup/windows_exe_adapter.dart';
-import 'package:onexray/core/desktop_startup/windows_msix_adapter.dart';
-import 'package:onexray/core/ffi/windows/mode.dart';
-import 'package:onexray/core/tools/platform.dart';
+import 'package:apolune/core/desktop_startup/adapter.dart';
+import 'package:apolune/core/desktop_startup/linux_adapter.dart';
+import 'package:apolune/core/desktop_startup/macos_adapter.dart';
+import 'package:apolune/core/desktop_startup/model.dart';
+import 'package:apolune/core/desktop_startup/windows_exe_adapter.dart';
+import 'package:apolune/core/desktop_startup/windows_msix_adapter.dart';
+import 'package:apolune/core/ffi/windows/mode.dart';
+import 'package:apolune/core/tools/platform.dart';
 
 final class DesktopStartupPlatform {
   static final DesktopStartupPlatform _singleton =

@@ -2,17 +2,17 @@ import 'dart:io';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/pigeon/host_api.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
+import 'package:apolune/core/pigeon/host_api.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
   const queryChannel = BasicMessageChannel<Object?>(
-    'dev.flutter.pigeon.onexray.BridgeHostApi.queryPlatformPermission',
+    'dev.flutter.pigeon.apolune.BridgeHostApi.queryPlatformPermission',
     BridgeHostApi.pigeonChannelCodec,
   );
   const requestChannel = BasicMessageChannel<Object?>(
-    'dev.flutter.pigeon.onexray.BridgeHostApi.requestPlatformPermission',
+    'dev.flutter.pigeon.apolune.BridgeHostApi.requestPlatformPermission',
     BridgeHostApi.pigeonChannelCodec,
   );
   const permissions = MethodChannel('flutter.baseflow.com/permissions/methods');

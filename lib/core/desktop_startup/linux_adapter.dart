@@ -1,11 +1,11 @@
 import 'dart:io';
 
-import 'package:onexray/core/desktop_startup/adapter.dart';
-import 'package:onexray/core/desktop_startup/model.dart';
+import 'package:apolune/core/desktop_startup/adapter.dart';
+import 'package:apolune/core/desktop_startup/model.dart';
 import 'package:path/path.dart' as path;
 
 final class LinuxLaunchAtLoginAdapter extends LaunchAtLoginAdapter {
-  static const _desktopFileName = 'net.yuandev.onexray.desktop';
+  static const _desktopFileName = 'dev.apolune.client.desktop';
 
   final Map<String, String> _environment;
   final String _executable;
@@ -64,7 +64,7 @@ final class LinuxLaunchAtLoginAdapter extends LaunchAtLoginAdapter {
       }
       if (!await File(_executable).exists()) {
         return const LaunchAtLoginStatus.error(
-          'The OneXray executable does not exist.',
+          'The Apolune executable does not exist.',
         );
       }
 
@@ -105,7 +105,7 @@ final class LinuxLaunchAtLoginAdapter extends LaunchAtLoginAdapter {
   String get _desktopEntry =>
       '[Desktop Entry]\n'
       'Type=Application\n'
-      'Name=OneXray\n'
+      'Name=Apolune\n'
       'Exec=$_execValue\n'
       'TryExec=$_tryExecValue\n'
       'Terminal=false\n';

@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/pages/theme/color.dart';
-import 'package:onexray/pages/theme/font.dart';
-import 'package:onexray/pages/theme/layout.dart';
-import 'package:onexray/service/shared/menu/window/service.dart';
+import 'package:apolune/pages/theme/color.dart';
+import 'package:apolune/pages/theme/font.dart';
+import 'package:apolune/pages/theme/layout.dart';
+import 'package:apolune/service/shared/menu/window/service.dart';
 import 'package:window_manager/window_manager.dart';
 
 /// Native macOS controls use local safe areas, not a second full-width bar.
@@ -112,7 +112,7 @@ class _DesktopWindowFrameState extends State<DesktopWindowFrame>
                       backgroundColor: palette.header,
                       brightness: theme.brightness,
                       title: Text(
-                        'OneXray',
+                        'Apolune',
                         style: AppTypography.supporting.copyWith(
                           color: palette.foreground,
                         ),

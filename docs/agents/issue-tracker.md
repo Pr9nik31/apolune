@@ -1,10 +1,10 @@
 # Issue tracker: GitHub
 
-Issues and specs live in GitHub Issues for `YuanDevTeam/OneXray`.
+Issues and specs live in GitHub Issues for `Pr9nik31/apolune`.
 
-Use the `gh` CLI with `--repo YuanDevTeam/OneXray` in every `gh issue` and
+Use the `gh` CLI with `--repo Pr9nik31/apolune` in every `gh issue` and
 `gh pr` command so repository selection is independent of checkout aliases.
-For `gh api`, use explicit `repos/YuanDevTeam/OneXray/...` endpoints.
+For `gh api`, use explicit `repos/Pr9nik31/apolune/...` endpoints.
 
 ## Conventions
 
@@ -27,16 +27,16 @@ For `gh api`, use explicit `repos/YuanDevTeam/OneXray/...` endpoints.
 
 ## Issue operations
 
-- Publish a ticket: `gh issue create --repo YuanDevTeam/OneXray --title "..." --body "..."`
-- Fetch a ticket: `gh issue view <number> --repo YuanDevTeam/OneXray --comments`; include its labels when assessing state.
-- List tickets: `gh issue list --repo YuanDevTeam/OneXray --state open --json number,title,body,labels,comments`
-- Comment: `gh issue comment <number> --repo YuanDevTeam/OneXray --body "..."`
-- Add or remove labels: `gh issue edit <number> --repo YuanDevTeam/OneXray --add-label "..."` or `--remove-label "..."`
-- Close: `gh issue close <number> --repo YuanDevTeam/OneXray --comment "..."`
+- Publish a ticket: `gh issue create --repo Pr9nik31/apolune --title "..." --body "..."`
+- Fetch a ticket: `gh issue view <number> --repo Pr9nik31/apolune --comments`; include its labels when assessing state.
+- List tickets: `gh issue list --repo Pr9nik31/apolune --state open --json number,title,body,labels,comments`
+- Comment: `gh issue comment <number> --repo Pr9nik31/apolune --body "..."`
+- Add or remove labels: `gh issue edit <number> --repo Pr9nik31/apolune --add-label "..."` or `--remove-label "..."`
+- Close: `gh issue close <number> --repo Pr9nik31/apolune --comment "..."`
 
 GitHub shares one number space across issues and PRs. Resolve an ambiguous
-number with `gh pr view <number> --repo YuanDevTeam/OneXray`, falling back to
-`gh issue view <number> --repo YuanDevTeam/OneXray`.
+number with `gh pr view <number> --repo Pr9nik31/apolune`, falling back to
+`gh issue view <number> --repo Pr9nik31/apolune`.
 
 ## Pull requests as a triage surface
 
@@ -55,6 +55,6 @@ Used by `/wayfinder`. The map is one issue with child issues as tickets.
   `Blocked by: #<n>` at the top of the child body.
 - Frontier: choose the first open, unassigned child in map order without
   an open blocker.
-- Claim: `gh issue edit <number> --repo YuanDevTeam/OneXray --add-assignee @me`
+- Claim: `gh issue edit <number> --repo Pr9nik31/apolune --add-assignee @me`
 - Resolve: comment with the answer, close the child, then add a context
   pointer to the map's Decisions-so-far.

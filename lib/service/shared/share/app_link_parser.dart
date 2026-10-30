@@ -1,21 +1,21 @@
 import 'dart:convert';
 
-import 'package:onexray/core/model/geo_data_type.dart';
-import 'package:onexray/core/network/model.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/core/pigeon/model.dart';
-import 'package:onexray/service/shared/share/app_link_model.dart';
-import 'package:onexray/service/servers/subscription/model.dart';
+import 'package:apolune/core/model/geo_data_type.dart';
+import 'package:apolune/core/network/model.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/core/pigeon/model.dart';
+import 'package:apolune/service/shared/share/app_link_model.dart';
+import 'package:apolune/service/servers/subscription/model.dart';
 
-abstract final class OneXrayAppLinkParser {
-  static const scheme = 'onexray';
-  static const host = 'onexray.com';
+abstract final class ApoluneAppLinkParser {
+  static const scheme = 'apolune';
+  static const host = 'apolune.dev';
 
   static const configPath = '/config/add';
   static const subscriptionPath = '/sub/add';
   static const geoDataPath = '/dat/add';
 
-  static OneXrayAppLink? parse(Uri uri) {
+  static ApoluneAppLink? parse(Uri uri) {
     if (uri.scheme.toLowerCase() != scheme ||
         uri.host.toLowerCase() != host ||
         uri.hasPort ||
@@ -31,7 +31,7 @@ abstract final class OneXrayAppLinkParser {
     };
   }
 
-  static OneXrayConfigLink? _parseConfig(Uri uri) {
+  static ApoluneConfigLink? _parseConfig(Uri uri) {
     if (!_hasOnlyQueryKeys(uri, const {'type', 'data'})) {
       return null;
     }
@@ -41,10 +41,10 @@ abstract final class OneXrayAppLinkParser {
       return null;
     }
     final type = switch (typeText) {
-      'outbound' => OneXrayConfigLinkType.outbound,
-      'raw' => OneXrayConfigLinkType.raw,
-      'custom' => OneXrayConfigLinkType.custom,
-      'custom-advanced' => OneXrayConfigLinkType.customAdvanced,
+      'outbound' => ApoluneConfigLinkType.outbound,
+      'raw' => ApoluneConfigLinkType.raw,
+      'custom' => ApoluneConfigLinkType.custom,
+      'custom-advanced' => ApoluneConfigLinkType.customAdvanced,
       _ => null,
     };
     if (type == null) {
@@ -56,7 +56,7 @@ abstract final class OneXrayAppLinkParser {
       if (xrayJson.trim().isEmpty) {
         return null;
       }
-      return OneXrayConfigLink(
+      return ApoluneConfigLink(
         name: _fragmentName(uri),
         type: type,
         xrayJson: xrayJson,
@@ -66,7 +66,7 @@ abstract final class OneXrayAppLinkParser {
     }
   }
 
-  static OneXraySubscriptionLink? _parseSubscription(Uri uri) {
+  static ApoluneSubscriptionLink? _parseSubscription(Uri uri) {
     if (!_hasOnlyQueryKeys(uri, const {
       'url',
       'age',
@@ -121,7 +121,7 @@ abstract final class OneXrayAppLinkParser {
             (modeText == null || mode == null))) {
       return null;
     }
-    return OneXraySubscriptionLink(
+    return ApoluneSubscriptionLink(
       name: _fragmentName(uri),
       url: url,
       ageKeyType: ageKeyType,
@@ -131,7 +131,7 @@ abstract final class OneXrayAppLinkParser {
     );
   }
 
-  static OneXrayGeoDataLink? _parseGeoData(Uri uri) {
+  static ApoluneGeoDataLink? _parseGeoData(Uri uri) {
     if (!_hasOnlyQueryKeys(uri, const {'type', 'url'})) {
       return null;
     }
@@ -145,7 +145,7 @@ abstract final class OneXrayAppLinkParser {
     if (type == null || url == null) {
       return null;
     }
-    return OneXrayGeoDataLink(name: _fragmentName(uri), type: type, url: url);
+    return ApoluneGeoDataLink(name: _fragmentName(uri), type: type, url: url);
   }
 
   static String? _httpsUrl(String text) {

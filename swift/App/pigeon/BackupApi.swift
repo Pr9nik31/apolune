@@ -30,7 +30,7 @@ final class AppleBackupApi: NSObject, @preconcurrency BackupHostApi, @preconcurr
 
     func selectBackupFile(create: Bool, completion: @escaping (Result<BackupLocation?, Error>) -> Void) {
         guard selection == nil else {
-            completion(.failure(NSError(domain: "OneXray.Backup", code: 1,
+            completion(.failure(NSError(domain: "Apolune.Backup", code: 1,
                                         userInfo: [NSLocalizedDescriptionKey: "A document picker is already open."])))
             return
         }
@@ -46,7 +46,7 @@ final class AppleBackupApi: NSObject, @preconcurrency BackupHostApi, @preconcurr
         var presenter = scenes.flatMap(\.windows).first(where: \.isKeyWindow)?.rootViewController
         while let presented = presenter?.presentedViewController { presenter = presented }
         guard let presenter else {
-            finishSelection(.failure(NSError(domain: "OneXray.Backup", code: 1,
+            finishSelection(.failure(NSError(domain: "Apolune.Backup", code: 1,
                                              userInfo: [NSLocalizedDescriptionKey: "No window is available."])))
             return
         }

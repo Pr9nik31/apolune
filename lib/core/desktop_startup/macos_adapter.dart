@@ -1,6 +1,6 @@
-import 'package:onexray/core/desktop_startup/adapter.dart';
-import 'package:onexray/core/desktop_startup/model.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
+import 'package:apolune/core/desktop_startup/adapter.dart';
+import 'package:apolune/core/desktop_startup/model.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
 
 final class MacOSLaunchAtLoginAdapter extends LaunchAtLoginAdapter {
   final BridgeHostApi _api;

@@ -3,14 +3,14 @@ import 'dart:async';
 import 'package:drift/native.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/ffi/windows/mode.dart';
-import 'package:onexray/core/tools/platform.dart';
-import 'package:onexray/service/connect/coordinator.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
-import 'package:onexray/service/shared/menu/tray/service.dart';
-import 'package:onexray/service/shared/menu/tray/entry.dart';
-import 'package:onexray/service/shared/menu/tray/platform.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/ffi/windows/mode.dart';
+import 'package:apolune/core/tools/platform.dart';
+import 'package:apolune/service/connect/coordinator.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
+import 'package:apolune/service/shared/menu/tray/service.dart';
+import 'package:apolune/service/shared/menu/tray/entry.dart';
+import 'package:apolune/service/shared/menu/tray/platform.dart';
 
 Iterable<TrayMenuEntry> _items(List<TrayMenuEntry> entries) sync* {
   for (final entry in entries) {
@@ -42,7 +42,7 @@ final class _FakeTrayPlatform implements TrayPlatform {
   }) {
     _onClick = onClick;
     _onMenuVisibility = onMenuVisibility;
-    calls.add(const MethodCall('setToolTip', {'toolTip': 'OneXray'}));
+    calls.add(const MethodCall('setToolTip', {'toolTip': 'Apolune'}));
     if (AppPlatform.isMacOS) {
       calls.add(const MethodCall('setTitle', {'title': ''}));
     }
@@ -182,7 +182,7 @@ void main() {
       calls
           .where((call) => call.method == 'setToolTip')
           .map((call) => call.arguments['toolTip']),
-      everyElement('OneXray'),
+      everyElement('Apolune'),
     );
     expect(_items(menus.last).any((item) => item.key == 'stopVpn'), isTrue);
     expect(calls.where((call) => call.method == 'setIcon'), hasLength(2));

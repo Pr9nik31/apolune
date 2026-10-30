@@ -1,9 +1,9 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/pages/shared/page_cubit.dart';
-import 'package:onexray/core/tools/logger.dart';
-import 'package:onexray/pages/launch/route.dart';
-import 'package:onexray/service/launch/bootstrap.dart';
-import 'package:onexray/service/launch/app_startup.dart';
+import 'package:apolune/pages/shared/page_cubit.dart';
+import 'package:apolune/core/tools/logger.dart';
+import 'package:apolune/pages/launch/route.dart';
+import 'package:apolune/service/launch/bootstrap.dart';
+import 'package:apolune/service/launch/app_startup.dart';
 
 class SplashPageState {
   final String? route;

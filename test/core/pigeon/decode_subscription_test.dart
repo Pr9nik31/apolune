@@ -3,14 +3,14 @@ import 'dart:io';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/pigeon/host_api.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
+import 'package:apolune/core/pigeon/host_api.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
   test('subscription decoder carries Age and returns complete plaintext', () async {
     const channel = BasicMessageChannel<Object?>(
-      'dev.flutter.pigeon.onexray.BridgeHostApi.invoke',
+      'dev.flutter.pigeon.apolune.BridgeHostApi.invoke',
       BridgeHostApi.pigeonChannelCodec,
     );
     final messenger =

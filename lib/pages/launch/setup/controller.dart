@@ -2,12 +2,12 @@ import 'dart:async';
 
 import 'package:material_ui/material_ui.dart';
 import 'package:go_router/go_router.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/launch/setup/selectors.dart';
-import 'package:onexray/pages/main/url.dart';
-import 'package:onexray/pages/shared/page_cubit.dart';
-import 'package:onexray/service/launch/setup.dart';
-import 'package:onexray/service/shared/failure.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/launch/setup/selectors.dart';
+import 'package:apolune/pages/main/url.dart';
+import 'package:apolune/pages/shared/page_cubit.dart';
+import 'package:apolune/service/launch/setup.dart';
+import 'package:apolune/service/shared/failure.dart';
 
 enum SetupAction {
   acceptPrivacy,

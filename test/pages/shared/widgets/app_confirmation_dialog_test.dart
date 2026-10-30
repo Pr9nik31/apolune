@@ -1,15 +1,15 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/service/settings/language/locale.dart';
-import 'package:onexray/pages/theme/theme.dart';
-import 'package:onexray/pages/theme/layout.dart';
-import 'package:onexray/pages/shared/widgets/settings_page.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/service/settings/language/locale.dart';
+import 'package:apolune/pages/theme/theme.dart';
+import 'package:apolune/pages/theme/layout.dart';
+import 'package:apolune/pages/shared/widgets/settings_page.dart';
 
 const _open = Key('open-confirmation');
 const _filename =
-    'OneXray-connection-configurations-servers-subscriptions-Age-private-keys-'
+    'Apolune-connection-configurations-servers-subscriptions-Age-private-keys-'
     'custom-routing-and-Raw-JSON.log';
 
 enum _Action { exportLog, restore, exportConfiguration, clear, discard }

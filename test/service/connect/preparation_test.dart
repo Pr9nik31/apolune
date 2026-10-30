@@ -6,20 +6,20 @@ import 'package:drift/drift.dart' hide isNull, isNotNull;
 import 'package:drift/native.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/db/database/constants.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/core/model/geo_data_type.dart';
-import 'package:onexray/core/pigeon/host_api.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/service/advanced/local_api/service.dart';
-import 'package:onexray/service/advanced/local_api/settings.dart';
-import 'package:onexray/service/connect/preparation.dart';
-import 'package:onexray/service/connect/resolver.dart';
-import 'package:onexray/service/connect/routing/custom/advanced.dart';
-import 'package:onexray/service/connect/routing/custom/state.dart';
-import 'package:onexray/service/connect/runtime.dart';
-import 'package:onexray/service/connect/settings.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/db/database/constants.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/core/model/geo_data_type.dart';
+import 'package:apolune/core/pigeon/host_api.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/service/advanced/local_api/service.dart';
+import 'package:apolune/service/advanced/local_api/settings.dart';
+import 'package:apolune/service/connect/preparation.dart';
+import 'package:apolune/service/connect/resolver.dart';
+import 'package:apolune/service/connect/routing/custom/advanced.dart';
+import 'package:apolune/service/connect/routing/custom/state.dart';
+import 'package:apolune/service/connect/runtime.dart';
+import 'package:apolune/service/connect/settings.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -131,11 +131,11 @@ void main() {
       db = AppDatabase.forTesting(NativeDatabase.memory());
       addTearDown(db.close);
       final directory = await Directory.systemTemp.createTemp(
-        'onexray-provider-preparation-',
+        'apolune-provider-preparation-',
       );
       addTearDown(() => directory.delete(recursive: true));
       const channel = BasicMessageChannel<Object?>(
-        'dev.flutter.pigeon.onexray.BridgeHostApi.getTunFilesDir',
+        'dev.flutter.pigeon.apolune.BridgeHostApi.getTunFilesDir',
         BridgeHostApi.pigeonChannelCodec,
       );
       final messenger =
@@ -275,7 +275,7 @@ void main() {
           name: 'Unix socket',
           enabled: true,
           apiPort: 18587,
-          listen: '/tmp/onexray-provider.sock',
+          listen: '/tmp/apolune-provider.sock',
         ),
       ]) {
         test('preserves provider inbound with ${allowed.name}', () async {

@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/errors/failure.dart';
-import 'package:onexray/core/errors/json_diagnostic.dart';
-import 'package:onexray/core/tools/json_document.dart';
+import 'package:apolune/core/errors/failure.dart';
+import 'package:apolune/core/errors/json_diagnostic.dart';
+import 'package:apolune/core/tools/json_document.dart';
 
 void main() {
   test('positions count UTF-16 units and CRLF as one line break', () {

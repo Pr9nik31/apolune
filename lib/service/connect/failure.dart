@@ -1,9 +1,9 @@
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/service/connect/platform_requirements.dart';
-import 'package:onexray/service/connect/resolver.dart';
-import 'package:onexray/service/connect/runtime_host.dart';
-import 'package:onexray/service/shared/failure.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/service/connect/platform_requirements.dart';
+import 'package:apolune/service/connect/resolver.dart';
+import 'package:apolune/service/connect/runtime_host.dart';
+import 'package:apolune/service/shared/failure.dart';
 
 String connectionFailureReason(
   Object error, {

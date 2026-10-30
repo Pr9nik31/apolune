@@ -2,16 +2,16 @@ import 'dart:convert';
 
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/pigeon/model.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/connect/runtime_observatory.dart';
-import 'package:onexray/pages/theme/theme.dart';
-import 'package:onexray/service/connect/compiler.dart';
-import 'package:onexray/service/connect/coordinator.dart';
-import 'package:onexray/service/connect/runtime.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/connect/traffic.dart';
-import 'package:onexray/service/settings/language/locale.dart';
+import 'package:apolune/core/pigeon/model.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/connect/runtime_observatory.dart';
+import 'package:apolune/pages/theme/theme.dart';
+import 'package:apolune/service/connect/compiler.dart';
+import 'package:apolune/service/connect/coordinator.dart';
+import 'package:apolune/service/connect/runtime.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/connect/traffic.dart';
+import 'package:apolune/service/settings/language/locale.dart';
 
 void main() {
   Widget app(ConnectionView view, {Locale locale = const Locale('en')}) =>

@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/ffi/windows/core_process.dart';
+import 'package:apolune/core/ffi/windows/core_process.dart';
 import 'package:path/path.dart' as p;
 
 void main() {
@@ -14,8 +14,8 @@ void main() {
     await root.create(recursive: true);
     directory = await root.createTemp('native-');
     addTearDown(() => directory.delete(recursive: true));
-    // Native operations use a unique fixture name, never real OneXrayCore.
-    name = 'OneXrayFixture-$pid-${DateTime.now().microsecondsSinceEpoch}.exe';
+    // Native operations use a unique fixture name, never real ApoluneCore.
+    name = 'ApoluneFixture-$pid-${DateTime.now().microsecondsSinceEpoch}.exe';
     core = WindowsCoreProcess.forTesting(processName: name);
   });
 

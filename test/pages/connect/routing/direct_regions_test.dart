@@ -3,19 +3,19 @@ import 'dart:io';
 
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/l10n/localizations/app_localizations_en.dart';
-import 'package:onexray/l10n/localizations/app_localizations_fa.dart';
-import 'package:onexray/l10n/localizations/app_localizations_ru.dart';
-import 'package:onexray/l10n/localizations/app_localizations_zh.dart';
-import 'package:onexray/pages/launch/setup/selectors.dart';
-import 'package:onexray/pages/connect/routing/smart/controller.dart';
-import 'package:onexray/pages/connect/routing/smart/regions.dart';
-import 'package:onexray/service/connect/coordinator.dart';
-import 'package:onexray/service/connect/runtime.dart';
-import 'package:onexray/service/connect/routing/region_catalog.dart';
-import 'package:onexray/service/connect/routing/smart/editor.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/l10n/localizations/app_localizations_en.dart';
+import 'package:apolune/l10n/localizations/app_localizations_fa.dart';
+import 'package:apolune/l10n/localizations/app_localizations_ru.dart';
+import 'package:apolune/l10n/localizations/app_localizations_zh.dart';
+import 'package:apolune/pages/launch/setup/selectors.dart';
+import 'package:apolune/pages/connect/routing/smart/controller.dart';
+import 'package:apolune/pages/connect/routing/smart/regions.dart';
+import 'package:apolune/service/connect/coordinator.dart';
+import 'package:apolune/service/connect/runtime.dart';
+import 'package:apolune/service/connect/routing/region_catalog.dart';
+import 'package:apolune/service/connect/routing/smart/editor.dart';
 
 void main() {
   test('Smart preview retains direct sources after merging rules', () async {

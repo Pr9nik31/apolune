@@ -1,5 +1,5 @@
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/db/table/geo_data.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/db/table/geo_data.dart';
 import 'package:drift/drift.dart';
 
 part 'geo_data.g.dart';

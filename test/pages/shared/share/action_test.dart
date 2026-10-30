@@ -3,16 +3,16 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/pages/connect/dialogs.dart';
-import 'package:onexray/pages/shared/share/action.dart';
-import 'package:onexray/pages/shared/widgets/button_progress.dart';
-import 'package:onexray/service/shared/share/outgoing_share.dart';
+import 'package:apolune/pages/connect/dialogs.dart';
+import 'package:apolune/pages/shared/share/action.dart';
+import 'package:apolune/pages/shared/widgets/button_progress.dart';
+import 'package:apolune/service/shared/share/outgoing_share.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 import 'test_app.dart';
 
-const _content = ShareText(title: 'Example', text: 'onexray://example.test');
+const _content = ShareText(title: 'Example', text: 'apolune://example.test');
 const _buttonKey = Key('share-button');
 
 Widget _button(BuildContext context, ShareActionView action) =>

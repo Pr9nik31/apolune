@@ -1,8 +1,8 @@
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/pigeon/host_api.dart';
-import 'package:onexray/core/tools/logger.dart';
-import 'package:onexray/service/servers/outbound/map.dart';
-import 'package:onexray/service/servers/outbound/state_db.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/pigeon/host_api.dart';
+import 'package:apolune/core/tools/logger.dart';
+import 'package:apolune/service/servers/outbound/map.dart';
+import 'package:apolune/service/servers/outbound/state_db.dart';
 
 class XrayShareReader {
   Future<List<CoreConfigCompanion>> parseShareText(

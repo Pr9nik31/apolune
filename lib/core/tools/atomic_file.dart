@@ -6,7 +6,7 @@ import 'package:win32/win32.dart';
 /// The caller serializes writes to this target. Never delete the previous file
 /// before replacement, including on Windows where rename differs from POSIX.
 Future<void> writeBytesAtomically(File target, List<int> bytes) async {
-  final staging = await target.parent.createTemp('.onexray-write-');
+  final staging = await target.parent.createTemp('.apolune-write-');
   final temporary = File('${staging.path}/payload');
   try {
     await temporary.writeAsBytes(bytes, flush: true);

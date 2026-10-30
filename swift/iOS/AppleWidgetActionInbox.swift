@@ -10,7 +10,7 @@ enum AppleWidgetAction: String, Sendable {
 @MainActor
 final class AppleWidgetActionInbox {
     static let shared = AppleWidgetActionInbox()
-    static let actionAvailable = Notification.Name("OneXray.AppleWidgetActionAvailable")
+    static let actionAvailable = Notification.Name("Apolune.AppleWidgetActionAvailable")
     private var pending: AppleWidgetAction?
 
     func submit(_ action: AppleWidgetAction) {

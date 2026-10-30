@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/pigeon/model_reader.dart';
+import 'package:apolune/core/pigeon/model_reader.dart';
 
 void main() {
   test('parses a valid libXray response', () {

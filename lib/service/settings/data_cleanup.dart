@@ -1,24 +1,24 @@
 import 'dart:io';
 
-import 'package:onexray/core/errors/failure.dart';
+import 'package:apolune/core/errors/failure.dart';
 
 import 'package:flutter/foundation.dart';
-import 'package:onexray/core/constants/preferences.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/pigeon/constants.dart';
-import 'package:onexray/core/tools/logger.dart';
-import 'package:onexray/service/launch/app_startup.dart';
-import 'package:onexray/service/connect/coordinator.dart';
-import 'package:onexray/service/advanced/xray/geodata/service.dart';
-import 'package:onexray/service/advanced/local_api/service.dart';
-import 'package:onexray/service/advanced/xray/data_update/service.dart';
-import 'package:onexray/service/servers/import.dart';
-import 'package:onexray/service/servers/manual_groups.dart';
-import 'package:onexray/service/servers/subscription/service.dart';
-import 'package:onexray/service/shared/ping/service.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
-import 'package:onexray/service/settings/backup/service.dart';
-import 'package:onexray/service/advanced/tunnel/android/automation/service.dart';
+import 'package:apolune/core/constants/preferences.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/pigeon/constants.dart';
+import 'package:apolune/core/tools/logger.dart';
+import 'package:apolune/service/launch/app_startup.dart';
+import 'package:apolune/service/connect/coordinator.dart';
+import 'package:apolune/service/advanced/xray/geodata/service.dart';
+import 'package:apolune/service/advanced/local_api/service.dart';
+import 'package:apolune/service/advanced/xray/data_update/service.dart';
+import 'package:apolune/service/servers/import.dart';
+import 'package:apolune/service/servers/manual_groups.dart';
+import 'package:apolune/service/servers/subscription/service.dart';
+import 'package:apolune/service/shared/ping/service.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
+import 'package:apolune/service/settings/backup/service.dart';
+import 'package:apolune/service/advanced/tunnel/android/automation/service.dart';
 import 'package:path_provider/path_provider.dart';
 
 final class AppDataCleanupService {

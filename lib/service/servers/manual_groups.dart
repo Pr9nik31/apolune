@@ -1,8 +1,8 @@
 import 'package:collection/collection.dart';
 import 'package:drift/drift.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/service/shared/in_flight_operations.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/service/shared/in_flight_operations.dart';
 
 /// Manual organization changes never compile or reconnect a running server.
 class ManualServerGroupService {

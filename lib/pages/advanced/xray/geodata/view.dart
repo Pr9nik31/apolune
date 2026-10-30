@@ -2,16 +2,16 @@ import 'dart:math' as math;
 
 import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/core/tools/traffic_format.dart';
-import 'package:onexray/pages/theme/font.dart';
-import 'package:onexray/pages/theme/layout.dart';
-import 'package:onexray/pages/theme/color.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/core/tools/traffic_format.dart';
+import 'package:apolune/pages/theme/font.dart';
+import 'package:apolune/pages/theme/layout.dart';
+import 'package:apolune/pages/theme/color.dart';
 import 'package:intl/intl.dart' show DateFormat;
-import 'package:onexray/service/advanced/xray/geodata/model.dart';
-import 'package:onexray/pages/shared/widgets/button_progress.dart';
-import 'package:onexray/pages/shared/widgets/app_activity.dart';
+import 'package:apolune/service/advanced/xray/geodata/model.dart';
+import 'package:apolune/pages/shared/widgets/button_progress.dart';
+import 'package:apolune/pages/shared/widgets/app_activity.dart';
 
 /// Pending declarations have no published size, timestamp or category page.
 class PendingGeoDataRow extends StatelessWidget {

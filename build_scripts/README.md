@@ -5,7 +5,7 @@ Debug and [Validation](../docs/validation.md) for device/channel acceptance.
 
 ## Prepare the workspace
 
-Keep `OneXray/` and `libXray/` as sibling checkouts. Windows also needs a compatible
+Keep `Apolune/` and `libXray/` as sibling checkouts. Windows also needs a compatible
 Vole checkout at sibling `Vole/`, workspace `references/Vole/`, or `VOLE_DIR`.
 The configured checkout must support custom VPN profiles and the retained Windows
 host MTA lifetime. A local commit is not available to CI until published upstream.
@@ -39,7 +39,7 @@ commands serially.
 ## GitHub Actions
 
 Prefer maintained Actions for SDK/tool setup, downloads, artifacts and releases.
-Keep scripts for OneXray's build commands, credentials, release policy and native
+Keep scripts for Apolune's build commands, credentials, release policy and native
 packaging. Check target architecture support before replacing a setup step.
 
 Use the latest supported major tag for Actions. When upstream does not publish
@@ -86,7 +86,7 @@ Outputs go to sibling `output/`. Use an isolated checkout/output directory.
 
 ```shell
 export BUILD_NUMBER=1
-uv run --project build_scripts python build_scripts/main.py OneXray <system>
+uv run --project build_scripts python build_scripts/main.py Apolune <system>
 ```
 
 PowerShell uses `$env:BUILD_NUMBER = "1"`; the build command is otherwise the same.
@@ -132,7 +132,7 @@ builds do not validate distribution signing or device Widget availability.
 ## Windows
 
 `--windows-mode exe|msix` selects both packaging and the compiled runtime; default
-is `exe`, never a package-identity fallback. `ONEXRAY_WINDOWS_ARCH=x64|arm64` defaults
+is `exe`, never a package-identity fallback. `APOLUNE_WINDOWS_ARCH=x64|arm64` defaults
 to the host and requires matching toolchains.
 
 - **EXE/ZIP:** Xray native TUN/Wintun and current-user Startup shortcut. Fastforge
@@ -163,10 +163,10 @@ an existing Code Signing certificate in the current user's `My` store:
 ```powershell
 $certificate = Get-Item "Cert:\CurrentUser\My\<thumbprint>"
 $env:BUILD_NUMBER = "1"
-$env:ONEXRAY_DEV_SIGN = "1"
-$env:ONEXRAY_DEV_CERT_THUMBPRINT = $certificate.Thumbprint
-$env:ONEXRAY_DEV_PUBLISHER = $certificate.Subject
-uv run --project build_scripts python build_scripts/main.py OneXray windows --windows-mode msix
+$env:APOLUNE_DEV_SIGN = "1"
+$env:APOLUNE_DEV_CERT_THUMBPRINT = $certificate.Thumbprint
+$env:APOLUNE_DEV_PUBLISHER = $certificate.Subject
+uv run --project build_scripts python build_scripts/main.py Apolune windows --windows-mode msix
 ```
 
 The certificate must have its private key. Trust a self-signed public CER on the
@@ -174,10 +174,10 @@ test machine through `LocalMachine\TrustedPeople` with normal administrator
 approval, not the Root store. Scripts do not manage certificates or accept PFX
 passwords. MakeAppx and, for development builds, SignTool must succeed before
 replacing an output. Windows checks signature trust on installation.
-Set `ONEXRAY_DEV_SIGN=0` for an unsigned Store build.
+Set `APOLUNE_DEV_SIGN=0` for an unsigned Store build.
 
-Development identity `OneXray.Dev` and profile `OneXray Dev` are separate from
-Store identity `YuanDevLLC.OneXray` and profile `OneXray`. No old profile or session
+Development identity `Apolune.Dev` and profile `Apolune Dev` are separate from
+Store identity `Apolune.Apolune` and profile `Apolune`. No old profile or session
 token is adopted or renamed automatically; stop an old active profile before switching. EXE/ZIP and
 MSIX are different data/upgrade channels; see [App behavior](../docs/app.md).
 

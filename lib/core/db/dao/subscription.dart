@@ -1,8 +1,8 @@
 import 'package:drift/drift.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/core/db/table/core_config.dart';
-import 'package:onexray/core/db/table/subscription.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/core/db/table/core_config.dart';
+import 'package:apolune/core/db/table/subscription.dart';
 
 part 'subscription.g.dart';
 

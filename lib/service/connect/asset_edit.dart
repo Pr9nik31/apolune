@@ -1,6 +1,6 @@
-import 'package:onexray/service/connect/coordinator.dart';
-import 'package:onexray/service/connect/runtime.dart';
-import 'package:onexray/service/shared/share/configuration_transfer.dart';
+import 'package:apolune/service/connect/coordinator.dart';
+import 'package:apolune/service/connect/runtime.dart';
+import 'package:apolune/service/shared/share/configuration_transfer.dart';
 
 /// Shared transaction/reconnect boundary for Raw, custom-route and node editors.
 /// Each editor still owns its format, semantic comparison and stale-row check.

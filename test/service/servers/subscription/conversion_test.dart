@@ -5,15 +5,15 @@ import 'dart:typed_data';
 import 'package:dio/dio.dart';
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/core/errors/failure.dart';
-import 'package:onexray/core/network/client.dart';
-import 'package:onexray/service/servers/subscription/model.dart';
-import 'package:onexray/service/servers/subscription/reader.dart';
-import 'package:onexray/service/servers/subscription/service.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
-import 'package:onexray/service/shared/share/xray_share_reader.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/core/errors/failure.dart';
+import 'package:apolune/core/network/client.dart';
+import 'package:apolune/service/servers/subscription/model.dart';
+import 'package:apolune/service/servers/subscription/reader.dart';
+import 'package:apolune/service/servers/subscription/service.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
+import 'package:apolune/service/shared/share/xray_share_reader.dart';
 
 const _input = SubscriptionInput(
   name: 'Provider',
@@ -276,7 +276,7 @@ void _expectOrdinary(SubscriptionData source) {
 
 class _Harness {
   final database = AppDatabase.forTesting(NativeDatabase.memory());
-  final client = Dio(BaseOptions(headers: {'User-Agent': 'OneXray/test'}));
+  final client = Dio(BaseOptions(headers: {'User-Agent': 'Apolune/test'}));
   final requests = <RequestOptions>[];
   final parsed = <String>[];
   final pings = <int>[];

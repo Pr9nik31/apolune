@@ -1,7 +1,7 @@
-import 'package:onexray/core/errors/failure.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
+import 'package:apolune/core/errors/failure.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
 
-export 'package:onexray/core/errors/failure.dart';
+export 'package:apolune/core/errors/failure.dart';
 
 /// Reuse approved UI copy; diagnostic details remain in the source language.
 String appFailureMessage(

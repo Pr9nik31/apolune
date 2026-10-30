@@ -1,6 +1,6 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/shared/widgets/adaptive_dialog.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/shared/widgets/adaptive_dialog.dart';
 
 /// Names the independent personal copy; it never edits subscription JSON.
 class ProviderRawCopyNameDialog extends StatefulWidget {

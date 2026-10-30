@@ -1,8 +1,8 @@
-import 'package:onexray/core/db/database/constants.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/service/servers/catalog.dart';
-import 'package:onexray/service/connect/settings.dart';
+import 'package:apolune/core/db/database/constants.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/service/servers/catalog.dart';
+import 'package:apolune/service/connect/settings.dart';
 
 class ServerGroup {
   final String id;

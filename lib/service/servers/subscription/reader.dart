@@ -1,19 +1,19 @@
 import 'dart:convert';
 
 import 'package:drift/drift.dart';
-import 'package:onexray/core/errors/failure.dart';
-import 'package:onexray/core/db/database/constants.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/core/pigeon/host_api.dart';
-import 'package:onexray/core/tools/json.dart';
-import 'package:onexray/service/advanced/xray/geodata/service.dart';
-import 'package:onexray/service/servers/outbound/map.dart';
-import 'package:onexray/service/servers/outbound/state_db.dart';
-import 'package:onexray/service/servers/subscription/model.dart';
-import 'package:onexray/service/shared/share/xray_share_reader.dart';
-import 'package:onexray/service/shared/xray/validation.dart';
-import 'package:onexray/service/shared/xray/remnawave.dart';
+import 'package:apolune/core/errors/failure.dart';
+import 'package:apolune/core/db/database/constants.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/core/pigeon/host_api.dart';
+import 'package:apolune/core/tools/json.dart';
+import 'package:apolune/service/advanced/xray/geodata/service.dart';
+import 'package:apolune/service/servers/outbound/map.dart';
+import 'package:apolune/service/servers/outbound/state_db.dart';
+import 'package:apolune/service/servers/subscription/model.dart';
+import 'package:apolune/service/shared/share/xray_share_reader.dart';
+import 'package:apolune/service/shared/xray/validation.dart';
+import 'package:apolune/service/shared/xray/remnawave.dart';
 
 final class SubscriptionConfigurationResult {
   final List<CoreConfigCompanion> rows;

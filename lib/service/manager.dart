@@ -1,26 +1,26 @@
 import 'dart:async';
 
 import 'package:flutter/widgets.dart';
-import 'package:onexray/core/network/client.dart';
-import 'package:onexray/core/pigeon/host_api.dart';
-import 'package:onexray/core/tools/logger.dart';
-import 'package:onexray/service/launch/app_startup.dart';
-import 'package:onexray/service/settings/app_update/service.dart';
-import 'package:onexray/service/advanced/xray/data_update/scheduler.dart';
-import 'package:onexray/service/connect/coordinator.dart';
-import 'package:onexray/service/connect/platform_requirements.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
-import 'package:onexray/service/advanced/xray/geodata/service.dart';
-import 'package:onexray/service/advanced/local_api/service.dart';
-import 'package:onexray/service/launch/storage_preparation.dart';
-import 'package:onexray/service/shared/menu/short_cut/service.dart';
-import 'package:onexray/service/shared/menu/tray/service.dart';
-import 'package:onexray/service/shared/menu/window/service.dart';
-import 'package:onexray/service/shared/notification/service.dart';
-import 'package:onexray/service/shared/ping/service.dart';
-import 'package:onexray/service/shared/share/service.dart';
-import 'package:onexray/service/shared/apple_widget/service.dart';
-import 'package:onexray/service/advanced/tunnel/android/automation/service.dart';
+import 'package:apolune/core/network/client.dart';
+import 'package:apolune/core/pigeon/host_api.dart';
+import 'package:apolune/core/tools/logger.dart';
+import 'package:apolune/service/launch/app_startup.dart';
+import 'package:apolune/service/settings/app_update/service.dart';
+import 'package:apolune/service/advanced/xray/data_update/scheduler.dart';
+import 'package:apolune/service/connect/coordinator.dart';
+import 'package:apolune/service/connect/platform_requirements.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
+import 'package:apolune/service/advanced/xray/geodata/service.dart';
+import 'package:apolune/service/advanced/local_api/service.dart';
+import 'package:apolune/service/launch/storage_preparation.dart';
+import 'package:apolune/service/shared/menu/short_cut/service.dart';
+import 'package:apolune/service/shared/menu/tray/service.dart';
+import 'package:apolune/service/shared/menu/window/service.dart';
+import 'package:apolune/service/shared/notification/service.dart';
+import 'package:apolune/service/shared/ping/service.dart';
+import 'package:apolune/service/shared/share/service.dart';
+import 'package:apolune/service/shared/apple_widget/service.dart';
+import 'package:apolune/service/advanced/tunnel/android/automation/service.dart';
 
 abstract final class ServiceManager {
   static Future<void>? _initFuture;

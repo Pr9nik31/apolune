@@ -1,15 +1,15 @@
 import 'dart:async';
 
-import 'package:onexray/core/ffi/base_ffi_api.dart';
-import 'package:onexray/core/ffi/windows/ffi_api.dart';
-import 'package:onexray/core/ffi/windows/model.dart';
-import 'package:onexray/core/ffi/windows/native_api.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/core/pigeon/flutter_api.dart';
-import 'package:onexray/core/pigeon/model.dart';
-import 'package:onexray/core/pigeon/model_reader.dart';
-import 'package:onexray/core/pigeon/model_writer.dart';
-import 'package:onexray/core/tools/logger.dart';
+import 'package:apolune/core/ffi/base_ffi_api.dart';
+import 'package:apolune/core/ffi/windows/ffi_api.dart';
+import 'package:apolune/core/ffi/windows/model.dart';
+import 'package:apolune/core/ffi/windows/native_api.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/core/pigeon/flutter_api.dart';
+import 'package:apolune/core/pigeon/model.dart';
+import 'package:apolune/core/pigeon/model_reader.dart';
+import 'package:apolune/core/pigeon/model_writer.dart';
+import 'package:apolune/core/tools/logger.dart';
 
 class WindowsMsixFfiApi extends WindowsFfiApi {
   WindowsMsixFfiApi({
@@ -28,7 +28,7 @@ class WindowsMsixFfiApi extends WindowsFfiApi {
            notifyError ?? AppFlutterApi().vpnStatusController.addError,
        super.base();
 
-  static const _coreRelativePath = 'OneXrayCore.exe';
+  static const _coreRelativePath = 'ApoluneCore.exe';
 
   final WindowsNativeApi _native;
   final Future<StartVpnRequest> Function() _readRequest;

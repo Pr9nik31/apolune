@@ -1,8 +1,8 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:go_router/go_router.dart';
-import 'package:onexray/pages/shared/page_cubit.dart';
-import 'package:onexray/pages/shared/alert.dart';
-import 'package:onexray/service/advanced/xray/data_update/state.dart';
+import 'package:apolune/pages/shared/page_cubit.dart';
+import 'package:apolune/pages/shared/alert.dart';
+import 'package:apolune/service/advanced/xray/data_update/state.dart';
 
 class AutoUpdatePageState {
   final AutoUpdateState autoUpdateState;

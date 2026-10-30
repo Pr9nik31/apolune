@@ -4,15 +4,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/main/adaptive_shell.dart';
-import 'package:onexray/pages/main/dialog_page.dart';
-import 'package:onexray/pages/main/modal_route_observer.dart';
-import 'package:onexray/pages/main/navigation.dart';
-import 'package:onexray/pages/theme/theme.dart';
-import 'package:onexray/service/settings/language/locale.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
-import 'package:onexray/service/shared/menu/settings/service.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/main/adaptive_shell.dart';
+import 'package:apolune/pages/main/dialog_page.dart';
+import 'package:apolune/pages/main/modal_route_observer.dart';
+import 'package:apolune/pages/main/navigation.dart';
+import 'package:apolune/pages/theme/theme.dart';
+import 'package:apolune/service/settings/language/locale.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
+import 'package:apolune/service/shared/menu/settings/service.dart';
 
 void main() {
   testWidgets('Settings preserves its subpage and drafts in other branches', (

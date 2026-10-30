@@ -3,10 +3,10 @@
 
 import 'dart:io';
 
-import 'package:onexray/core/errors/json_diagnostic.dart';
-import 'package:onexray/core/model/xray_json.dart';
-import 'package:onexray/service/shared/ping/state.dart';
-import 'package:onexray/service/shared/xray/fake_dns.dart';
+import 'package:apolune/core/errors/json_diagnostic.dart';
+import 'package:apolune/core/model/xray_json.dart';
+import 'package:apolune/service/shared/ping/state.dart';
+import 'package:apolune/service/shared/xray/fake_dns.dart';
 
 /// Editable address of one DNS resolver.
 final class RoutingDnsResolver {

@@ -1,21 +1,21 @@
 import 'dart:async';
 
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/core/errors/json_diagnostic.dart';
-import 'package:onexray/core/pigeon/constants.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/connect/dialogs.dart';
-import 'package:onexray/pages/shared/alert.dart';
-import 'package:onexray/pages/shared/page_cubit.dart';
-import 'package:onexray/pages/shared/widgets/configuration_transfer.dart';
-import 'package:onexray/service/connect/raw/editor.dart';
-import 'package:onexray/service/connect/routing/custom/advanced.dart';
-import 'package:onexray/service/connect/routing/custom/editor.dart';
-import 'package:onexray/service/connect/routing/custom/configuration.dart';
-import 'package:onexray/service/connect/routing/custom/geodata_suggestions.dart';
+import 'package:apolune/core/errors/json_diagnostic.dart';
+import 'package:apolune/core/pigeon/constants.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/connect/dialogs.dart';
+import 'package:apolune/pages/shared/alert.dart';
+import 'package:apolune/pages/shared/page_cubit.dart';
+import 'package:apolune/pages/shared/widgets/configuration_transfer.dart';
+import 'package:apolune/service/connect/raw/editor.dart';
+import 'package:apolune/service/connect/routing/custom/advanced.dart';
+import 'package:apolune/service/connect/routing/custom/editor.dart';
+import 'package:apolune/service/connect/routing/custom/configuration.dart';
+import 'package:apolune/service/connect/routing/custom/geodata_suggestions.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:onexray/service/shared/failure.dart';
-import 'package:onexray/service/shared/share/configuration_transfer.dart';
+import 'package:apolune/service/shared/failure.dart';
+import 'package:apolune/service/shared/share/configuration_transfer.dart';
 import 'package:re_editor/re_editor.dart';
 
 const _unchanged = Object();
@@ -411,7 +411,7 @@ class JsonConfigurationEditorController
     try {
       if (!await launchUrl(
         Uri.parse(
-          'https://onexray.com/${prefix}docs/configuration/advanced-routing/',
+          'https://apolune.dev/${prefix}docs/configuration/advanced-routing/',
         ),
         mode: LaunchMode.externalApplication,
       )) {

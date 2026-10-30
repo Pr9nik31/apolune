@@ -2,13 +2,13 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/ffi/windows/mode.dart';
-import 'package:onexray/service/connect/compiler.dart';
-import 'package:onexray/service/connect/routing/custom/advanced.dart';
-import 'package:onexray/service/connect/routing/region_catalog.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/shared/xray/vpn_config.dart';
-import 'package:onexray/service/shared/xray/validation.dart';
+import 'package:apolune/core/ffi/windows/mode.dart';
+import 'package:apolune/service/connect/compiler.dart';
+import 'package:apolune/service/connect/routing/custom/advanced.dart';
+import 'package:apolune/service/connect/routing/region_catalog.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/shared/xray/vpn_config.dart';
+import 'package:apolune/service/shared/xray/validation.dart';
 
 const _ipv4 = '192.0.2.53';
 const _ipv6 = '2001:db8::53';

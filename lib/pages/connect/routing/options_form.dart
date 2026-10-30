@@ -1,12 +1,12 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/connect/routing/widgets.dart';
-import 'package:onexray/pages/shared/widgets/dns_text_field.dart';
-import 'package:onexray/pages/shared/widgets/menu_picker.dart';
-import 'package:onexray/pages/theme/color.dart';
-import 'package:onexray/pages/theme/font.dart';
-import 'package:onexray/service/connect/routing/options.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/connect/routing/widgets.dart';
+import 'package:apolune/pages/shared/widgets/dns_text_field.dart';
+import 'package:apolune/pages/shared/widgets/menu_picker.dart';
+import 'package:apolune/pages/theme/color.dart';
+import 'package:apolune/pages/theme/font.dart';
+import 'package:apolune/service/connect/routing/options.dart';
 import 'package:shadcn_ui/shadcn_ui.dart' show ShadSwitch;
 
 /// Ordinary routing forms edit business values, never generated Core JSON.

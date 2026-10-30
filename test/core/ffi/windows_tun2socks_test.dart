@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/ffi/windows/tun2socks.dart';
+import 'package:apolune/core/ffi/windows/tun2socks.dart';
 
 void main() {
   test('builds the credential-free Vole UWP config with IPv6 policy', () {
@@ -11,7 +11,7 @@ tun:
   mtu: 1400
 
 proxies:
-  - name: onexray-local-socks
+  - name: apolune-local-socks
     type: socks5
     server: 127.0.0.1
     port: 1080
@@ -21,7 +21,7 @@ dns:
   enable: false
 
 rules:
-  - MATCH,onexray-local-socks
+  - MATCH,apolune-local-socks
 ''');
     expect(
       buildWindowsTun2SocksConfig('1080', enableIPv6: false),

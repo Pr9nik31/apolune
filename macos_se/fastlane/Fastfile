@@ -9,9 +9,9 @@ end
 platform :mac do
   lane :deploy do
     output_dir = File.expand_path('../../../output', __dir__)
-    product_name = 'OneXraySE'
+    product_name = 'ApoluneSE'
     app_path = File.join(output_dir, "#{product_name}.app")
-    zip_path = File.join(output_dir, 'OneXray-macos-universal.zip')
+    zip_path = File.join(output_dir, 'Apolune-macos-universal.zip')
 
     team_id = '2CKAULFA9J'
 
@@ -22,8 +22,8 @@ platform :mac do
     )
 
     [
-      ['net.yuandev.onexray.se', 'OneXraySEmacOS'],
-      ['net.yuandev.onexray.se.tun', 'OneXraySEmacOSTun']
+      ['dev.apolune.client.se', 'ApoluneSEmacOS'],
+      ['dev.apolune.client.se.tun', 'ApoluneSEmacOSTun']
     ].each do |app_identifier, provisioning_name|
       get_provisioning_profile(
         api_key: api_key,
@@ -50,8 +50,8 @@ platform :mac do
         signingStyle: 'manual',
         teamID: team_id,
         provisioningProfiles: {
-          'net.yuandev.onexray.se' => 'OneXraySEmacOS',
-          'net.yuandev.onexray.se.tun' => 'OneXraySEmacOSTun'
+          'dev.apolune.client.se' => 'ApoluneSEmacOS',
+          'dev.apolune.client.se.tun' => 'ApoluneSEmacOSTun'
         }
       }
     )

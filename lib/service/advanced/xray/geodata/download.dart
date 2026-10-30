@@ -1,9 +1,9 @@
 import 'dart:io';
 
-import 'package:onexray/core/errors/failure.dart';
+import 'package:apolune/core/errors/failure.dart';
 
-import 'package:onexray/core/network/client.dart';
-import 'package:onexray/service/advanced/xray/geodata/model.dart';
+import 'package:apolune/core/network/client.dart';
+import 'package:apolune/service/advanced/xray/geodata/model.dart';
 
 /// Keep every redirect HTTPS and bound downloads before indexing/publication.
 Future<void> downloadGeoData(String url, File destination) async {

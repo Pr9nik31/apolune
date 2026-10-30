@@ -8,7 +8,7 @@ part of 'model.dart';
 
 BackupDocument _$BackupDocumentFromJson(Map<String, dynamic> json) =>
     BackupDocument(
-      format: json['format'] as String? ?? 'onexray-backup',
+      format: json['format'] as String? ?? 'apolune-backup',
       version: (json['version'] as num?)?.toInt() ?? 1,
       createdAt: (json['createdAt'] as num).toInt(),
       manualGroups:

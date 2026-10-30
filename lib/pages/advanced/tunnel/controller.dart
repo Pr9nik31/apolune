@@ -1,16 +1,16 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/core/pigeon/host_api.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/shared/alert.dart';
-import 'package:onexray/pages/shared/page_cubit.dart';
-import 'package:onexray/service/connect/failure.dart';
-import 'package:onexray/service/connect/coordinator.dart';
-import 'package:onexray/service/advanced/policy_editor.dart';
-import 'package:onexray/service/advanced/platform_policy.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/advanced/tunnel/interface.dart';
-import 'package:onexray/service/shared/failure.dart';
+import 'package:apolune/core/pigeon/host_api.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/shared/alert.dart';
+import 'package:apolune/pages/shared/page_cubit.dart';
+import 'package:apolune/service/connect/failure.dart';
+import 'package:apolune/service/connect/coordinator.dart';
+import 'package:apolune/service/advanced/policy_editor.dart';
+import 'package:apolune/service/advanced/platform_policy.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/advanced/tunnel/interface.dart';
+import 'package:apolune/service/shared/failure.dart';
 
 enum TunnelDestination { apple, android, windows, interface }
 

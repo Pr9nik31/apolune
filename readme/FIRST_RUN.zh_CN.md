@@ -21,9 +21,9 @@
 在工作空间中只 clone 尚未准备的仓库：
 
 ```shell
-git clone https://github.com/YuanDevTeam/OneXray.git
+git clone https://github.com/Pr9nik31/apolune.git
 git clone https://github.com/XTLS/libXray.git
-cd OneXray
+cd Apolune
 ```
 
 两个仓库放在同一级；Windows 另需 Vole，目录规则见[构建手册](../build_scripts/README.md#prepare-the-workspace)。下文命令均从 App 根目录
@@ -67,8 +67,8 @@ sudo apt-get install -y build-essential clang libclang-dev cmake ninja-build pkg
 python3 ../libXray/build/main.py linux
 mkdir -p linux/app
 cp ../libXray/linux_so/libXray.so linux/app/
-cp ../libXray/bin/xray linux/app/OneXrayCore
-chmod +x linux/app/OneXrayCore
+cp ../libXray/bin/xray linux/app/ApoluneCore
+chmod +x linux/app/ApoluneCore
 ```
 
 ### Windows
@@ -112,7 +112,7 @@ FFI 头文件与配置见 `pubspec.yaml`；已入库的模型、数据库、资�
 - Linux：先生成 Debug bundle，再授予实际 Core 网络能力：
   ```shell
   flutter build linux --debug
-  sudo setcap cap_net_admin,cap_net_raw+eip build/linux/x64/debug/bundle/OneXrayCore
+  sudo setcap cap_net_admin,cap_net_raw+eip build/linux/x64/debug/bundle/ApoluneCore
   flutter run -d linux --no-enable-impeller
   ```
   ARM64 将 `x64` 改为 `arm64`；重新构建替换 Core 后重新授予能力。

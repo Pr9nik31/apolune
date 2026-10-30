@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/pages/connect/routing/custom/rule_controller.dart';
-import 'package:onexray/service/connect/routing/custom/geodata_suggestions.dart';
-import 'package:onexray/service/connect/routing/custom/state.dart';
+import 'package:apolune/pages/connect/routing/custom/rule_controller.dart';
+import 'package:apolune/service/connect/routing/custom/geodata_suggestions.dart';
+import 'package:apolune/service/connect/routing/custom/state.dart';
 
 void main() {
   test('extended conditions survive edits and can be removed without changing the original', () {

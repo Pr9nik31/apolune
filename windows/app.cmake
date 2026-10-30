@@ -13,7 +13,7 @@ install(FILES
         COMPONENT Runtime)
 
 install(PROGRAMS
-        "${APP_DIR}/OneXrayCore.exe"
+        "${APP_DIR}/ApoluneCore.exe"
         "${APP_DIR}/vole-windows-vpn-host.exe"
         "${APP_DIR}/vole-windows-session-host.exe"
         DESTINATION "${CMAKE_INSTALL_PREFIX}"

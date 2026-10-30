@@ -2,16 +2,16 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/ffi/windows/mode.dart';
-import 'package:onexray/core/model/xray_json.dart';
-import 'package:onexray/core/pigeon/constants.dart';
-import 'package:onexray/service/connect/compiler.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/connect/routing/region_catalog.dart';
-import 'package:onexray/service/connect/routing/custom/state.dart';
-import 'package:onexray/service/connect/routing/custom/advanced.dart';
-import 'package:onexray/service/shared/xray/runtime_inbounds.dart';
-import 'package:onexray/service/shared/xray/remnawave.dart';
+import 'package:apolune/core/ffi/windows/mode.dart';
+import 'package:apolune/core/model/xray_json.dart';
+import 'package:apolune/core/pigeon/constants.dart';
+import 'package:apolune/service/connect/compiler.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/connect/routing/region_catalog.dart';
+import 'package:apolune/service/connect/routing/custom/state.dart';
+import 'package:apolune/service/connect/routing/custom/advanced.dart';
+import 'package:apolune/service/shared/xray/runtime_inbounds.dart';
+import 'package:apolune/service/shared/xray/remnawave.dart';
 
 import '../../support/xdrive_template_fixture.dart';
 
@@ -351,7 +351,7 @@ void main() {
         expect(tunnel['settings'], {'auth': 'noauth', 'udp': true});
       } else {
         expect(tunnel['protocol'], 'tun');
-        expect(tunnel['settings']['name'], 'OneXrayTun');
+        expect(tunnel['settings']['name'], 'ApoluneTun');
         expect(tunnel['settings']['mtu'], VpnConstants.tunMtu);
         expect(tunnel['settings']['gateway'], ['198.18.0.1/15']);
         expect(tunnel['settings']['autoOutboundsInterface'], 'Ethernet');
@@ -669,7 +669,7 @@ void main() {
           expect(tun['settings']['desc'], 'Keep');
           expect(tun['settings']['userLevel'], 5);
           expect(tun['settings']['futureSetting'], 'retain');
-          expect(tun['settings']['name'], 'OneXrayTun');
+          expect(tun['settings']['name'], 'ApoluneTun');
           expect(tun['settings']['mtu'], VpnConstants.tunMtu);
           if (platform != ConnectionPlatform.windows &&
               platform != ConnectionPlatform.linux) {
@@ -1082,7 +1082,7 @@ void main() {
               expect(inbound['protocol'], 'tun');
               expect(inbound.containsKey('port'), false);
               expect(inbound['settings'], {
-                'name': 'OneXrayTun',
+                'name': 'ApoluneTun',
                 'mtu': VpnConstants.tunMtu,
                 'gateway': ['198.18.0.1/15', if (ipv6) 'fc00::1/64'],
                 'dns': ['8.8.8.8', if (ipv6) '2001:4860:4860::8888'],
@@ -1274,7 +1274,7 @@ void main() {
           inbounds.singleWhere(
             (inbound) => inbound['tag'] == 'tunIn',
           )['settings'],
-          {'name': 'OneXrayTun', 'mtu': 1500},
+          {'name': 'ApoluneTun', 'mtu': 1500},
         );
         expect(inbounds, hasLength(1));
         config['outbounds'].clear();
@@ -1705,7 +1705,7 @@ void main() {
     );
     final runtime = plan.config;
     expect(runtime['inbounds'][1]['tag'], 'extra');
-    expect(runtime['inbounds'].first['settings']['name'], 'OneXrayTun');
+    expect(runtime['inbounds'].first['settings']['name'], 'ApoluneTun');
     expect(runtime['policy']['levels']['0']['handshake'], 7);
     expect(runtime['policy']['levels']['0']['statsUserUplink'], false);
     expect(runtime['policy']['system']['statsOutboundUplink'], false);
@@ -2002,7 +2002,7 @@ void main() {
         });
         if (platform == ConnectionPlatform.linux) {
           expect(config['inbounds'].single['settings'], {
-            'name': 'OneXrayTun',
+            'name': 'ApoluneTun',
             'mtu': VpnConstants.tunMtu,
             'gateway': ['198.18.0.1/15', if (ipv6) 'fc00::1/64'],
             'dns': ['8.8.8.8', if (ipv6) '2001:4860:4860::8888'],

@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:onexray/core/ffi/desktop_core_exit.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
+import 'package:apolune/core/ffi/desktop_core_exit.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
 
 /// Owns passive exit watches; every PID read still queries the operating system.
 class CoreProcessMonitor {

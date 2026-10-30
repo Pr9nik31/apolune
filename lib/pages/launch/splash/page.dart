@@ -1,9 +1,9 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:onexray/pages/launch/splash/controller.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/service/shared/failure.dart';
+import 'package:apolune/pages/launch/splash/controller.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/service/shared/failure.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});

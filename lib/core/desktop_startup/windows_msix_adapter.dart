@@ -1,9 +1,9 @@
 import 'dart:io';
 
-import 'package:onexray/core/desktop_startup/adapter.dart';
-import 'package:onexray/core/desktop_startup/model.dart';
-import 'package:onexray/core/ffi/windows/model.dart';
-import 'package:onexray/core/ffi/windows/native_api.dart';
+import 'package:apolune/core/desktop_startup/adapter.dart';
+import 'package:apolune/core/desktop_startup/model.dart';
+import 'package:apolune/core/ffi/windows/model.dart';
+import 'package:apolune/core/ffi/windows/native_api.dart';
 
 final class WindowsMsixLaunchAtLoginAdapter extends LaunchAtLoginAdapter {
   final WindowsNativeApi _native;

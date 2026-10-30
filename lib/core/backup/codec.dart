@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:onexray/core/backup/model.dart';
+import 'package:apolune/core/backup/model.dart';
 
-const backupFileName = 'OneXray-backup.json';
+const backupFileName = 'Apolune-backup.json';
 const backupByteLimit = 64 * 1024 * 1024;
 
 BackupDocument decodeBackup(Uint8List bytes) {
@@ -14,7 +14,7 @@ BackupDocument decodeBackup(Uint8List bytes) {
   try {
     final json = jsonDecode(utf8.decode(bytes));
     if (json is! Map<String, dynamic> ||
-        json['format'] != 'onexray-backup' ||
+        json['format'] != 'apolune-backup' ||
         json['version'] != 1 ||
         json['createdAt'] is! int ||
         (json['createdAt'] as int) <= 0) {
@@ -26,12 +26,12 @@ BackupDocument decodeBackup(Uint8List bytes) {
     validateBackupManualGroups(document);
     return document;
   } catch (_) {
-    throw const FormatException('Invalid or unsupported OneXray backup');
+    throw const FormatException('Invalid or unsupported Apolune backup');
   }
 }
 
 Uint8List encodeBackup(BackupDocument document) {
-  if (document.format != 'onexray-backup' ||
+  if (document.format != 'apolune-backup' ||
       document.version != 1 ||
       document.createdAt <= 0) {
     throw const FormatException('Unsupported backup format');

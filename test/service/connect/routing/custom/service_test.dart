@@ -1,16 +1,16 @@
 import 'dart:convert';
 
-import 'package:onexray/core/errors/failure.dart';
+import 'package:apolune/core/errors/failure.dart';
 
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/pigeon/constants.dart';
-import 'package:onexray/service/connect/routing/custom/service.dart';
-import 'package:onexray/service/connect/routing/custom/configuration.dart';
-import 'package:onexray/service/connect/routing/custom/state.dart';
-import 'package:onexray/core/model/xray_json.dart';
-import 'package:onexray/service/connect/routing/custom/editor.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/pigeon/constants.dart';
+import 'package:apolune/service/connect/routing/custom/service.dart';
+import 'package:apolune/service/connect/routing/custom/configuration.dart';
+import 'package:apolune/service/connect/routing/custom/state.dart';
+import 'package:apolune/core/model/xray_json.dart';
+import 'package:apolune/service/connect/routing/custom/editor.dart';
 
 void main() {
   test(

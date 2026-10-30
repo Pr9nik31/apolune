@@ -3,13 +3,13 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/core/pigeon/model.dart';
-import 'package:onexray/service/connect/compiler.dart';
-import 'package:onexray/service/connect/runtime.dart';
-import 'package:onexray/service/connect/runtime_host.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/shared/xray/metrics/model.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/core/pigeon/model.dart';
+import 'package:apolune/service/connect/compiler.dart';
+import 'package:apolune/service/connect/runtime.dart';
+import 'package:apolune/service/connect/runtime_host.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/shared/xray/metrics/model.dart';
 import 'package:path/path.dart' as p;
 
 void main() {
@@ -17,7 +17,7 @@ void main() {
 
   setUp(() async {
     final fixtures = Directory(
-      p.join('..', 'references', 'onexray-refactor-validation', 'fixtures'),
+      p.join('..', 'references', 'apolune-refactor-validation', 'fixtures'),
     ).absolute;
     await fixtures.create(recursive: true);
     directory = await fixtures.createTemp('runtime-host-');

@@ -1,5 +1,5 @@
-import 'package:onexray/core/model/xray_json.dart';
-import 'package:onexray/core/tools/json.dart';
+import 'package:apolune/core/model/xray_json.dart';
+import 'package:apolune/core/tools/json.dart';
 
 Map<String, dynamic> copyOutboundMap(
   Map<String, dynamic> outbound, {

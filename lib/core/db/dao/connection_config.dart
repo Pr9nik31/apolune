@@ -1,6 +1,6 @@
 import 'package:drift/drift.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/db/table/connection_config.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/db/table/connection_config.dart';
 
 part 'connection_config.g.dart';
 

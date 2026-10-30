@@ -1,12 +1,12 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:onexray/core/constants/preferences.dart';
-import 'package:onexray/service/settings/app_update/service.dart';
-import 'package:onexray/service/servers/sort.dart';
-import 'package:onexray/service/shared/event_bus/enum.dart';
-import 'package:onexray/service/shared/event_bus/state.dart';
-import 'package:onexray/service/manager.dart';
-import 'package:onexray/service/shared/ping/batch.dart';
-import 'package:onexray/service/shared/apple_widget/service.dart';
+import 'package:apolune/core/constants/preferences.dart';
+import 'package:apolune/service/settings/app_update/service.dart';
+import 'package:apolune/service/servers/sort.dart';
+import 'package:apolune/service/shared/event_bus/enum.dart';
+import 'package:apolune/service/shared/event_bus/state.dart';
+import 'package:apolune/service/manager.dart';
+import 'package:apolune/service/shared/ping/batch.dart';
+import 'package:apolune/service/shared/apple_widget/service.dart';
 
 class AppEventBus extends Cubit<AppEventBusState> {
   static late AppEventBus instance;

@@ -20,7 +20,7 @@ class AndroidBuilder(Builder):
         run_command(
             ["fastlane", "deploy", "--verbose"],
             cwd=self.project_dir,
-            env={"ONEXRAY_BUILD_NUMBER": str(self.build_number)},
+            env={"APOLUNE_BUILD_NUMBER": str(self.build_number)},
         )
         shutil.copy2(
             Path(self.root_dir) / "build/app/outputs/bundle/release/app-release.aab",

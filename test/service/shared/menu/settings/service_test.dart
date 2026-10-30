@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/service/shared/menu/settings/service.dart';
+import 'package:apolune/service/shared/menu/settings/service.dart';
 
 void main() {
   test(

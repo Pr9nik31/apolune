@@ -1,6 +1,6 @@
-import 'package:onexray/core/model/xray_json.dart';
-import 'package:onexray/service/connect/routing/options.dart';
-import 'package:onexray/service/shared/xray/runtime_outbounds.dart';
+import 'package:apolune/core/model/xray_json.dart';
+import 'package:apolune/service/connect/routing/options.dart';
+import 'package:apolune/service/shared/xray/runtime_outbounds.dart';
 
 /// The ordinary runtime and save validation use the same forwarding graph.
 /// Complete configurations retain their own DNS adapters and never use this.

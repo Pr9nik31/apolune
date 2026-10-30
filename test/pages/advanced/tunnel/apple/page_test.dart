@@ -1,19 +1,19 @@
 import 'package:drift/native.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/service/settings/language/locale.dart';
-import 'package:onexray/pages/advanced/tunnel/apple/page.dart';
-import 'package:onexray/pages/advanced/tunnel/apple/wifi.dart';
-import 'package:onexray/pages/advanced/tunnel/apple/widgets.dart';
-import 'package:onexray/pages/advanced/tunnel/controller.dart';
-import 'package:onexray/pages/theme/theme.dart';
-import 'package:onexray/service/connect/coordinator.dart';
-import 'package:onexray/service/connect/runtime.dart';
-import 'package:onexray/service/advanced/policy_editor.dart';
-import 'package:onexray/service/connect/settings.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/service/settings/language/locale.dart';
+import 'package:apolune/pages/advanced/tunnel/apple/page.dart';
+import 'package:apolune/pages/advanced/tunnel/apple/wifi.dart';
+import 'package:apolune/pages/advanced/tunnel/apple/widgets.dart';
+import 'package:apolune/pages/advanced/tunnel/controller.dart';
+import 'package:apolune/pages/theme/theme.dart';
+import 'package:apolune/service/connect/coordinator.dart';
+import 'package:apolune/service/connect/runtime.dart';
+import 'package:apolune/service/advanced/policy_editor.dart';
+import 'package:apolune/service/connect/settings.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 void _phone(WidgetTester tester) {

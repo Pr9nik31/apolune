@@ -1,30 +1,30 @@
 import 'dart:convert';
 
-import 'package:onexray/core/errors/failure.dart';
+import 'package:apolune/core/errors/failure.dart';
 
 import 'package:collection/collection.dart';
 import 'package:drift/drift.dart';
-import 'package:onexray/core/db/database/constants.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/core/pigeon/host_api.dart';
-import 'package:onexray/service/connect/compiler.dart';
-import 'package:onexray/service/connect/coordinator.dart';
-import 'package:onexray/service/connect/asset_edit.dart';
-import 'package:onexray/service/connect/preparation.dart';
-import 'package:onexray/service/connect/resolver.dart';
-import 'package:onexray/service/connect/raw/editor.dart';
-import 'package:onexray/service/connect/raw/validator.dart';
-import 'package:onexray/service/connect/runtime.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/shared/ping/service.dart';
-import 'package:onexray/service/shared/xray/validation.dart';
-import 'package:onexray/service/shared/xray/remnawave.dart';
-import 'package:onexray/service/servers/subscription/service.dart';
-import 'package:onexray/service/servers/outbound/map.dart';
-import 'package:onexray/service/servers/outbound/state_db.dart';
-import 'package:onexray/service/servers/catalog.dart';
-import 'package:onexray/service/servers/manual_groups.dart';
+import 'package:apolune/core/db/database/constants.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/core/pigeon/host_api.dart';
+import 'package:apolune/service/connect/compiler.dart';
+import 'package:apolune/service/connect/coordinator.dart';
+import 'package:apolune/service/connect/asset_edit.dart';
+import 'package:apolune/service/connect/preparation.dart';
+import 'package:apolune/service/connect/resolver.dart';
+import 'package:apolune/service/connect/raw/editor.dart';
+import 'package:apolune/service/connect/raw/validator.dart';
+import 'package:apolune/service/connect/runtime.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/shared/ping/service.dart';
+import 'package:apolune/service/shared/xray/validation.dart';
+import 'package:apolune/service/shared/xray/remnawave.dart';
+import 'package:apolune/service/servers/subscription/service.dart';
+import 'package:apolune/service/servers/outbound/map.dart';
+import 'package:apolune/service/servers/outbound/state_db.dart';
+import 'package:apolune/service/servers/catalog.dart';
+import 'package:apolune/service/servers/manual_groups.dart';
 
 class ServerEditDraft {
   final CoreConfigData original;

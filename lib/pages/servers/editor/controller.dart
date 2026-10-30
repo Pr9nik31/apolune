@@ -1,11 +1,11 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/core/errors/json_diagnostic.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/shared/alert.dart';
-import 'package:onexray/pages/shared/page_cubit.dart';
-import 'package:onexray/pages/shared/widgets/settings_page.dart';
-import 'package:onexray/service/shared/failure.dart';
-import 'package:onexray/service/servers/server.dart';
+import 'package:apolune/core/errors/json_diagnostic.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/shared/alert.dart';
+import 'package:apolune/pages/shared/page_cubit.dart';
+import 'package:apolune/pages/shared/widgets/settings_page.dart';
+import 'package:apolune/service/shared/failure.dart';
+import 'package:apolune/service/servers/server.dart';
 import 'package:re_editor/re_editor.dart';
 
 @immutable

@@ -1,4 +1,4 @@
-import 'package:onexray/core/errors/json_diagnostic.dart';
+import 'package:apolune/core/errors/json_diagnostic.dart';
 
 /// Templates supply preferences; App supplies selectors, fallback and subjects.
 void checkSelectionDocument(Map<String, dynamic> json) {

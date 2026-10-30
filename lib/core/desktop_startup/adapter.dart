@@ -1,4 +1,4 @@
-import 'package:onexray/core/desktop_startup/model.dart';
+import 'package:apolune/core/desktop_startup/model.dart';
 
 abstract class LaunchAtLoginAdapter {
   Future<LaunchAtLoginStatus> query();

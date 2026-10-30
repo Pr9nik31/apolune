@@ -1,11 +1,11 @@
-import 'package:onexray/core/errors/failure.dart';
-import 'package:onexray/core/errors/json_diagnostic.dart';
-import 'package:onexray/core/pigeon/host_api.dart';
-import 'package:onexray/core/tools/empty.dart';
-import 'package:onexray/service/settings/language/service.dart';
-import 'package:onexray/service/advanced/xray/geodata/service.dart';
-import 'package:onexray/service/shared/xray/validation.dart';
-import 'package:onexray/service/shared/share/configuration_source.dart';
+import 'package:apolune/core/errors/failure.dart';
+import 'package:apolune/core/errors/json_diagnostic.dart';
+import 'package:apolune/core/pigeon/host_api.dart';
+import 'package:apolune/core/tools/empty.dart';
+import 'package:apolune/service/settings/language/service.dart';
+import 'package:apolune/service/advanced/xray/geodata/service.dart';
+import 'package:apolune/service/shared/xray/validation.dart';
+import 'package:apolune/service/shared/share/configuration_source.dart';
 
 final class ParsedRawConfiguration {
   final ConfigurationSource _source;

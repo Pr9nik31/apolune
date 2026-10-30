@@ -1,6 +1,6 @@
-import 'package:onexray/core/constants/preferences.dart';
-import 'package:onexray/service/launch/app_startup.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
+import 'package:apolune/core/constants/preferences.dart';
+import 'package:apolune/service/launch/app_startup.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
 
 enum LaunchDestination { setup, connect }
 

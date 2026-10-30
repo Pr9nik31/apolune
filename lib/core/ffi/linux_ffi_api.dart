@@ -3,17 +3,17 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
-import 'package:onexray/core/errors/failure.dart';
-import 'package:onexray/core/ffi/base_ffi_api.dart';
-import 'package:onexray/core/ffi/core_process_monitor.dart';
-import 'package:onexray/core/ffi/desktop_core_exit.dart';
-import 'package:onexray/core/ffi/linux_core_exit.dart';
-import 'package:onexray/core/model/tun_json.dart';
-import 'package:onexray/core/pigeon/flutter_api.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/core/pigeon/model.dart';
-import 'package:onexray/core/pigeon/model_reader.dart';
-import 'package:onexray/core/tools/logger.dart';
+import 'package:apolune/core/errors/failure.dart';
+import 'package:apolune/core/ffi/base_ffi_api.dart';
+import 'package:apolune/core/ffi/core_process_monitor.dart';
+import 'package:apolune/core/ffi/desktop_core_exit.dart';
+import 'package:apolune/core/ffi/linux_core_exit.dart';
+import 'package:apolune/core/model/tun_json.dart';
+import 'package:apolune/core/pigeon/flutter_api.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/core/pigeon/model.dart';
+import 'package:apolune/core/pigeon/model_reader.dart';
+import 'package:apolune/core/tools/logger.dart';
 import 'package:path/path.dart' as p;
 
 class LinuxFfiApi extends BaseFfiApi {
@@ -47,7 +47,7 @@ class LinuxFfiApi extends BaseFfiApi {
        _notifyError =
            notifyError ?? AppFlutterApi().vpnStatusController.addError;
 
-  static const _coreBin = 'OneXrayCore';
+  static const _coreBin = 'ApoluneCore';
   final String? _filesDirectory;
   final String? _executablePath;
   final Future<ProcessResult> Function(String, List<String>) _runCommand;

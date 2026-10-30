@@ -1,4 +1,4 @@
-import 'package:onexray/core/db/database/database.dart';
+import 'package:apolune/core/db/database/database.dart';
 
 /// Provider-reported counters, never device or current-connection statistics.
 class SubscriptionUserInfo {

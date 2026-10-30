@@ -5,17 +5,17 @@ import 'package:drift/native.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/shared/share/controller.dart';
-import 'package:onexray/pages/shared/share/page.dart';
-import 'package:onexray/pages/shared/share/params.dart';
-import 'package:onexray/pages/shared/widgets/adaptive_dialog.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
-import 'package:onexray/service/shared/share/app_link_model.dart';
-import 'package:onexray/service/shared/share/app_link_parser.dart';
-import 'package:onexray/service/shared/share/outgoing_share.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/shared/share/controller.dart';
+import 'package:apolune/pages/shared/share/page.dart';
+import 'package:apolune/pages/shared/share/params.dart';
+import 'package:apolune/pages/shared/widgets/adaptive_dialog.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
+import 'package:apolune/service/shared/share/app_link_model.dart';
+import 'package:apolune/service/shared/share/app_link_parser.dart';
+import 'package:apolune/service/shared/share/outgoing_share.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 import 'test_app.dart';
@@ -88,9 +88,9 @@ void main() {
       });
       await tester.pumpAndSettle();
       expect(controller.state.linkError, isEmpty);
-      expect(controller.state.format, ShareLinkFormat.onexray);
+      expect(controller.state.format, ShareLinkFormat.apolune);
       expect(find.text(l.prototypeOriginalLink), findsNothing);
-      expect(find.text(l.sharePageOneXrayLink), findsOneWidget);
+      expect(find.text(l.sharePageApoluneLink), findsOneWidget);
       expect(find.text(l.sharePageShowQRCode), findsOneWidget);
       expect(find.text(l.prototypeRawJsonShareWarning), findsOneWidget);
       final editable = tester.widget<EditableText>(find.byType(EditableText));
@@ -118,9 +118,9 @@ void main() {
       await tester.tap(find.widgetWithText(ShadButton, l.sharePageCopyLink));
       await tester.pumpAndSettle();
       final link =
-          OneXrayAppLinkParser.parse(Uri.parse(copied.single))!
-              as OneXrayConfigLink;
-      expect(link.type, OneXrayConfigLinkType.raw);
+          ApoluneAppLinkParser.parse(Uri.parse(copied.single))!
+              as ApoluneConfigLink;
+      expect(link.type, ApoluneConfigLinkType.raw);
       expect(link.name, 'Complete profile');
       if (type == CoreConfigType.Remnawave) {
         final config = jsonDecode(link.xrayJson) as Map<String, dynamic>;

@@ -6,24 +6,24 @@ import 'package:drift/drift.dart' show Value;
 import 'package:drift/native.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/backup/codec.dart';
-import 'package:onexray/core/backup/model.dart';
-import 'package:onexray/core/backup/storage.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/service/advanced/platform_policy.dart';
-import 'package:onexray/service/advanced/xray/data_update/state.dart';
-import 'package:onexray/service/advanced/xray/geodata/service.dart';
-import 'package:onexray/service/connect/coordinator.dart';
-import 'package:onexray/service/connect/runtime_host.dart';
-import 'package:onexray/service/connect/runtime.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/settings/backup/assets.dart';
-import 'package:onexray/service/settings/backup/service.dart';
-import 'package:onexray/service/settings/data_cleanup.dart';
-import 'package:onexray/service/servers/subscription/service.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
-import 'package:onexray/service/shared/ping/service.dart';
+import 'package:apolune/core/backup/codec.dart';
+import 'package:apolune/core/backup/model.dart';
+import 'package:apolune/core/backup/storage.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/service/advanced/platform_policy.dart';
+import 'package:apolune/service/advanced/xray/data_update/state.dart';
+import 'package:apolune/service/advanced/xray/geodata/service.dart';
+import 'package:apolune/service/connect/coordinator.dart';
+import 'package:apolune/service/connect/runtime_host.dart';
+import 'package:apolune/service/connect/runtime.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/settings/backup/assets.dart';
+import 'package:apolune/service/settings/backup/service.dart';
+import 'package:apolune/service/settings/data_cleanup.dart';
+import 'package:apolune/service/servers/subscription/service.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
+import 'package:apolune/service/shared/ping/service.dart';
 // ignore: depend_on_referenced_packages
 import 'package:shared_preferences_platform_interface/in_memory_shared_preferences_async.dart';
 // ignore: depend_on_referenced_packages
@@ -62,7 +62,7 @@ void main() {
     addTearDown(bus.close);
     db = AppDatabase.forTesting(NativeDatabase.memory());
     addTearDown(db.close);
-    final parent = await Directory('../references/onexray-tests').absolute
+    final parent = await Directory('../references/apolune-tests').absolute
         .create(recursive: true);
     final root = await parent.createTemp('backup-service-');
     addTearDown(() => root.delete(recursive: true));

@@ -1,7 +1,7 @@
-import 'package:onexray/core/model/xray_json.dart';
-import 'package:onexray/core/pigeon/constants.dart';
-import 'package:onexray/core/tools/json.dart';
-import 'package:onexray/service/shared/xray/vpn_config.dart';
+import 'package:apolune/core/model/xray_json.dart';
+import 'package:apolune/core/pigeon/constants.dart';
+import 'package:apolune/core/tools/json.dart';
+import 'package:apolune/service/shared/xray/vpn_config.dart';
 
 /// Projects App configurations for libXray instance construction, not startup.
 /// Only disposable copies are changed; persisted and runtime JSON stay intact.

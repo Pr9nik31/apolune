@@ -1,7 +1,7 @@
-import 'package:onexray/service/settings/app_update/service.dart';
-import 'package:onexray/service/servers/sort.dart';
-import 'package:onexray/service/shared/event_bus/enum.dart';
-import 'package:onexray/service/shared/ping/batch.dart';
+import 'package:apolune/service/settings/app_update/service.dart';
+import 'package:apolune/service/servers/sort.dart';
+import 'package:apolune/service/shared/event_bus/enum.dart';
+import 'package:apolune/service/shared/ping/batch.dart';
 
 class AppEventBusState {
   /// Includes queued and automatic node probes, not just page-owned tests.

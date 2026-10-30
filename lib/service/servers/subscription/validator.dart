@@ -1,6 +1,6 @@
-import 'package:onexray/core/network/client.dart';
-import 'package:onexray/core/network/model.dart';
-import 'package:onexray/service/servers/subscription/model.dart';
+import 'package:apolune/core/network/client.dart';
+import 'package:apolune/core/network/model.dart';
+import 'package:apolune/service/servers/subscription/model.dart';
 
 abstract final class SubscriptionValidator {
   static SubscriptionUpdateResult? validate(SubscriptionInput input) {

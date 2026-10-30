@@ -4,20 +4,20 @@ import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
-import 'package:onexray/core/constants/preferences.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/service/settings/language/locale.dart';
-import 'package:onexray/pages/advanced/xray/log/controller.dart';
-import 'package:onexray/pages/advanced/xray/log/params.dart';
-import 'package:onexray/pages/advanced/xray/ping/page.dart';
-import 'package:onexray/pages/advanced/xray/ping/controller.dart';
-import 'package:onexray/pages/shared/widgets/page_action_bar.dart';
-import 'package:onexray/pages/shared/widgets/setting_row.dart';
-import 'package:onexray/pages/advanced/xray/data_update/page.dart';
-import 'package:onexray/pages/theme/theme.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
-import 'package:onexray/service/shared/ping/state.dart';
-import 'package:onexray/service/advanced/xray/data_update/state.dart';
+import 'package:apolune/core/constants/preferences.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/service/settings/language/locale.dart';
+import 'package:apolune/pages/advanced/xray/log/controller.dart';
+import 'package:apolune/pages/advanced/xray/log/params.dart';
+import 'package:apolune/pages/advanced/xray/ping/page.dart';
+import 'package:apolune/pages/advanced/xray/ping/controller.dart';
+import 'package:apolune/pages/shared/widgets/page_action_bar.dart';
+import 'package:apolune/pages/shared/widgets/setting_row.dart';
+import 'package:apolune/pages/advanced/xray/data_update/page.dart';
+import 'package:apolune/pages/theme/theme.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
+import 'package:apolune/service/shared/ping/state.dart';
+import 'package:apolune/service/advanced/xray/data_update/state.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 // ignore: depend_on_referenced_packages
 import 'package:shared_preferences_platform_interface/in_memory_shared_preferences_async.dart';
@@ -277,9 +277,9 @@ void main() {
   });
 
   test('log viewer controller reads the current file tail', () async {
-    final fixtures = await Directory('../references/onexray-tests').absolute
+    final fixtures = await Directory('../references/apolune-tests').absolute
         .create(recursive: true);
-    final tempDir = await fixtures.createTemp('onexray-log-test');
+    final tempDir = await fixtures.createTemp('apolune-log-test');
     addTearDown(() => tempDir.delete(recursive: true));
     final logFile = File('${tempDir.path}/access.log');
     await logFile.writeAsString('first line\nsecond line\n');

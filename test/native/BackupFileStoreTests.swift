@@ -3,10 +3,10 @@ import XCTest
 
 final class BackupFileStoreTests: XCTestCase {
     private func fixture(_ body: (URL, UserDefaults, BackupFileStore) throws -> Void) throws {
-        let root = URL(fileURLWithPath: "../references/onexray-tests/native").standardizedFileURL
+        let root = URL(fileURLWithPath: "../references/apolune-tests/native").standardizedFileURL
             .appendingPathComponent(UUID().uuidString)
         try FileManager.default.createDirectory(at: root, withIntermediateDirectories: true)
-        let suite = "OneXray.BackupTests.\(UUID().uuidString)"
+        let suite = "Apolune.BackupTests.\(UUID().uuidString)"
         let preferences = UserDefaults(suiteName: suite)!
         defer {
             preferences.removePersistentDomain(forName: suite)
@@ -94,7 +94,7 @@ final class BackupFileStoreTests: XCTestCase {
             let identifier = file.absoluteString
             let data = try file.bookmarkData(options: .minimalBookmark,
                                             includingResourceValuesForKeys: nil, relativeTo: nil)
-            preferences.set([identifier: ["bookmark": data]], forKey: "onexray.backup.fileBookmarks")
+            preferences.set([identifier: ["bookmark": data]], forKey: "apolune.backup.fileBookmarks")
             XCTAssertEqual(try store.read(identifier), original)
             let candidate = try store.bind(file, create: false)
             XCTAssertNotEqual(candidate, identifier)

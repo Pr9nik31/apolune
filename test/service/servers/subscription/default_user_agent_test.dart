@@ -4,13 +4,13 @@ import 'package:dio/dio.dart';
 import 'package:drift/native.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/core/network/client.dart';
-import 'package:onexray/service/servers/subscription/model.dart';
-import 'package:onexray/service/servers/subscription/reader.dart';
-import 'package:onexray/service/servers/subscription/service.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/core/network/client.dart';
+import 'package:apolune/service/servers/subscription/model.dart';
+import 'package:apolune/service/servers/subscription/reader.dart';
+import 'package:apolune/service/servers/subscription/service.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 void main() {
@@ -30,8 +30,8 @@ void main() {
           throw PlatformException(code: 'temporarily-unavailable');
         }
         return {
-          'appName': 'OneXray',
-          'packageName': 'net.yuandev.onexray',
+          'appName': 'Apolune',
+          'packageName': 'dev.apolune.client',
           'version': '26.10.4',
           'buildNumber': '104',
           'buildSignature': '',

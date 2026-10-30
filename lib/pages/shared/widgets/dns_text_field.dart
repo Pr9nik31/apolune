@@ -1,5 +1,5 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/pages/theme/font.dart';
+import 'package:apolune/pages/theme/font.dart';
 
 /// Keeps editing resources local while the owning page Cubit owns the value.
 class DnsTextField extends StatefulWidget {

@@ -1,11 +1,11 @@
 import 'package:flutter/services.dart';
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/shared/alert.dart';
-import 'package:onexray/pages/shared/page_cubit.dart';
-import 'package:onexray/service/advanced/tunnel/android/automation/service.dart';
-import 'package:onexray/service/shared/failure.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/shared/alert.dart';
+import 'package:apolune/pages/shared/page_cubit.dart';
+import 'package:apolune/service/advanced/tunnel/android/automation/service.dart';
+import 'package:apolune/service/shared/failure.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AutomationPageState {
@@ -138,7 +138,7 @@ class AutomationController extends PageCubit<AutomationPageState> {
     try {
       if (!await launchUrl(
         Uri.parse(
-          'https://onexray.com$prefix/docs/advanced/android/#automation',
+          'https://apolune.dev$prefix/docs/advanced/android/#automation',
         ),
         mode: LaunchMode.externalApplication,
       )) {

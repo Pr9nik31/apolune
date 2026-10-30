@@ -1,10 +1,10 @@
 import 'dart:io';
 
-import 'package:onexray/core/ffi/linux_ffi_api.dart';
-import 'package:onexray/core/ffi/windows/ffi_api.dart';
-import 'package:onexray/service/advanced/platform_policy.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/advanced/tunnel/interface.dart';
+import 'package:apolune/core/ffi/linux_ffi_api.dart';
+import 'package:apolune/core/ffi/windows/ffi_api.dart';
+import 'package:apolune/service/advanced/platform_policy.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/advanced/tunnel/interface.dart';
 
 enum ConnectionPlatformRequirementFailure {
   outboundInterfaceRequired,
@@ -67,7 +67,7 @@ final class ConnectionPlatformRequirements {
     if (!await file.exists() ||
         ((await file.stat()).mode & 0x49) == 0 ||
         !await File('/dev/net/tun').exists()) {
-      throw StateError('OneXrayCore / TUN is unavailable');
+      throw StateError('ApoluneCore / TUN is unavailable');
     }
     final status = await File('/proc/self/status').readAsString();
     if (RegExp(r'^Uid:\s+0\s+0\s+0\s+0$', multiLine: true).hasMatch(status)) {

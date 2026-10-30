@@ -1,23 +1,23 @@
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/service/shared/share/app_link_generator.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/service/shared/share/app_link_generator.dart';
 
-typedef OneXrayGeoDataLookup = Future<GeoDataData?> Function(String name);
+typedef ApoluneGeoDataLookup = Future<GeoDataData?> Function(String name);
 
-final class OneXrayAppLinkShareService {
-  OneXrayAppLinkShareService({OneXrayGeoDataLookup? geoDataLookup})
+final class ApoluneAppLinkShareService {
+  ApoluneAppLinkShareService({ApoluneGeoDataLookup? geoDataLookup})
     : _geoDataLookup =
           geoDataLookup ?? AppDatabase().geoDataDao.searchRowByName;
 
-  final OneXrayGeoDataLookup _geoDataLookup;
+  final ApoluneGeoDataLookup _geoDataLookup;
 
   Future<String?> config(CoreConfigData config) async {
-    final configUri = OneXrayAppLinkGenerator.config(config);
+    final configUri = ApoluneAppLinkGenerator.config(config);
     if (configUri == null) {
       return null;
     }
 
     final links = <String>[];
-    final names = OneXrayAppLinkGenerator.referencedGeoDataNames(
+    final names = ApoluneAppLinkGenerator.referencedGeoDataNames(
       config,
     ).toList()..sort();
     for (final name in names) {
@@ -25,7 +25,7 @@ final class OneXrayAppLinkShareService {
       if (geoData == null) {
         continue;
       }
-      final uri = OneXrayAppLinkGenerator.geoData(geoData);
+      final uri = ApoluneAppLinkGenerator.geoData(geoData);
       if (uri != null) {
         links.add(uri.toString());
       }
@@ -35,10 +35,10 @@ final class OneXrayAppLinkShareService {
   }
 
   String? subscription(SubscriptionData subscription) {
-    return OneXrayAppLinkGenerator.subscription(subscription)?.toString();
+    return ApoluneAppLinkGenerator.subscription(subscription)?.toString();
   }
 
   String? geoData(GeoDataData geoData) {
-    return OneXrayAppLinkGenerator.geoData(geoData)?.toString();
+    return ApoluneAppLinkGenerator.geoData(geoData)?.toString();
   }
 }

@@ -1,4 +1,4 @@
-import 'package:onexray/core/model/xray_json.dart';
+import 'package:apolune/core/model/xray_json.dart';
 
 /// Keeps FakeDNS servers, pools and managed inbound recovery in sync.
 abstract final class FakeDns {

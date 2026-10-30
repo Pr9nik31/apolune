@@ -1,5 +1,5 @@
 name: Bug report
-description: Report a problem with the OneXray app.
+description: Report a problem with the Apolune app.
 title: "[Bug]: "
 labels: [bug]
 body:
@@ -7,7 +7,7 @@ body:
     attributes:
       value: |
         Please write your report in English and describe one problem per issue.
-        Check the [latest release](https://github.com/YuanDevTeam/OneXray/releases/latest) and mention if you cannot test it.
+        Check the [latest release](https://github.com/Pr9nik31/apolune/releases/latest) and mention if you cannot test it.
         Issues and attachments are public. Remove passwords, UUIDs, subscription URLs or tokens, age private keys, and other private data before sharing logs, configurations, or screenshots.
   - type: checkboxes
     id: existing-issues
@@ -19,7 +19,7 @@ body:
   - type: input
     id: app-version
     attributes:
-      label: OneXray version
+      label: Apolune version
       description: Enter the exact app version from Settings. For a source build, include the commit. If the app cannot open, use the installed package version.
     validations:
       required: true
@@ -34,8 +34,8 @@ body:
       label: Platform
       options:
         - iOS / iPadOS
-        - macOS - OneXray (App Store)
-        - macOS - OneXraySE (System Extension)
+        - macOS - Apolune (App Store)
+        - macOS - ApoluneSE (System Extension)
         - Android
         - Windows
         - Linux
@@ -96,7 +96,7 @@ body:
     id: logs
     attributes:
       label: Relevant logs
-      description: Paste the relevant error and surrounding log lines if available. The OneXraySE build has no in-app Xray log viewer; leave this blank if logs are unavailable.
+      description: Paste the relevant error and surrounding log lines if available. The ApoluneSE build has no in-app Xray log viewer; leave this blank if logs are unavailable.
       render: text
   - type: textarea
     id: context

@@ -2,12 +2,12 @@ import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter/services.dart';
-import 'package:onexray/core/errors/failure.dart';
-import 'package:onexray/core/errors/json_diagnostic.dart';
-import 'package:onexray/core/pigeon/constants.dart';
-import 'package:onexray/service/connect/raw/validator.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
-import 'package:onexray/service/shared/share/configuration_source.dart';
+import 'package:apolune/core/errors/failure.dart';
+import 'package:apolune/core/errors/json_diagnostic.dart';
+import 'package:apolune/core/pigeon/constants.dart';
+import 'package:apolune/service/connect/raw/validator.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
+import 'package:apolune/service/shared/share/configuration_source.dart';
 
 const source = '''
   {

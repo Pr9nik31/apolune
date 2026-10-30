@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:onexray/core/model/tun_json.dart';
-import 'package:onexray/core/tools/json.dart';
+import 'package:apolune/core/model/tun_json.dart';
+import 'package:apolune/core/tools/json.dart';
 
 part 'model.g.dart';
 

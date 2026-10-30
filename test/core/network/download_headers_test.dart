@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/network/client.dart';
-import 'package:onexray/core/network/model.dart';
+import 'package:apolune/core/network/client.dart';
+import 'package:apolune/core/network/model.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 void main() {
@@ -11,8 +11,8 @@ void main() {
 
   setUpAll(() {
     PackageInfo.setMockInitialValues(
-      appName: 'OneXray',
-      packageName: 'net.yuandev.onexray',
+      appName: 'Apolune',
+      packageName: 'dev.apolune.client',
       version: '1.0.0',
       buildNumber: '1',
       buildSignature: '',
@@ -37,8 +37,8 @@ void main() {
     expect(receivedAgeHeader, isNull);
     expect(
       receivedUserAgent,
-      'v2rayN/1.0.0 OneXray/1.0.0 '
-      '(net.yuandev.onexray; build:1; ${Platform.operatingSystem})',
+      'v2rayN/1.0.0 Apolune/1.0.0 '
+      '(dev.apolune.client; build:1; ${Platform.operatingSystem})',
     );
     expect(NetClient().downloadUserAgent, receivedUserAgent);
   });

@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:onexray/core/errors/json_diagnostic.dart';
-import 'package:onexray/core/tools/json_document.dart';
-import 'package:onexray/pages/shared/page_cubit.dart';
-import 'package:onexray/service/shared/json_editing.dart';
+import 'package:apolune/core/errors/json_diagnostic.dart';
+import 'package:apolune/core/tools/json_document.dart';
+import 'package:apolune/pages/shared/page_cubit.dart';
+import 'package:apolune/service/shared/json_editing.dart';
 import 'package:re_editor/re_editor.dart';
 
 class JsonEditorState {

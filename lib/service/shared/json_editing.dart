@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:onexray/core/tools/json_tokens.dart';
+import 'package:apolune/core/tools/json_tokens.dart';
 
 enum JsonEditorKind { outbound, customRouting, advancedRouting, raw }
 

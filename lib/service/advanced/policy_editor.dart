@@ -1,15 +1,15 @@
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
-import 'package:onexray/core/ffi/windows/mode.dart';
-import 'package:onexray/service/advanced/local_api/service.dart';
-import 'package:onexray/service/connect/coordinator.dart';
-import 'package:onexray/service/connect/compiler.dart';
-import 'package:onexray/service/advanced/platform_policy.dart';
-import 'package:onexray/service/connect/runtime.dart';
-import 'package:onexray/service/connect/runtime_host.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/connect/provider_mode.dart';
+import 'package:apolune/core/ffi/windows/mode.dart';
+import 'package:apolune/service/advanced/local_api/service.dart';
+import 'package:apolune/service/connect/coordinator.dart';
+import 'package:apolune/service/connect/compiler.dart';
+import 'package:apolune/service/advanced/platform_policy.dart';
+import 'package:apolune/service/connect/runtime.dart';
+import 'package:apolune/service/connect/runtime_host.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/connect/provider_mode.dart';
 
 /// Subpages carry the same original configuration and their own JSON draft.
 /// Invalid intermediate text stays here, never in the database or runtime.

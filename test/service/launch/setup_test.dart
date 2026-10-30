@@ -3,13 +3,13 @@ import 'dart:io';
 
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/constants/preferences.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/service/advanced/platform_policy.dart';
-import 'package:onexray/service/advanced/tunnel/interface.dart';
-import 'package:onexray/service/connect/runtime.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/launch/setup.dart';
+import 'package:apolune/core/constants/preferences.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/service/advanced/platform_policy.dart';
+import 'package:apolune/service/advanced/tunnel/interface.dart';
+import 'package:apolune/service/connect/runtime.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/launch/setup.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 // ignore: depend_on_referenced_packages
 import 'package:shared_preferences_platform_interface/in_memory_shared_preferences_async.dart';

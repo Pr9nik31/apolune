@@ -1,5 +1,5 @@
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/core/tools/platform.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/core/tools/platform.dart';
 
 /// Device authorization only; VPN lifecycle remains entirely native.
 class AndroidAutomationService {
@@ -10,7 +10,7 @@ class AndroidAutomationService {
   final AndroidAutomationHostApi _api;
   final bool _supported;
 
-  static const packageName = 'net.yuandev.onexray';
+  static const packageName = 'dev.apolune.client';
   static const receiver = '$packageName.automation.VpnAutomationReceiver';
   static const startAction = '$packageName.action.START_VPN';
   static const stopAction = '$packageName.action.STOP_VPN';

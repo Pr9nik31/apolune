@@ -1,4 +1,4 @@
-import 'package:onexray/service/settings/app_update/service.dart';
+import 'package:apolune/service/settings/app_update/service.dart';
 
 class AppUpdateDialogParams {
   final AppUpdateInfo updateInfo;

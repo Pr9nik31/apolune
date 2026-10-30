@@ -1,8 +1,8 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/pages/theme/color.dart';
-import 'package:onexray/pages/theme/font.dart';
-import 'package:onexray/pages/theme/layout.dart';
-import 'package:onexray/pages/shared/widgets/setting_row.dart';
+import 'package:apolune/pages/theme/color.dart';
+import 'package:apolune/pages/theme/font.dart';
+import 'package:apolune/pages/theme/layout.dart';
+import 'package:apolune/pages/shared/widgets/setting_row.dart';
 
 class SettingsUpdateDot extends StatelessWidget {
   const SettingsUpdateDot({super.key});

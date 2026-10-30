@@ -1,11 +1,11 @@
 import 'package:flutter/services.dart' show Clipboard, ClipboardData;
 import 'package:material_ui/material_ui.dart';
-import 'package:onexray/l10n/localizations/app_localizations.dart';
-import 'package:onexray/pages/shared/alert.dart';
-import 'package:onexray/pages/shared/page_cubit.dart';
-import 'package:onexray/service/advanced/local_api/service.dart';
-import 'package:onexray/service/advanced/local_api/settings.dart';
-import 'package:onexray/service/shared/failure.dart';
+import 'package:apolune/l10n/localizations/app_localizations.dart';
+import 'package:apolune/pages/shared/alert.dart';
+import 'package:apolune/pages/shared/page_cubit.dart';
+import 'package:apolune/service/advanced/local_api/service.dart';
+import 'package:apolune/service/advanced/local_api/settings.dart';
+import 'package:apolune/service/shared/failure.dart';
 
 typedef ConfigureLocalApi = Future<LocalApiSettings> Function({
   required bool enabled,

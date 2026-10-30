@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/service/shared/command_serial_executor.dart';
+import 'package:apolune/service/shared/command_serial_executor.dart';
 
 void main() {
   test('serializes commands and returns their results', () async {

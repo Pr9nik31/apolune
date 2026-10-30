@@ -1,4 +1,4 @@
-import 'package:onexray/core/db/database/database.dart';
+import 'package:apolune/core/db/database/database.dart';
 
 enum SystemGeoDatId {
   geoSite(-2),

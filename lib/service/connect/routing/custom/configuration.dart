@@ -1,4 +1,4 @@
-import 'package:onexray/core/errors/failure.dart';
+import 'package:apolune/core/errors/failure.dart';
 
 /// Shared identity and node selection, not a shared editable field model.
 /// Ordinary forms and advanced JSON retain separate representations.

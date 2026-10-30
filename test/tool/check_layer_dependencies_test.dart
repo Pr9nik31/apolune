@@ -5,9 +5,9 @@ import '../../tool/check_layer_dependencies.dart';
 void main() {
   test('finds package imports and exports with leading whitespace', () {
     const source = '''
-import 'package:onexray/core/model/example.dart';
-  import "package:onexray/service/example.dart";
-\texport 'package:onexray/pages/example.dart';
+import 'package:apolune/core/model/example.dart';
+  import "package:apolune/service/example.dart";
+\texport 'package:apolune/pages/example.dart';
 export 'package:other/package.dart';
 ''';
 

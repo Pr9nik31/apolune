@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/tools/json_document.dart';
-import 'package:onexray/service/shared/json_editing.dart';
+import 'package:apolune/core/tools/json_document.dart';
+import 'package:apolune/service/shared/json_editing.dart';
 
 List<JsonCompletion> completions(
   String marked,

@@ -37,18 +37,18 @@ class WindowsBuilder(Builder):
             raise ValueError(f"Unsupported Windows mode: {mode}")
         super().__init__(project, system, build_scripts_dir)
         self.mode = mode
-        self.local_development = mode == "msix" and os.environ.get("ONEXRAY_DEV_SIGN") == "1"
+        self.local_development = mode == "msix" and os.environ.get("APOLUNE_DEV_SIGN") == "1"
         self.target_architecture = self._target_architecture()
         package_architecture = "amd64" if self.target_architecture == "x64" else "arm64"
         self.package_suffix = f"windows-{package_architecture}"
 
     @staticmethod
     def _target_architecture() -> str:
-        configured = os.environ.get("ONEXRAY_WINDOWS_ARCH")
+        configured = os.environ.get("APOLUNE_WINDOWS_ARCH")
         if configured in ("x64", "arm64"):
             return configured
         if configured:
-            raise ValueError("ONEXRAY_WINDOWS_ARCH must be x64 or arm64")
+            raise ValueError("APOLUNE_WINDOWS_ARCH must be x64 or arm64")
         if is_amd64():
             return "x64"
         if is_arm64():
@@ -120,10 +120,10 @@ class WindowsBuilder(Builder):
                 flutter_command(),
                 "build",
                 "windows",
-                "--dart-define=ONEXRAY_WINDOWS_MODE=msix",
+                "--dart-define=APOLUNE_WINDOWS_MODE=msix",
             ]
             if self.local_development:
-                command.append("--dart-define=ONEXRAY_WINDOWS_DEVELOPMENT=true")
+                command.append("--dart-define=APOLUNE_WINDOWS_DEVELOPMENT=true")
             run_command(command, cwd=self.root_dir)
             self.package_msix()
         else:
@@ -156,7 +156,7 @@ class WindowsBuilder(Builder):
                 "exe,zip",
                 arguments=(
                     "--build-dart-define",
-                    "ONEXRAY_WINDOWS_MODE=exe",
+                    "APOLUNE_WINDOWS_MODE=exe",
                     "--flutter-build-args",
                     f"build-number={build_number or self.build_number}",
                     "--artifact-name",

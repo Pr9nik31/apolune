@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/tools/json.dart';
-import 'package:onexray/service/connect/dialing.dart';
-import 'package:onexray/service/shared/xray/server_dialing.dart';
+import 'package:apolune/core/tools/json.dart';
+import 'package:apolune/service/connect/dialing.dart';
+import 'package:apolune/service/shared/xray/server_dialing.dart';
 
 const dualStack = EffectiveServerDialing(
   domainStrategy: 'UseIP',

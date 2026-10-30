@@ -1,17 +1,17 @@
 import 'dart:typed_data';
 
-import 'package:onexray/core/errors/failure.dart';
+import 'package:apolune/core/errors/failure.dart';
 
-import 'package:onexray/core/tools/platform.dart';
-import 'package:onexray/core/ffi/linux_ffi_api.dart';
-import 'package:onexray/core/ffi/windows/ffi_api.dart';
-import 'package:onexray/core/ffi/windows/model.dart';
-import 'package:onexray/core/pigeon/messages.g.dart';
-import 'package:onexray/core/pigeon/invoke_limits.dart';
-import 'package:onexray/core/pigeon/model.dart';
-import 'package:onexray/core/pigeon/model_reader.dart';
-import 'package:onexray/core/tools/json.dart';
-import 'package:onexray/core/tools/logger.dart';
+import 'package:apolune/core/tools/platform.dart';
+import 'package:apolune/core/ffi/linux_ffi_api.dart';
+import 'package:apolune/core/ffi/windows/ffi_api.dart';
+import 'package:apolune/core/ffi/windows/model.dart';
+import 'package:apolune/core/pigeon/messages.g.dart';
+import 'package:apolune/core/pigeon/invoke_limits.dart';
+import 'package:apolune/core/pigeon/model.dart';
+import 'package:apolune/core/pigeon/model_reader.dart';
+import 'package:apolune/core/tools/json.dart';
+import 'package:apolune/core/tools/logger.dart';
 import 'package:path/path.dart' as p;
 import 'package:permission_handler/permission_handler.dart';
 

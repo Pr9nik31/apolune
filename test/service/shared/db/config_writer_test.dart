@@ -1,8 +1,8 @@
 import 'package:drift/drift.dart';
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/service/shared/db/config_writer.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/service/shared/db/config_writer.dart';
 
 void main() {
   late AppDatabase database;

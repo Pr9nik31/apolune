@@ -1,30 +1,30 @@
 import 'dart:convert';
 
-import 'package:onexray/core/db/database/database.dart';
-import 'package:onexray/core/db/database/enum.dart';
-import 'package:onexray/core/ffi/windows/mode.dart';
-import 'package:onexray/core/model/xray_json.dart';
-import 'package:onexray/core/pigeon/constants.dart';
-import 'package:onexray/core/tools/json.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/connect/dialing.dart';
-import 'package:onexray/service/connect/runtime_network_policy.dart';
-import 'package:onexray/service/connect/routing/region_catalog.dart';
-import 'package:onexray/service/connect/routing/custom/state.dart';
-import 'package:onexray/service/connect/routing/custom/configuration.dart';
-import 'package:onexray/service/connect/routing/custom/advanced.dart';
-import 'package:onexray/service/connect/routing/dns.dart';
-import 'package:onexray/service/connect/routing/dns_forwarding.dart';
-import 'package:onexray/service/connect/routing/options.dart';
-import 'package:onexray/service/servers/outbound/map.dart';
-import 'package:onexray/service/servers/outbound/state_db.dart';
-import 'package:onexray/service/shared/xray/runtime_inbounds.dart';
-import 'package:onexray/service/shared/xray/runtime_outbounds.dart';
-import 'package:onexray/service/shared/xray/fake_dns.dart';
-import 'package:onexray/service/shared/xray/fragment.dart';
-import 'package:onexray/service/shared/xray/remnawave.dart';
-import 'package:onexray/service/shared/xray/vpn_config.dart';
-import 'package:onexray/service/shared/xray/server_dialing.dart';
+import 'package:apolune/core/db/database/database.dart';
+import 'package:apolune/core/db/database/enum.dart';
+import 'package:apolune/core/ffi/windows/mode.dart';
+import 'package:apolune/core/model/xray_json.dart';
+import 'package:apolune/core/pigeon/constants.dart';
+import 'package:apolune/core/tools/json.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/connect/dialing.dart';
+import 'package:apolune/service/connect/runtime_network_policy.dart';
+import 'package:apolune/service/connect/routing/region_catalog.dart';
+import 'package:apolune/service/connect/routing/custom/state.dart';
+import 'package:apolune/service/connect/routing/custom/configuration.dart';
+import 'package:apolune/service/connect/routing/custom/advanced.dart';
+import 'package:apolune/service/connect/routing/dns.dart';
+import 'package:apolune/service/connect/routing/dns_forwarding.dart';
+import 'package:apolune/service/connect/routing/options.dart';
+import 'package:apolune/service/servers/outbound/map.dart';
+import 'package:apolune/service/servers/outbound/state_db.dart';
+import 'package:apolune/service/shared/xray/runtime_inbounds.dart';
+import 'package:apolune/service/shared/xray/runtime_outbounds.dart';
+import 'package:apolune/service/shared/xray/fake_dns.dart';
+import 'package:apolune/service/shared/xray/fragment.dart';
+import 'package:apolune/service/shared/xray/remnawave.dart';
+import 'package:apolune/service/shared/xray/vpn_config.dart';
+import 'package:apolune/service/shared/xray/server_dialing.dart';
 
 /// A complete provider graph selected as one subscription asset.
 class ResolvedProfile {

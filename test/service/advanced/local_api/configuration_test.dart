@@ -2,17 +2,17 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onexray/core/pigeon/constants.dart';
-import 'package:onexray/service/advanced/local_api/configuration.dart';
-import 'package:onexray/service/connect/compiler.dart';
-import 'package:onexray/service/connect/raw/validator.dart';
-import 'package:onexray/service/connect/routing/custom/advanced.dart';
-import 'package:onexray/service/connect/routing/custom/document.dart';
-import 'package:onexray/service/connect/routing/custom/service.dart';
-import 'package:onexray/service/connect/routing/region_catalog.dart';
-import 'package:onexray/service/connect/settings.dart';
-import 'package:onexray/service/shared/event_bus/service.dart';
-import 'package:onexray/service/shared/xray/validation.dart';
+import 'package:apolune/core/pigeon/constants.dart';
+import 'package:apolune/service/advanced/local_api/configuration.dart';
+import 'package:apolune/service/connect/compiler.dart';
+import 'package:apolune/service/connect/raw/validator.dart';
+import 'package:apolune/service/connect/routing/custom/advanced.dart';
+import 'package:apolune/service/connect/routing/custom/document.dart';
+import 'package:apolune/service/connect/routing/custom/service.dart';
+import 'package:apolune/service/connect/routing/region_catalog.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/service/shared/event_bus/service.dart';
+import 'package:apolune/service/shared/xray/validation.dart';
 
 const ordinary = '''{
   "name": "Local routing",

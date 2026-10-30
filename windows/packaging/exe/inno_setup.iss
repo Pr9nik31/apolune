@@ -5,8 +5,8 @@ AppName={{DISPLAY_NAME}}
 AppVersion={{APP_VERSION}}
 AppPublisher={{PUBLISHER_NAME}}
 AppPublisherURL={{PUBLISHER_URL}}
-AppSupportURL=https://github.com/YuanDevTeam/OneXray/issues
-AppUpdatesURL=https://onexray.com
+AppSupportURL=https://github.com/Pr9nik31/apolune/issues
+AppUpdatesURL=https://apolune.dev
 DefaultDirName={{INSTALL_DIR_NAME}}
 DisableProgramGroupPage=yes
 OutputDir=.
@@ -37,10 +37,10 @@ Name: "{autoprograms}\{{DISPLAY_NAME}}"; Filename: "{app}\{{EXECUTABLE_NAME}}"; 
 Name: "{autodesktop}\{{DISPLAY_NAME}}"; Filename: "{app}\{{EXECUTABLE_NAME}}"; WorkingDir: "{app}"; Tasks: desktopicon
 
 [Registry]
-Root: HKCU; Subkey: "Software\Classes\onexray"; ValueType: string; ValueName: ""; ValueData: "URL:OneXray Protocol"
-Root: HKCU; Subkey: "Software\Classes\onexray"; ValueType: string; ValueName: "URL Protocol"; ValueData: ""
-Root: HKCU; Subkey: "Software\Classes\onexray\DefaultIcon"; ValueType: string; ValueName: ""; ValueData: """{app}\{{EXECUTABLE_NAME}}"",0"
-Root: HKCU; Subkey: "Software\Classes\onexray\shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\{{EXECUTABLE_NAME}}"" ""%1"""
+Root: HKCU; Subkey: "Software\Classes\apolune"; ValueType: string; ValueName: ""; ValueData: "URL:Apolune Protocol"
+Root: HKCU; Subkey: "Software\Classes\apolune"; ValueType: string; ValueName: "URL Protocol"; ValueData: ""
+Root: HKCU; Subkey: "Software\Classes\apolune\DefaultIcon"; ValueType: string; ValueName: ""; ValueData: """{app}\{{EXECUTABLE_NAME}}"",0"
+Root: HKCU; Subkey: "Software\Classes\apolune\shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\{{EXECUTABLE_NAME}}"" ""%1"""
 
 [Run]
 Filename: "{app}\{{EXECUTABLE_NAME}}"; Description: "{cm:LaunchProgram,{{DISPLAY_NAME}}}"; Flags: nowait postinstall skipifsilent
@@ -61,7 +61,7 @@ begin
     TargetPath := Shortcut.TargetPath;
     Result := (TargetPath <> '') and PathSame(TargetPath, ExpectedTarget);
   except
-    Log('Unable to inspect the OneXray startup shortcut.');
+    Log('Unable to inspect the Apolune startup shortcut.');
   end;
 end;
 
@@ -75,10 +75,10 @@ begin
   ShortcutPath := ExpandConstant('{userstartup}\{{DISPLAY_NAME}}.lnk');
   if StartupShortcutTargetsCurrentInstall(ShortcutPath, ExpectedTarget) and
      not DeleteFile(ShortcutPath) then
-    Log('Unable to remove the OneXray startup shortcut.');
+    Log('Unable to remove the Apolune startup shortcut.');
   { Never remove another installation's protocol registration. }
-  if RegQueryStringValue(HKCU, 'Software\Classes\onexray\shell\open\command',
+  if RegQueryStringValue(HKCU, 'Software\Classes\apolune\shell\open\command',
       '', CurrentCommand) and
      (CompareText(CurrentCommand, '"' + ExpectedTarget + '" "%1"') = 0) then
-    RegDeleteKeyIncludingSubkeys(HKCU, 'Software\Classes\onexray');
+    RegDeleteKeyIncludingSubkeys(HKCU, 'Software\Classes\apolune');
 end;
