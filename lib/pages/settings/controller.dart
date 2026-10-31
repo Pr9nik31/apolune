@@ -7,6 +7,8 @@ import 'package:apolune/core/tools/platform.dart';
 import 'package:apolune/l10n/localizations/app_localizations.dart';
 import 'package:apolune/pages/main/navigation.dart';
 import 'package:apolune/pages/shared/alert.dart';
+import 'package:apolune/pages/shared/connection_action.dart';
+import 'package:apolune/service/connect/coordinator.dart';
 import 'package:apolune/pages/shared/page_cubit.dart';
 import 'package:apolune/pages/settings/app_icon/controller.dart';
 import 'package:apolune/pages/shared/widgets/settings_page.dart';
@@ -25,6 +27,7 @@ class SettingsPageState {
   final String xrayVersion;
   final AppIcon appIcon;
   final bool connectOnLaunch;
+  final bool expert;
   final bool loading;
   final bool saving;
   final bool checkingUpdate;
@@ -36,6 +39,7 @@ class SettingsPageState {
     this.xrayVersion = '—',
     this.appIcon = AppIcon.light,
     this.connectOnLaunch = false,
+    this.expert = false,
     this.loading = true,
     this.saving = false,
     this.checkingUpdate = false,
@@ -49,6 +53,7 @@ class SettingsPageState {
     String? xrayVersion,
     AppIcon? appIcon,
     bool? connectOnLaunch,
+    bool? expert,
     bool? loading,
     bool? saving,
     bool? checkingUpdate,
@@ -61,6 +66,7 @@ class SettingsPageState {
     xrayVersion: xrayVersion ?? this.xrayVersion,
     appIcon: appIcon ?? this.appIcon,
     connectOnLaunch: connectOnLaunch ?? this.connectOnLaunch,
+    expert: expert ?? this.expert,
     loading: loading ?? this.loading,
     saving: saving ?? this.saving,
     checkingUpdate: checkingUpdate ?? this.checkingUpdate,
@@ -126,18 +132,39 @@ class SettingsController extends PageCubit<SettingsPageState> {
   Future<void> _readPreferences() async {
     try {
       final connect = await PreferencesKey().readConnectOnAppLaunch();
+      final connection = await ConnectionCoordinator.instance.configuration;
       final icon = showAppIcon
           ? AppIcon.fromString(await AppHostApi().getCurrentAppIcon())
           : null;
       emit(
         state.copyWith(
           connectOnLaunch: connect,
+          expert: connection.connection.expert,
           appIcon: icon ?? AppIcon.light,
           loading: false,
         ),
       );
     } catch (error) {
       emit(state.copyWith(loading: false, failure: error));
+    }
+  }
+
+  /// «Режим уверенного пользователя»: включает экспертные поля на экране
+  /// подключения. Хранится в той же конфигурации, что читает этот экран.
+  Future<void> setExpert(BuildContext context, bool value) async {
+    if (state.saving) return;
+    emit(state.copyWith(saving: true));
+    try {
+      await applyConnectionChange(
+        context,
+        ConnectionCoordinator.instance,
+        {'expert': value},
+        label: (_) => AppLocalizations.of(context)!.prototypeExpertMode,
+      );
+      emit(state.copyWith(expert: value, saving: false));
+    } catch (error) {
+      if (context.mounted) _showUnavailable(context, error);
+      emit(state.copyWith(saving: false));
     }
   }
 

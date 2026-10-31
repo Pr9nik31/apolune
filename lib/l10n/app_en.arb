@@ -2743,6 +2743,14 @@
   "@prototypeIconBlack": {
     "description": "Approved prototype copy: Black"
   },
+  "prototypeExpertSection": "Expert",
+  "@prototypeExpertSection": {
+    "description": "Settings section for expert options"
+  },
+  "prototypeConfidentUserMode": "Confident user mode",
+  "@prototypeConfidentUserMode": {
+    "description": "Turns on expert controls on the connection screen"
+  },
   "prototypeIconLight": "Light",
   "@prototypeIconLight": {
     "description": "Light application icon name"

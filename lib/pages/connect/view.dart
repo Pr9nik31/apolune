@@ -126,7 +126,6 @@ class ConnectView extends StatelessWidget {
                         padding: const EdgeInsets.all(1),
                         child: Column(
                           children: [
-                            _expertSwitch(context),
                             if (expert)
                               _raws(context)
                             else
@@ -220,7 +219,6 @@ class ConnectView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _status(context, desktop: true),
-          _expertSwitch(context, desktop: true),
           if (expert)
             _raws(context, desktop: true)
           else
@@ -436,60 +434,6 @@ class ConnectView extends StatelessWidget {
     );
   }
 
-  Widget _expertSwitch(BuildContext context, {bool desktop = false}) {
-    final l = AppLocalizations.of(context)!;
-    final palette = ColorManager.palette(context);
-    return Container(
-      constraints: BoxConstraints(
-        minHeight: desktop
-            ? AppLayout.connectDesktopExpertRowMinHeight
-            : AppLayout.connectExpertRowMinHeight,
-      ),
-      padding: EdgeInsets.symmetric(horizontal: desktop ? 18 : 12),
-      decoration: BoxDecoration(
-        border: Border(bottom: BorderSide(color: palette.border)),
-      ),
-      child: Row(
-        children: [
-          Expanded(
-            child: Row(
-              children: [
-                Flexible(
-                  child: Text(
-                    l.prototypeExpertMode,
-                    style: desktop
-                        ? AppTypography.connectDesktopCaption
-                        : AppTypography.connectCaption,
-                  ),
-                ),
-                const SizedBox(width: 7),
-                ExcludeSemantics(
-                  child: Icon(
-                    LucideIcons.info,
-                    size: 15,
-                    color: palette.mutedForeground,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(width: 16),
-          if (pendingChange == 'expert') ...[
-            const ButtonProgressIndicator(),
-            const SizedBox(width: 8),
-          ],
-          Semantics(
-            label: l.prototypeExpertMode,
-            child: ShadSwitch(
-              value: expert,
-              enabled: !_busy && pendingChange == null,
-              onChanged: onExpert,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 
   Widget _why(BuildContext context, {bool desktop = false}) {
     final palette = ColorManager.palette(context);

@@ -177,6 +177,21 @@ class SettingsPage extends StatelessWidget {
                       ),
                   ],
                 );
+                final expert = SettingSection(
+                  title: l10n.prototypeExpertSection,
+                  icon: LucideIcons.terminal,
+                  padding: EdgeInsets.zero,
+                  dividerIndent: 0,
+                  children: [
+                    _StartupSettingRow(
+                      title: l10n.prototypeConfidentUserMode,
+                      value: state.expert,
+                      onChanged: state.loading || state.saving
+                          ? null
+                          : (value) => controller.setExpert(context, value),
+                    ),
+                  ],
+                );
                 final data = SettingSection(
                   title: l10n.prototypeData,
                   icon: LucideIcons.hardDrive,
@@ -308,6 +323,8 @@ class SettingsPage extends StatelessWidget {
                                     Expanded(
                                       child: Column(
                                         children: [
+                                          expert,
+                                          SizedBox(height: sectionGap),
                                           data,
                                           SizedBox(height: sectionGap),
                                           about,
@@ -323,6 +340,8 @@ class SettingsPage extends StatelessWidget {
                                     language,
                                     SizedBox(height: sectionGap),
                                     startup,
+                                    SizedBox(height: sectionGap),
+                                    expert,
                                     SizedBox(height: sectionGap),
                                     data,
                                     SizedBox(height: sectionGap),
