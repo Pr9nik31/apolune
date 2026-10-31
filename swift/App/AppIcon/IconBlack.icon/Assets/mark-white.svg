@@ -1,6 +1,22 @@
 <svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M761.870 761.870L262.130 262.130" stroke="white" stroke-width="96.635" stroke-linecap="round"/>
-  <path d="M212.157 312.105L312.105 212.157" stroke="white" stroke-width="96.635" stroke-linecap="round"/>
-  <path d="M262.130 761.870L761.870 262.130" stroke="white" stroke-width="96.635" stroke-linecap="round"/>
-  <path d="M711.895 212.157L811.843 312.105" stroke="white" stroke-width="96.635" stroke-linecap="round"/>
+  <defs>
+    <clipPath id="planet">
+      <circle cx="512" cy="512" r="214"/>
+    </clipPath>
+    <clipPath id="front">
+      <rect x="-512" y="512" width="2048" height="1024"/>
+    </clipPath>
+  </defs>
+  <g transform="rotate(-20 512 512)">
+    <ellipse cx="512" cy="512" rx="352" ry="132" stroke="white" stroke-width="34"/>
+  </g>
+  <circle cx="512" cy="512" r="214" fill="white"/>
+  <g clip-path="url(#planet)">
+    <g transform="rotate(-20 512 512)">
+      <g clip-path="url(#front)">
+        <ellipse cx="512" cy="512" rx="352" ry="132" stroke="#16150F" stroke-width="34"/>
+      </g>
+    </g>
+  </g>
+  <circle cx="843" cy="392" r="36" fill="#C0402B"/>
 </svg>
