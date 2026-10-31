@@ -5,6 +5,11 @@ import 'package:shadcn_ui/shadcn_ui.dart';
 abstract final class AppFontFamily {
   static const sans = "packages/shadcn_ui/Geist";
   static const mono = "packages/shadcn_ui/GeistMono";
+
+  // Ретро-плакат: сжатый дисплей, гротеск для текста, моно для цифр.
+  static const display = "Oswald";
+  static const text = "Golos";
+  static const figures = "Mono";
   static const windowsSansFallback = <String>[
     "Microsoft YaHei UI",
     "Microsoft YaHei",
@@ -20,12 +25,20 @@ abstract final class AppTypography {
   static TextStyle _style(int size, [int weight = 400]) => TextStyle(
     fontSize: size.toDouble(),
     fontWeight: FontWeight.values[weight ~/ 100 - 1],
+    fontFamily: AppFontFamily.text,
+    fontVariations: [FontVariation('wght', weight.toDouble())],
     fontFamilyFallback: AppFontFamily.sansFallback,
   );
 
-  static final pageTitle = _style(31, 700);
-  static final panelTitle = _style(19, 700);
-  static final sectionTitle = _style(14, 700);
+  static TextStyle _display(int size, [int weight = 700]) => _style(size, weight)
+      .copyWith(fontFamily: AppFontFamily.display, letterSpacing: 0.6, height: 1.06);
+
+  static TextStyle _figures(int size, [int weight = 500]) =>
+      _style(size, weight).copyWith(fontFamily: AppFontFamily.figures);
+
+  static final pageTitle = _display(34, 700);
+  static final panelTitle = _display(21, 600);
+  static final sectionTitle = _display(15, 600);
   static final rowTitle = _style(13, 700);
   static final rowValue = _style(13);
   static final supporting = _style(12);
@@ -34,8 +47,8 @@ abstract final class AppTypography {
   static final navigationLabel = _style(16, 500);
   static final selectedNavigationLabel = _style(16, 600);
   static final badge = _style(12, 600);
-  static final code = _style(12);
-  static final metric = _style(20, 600);
+  static final code = _figures(12);
+  static final metric = _figures(20, 600);
 
   static final pageAction = _style(12, 600);
   static final settingsSectionTitle = _style(14, 700);

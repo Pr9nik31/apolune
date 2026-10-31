@@ -13,7 +13,7 @@ platform :mac do
     app_path = File.join(output_dir, "#{product_name}.app")
     zip_path = File.join(output_dir, 'Apolune-macos-universal.zip')
 
-    team_id = '2CKAULFA9J'
+    team_id = 'APOLUNE'
 
     api_key = app_store_connect_api_key(
       key_id: ENV.fetch('FASTLANE_ASC_KEY_ID'),

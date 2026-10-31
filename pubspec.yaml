@@ -126,9 +126,20 @@ flutter:
   generate: true
 
   assets:
+    - assets/fonts/
     - assets/
     - assets/dat/
     - assets/geodata/regions.json
     - assets/icon/
     - assets/app_icon/
     - assets/macos_icon/
+  fonts:
+    - family: Oswald
+      fonts:
+        - asset: assets/fonts/oswald.ttf
+    - family: Golos
+      fonts:
+        - asset: assets/fonts/golos.ttf
+    - family: Mono
+      fonts:
+        - asset: assets/fonts/mono.ttf

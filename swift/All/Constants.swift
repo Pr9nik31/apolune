@@ -13,7 +13,7 @@ public enum Constants {
     #endif
 }
 
-private let teamAppGroupId = "2CKAULFA9J.dev.apolune.client"
+private let teamAppGroupId = "APOLUNE.dev.apolune.client"
 private let groupAppGroupId = "group.dev.apolune.client"
 private let seGroupAppGroupId = "group.dev.apolune.client.se"
 
