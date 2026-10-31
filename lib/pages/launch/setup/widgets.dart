@@ -50,11 +50,13 @@ class SetupDesktopBody extends StatelessWidget {
     required this.progress,
     required this.children,
     this.bodyTop = 48,
+    this.showBrand = true,
   });
 
   final Widget progress;
   final List<Widget> children;
   final double bodyTop;
+  final bool showBrand;
 
   @override
   Widget build(BuildContext context) => SingleChildScrollView(
@@ -67,9 +69,10 @@ class SetupDesktopBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const ApoluneBrand(size: 36),
-          const SizedBox(height: 10),
-          const SizedBox(height: 10),
+          if (showBrand) ...[
+            const ApoluneBrand(size: 34),
+            const SizedBox(height: 10),
+          ],
           Center(
             child: ConstrainedBox(
               constraints: const BoxConstraints(

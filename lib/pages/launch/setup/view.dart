@@ -51,10 +51,7 @@ class SetupView extends StatelessWidget {
                   key: ValueKey(state.step),
                   top: welcome ? 32 : 24,
                   children: [
-                    if (welcome) ...[
-                      const ApoluneBrand(size: 40, centered: true),
-                      const SizedBox(height: 36),
-                    ],
+
                     if (!welcome && state.step != SetupStep.complete) ...[
                       _SetupProgress(step: state.step),
                       const SizedBox(height: 48),
@@ -63,6 +60,7 @@ class SetupView extends StatelessWidget {
                   ],
                 )
               : SetupDesktopBody(
+                  showBrand: !welcome,
                   key: ValueKey(state.step),
                   progress: state.step == SetupStep.complete
                       ? const SizedBox.shrink()
@@ -87,8 +85,8 @@ class SetupView extends StatelessWidget {
     final l = AppLocalizations.of(context)!;
     final palette = ColorManager.palette(context);
     return [
-      const Center(child: ApoluneMark(size: 132)),
-      SizedBox(height: mobile ? 26 : 24),
+      const Center(child: ApoluneMark(size: 210)),
+      SizedBox(height: mobile ? 10 : 8),
       Text(
         l.prototypeWelcome,
         textAlign: TextAlign.center,

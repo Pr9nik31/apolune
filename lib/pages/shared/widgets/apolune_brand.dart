@@ -27,7 +27,7 @@ class ApoluneMark extends StatelessWidget {
     final palette = ColorManager.palette(context);
     return SizedBox(
       width: size,
-      height: size,
+      height: size * 0.62,
       child: CustomPaint(
         painter: _ApoluneMarkPainter(
           color: color ?? palette.foreground,
@@ -57,6 +57,7 @@ class ApoluneBrand extends StatelessWidget {
     final palette = ColorManager.palette(context);
     return Row(
       mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment:
           centered ? MainAxisAlignment.center : MainAxisAlignment.start,
       children: [
@@ -66,7 +67,7 @@ class ApoluneBrand extends StatelessWidget {
           accent: palette.primary,
           bg: palette.background,
         ),
-        SizedBox(width: size * 0.34),
+        SizedBox(width: size * 0.18),
         Text('Apolune', style: style ?? AppTypography.setupBrand),
       ],
     );
@@ -98,7 +99,7 @@ class _ApoluneMarkPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final w = size.width;
-    final c = Offset(w * 0.5, w * 0.5);
+    final c = Offset(w * 0.5, size.height * 0.5);
     final r = w * _planet;
 
     final ring = Paint()
@@ -141,7 +142,7 @@ class _ApoluneMarkPainter extends CustomPainter {
 
     // Точка на орбите
     canvas.drawCircle(
-      Offset(w * _dotX, w * _dotY),
+      c + Offset((_dotX - 0.5) * w, (_dotY - 0.5) * w),
       w * _dotR,
       Paint()..color = accent,
     );
