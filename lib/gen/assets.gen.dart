@@ -14,26 +14,18 @@ import 'package:flutter/widgets.dart';
 class $AssetsAppIconGen {
   const $AssetsAppIconGen();
 
-  /// File path: assets/app_icon/black.png
-  AssetGenImage get black => const AssetGenImage('assets/app_icon/black.png');
-
-  /// File path: assets/app_icon/blue.png
-  AssetGenImage get blue => const AssetGenImage('assets/app_icon/blue.png');
-
+  /// File path: assets/app_icon/light.png
+  AssetGenImage get light =>
+      const AssetGenImage('assets/app_icon/light.png');
+  /// File path: assets/app_icon/dark.png
+  AssetGenImage get dark =>
+      const AssetGenImage('assets/app_icon/dark.png');
   /// File path: assets/app_icon/green.png
-  AssetGenImage get green => const AssetGenImage('assets/app_icon/green.png');
-
-  /// File path: assets/app_icon/orange.png
-  AssetGenImage get orange => const AssetGenImage('assets/app_icon/orange.png');
-
-  /// File path: assets/app_icon/purple.png
-  AssetGenImage get purple => const AssetGenImage('assets/app_icon/purple.png');
-
+  AssetGenImage get green =>
+      const AssetGenImage('assets/app_icon/green.png');
   /// File path: assets/app_icon/red.png
-  AssetGenImage get red => const AssetGenImage('assets/app_icon/red.png');
-
-  /// List of all assets
-  List<AssetGenImage> get values => [black, blue, green, orange, purple, red];
+  AssetGenImage get red =>
+      const AssetGenImage('assets/app_icon/red.png');
 }
 
 class $AssetsDatGen {
@@ -103,28 +95,18 @@ class $AssetsIconGen {
 class $AssetsMacosIconGen {
   const $AssetsMacosIconGen();
 
-  /// File path: assets/macos_icon/black.png
-  AssetGenImage get black => const AssetGenImage('assets/macos_icon/black.png');
-
-  /// File path: assets/macos_icon/blue.png
-  AssetGenImage get blue => const AssetGenImage('assets/macos_icon/blue.png');
-
+  /// File path: assets/macos_icon/light.png
+  AssetGenImage get light =>
+      const AssetGenImage('assets/macos_icon/light.png');
+  /// File path: assets/macos_icon/dark.png
+  AssetGenImage get dark =>
+      const AssetGenImage('assets/macos_icon/dark.png');
   /// File path: assets/macos_icon/green.png
-  AssetGenImage get green => const AssetGenImage('assets/macos_icon/green.png');
-
-  /// File path: assets/macos_icon/orange.png
-  AssetGenImage get orange =>
-      const AssetGenImage('assets/macos_icon/orange.png');
-
-  /// File path: assets/macos_icon/purple.png
-  AssetGenImage get purple =>
-      const AssetGenImage('assets/macos_icon/purple.png');
-
+  AssetGenImage get green =>
+      const AssetGenImage('assets/macos_icon/green.png');
   /// File path: assets/macos_icon/red.png
-  AssetGenImage get red => const AssetGenImage('assets/macos_icon/red.png');
-
-  /// List of all assets
-  List<AssetGenImage> get values => [black, blue, green, orange, purple, red];
+  AssetGenImage get red =>
+      const AssetGenImage('assets/macos_icon/red.png');
 }
 
 abstract final class Assets {

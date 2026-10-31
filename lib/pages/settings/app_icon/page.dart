@@ -179,11 +179,9 @@ class AppIconChoiceView extends StatelessWidget {
 }
 
 String appIconLabel(AppLocalizations l10n, AppIcon icon) => switch (icon) {
-  AppIcon.primary => l10n.prototypeIconBlue,
-  AppIcon.black => l10n.prototypeIconBlack,
+  AppIcon.light => l10n.prototypeIconLight,
+  AppIcon.dark => l10n.prototypeIconDark,
   AppIcon.green => l10n.prototypeIconGreen,
-  AppIcon.orange => l10n.prototypeIconOrange,
-  AppIcon.purple => l10n.prototypeIconPurple,
   AppIcon.red => l10n.prototypeIconRed,
 };
 

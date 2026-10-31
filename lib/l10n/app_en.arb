@@ -2743,6 +2743,14 @@
   "@prototypeIconBlack": {
     "description": "Approved prototype copy: Black"
   },
+  "prototypeIconLight": "Light",
+  "@prototypeIconLight": {
+    "description": "Light application icon name"
+  },
+  "prototypeIconDark": "Dark",
+  "@prototypeIconDark": {
+    "description": "Dark application icon name"
+  },
   "prototypeIconGreen": "Green",
   "@prototypeIconGreen": {
     "description": "Approved prototype copy: Green"

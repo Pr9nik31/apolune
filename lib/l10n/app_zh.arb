@@ -833,6 +833,8 @@
   "prototypeNone": "无",
   "prototypeIconBlue": "蓝色",
   "prototypeIconBlack": "黑色",
+  "prototypeIconLight": "浅色",
+  "prototypeIconDark": "深色",
   "prototypeIconGreen": "绿色",
   "prototypeIconOrange": "橙色",
   "prototypeIconPurple": "紫色",

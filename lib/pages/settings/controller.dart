@@ -34,7 +34,7 @@ class SettingsPageState {
   const SettingsPageState({
     this.appVersion = '—',
     this.xrayVersion = '—',
-    this.appIcon = AppIcon.primary,
+    this.appIcon = AppIcon.light,
     this.connectOnLaunch = false,
     this.loading = true,
     this.saving = false,
@@ -132,7 +132,7 @@ class SettingsController extends PageCubit<SettingsPageState> {
       emit(
         state.copyWith(
           connectOnLaunch: connect,
-          appIcon: icon ?? AppIcon.primary,
+          appIcon: icon ?? AppIcon.light,
           loading: false,
         ),
       );

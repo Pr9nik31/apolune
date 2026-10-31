@@ -833,6 +833,8 @@
   "prototypeNone": "Нет",
   "prototypeIconBlue": "Синий",
   "prototypeIconBlack": "Чёрный",
+  "prototypeIconLight": "Светлый",
+  "prototypeIconDark": "Тёмный",
   "prototypeIconGreen": "Зелёный",
   "prototypeIconOrange": "Оранжевый",
   "prototypeIconPurple": "Фиолетовый",

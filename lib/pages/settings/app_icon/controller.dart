@@ -8,11 +8,9 @@ import 'package:go_router/go_router.dart';
 import 'package:apolune/pages/shared/alert.dart';
 
 enum AppIcon {
-  primary("IconBlue"),
-  black("IconBlack"),
+  light("IconBlue"),
+  dark("IconBlack"),
   green("IconGreen"),
-  orange("IconOrange"),
-  purple("IconPurple"),
   red("IconRed");
 
   const AppIcon(this.name);
@@ -35,16 +33,12 @@ enum AppIcon {
 
   AssetGenImage get assetImage {
     switch (this) {
-      case AppIcon.primary:
-        return Assets.appIcon.blue;
-      case AppIcon.black:
-        return Assets.appIcon.black;
+      case AppIcon.light:
+        return Assets.appIcon.light;
+      case AppIcon.dark:
+        return Assets.appIcon.dark;
       case AppIcon.green:
         return Assets.appIcon.green;
-      case AppIcon.orange:
-        return Assets.appIcon.orange;
-      case AppIcon.purple:
-        return Assets.appIcon.purple;
       case AppIcon.red:
         return Assets.appIcon.red;
     }
@@ -52,16 +46,12 @@ enum AppIcon {
 
   AssetGenImage get dockAssetImage {
     switch (this) {
-      case AppIcon.primary:
-        return Assets.macosIcon.blue;
-      case AppIcon.black:
-        return Assets.macosIcon.black;
+      case AppIcon.light:
+        return Assets.macosIcon.light;
+      case AppIcon.dark:
+        return Assets.macosIcon.dark;
       case AppIcon.green:
         return Assets.macosIcon.green;
-      case AppIcon.orange:
-        return Assets.macosIcon.orange;
-      case AppIcon.purple:
-        return Assets.macosIcon.purple;
       case AppIcon.red:
         return Assets.macosIcon.red;
     }
@@ -74,7 +64,7 @@ class AppIconPageState {
   final bool saving;
 
   const AppIconPageState({
-    this.appIcon = AppIcon.primary,
+    this.appIcon = AppIcon.light,
     this.loading = true,
     this.saving = false,
   });
@@ -98,7 +88,7 @@ class AppIconController extends PageCubit<AppIconPageState> {
       final currentIcon = await AppHostApi().getCurrentAppIcon();
       emit(
         state.copyWith(
-          appIcon: AppIcon.fromString(currentIcon) ?? AppIcon.primary,
+          appIcon: AppIcon.fromString(currentIcon) ?? AppIcon.light,
         ),
       );
     } catch (error) {
@@ -117,7 +107,7 @@ class AppIconController extends PageCubit<AppIconPageState> {
     if (state.loading || state.saving) return;
     emit(state.copyWith(saving: true));
     var name = state.appIcon.name;
-    if (state.appIcon == AppIcon.primary) {
+    if (state.appIcon == AppIcon.light) {
       name = "";
     }
     try {
