@@ -96,7 +96,6 @@ class _ConnectPageState extends State<ConnectPage> {
                 onExpert: (value) => controller.toggleExpert(context, value),
                 onServer: () => controller.chooseServer(context),
                 onMethod: () => controller.chooseTrafficMethod(context),
-                onWhy: () => controller.showWhy(context),
                 onRawAdd: () => controller.editRaw(context),
                 onRawSelect: (row) => controller.selectRaw(context, row.id),
                 onRawActions: (row) => controller.showRawActions(context, row),

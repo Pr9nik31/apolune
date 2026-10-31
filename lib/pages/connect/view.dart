@@ -38,7 +38,6 @@ class ConnectView extends StatelessWidget {
     required this.onExpert,
     required this.onServer,
     required this.onMethod,
-    required this.onWhy,
     required this.onRawAdd,
     required this.onRawSelect,
     required this.onRawActions,
@@ -60,7 +59,6 @@ class ConnectView extends StatelessWidget {
       onAddServers,
       onServer,
       onMethod,
-      onWhy,
       onRawAdd;
   final ValueChanged<bool> onExpert;
   final ValueChanged<CoreConfigData> onRawSelect, onRawActions;
@@ -131,11 +129,7 @@ class ConnectView extends StatelessWidget {
                           child: _raws(context),
                         ),
                       )
-                    else
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 4),
-                        child: _why(context),
-                      ),
+
                   ],
                 );
                 final traffic = Card(
@@ -202,11 +196,7 @@ class ConnectView extends StatelessWidget {
           _status(context, desktop: true),
           if (expert)
             _raws(context, desktop: true)
-          else
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
-              child: _why(context, desktop: true),
-            ),
+
         ],
       ),
     );
@@ -288,43 +278,6 @@ class ConnectView extends StatelessWidget {
   }
 
 
-  Widget _why(BuildContext context, {bool desktop = false}) {
-    final palette = ColorManager.palette(context);
-    final action = InkWell(
-      onTap: onWhy,
-      borderRadius: desktop ? BorderRadius.circular(AppRadii.small) : null,
-      child: Container(
-        constraints: BoxConstraints(minHeight: desktop ? 53 : 49),
-        padding: desktop ? const EdgeInsets.symmetric(horizontal: 14) : null,
-        child: Row(
-          children: [
-            Icon(LucideIcons.circleHelp, size: 20, color: palette.primary),
-            const SizedBox(width: 12),
-            Expanded(
-              child: Text(
-                AppLocalizations.of(context)!.prototypeWhyThisConnection,
-                style:
-                    (desktop
-                            ? AppTypography.connectDesktopWhy
-                            : AppTypography.connectWhy)
-                        .copyWith(color: palette.primary),
-              ),
-            ),
-            Icon(LucideIcons.chevronRightDir, size: 19, color: palette.primary),
-          ],
-        ),
-      ),
-    );
-    if (!desktop) return action;
-    return Material(
-      color: palette.card,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(AppRadii.small),
-        side: BorderSide(color: palette.border),
-      ),
-      child: action,
-    );
-  }
 
   Widget _status(BuildContext context, {bool desktop = false}) {
     final l = AppLocalizations.of(context)!;
