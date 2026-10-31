@@ -153,7 +153,7 @@ abstract final class AppTypography {
   static final windowsNetworkMeta = _style(12, 400);
   static final windowsNetworkInput = _style(13, 400);
   static final windowsNetworkNote = _style(12, 400);
-  static final setupBrand = _style(19, 700);
+  static final setupBrand = _display(21, 700);
   static final setupTitle = _style(27, 700);
   static final setupDesktopTitle = _style(40, 700);
   static final setupWelcomeTitle = _style(25, 700);

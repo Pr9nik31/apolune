@@ -1,4 +1,5 @@
 import 'package:material_ui/material_ui.dart';
+import 'package:apolune/pages/shared/widgets/apolune_brand.dart';
 import 'package:apolune/pages/theme/color.dart';
 import 'package:apolune/pages/theme/font.dart';
 import 'package:apolune/pages/theme/layout.dart';
@@ -66,7 +67,8 @@ class SetupDesktopBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text('Apolune', style: AppTypography.setupBrand),
+          const ApoluneBrand(size: 36),
+          const SizedBox(height: 10),
           const SizedBox(height: 10),
           Center(
             child: ConstrainedBox(

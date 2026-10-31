@@ -47,5 +47,6 @@
 - macOS: `swift/App/AppIcon/IconBlue.icon/Assets/mark-white.svg` (заливка петроль).
 - iOS: `swift/App/AppIcon/IconBlack.icon/Assets/mark-white.svg` (тёмная заливка, вырез под неё).
 
-В интерфейсе пока не используется: `assets/logo.png` — мёртвый файл апстрима, заменить при
-подключении знака в шапку и онбординг.
+В интерфейсе: виджет `lib/pages/shared/widgets/apolune_brand.dart` (`ApoluneMark` + `ApoluneBrand`),
+стоит в шапке онбординга. Цвета берутся из палитры темы, вырез кольца — из цвета фона, поэтому
+знак работает и в светлой, и в тёмной теме без отдельных файлов.

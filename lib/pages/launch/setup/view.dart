@@ -1,4 +1,5 @@
 import 'package:material_ui/material_ui.dart';
+import 'package:apolune/pages/shared/widgets/apolune_brand.dart';
 import 'package:apolune/gen/assets.gen.dart';
 import 'package:apolune/l10n/localizations/app_localizations.dart';
 import 'package:apolune/pages/launch/setup/controller.dart';
@@ -52,11 +53,7 @@ class SetupView extends StatelessWidget {
                   top: welcome ? 32 : 24,
                   children: [
                     if (welcome) ...[
-                      Text(
-                        'Apolune',
-                        textAlign: TextAlign.center,
-                        style: AppTypography.setupBrand,
-                      ),
+                      const ApoluneBrand(size: 40, centered: true),
                       const SizedBox(height: 36),
                     ],
                     if (!welcome && state.step != SetupStep.complete) ...[
