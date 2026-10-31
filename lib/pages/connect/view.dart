@@ -210,6 +210,11 @@ class ConnectView extends StatelessWidget {
     final palette = ColorManager.palette(context);
     final viewport = MediaQuery.sizeOf(context);
     final compact = viewport.width <= AppLayout.compactDesktopBreakpoint;
+    final panelHeight =
+        (viewport.height - AppLayout.connectDesktopPanelViewportInset).clamp(
+          320.0,
+          900.0,
+        );
     final connected = view.phase == ConnectionPhase.connected;
     final main = Card(
       key: const ValueKey('desktop-connection-panel'),
@@ -298,13 +303,15 @@ class ConnectView extends StatelessWidget {
           ? Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
+                // Без жёстких минимумов: на планшете они выталкивали трафик
+                // за пределы экрана.
                 ConstrainedBox(
-                  constraints: const BoxConstraints(minHeight: 660),
+                  constraints: BoxConstraints(minHeight: panelHeight * 0.62),
                   child: main,
                 ),
                 const SizedBox(height: 16),
                 ConstrainedBox(
-                  constraints: const BoxConstraints(minHeight: 560),
+                  constraints: const BoxConstraints(minHeight: 280),
                   child: traffic,
                 ),
               ],
