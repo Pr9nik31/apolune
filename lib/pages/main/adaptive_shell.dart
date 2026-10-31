@@ -446,14 +446,17 @@ class _AdaptiveMainShellState extends State<AdaptiveMainShell> {
                 minHeight: AppSpacing.sidebarRowHeight,
               ),
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 14),
                 child: Row(
                   children: [
                     Icon(_icon(primary), size: 22, color: color),
-                    const SizedBox(width: 14),
+                    const SizedBox(width: 12),
                     Expanded(
                       child: Text(
                         label,
+                        maxLines: 1,
+                        softWrap: false,
+                        overflow: TextOverflow.ellipsis,
                         style:
                             (selected
                                     ? AppTypography.selectedNavigationLabel
