@@ -1,4 +1,5 @@
 import 'package:material_ui/material_ui.dart';
+import 'package:apolune/service/connect/settings.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:apolune/core/tools/platform.dart';
 import 'package:apolune/l10n/localizations/app_localizations.dart';
@@ -177,6 +178,30 @@ class SettingsPage extends StatelessWidget {
                       ),
                   ],
                 );
+                final routingLabel = switch (state.trafficMode) {
+                  TrafficMode.smart => l10n.prototypeSmartRoutingRecommended,
+                  TrafficMode.allVpn => l10n.prototypeAllViaVpn,
+                  TrafficMode.custom => l10n.prototypeCustomRouting,
+                };
+                final routing = SettingSection(
+                  title: l10n.prototypeTrafficMethod,
+                  icon: LucideIcons.route,
+                  padding: EdgeInsets.zero,
+                  dividerIndent: 0,
+                  children: [
+                    SettingRow(
+                      title: routingLabel,
+                      minHeight: mobile ? 48 : 56,
+                      titleStyle: mobile
+                          ? AppTypography.settingsFieldTitle
+                          : AppTypography.settingsRow,
+                      showChevron: true,
+                      onTap: state.loading || state.saving
+                          ? null
+                          : () => controller.chooseTrafficMethod(context),
+                    ),
+                  ],
+                );
                 final expert = SettingSection(
                   title: l10n.prototypeExpertSection,
                   icon: LucideIcons.terminal,
@@ -316,6 +341,8 @@ class SettingsPage extends StatelessWidget {
                                           language,
                                           SizedBox(height: sectionGap),
                                           startup,
+                                          SizedBox(height: sectionGap),
+                                          routing,
                                         ],
                                       ),
                                     ),
@@ -340,6 +367,8 @@ class SettingsPage extends StatelessWidget {
                                     language,
                                     SizedBox(height: sectionGap),
                                     startup,
+                                    SizedBox(height: sectionGap),
+                                    routing,
                                     SizedBox(height: sectionGap),
                                     expert,
                                     SizedBox(height: sectionGap),

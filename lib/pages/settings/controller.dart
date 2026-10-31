@@ -9,6 +9,8 @@ import 'package:apolune/pages/main/navigation.dart';
 import 'package:apolune/pages/shared/alert.dart';
 import 'package:apolune/pages/shared/connection_action.dart';
 import 'package:apolune/service/connect/coordinator.dart';
+import 'package:apolune/service/connect/settings.dart';
+import 'package:apolune/pages/connect/controller.dart';
 import 'package:apolune/pages/shared/page_cubit.dart';
 import 'package:apolune/pages/settings/app_icon/controller.dart';
 import 'package:apolune/pages/shared/widgets/settings_page.dart';
@@ -28,6 +30,7 @@ class SettingsPageState {
   final AppIcon appIcon;
   final bool connectOnLaunch;
   final bool expert;
+  final TrafficMode trafficMode;
   final bool loading;
   final bool saving;
   final bool checkingUpdate;
@@ -40,6 +43,7 @@ class SettingsPageState {
     this.appIcon = AppIcon.light,
     this.connectOnLaunch = false,
     this.expert = false,
+    this.trafficMode = TrafficMode.smart,
     this.loading = true,
     this.saving = false,
     this.checkingUpdate = false,
@@ -54,6 +58,7 @@ class SettingsPageState {
     AppIcon? appIcon,
     bool? connectOnLaunch,
     bool? expert,
+    TrafficMode? trafficMode,
     bool? loading,
     bool? saving,
     bool? checkingUpdate,
@@ -67,6 +72,7 @@ class SettingsPageState {
     appIcon: appIcon ?? this.appIcon,
     connectOnLaunch: connectOnLaunch ?? this.connectOnLaunch,
     expert: expert ?? this.expert,
+    trafficMode: trafficMode ?? this.trafficMode,
     loading: loading ?? this.loading,
     saving: saving ?? this.saving,
     checkingUpdate: checkingUpdate ?? this.checkingUpdate,
@@ -140,6 +146,7 @@ class SettingsController extends PageCubit<SettingsPageState> {
         state.copyWith(
           connectOnLaunch: connect,
           expert: connection.connection.expert,
+          trafficMode: connection.connection.trafficMode,
           appIcon: icon ?? AppIcon.light,
           loading: false,
         ),
@@ -165,6 +172,21 @@ class SettingsController extends PageCubit<SettingsPageState> {
     } catch (error) {
       if (context.mounted) _showUnavailable(context, error);
       emit(state.copyWith(saving: false));
+    }
+  }
+
+  /// Выбор режима маршрутизации: диалог живёт в контроллере подключения,
+  /// поэтому переиспользуем его, а не дублируем логику.
+  Future<void> chooseTrafficMethod(BuildContext context) async {
+    final connect = ConnectController();
+    try {
+      await connect.initialize();
+      if (!context.mounted) return;
+      await connect.chooseTrafficMethod(context);
+      final configuration = await ConnectionCoordinator.instance.configuration;
+      emit(state.copyWith(trafficMode: configuration.connection.trafficMode));
+    } finally {
+      await connect.close();
     }
   }
 
