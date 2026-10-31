@@ -1,0 +1,18 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="planet"><circle cx="512" cy="512" r="214"/></clipPath>
+    <clipPath id="front"><rect x="-512" y="512" width="2048" height="1024"/></clipPath>
+  </defs>
+  <g transform="rotate(-20 512 512)">
+    <ellipse cx="512" cy="512" rx="352" ry="132" stroke="#EDE8DC" stroke-width="34"/>
+  </g>
+  <circle cx="512" cy="512" r="214" fill="#EDE8DC"/>
+  <g clip-path="url(#planet)">
+    <g transform="rotate(-20 512 512)">
+      <g clip-path="url(#front)">
+        <ellipse cx="512" cy="512" rx="352" ry="132" stroke="#12110E" stroke-width="34"/>
+      </g>
+    </g>
+  </g>
+  <circle cx="843" cy="392" r="36" fill="#D4503A"/>
+</svg>
