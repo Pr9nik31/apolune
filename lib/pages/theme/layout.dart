@@ -1,3 +1,5 @@
+import 'dart:ui' show Size;
+
 import 'package:flutter/foundation.dart';
 
 /// Shared logical-pixel values mapped from the approved prototype theme.
@@ -18,6 +20,15 @@ abstract final class AppLayout {
   static const compactDesktopBreakpoint = 900.0;
   static const desktopSidebarWidth = 225.0;
   static const compactSidebarWidth = 190.0;
+
+  /// Ниже этой высоты боковая панель не помещается: в ландшафте телефона
+  /// остаётся нижняя навигация.
+  static const sidebarMinHeight = 560.0;
+
+  /// Десктопная раскладка требует и ширины, и высоты. В ландшафте телефона
+  /// ширина «десктопная», а высоты на две колонки нет — остаётся мобильная.
+  static bool isWideSize(Size size) =>
+      size.width > mobileBreakpoint && size.height >= sidebarMinHeight;
   static const standardMaxWidth = 1120.0;
   static const advancedMaxWidth = 980.0;
   static const settingsMaxWidth = 1176.0;

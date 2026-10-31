@@ -224,7 +224,7 @@ class _AdaptiveMainShellState extends State<AdaptiveMainShell> {
           selector: (state) => state.appUpdateInfo,
           builder: (context, appUpdateInfo) => LayoutBuilder(
             builder: (context, constraints) {
-              if (constraints.maxWidth > AppLayout.mobileBreakpoint) {
+              if (AppLayout.isWideSize(constraints.biggest)) {
                 return _railScaffold(
                   context,
                   constraints.maxWidth,

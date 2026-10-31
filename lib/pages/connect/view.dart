@@ -90,7 +90,7 @@ class ConnectView extends StatelessWidget {
         ),
       );
     }
-    if (MediaQuery.sizeOf(context).width > AppLayout.mobileBreakpoint) {
+    if (AppLayout.isWideSize(MediaQuery.sizeOf(context))) {
       return _desktop(context);
     }
     // Без резинового отскока: на iOS страница «улетала» вниз от одного движения.
