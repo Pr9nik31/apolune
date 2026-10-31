@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:material_ui/material_ui.dart';
+import 'package:apolune/pages/connect/controller.dart';
 import 'package:apolune/core/db/database/database.dart';
 import 'package:apolune/core/db/database/enum.dart';
 import 'package:apolune/core/tools/platform.dart';
@@ -1077,6 +1078,19 @@ class ServersController extends PageCubit<ServersPageState>
       ids: ids,
       sourceId: sourceId,
     );
+  }
+
+  /// Объяснение выбранного подключения: диалог живёт в контроллере
+  /// подключения, переиспользуем его.
+  Future<void> showWhy(BuildContext context) async {
+    final connect = ConnectController();
+    try {
+      await connect.initialize();
+      if (!context.mounted) return;
+      await connect.showWhy(context);
+    } finally {
+      await connect.close();
+    }
   }
 
   Future<void> openSources(BuildContext context) async {

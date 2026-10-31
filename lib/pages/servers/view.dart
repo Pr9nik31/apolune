@@ -337,6 +337,39 @@ class ServerBrowser extends StatelessWidget {
                 ),
               ),
             ),
+          const Divider(height: 1),
+          InkWell(
+            onTap: () => controller.showWhy(context),
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(minHeight: 52),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Row(
+                  children: [
+                    Icon(
+                      LucideIcons.circleHelp,
+                      size: 20,
+                      color: palette.primary,
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Text(
+                        l.prototypeWhyThisConnection,
+                        style: AppTypography.serverBody.copyWith(
+                          color: palette.primary,
+                        ),
+                      ),
+                    ),
+                    Icon(
+                      LucideIcons.chevronRightDir,
+                      size: 19,
+                      color: palette.primary,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
