@@ -1,6 +1,5 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:apolune/pages/shared/widgets/apolune_brand.dart';
-import 'package:apolune/gen/assets.gen.dart';
 import 'package:apolune/l10n/localizations/app_localizations.dart';
 import 'package:apolune/pages/launch/setup/controller.dart';
 import 'package:apolune/pages/launch/setup/selectors.dart';
@@ -88,7 +87,7 @@ class SetupView extends StatelessWidget {
     final l = AppLocalizations.of(context)!;
     final palette = ColorManager.palette(context);
     return [
-      Center(child: Assets.appIcon.blue.image(width: 96, height: 96)),
+      const Center(child: ApoluneMark(size: 132)),
       SizedBox(height: mobile ? 26 : 24),
       Text(
         l.prototypeWelcome,
