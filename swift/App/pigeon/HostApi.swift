@@ -17,11 +17,34 @@ final class AppHostApi: @preconcurrency BridgeHostApi {
     }
     
     func getTunFilesDir(completion: @escaping (Result<String, any Error>) -> Void) {
-        if let groupUrl = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroupId()) {
-            let path = groupUrl.adaptedPath()
-            completion(.success(path))
-        } else {
-            completion(.success(""))
+        if let groupUrl = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroupId()),
+           Self.prepareDirectory(groupUrl) {
+            completion(.success(groupUrl.adaptedPath()))
+            return
+        }
+        // Сборка без подписи не получает групповой контейнер: система отдаёт путь,
+        // но создать его не даёт. Тогда данные живут в Application Support.
+        let support = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first
+        if let support {
+            let fallback = support.appendingPathComponent("dev.apolune.client", isDirectory: true)
+            if Self.prepareDirectory(fallback) {
+                YGLog("appGroup unavailable, falling back to \(fallback.path)")
+                completion(.success(fallback.adaptedPath()))
+                return
+            }
+        }
+        completion(.success(""))
+    }
+
+    private static func prepareDirectory(_ url: URL) -> Bool {
+        do {
+            try FileManager.default.createDirectory(at: url, withIntermediateDirectories: true)
+            let probe = url.appendingPathComponent(".write-probe")
+            try Data().write(to: probe)
+            try? FileManager.default.removeItem(at: probe)
+            return true
+        } catch {
+            return false
         }
     }
 
