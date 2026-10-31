@@ -18,8 +18,8 @@ abstract final class AppLayout {
   static const macOSTitlebarHeight = 28.0;
   static const mobileBreakpoint = 720.0;
   static const compactDesktopBreakpoint = 900.0;
-  static const desktopSidebarWidth = 225.0;
-  static const compactSidebarWidth = 190.0;
+  static const desktopSidebarWidth = 264.0;
+  static const compactSidebarWidth = 224.0;
 
   /// Ниже этой высоты боковая панель не помещается: в ландшафте телефона
   /// остаётся нижняя навигация.
@@ -85,8 +85,8 @@ abstract final class AppSpacing {
   static const sidebarVertical = 36.0;
   static const macOSSidebarVertical = 16.0;
   static const macOSSidebarBrandBottom = 24.0;
-  static const sidebarBrandStart = 24.0;
-  static const sidebarCompactBrandStart = 14.0;
+  static const sidebarBrandStart = 18.0;
+  static const sidebarCompactBrandStart = 12.0;
   static const sidebarBrandTop = 5.0;
   static const sidebarBrandBottom = 40.0;
   static const sidebarRowHeight = 50.0;

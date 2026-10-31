@@ -384,7 +384,7 @@ class _AdaptiveMainShellState extends State<AdaptiveMainShell> {
                           : AppSpacing.sidebarBrandBottom,
                     ),
                     child: ApoluneBrand(
-                      size: 28,
+                      size: 26,
                       color: palette.brand,
                       bg: palette.sidebar,
                       style: AppTypography.desktopBrand.copyWith(
@@ -446,11 +446,11 @@ class _AdaptiveMainShellState extends State<AdaptiveMainShell> {
                 minHeight: AppSpacing.sidebarRowHeight,
               ),
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 14),
+                padding: const EdgeInsets.symmetric(horizontal: 12),
                 child: Row(
                   children: [
                     Icon(_icon(primary), size: 22, color: color),
-                    const SizedBox(width: 12),
+                    const SizedBox(width: 10),
                     Expanded(
                       child: Text(
                         label,
