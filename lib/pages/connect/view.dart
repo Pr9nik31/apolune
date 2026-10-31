@@ -92,98 +92,114 @@ class ConnectView extends StatelessWidget {
     if (MediaQuery.sizeOf(context).width > AppLayout.mobileBreakpoint) {
       return _desktop(context);
     }
-    return SingleChildScrollView(
-      padding: const EdgeInsets.fromLTRB(
-        AppSpacing.connectPageHorizontal,
-        AppSpacing.connectPageTop,
-        AppSpacing.connectPageHorizontal,
-        AppSpacing.connectPageBottom,
-      ),
-      child: ResponsiveContent(
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            final main = Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                _status(context),
-                const SizedBox(height: 14),
-                Card(
+    // Без резинового отскока: на iOS страница «улетала» вниз от одного движения.
+    return LayoutBuilder(
+      builder: (context, constraints) => SingleChildScrollView(
+        physics: const ClampingScrollPhysics(),
+        padding: const EdgeInsets.fromLTRB(
+          AppSpacing.connectPageHorizontal,
+          AppSpacing.connectPageTop,
+          AppSpacing.connectPageHorizontal,
+          AppSpacing.connectPageBottom,
+        ),
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            minHeight:
+                (constraints.maxHeight -
+                        AppSpacing.connectPageTop -
+                        AppSpacing.connectPageBottom)
+                    .clamp(0, double.infinity),
+          ),
+          child: ResponsiveContent(
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                final main = Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    _status(context),
+                    const SizedBox(height: 14),
+                    Card(
+                      margin: EdgeInsets.zero,
+                      clipBehavior: Clip.antiAlias,
+                      child: Padding(
+                        padding: const EdgeInsets.all(1),
+                        child: Column(
+                          children: [
+                            _expertSwitch(context),
+                            if (expert)
+                              _raws(context)
+                            else
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 12,
+                                ),
+                                child: Column(
+                                  children: [
+                                    _choice(
+                                      context,
+                                      LucideIcons.earth,
+                                      l.prototypeServers,
+                                      location,
+                                      onServer,
+                                      detail: locationDetail ?? runningPath,
+                                      meta: connected ? locationHealth : null,
+                                    ),
+                                    _choice(
+                                      context,
+                                      LucideIcons.shieldCheck,
+                                      l.prototypeTrafficMethod,
+                                      method,
+                                      onMethod,
+                                      detail: methodDetail,
+                                      enabled: methodEnabled,
+                                      busy: pendingChange == 'method',
+                                      minHeight: 113,
+                                    ),
+                                    _why(context),
+                                  ],
+                                ),
+                              ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                );
+                final traffic = Card(
                   margin: EdgeInsets.zero,
                   clipBehavior: Clip.antiAlias,
                   child: Padding(
-                    padding: const EdgeInsets.all(1),
+                    padding: const EdgeInsets.fromLTRB(13, 15, 13, 1),
                     child: Column(
                       children: [
-                        _expertSwitch(context),
-                        if (expert)
-                          _raws(context)
-                        else
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 12),
-                            child: Column(
-                              children: [
-                                _choice(
-                                  context,
-                                  LucideIcons.earth,
-                                  l.prototypeServers,
-                                  location,
-                                  onServer,
-                                  detail: locationDetail ?? runningPath,
-                                  meta: connected ? locationHealth : null,
+                        ConstrainedBox(
+                          constraints: const BoxConstraints(minHeight: 29),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  l.prototypeTraffic,
+                                  style: AppTypography.connectTrafficTitle,
                                 ),
-                                _choice(
-                                  context,
-                                  LucideIcons.shieldCheck,
-                                  l.prototypeTrafficMethod,
-                                  method,
-                                  onMethod,
-                                  detail: methodDetail,
-                                  enabled: methodEnabled,
-                                  busy: pendingChange == 'method',
-                                  minHeight: 113,
-                                ),
-                                _why(context),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
+                        ),
+                        const Divider(),
+                        trafficBuilder?.call(false) ??
+                            TrafficReadout(view: view),
                       ],
                     ),
                   ),
-                ),
-              ],
-            );
-            final traffic = Card(
-              margin: EdgeInsets.zero,
-              clipBehavior: Clip.antiAlias,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(13, 15, 13, 1),
-                child: Column(
-                  children: [
-                    ConstrainedBox(
-                      constraints: const BoxConstraints(minHeight: 29),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            child: Text(
-                              l.prototypeTraffic,
-                              style: AppTypography.connectTrafficTitle,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const Divider(),
-                    trafficBuilder?.call(false) ?? TrafficReadout(view: view),
-                  ],
-                ),
-              ),
-            );
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [main, const SizedBox(height: 13), traffic],
-            );
-          },
+                );
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [main, const SizedBox(height: 13), traffic],
+                );
+              },
+            ),
+          ),
         ),
       ),
     );
