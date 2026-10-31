@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:apolune/core/db/database/database.dart';
 import 'package:apolune/core/pigeon/flutter_api.dart';
 import 'package:apolune/core/pigeon/host_api.dart';
+import 'package:apolune/core/tools/platform.dart';
 import 'package:apolune/core/pigeon/messages.g.dart';
 import 'package:apolune/service/connect/failure.dart';
 import 'package:apolune/service/connect/preparation.dart';
@@ -120,8 +121,14 @@ class ConnectionCoordinator with WidgetsBindingObserver {
     void Function()? disposeStatus,
   }) : db = database ?? AppDatabase(),
        _statusEvents =
-           statusEvents ?? AppFlutterApi().vpnStatusController.stream,
-       _observeStatus = observeStatus ?? AppHostApi().observeVpnStatus,
+           statusEvents ??
+           (AppPlatform.isMacOS
+               // Локальное ядро не присылает событий Network Extension.
+               ? const Stream<VpnStatus>.empty()
+               : AppFlutterApi().vpnStatusController.stream),
+       _observeStatus =
+           observeStatus ??
+           (AppPlatform.isMacOS ? () async {} : AppHostApi().observeVpnStatus),
        _disposeStatus = disposeStatus ?? AppHostApi().disposeVpnStatus {
     final host = ConnectionRuntimeHost();
     _start = start == null

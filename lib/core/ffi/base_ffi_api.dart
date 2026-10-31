@@ -51,6 +51,10 @@ Future<String> readDesktopCoreStartError(
   return fallback;
 }
 
+/// Прямой вызов ядра в текущем процессе. На Apple libXray слинкована
+/// статически, поэтому `DynamicLibrary.open("")` находит её символы.
+Future<String> invokeLibXray(String requestJson) async => _cgoInvoke(requestJson);
+
 abstract class BaseFfiApi {
   Future<String> getTunFilesDir() async {
     final dir = await getApplicationSupportDirectory();

@@ -15,6 +15,7 @@ import 'package:apolune/core/pigeon/messages.g.dart';
 import 'package:apolune/core/pigeon/model.dart';
 import 'package:apolune/core/pigeon/model_writer.dart';
 import 'package:apolune/service/advanced/platform_policy.dart';
+import 'package:apolune/service/connect/macos_proxy.dart';
 import 'package:apolune/service/connect/runtime.dart';
 import 'package:apolune/service/connect/settings.dart';
 import 'package:apolune/service/connect/traffic.dart';
@@ -59,6 +60,7 @@ class ConnectionRuntimeHost {
   _startVpn;
   final Future<void> Function(ConnectionRuntime runtime)? _writeStartFile;
   final Future<NativeVpnCommandResult> Function()? _stopVpn;
+  final MacosProxySession _proxy = MacosProxySession();
 
   ConnectionRuntimeHost({
     String? runDirectory,
@@ -81,6 +83,9 @@ class ConnectionRuntimeHost {
     ({VpnStatus status, PlatformPermissionResult? permission, String? message})
   >
   _status() async {
+    if (_readStatus == null && _proxy.enabled) {
+      return (status: await _proxy.status(), permission: null, message: null);
+    }
     final readStatus = _readStatus;
     if (readStatus != null) {
       return (status: await readStatus(), permission: null, message: null);
@@ -225,6 +230,8 @@ class ConnectionRuntimeHost {
   Future<NativeVpnCommandResult> _start(ConnectionRuntime runtime) {
     final startVpn = _startVpn;
     if (startVpn != null) return startVpn(runtime);
+    // Без подписи macOS не поднимает Network Extension — ядро работает локально.
+    if (_proxy.enabled) return _proxy.start(runtime);
     final policy = runtime.configuration.policy;
     final windows =
         runtime.platform == ConnectionPlatform.windows &&
@@ -308,7 +315,8 @@ class ConnectionRuntimeHost {
   }
 
   Future<HostConnection> stop() async {
-    final result = await (_stopVpn?.call() ?? _host.stopVpn());
+    final result = await (_stopVpn?.call() ??
+        (_proxy.enabled ? _proxy.stop() : _host.stopVpn()));
     if (result.state != NativeVpnCommandState.success) {
       throw ConnectionHostException('stopFailed', cause: result.message);
     }
