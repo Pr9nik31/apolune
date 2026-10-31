@@ -93,15 +93,19 @@ class ConnectView extends StatelessWidget {
     if (AppLayout.isWideSize(MediaQuery.sizeOf(context))) {
       return _desktop(context);
     }
+    // На невысоких экранах отступы ужимаются: блок трафика должен быть
+    // достижим без долгой прокрутки.
+    final topInset = AppSpacing.connectPageTop * 0.55;
+    final bottomInset = AppSpacing.connectPageBottom * 0.6;
     // Без резинового отскока: на iOS страница «улетала» вниз от одного движения.
     return LayoutBuilder(
       builder: (context, constraints) => SingleChildScrollView(
         physics: const ElasticScrollPhysics(),
-        padding: const EdgeInsets.fromLTRB(
+        padding: EdgeInsets.fromLTRB(
           AppSpacing.connectPageHorizontal,
-          AppSpacing.connectPageTop,
+          topInset,
           AppSpacing.connectPageHorizontal,
-          AppSpacing.connectPageBottom,
+          bottomInset,
         ),
         child: ConstrainedBox(
           constraints: BoxConstraints(
@@ -195,7 +199,11 @@ class ConnectView extends StatelessWidget {
                 );
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [main, const SizedBox(height: 13), traffic],
+                  children: [
+                main,
+                const SizedBox(height: 10),
+                traffic,
+              ],
                 );
               },
             ),
