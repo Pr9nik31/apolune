@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:material_ui/material_ui.dart';
+import 'package:apolune/pages/shared/widgets/apolune_brand.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
@@ -382,11 +383,10 @@ class _AdaptiveMainShellState extends State<AdaptiveMainShell> {
                           ? AppSpacing.macOSSidebarBrandBottom
                           : AppSpacing.sidebarBrandBottom,
                     ),
-                    child: Text(
-                      'Apolune',
-                      maxLines: 1,
-                      softWrap: false,
-                      overflow: TextOverflow.ellipsis,
+                    child: ApoluneBrand(
+                      size: 28,
+                      color: palette.brand,
+                      bg: palette.sidebar,
                       style: AppTypography.desktopBrand.copyWith(
                         color: palette.brand,
                       ),

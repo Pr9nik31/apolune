@@ -46,11 +46,15 @@ class ApoluneBrand extends StatelessWidget {
     this.size = 26,
     this.style,
     this.centered = false,
+    this.color,
+    this.bg,
   });
 
   final double size;
   final TextStyle? style;
   final bool centered;
+  final Color? color;
+  final Color? bg;
 
   @override
   Widget build(BuildContext context) {
@@ -63,12 +67,20 @@ class ApoluneBrand extends StatelessWidget {
       children: [
         ApoluneMark(
           size: size,
-          color: palette.foreground,
+          color: color ?? palette.foreground,
           accent: palette.primary,
-          bg: palette.background,
+          bg: bg ?? palette.background,
         ),
         SizedBox(width: size * 0.18),
-        Text('Apolune', style: style ?? AppTypography.setupBrand),
+        Flexible(
+          child: Text(
+            'Apolune',
+            maxLines: 1,
+            softWrap: false,
+            overflow: TextOverflow.ellipsis,
+            style: style ?? AppTypography.setupBrand,
+          ),
+        ),
       ],
     );
   }
