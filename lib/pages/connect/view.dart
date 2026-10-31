@@ -1,4 +1,5 @@
 import 'package:material_ui/material_ui.dart';
+import 'package:apolune/pages/shared/widgets/elastic_scroll_physics.dart';
 import 'package:apolune/core/db/database/database.dart';
 import 'package:apolune/core/tools/traffic_format.dart';
 import 'package:apolune/l10n/localizations/app_localizations.dart';
@@ -95,7 +96,7 @@ class ConnectView extends StatelessWidget {
     // Без резинового отскока: на iOS страница «улетала» вниз от одного движения.
     return LayoutBuilder(
       builder: (context, constraints) => SingleChildScrollView(
-        physics: const ClampingScrollPhysics(),
+        physics: const ElasticScrollPhysics(),
         padding: const EdgeInsets.fromLTRB(
           AppSpacing.connectPageHorizontal,
           AppSpacing.connectPageTop,
