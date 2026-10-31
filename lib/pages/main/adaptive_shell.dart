@@ -224,7 +224,9 @@ class _AdaptiveMainShellState extends State<AdaptiveMainShell> {
           selector: (state) => state.appUpdateInfo,
           builder: (context, appUpdateInfo) => LayoutBuilder(
             builder: (context, constraints) {
-              if (AppLayout.isWideSize(constraints.biggest)) {
+              final railSize = constraints.biggest;
+              if (railSize.width > AppLayout.mobileBreakpoint &&
+                  railSize.height >= AppLayout.railMinHeight) {
                 return _railScaffold(
                   context,
                   constraints.maxWidth,
@@ -292,6 +294,7 @@ class _AdaptiveMainShellState extends State<AdaptiveMainShell> {
     AppUpdateInfo? appUpdateInfo,
   ) {
     final compact = width <= AppLayout.compactDesktopBreakpoint;
+    final short = MediaQuery.sizeOf(context).height < AppLayout.sidebarMinHeight;
     final sidebarWidth = !compact
         ? AppLayout.desktopSidebarWidth
         : AppLayout.compactSidebarWidth;
@@ -318,7 +321,9 @@ class _AdaptiveMainShellState extends State<AdaptiveMainShell> {
                 child: Padding(
                   padding: EdgeInsets.symmetric(
                     horizontal: AppSpacing.sidebarHorizontal,
-                    vertical: nativeSidebar
+                    vertical: short
+                        ? 10
+                        : nativeSidebar
                         ? AppSpacing.macOSSidebarVertical
                         : AppSpacing.sidebarVertical,
                   ),
@@ -326,6 +331,7 @@ class _AdaptiveMainShellState extends State<AdaptiveMainShell> {
                     context,
                     compact: compact,
                     nativeSidebar: nativeSidebar,
+                    short: short,
                     appUpdateInfo: appUpdateInfo,
                   ),
                 ),
@@ -354,6 +360,7 @@ class _AdaptiveMainShellState extends State<AdaptiveMainShell> {
     BuildContext context, {
     required bool compact,
     required bool nativeSidebar,
+    required bool short,
     required AppUpdateInfo? appUpdateInfo,
   }) {
     final palette = ColorManager.palette(context);
@@ -375,16 +382,18 @@ class _AdaptiveMainShellState extends State<AdaptiveMainShell> {
                       compact
                           ? AppSpacing.sidebarCompactBrandStart
                           : AppSpacing.sidebarBrandStart,
-                      AppSpacing.sidebarBrandTop,
+                      short ? 2 : AppSpacing.sidebarBrandTop,
                       compact
                           ? AppSpacing.sidebarCompactBrandStart
                           : AppSpacing.sidebarBrandStart,
-                      nativeSidebar
+                      short
+                          ? 18
+                          : nativeSidebar
                           ? AppSpacing.macOSSidebarBrandBottom
                           : AppSpacing.sidebarBrandBottom,
                     ),
                     child: ApoluneBrand(
-                      size: 26,
+                      size: short ? 22 : 26,
                       color: palette.brand,
                       bg: palette.sidebar,
                       style: AppTypography.desktopBrand.copyWith(
