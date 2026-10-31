@@ -71,7 +71,6 @@ class ConnectView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context)!;
-    final connected = view.phase == ConnectionPhase.connected;
     final empty =
         !hasServers &&
         !expert &&
@@ -123,52 +122,20 @@ class ConnectView extends StatelessWidget {
                   children: [
                     _status(context),
                     const SizedBox(height: 14),
-                    Card(
-                      margin: EdgeInsets.zero,
-                      clipBehavior: Clip.antiAlias,
-                      child: Padding(
-                        padding: const EdgeInsets.all(1),
-                        child: Column(
-                          children: [
-                            if (expert)
-                              _raws(context)
-                            else
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 12,
-                                ),
-                                child: Column(
-                                  children: [
-                                    _choice(
-                                      context,
-                                      LucideIcons.earth,
-                                      l.prototypeServers,
-                                      location,
-                                      onServer,
-                                      detail: locationDetail ?? runningPath,
-                                      meta: connected ? locationHealth : null,
-                                    ),
-                                    // Маршрутизация — для уверенных пользователей.
-                                    if (expert)
-                                      _choice(
-                                        context,
-                                        LucideIcons.shieldCheck,
-                                        l.prototypeTrafficMethod,
-                                        method,
-                                        onMethod,
-                                        detail: methodDetail,
-                                        enabled: methodEnabled,
-                                        busy: pendingChange == 'method',
-                                        minHeight: 113,
-                                      ),
-                                    _why(context),
-                                  ],
-                                ),
-                              ),
-                          ],
+                    if (expert)
+                      Card(
+                        margin: EdgeInsets.zero,
+                        clipBehavior: Clip.antiAlias,
+                        child: Padding(
+                          padding: const EdgeInsets.all(1),
+                          child: _raws(context),
                         ),
+                      )
+                    else
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 4),
+                        child: _why(context),
                       ),
-                    ),
                   ],
                 );
                 final traffic = Card(
@@ -225,7 +192,6 @@ class ConnectView extends StatelessWidget {
           320.0,
           900.0,
         );
-    final connected = view.phase == ConnectionPhase.connected;
     final main = Card(
       key: const ValueKey('desktop-connection-panel'),
       margin: EdgeInsets.zero,
@@ -238,36 +204,8 @@ class ConnectView extends StatelessWidget {
             _raws(context, desktop: true)
           else
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 29),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  _desktopChoice(
-                    context,
-                    LucideIcons.earth,
-                    l.prototypeServers,
-                    location,
-                    onServer,
-                    detail: locationDetail ?? runningPath,
-                    meta: connected ? locationHealth : null,
-                  ),
-                  if (expert) ...[
-                    const SizedBox(height: 25),
-                    _desktopChoice(
-                      context,
-                      LucideIcons.shieldCheck,
-                      l.prototypeTrafficMethod,
-                      method,
-                      onMethod,
-                      detail: methodDetail,
-                      enabled: methodEnabled,
-                      busy: pendingChange == 'method',
-                    ),
-                  ],
-                  const SizedBox(height: 25),
-                  _why(context, desktop: true),
-                ],
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+              child: _why(context, desktop: true),
             ),
         ],
       ),
@@ -346,110 +284,6 @@ class ConnectView extends StatelessWidget {
                 ),
               ),
             ),
-    );
-  }
-
-  Widget _desktopChoice(
-    BuildContext context,
-    IconData icon,
-    String label,
-    String value,
-    VoidCallback onTap, {
-    String? detail,
-    String? meta,
-    bool busy = false,
-    bool enabled = true,
-  }) {
-    final palette = ColorManager.palette(context);
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Padding(
-          padding: const EdgeInsetsDirectional.only(start: 2),
-          child: Text(
-            label,
-            style: AppTypography.connectDesktopChoiceLabel.copyWith(
-              color: palette.mutedStrong,
-            ),
-          ),
-        ),
-        const SizedBox(height: 10),
-        Material(
-          color: palette.card,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(AppRadii.small),
-            side: BorderSide(color: palette.border),
-          ),
-          child: InkWell(
-            onTap: _busy || !enabled ? null : onTap,
-            borderRadius: BorderRadius.circular(AppRadii.small),
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(
-                minHeight: AppLayout.connectDesktopChoiceMinHeight,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 14,
-                  vertical: 10,
-                ),
-                child: Row(
-                  children: [
-                    if (busy)
-                      const ButtonProgressIndicator()
-                    else
-                      Icon(
-                        icon,
-                        size: 23,
-                        color: Theme.of(context).brightness == Brightness.dark
-                            ? palette.foreground
-                            : palette.scannerBackground,
-                      ),
-                    const SizedBox(width: 13),
-                    Expanded(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            value,
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            style: AppTypography.connectDesktopChoiceTitle,
-                          ),
-                          if (detail != null && detail.isNotEmpty) ...[
-                            const SizedBox(height: 3),
-                            Text(
-                              detail,
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                              style: AppTypography.connectDesktopChoiceDetail
-                                  .copyWith(color: palette.mutedForeground),
-                            ),
-                          ],
-                        ],
-                      ),
-                    ),
-                    const SizedBox(width: 13),
-                    if (meta != null) ...[
-                      Text(
-                        meta,
-                        style: AppTypography.connectDesktopChoiceMeta.copyWith(
-                          color: palette.running,
-                        ),
-                      ),
-                      const SizedBox(width: 13),
-                    ],
-                    if (enabled)
-                      const Icon(LucideIcons.chevronRightDir, size: 19),
-                    if (meta == null) const SizedBox(width: 13),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ),
-      ],
     );
   }
 
@@ -653,6 +487,17 @@ class ConnectView extends StatelessWidget {
                           : AppTypography.connectStatusDetail)
                       .copyWith(color: palette.mutedStrong),
             ),
+            if (location.isNotEmpty)
+              Padding(
+                padding: EdgeInsets.only(top: desktop ? 10 : 6),
+                child: Text(
+                  location,
+                  textAlign: TextAlign.center,
+                  style: AppTypography.metadata.copyWith(
+                    color: palette.mutedForeground,
+                  ),
+                ),
+              ),
             if (view.issue == 'selectionReset')
               Padding(
                 padding: const EdgeInsets.only(top: 8),
@@ -699,106 +544,6 @@ class ConnectView extends StatelessWidget {
     );
   }
 
-  Widget _choice(
-    BuildContext context,
-    IconData icon,
-    String label,
-    String value,
-    VoidCallback onTap, {
-    String? detail,
-    String? meta,
-    bool busy = false,
-    bool enabled = true,
-    double minHeight = 0,
-  }) {
-    final palette = ColorManager.palette(context);
-    return Container(
-      constraints: BoxConstraints(minHeight: minHeight),
-      padding: const EdgeInsets.only(top: 13, bottom: 10),
-      decoration: BoxDecoration(
-        border: Border(bottom: BorderSide(color: palette.border)),
-      ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            label,
-            style: AppTypography.connectChoiceLabel.copyWith(
-              color: palette.mutedStrong,
-            ),
-          ),
-          const SizedBox(height: 7),
-          InkWell(
-            onTap: _busy || !enabled ? null : onTap,
-            child: Opacity(
-              opacity: 1,
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(
-                  minHeight: AppLayout.connectChoiceMinHeight,
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 1, bottom: 3),
-                  child: Row(
-                    children: [
-                      if (busy)
-                        const ButtonProgressIndicator()
-                      else
-                        Icon(
-                          icon,
-                          size: 23,
-                          color: Theme.of(context).brightness == Brightness.dark
-                              ? palette.foreground
-                              : palette.scannerBackground,
-                        ),
-                      const SizedBox(width: 13),
-                      Expanded(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              value,
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                              style: AppTypography.connectChoiceTitle,
-                            ),
-                            if (detail != null && detail.isNotEmpty) ...[
-                              const SizedBox(height: 3),
-                              Text(
-                                detail,
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                                style: AppTypography.connectChoiceDetail
-                                    .copyWith(color: palette.mutedForeground),
-                              ),
-                            ],
-                          ],
-                        ),
-                      ),
-                      const SizedBox(width: 13),
-                      if (meta != null) ...[
-                        Text(
-                          meta,
-                          style: AppTypography.connectChoiceMeta.copyWith(
-                            color: palette.running,
-                          ),
-                        ),
-                        const SizedBox(width: 13),
-                      ],
-                      if (enabled)
-                        const Icon(LucideIcons.chevronRightDir, size: 19),
-                      if (meta == null) const SizedBox(width: 13),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 
   Widget _raws(BuildContext context, {bool desktop = false}) {
     final l = AppLocalizations.of(context)!;
