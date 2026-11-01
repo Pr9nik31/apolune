@@ -4,6 +4,7 @@ import 'package:apolune/core/pigeon/host_api.dart';
 import 'package:apolune/core/pigeon/messages.g.dart';
 import 'package:apolune/core/tools/platform.dart';
 import 'package:apolune/pages/main/router.dart';
+import 'package:apolune/pages/shared/widgets/apolune_brand.dart';
 import 'package:apolune/service/launch/app_startup.dart';
 import 'package:apolune/service/shared/menu/short_cut/service.dart';
 import 'package:apolune/service/shared/menu/settings/service.dart';
@@ -16,6 +17,10 @@ const _minimumDesktopWindowSize = Size(480, 600);
 
 Future<void> main(List<String> _) async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Первый кадр рисуем сразу: системная заставка сменяется знаком, пока
+  // сервисы инициализируются. Иначе экран остаётся пустым всё время запуска.
+  runApp(const _BootSplash());
 
   await ShortCutService().initialize();
   ShareService().startAppLinks();
@@ -36,6 +41,17 @@ Future<void> main(List<String> _) async {
   // Hidden windows may not render frames. Keep visibility independent from
   // first-frame callbacks and preserve the existing hidden-start policy.
   await appStartup.onWindowReady();
+}
+
+/// Заставка первого кадра: только знак на бумаге, без зависимостей от темы.
+class _BootSplash extends StatelessWidget {
+  const _BootSplash();
+
+  @override
+  Widget build(BuildContext context) => const ColoredBox(
+    color: Color(0xFFEDE8DC),
+    child: Center(child: ApoluneMark(size: 150, color: Color(0xFF16150F))),
+  );
 }
 
 Future<void> _initBridge() async {
