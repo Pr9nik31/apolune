@@ -1,4 +1,7 @@
 import 'package:material_ui/material_ui.dart';
+import 'package:apolune/pages/shared/widgets/apolune_brand.dart';
+import 'package:apolune/pages/theme/color.dart';
+import 'package:apolune/pages/theme/font.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:apolune/pages/launch/splash/controller.dart';
@@ -39,7 +42,24 @@ class SplashPage extends StatelessWidget {
                       ),
                     ],
                   )
-                : const CircularProgressIndicator(),
+                : Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const ApoluneMark(size: 150),
+                      const SizedBox(height: 20),
+                      Text(
+                        'Apolune',
+                        style: AppTypography.desktopBrand.copyWith(
+                          color: ColorManager.palette(context).foreground,
+                        ),
+                      ),
+                      const SizedBox(height: 28),
+                      const SizedBox(
+                        width: 96,
+                        child: LinearProgressIndicator(minHeight: 2),
+                      ),
+                    ],
+                  ),
           ),
         ),
       ),
